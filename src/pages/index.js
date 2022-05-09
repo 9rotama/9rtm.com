@@ -12,8 +12,8 @@ const IndexPage = () => (
     <div>
       <Global styles={css`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,900;1,100;1,500;1,800&family=M+PLUS+1:wght@100;400;800&family=Montserrat:ital,wght@0,100;0,500;0,800;1,100;1,500;1,800&display=swap');
-        @font-face {
-          font-family: 'M PLUS 1','Montserrat Alternates';
+        body {
+          font-family: 'Montserrat Alternates', 'M PLUS 1';
         }
       `} />
     </div>
