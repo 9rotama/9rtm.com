@@ -5,14 +5,14 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { Global, css } from '@emotion/react'
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
+import { Global, css } from '@emotion/react';
 
-import Header from "./header"
+import Header from './header';
 
-const Layout = ({ children }) => {
+function Layout({ children }) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -21,13 +21,13 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
       <div>
         <Global styles={css`
-          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,900;1,100;1,500;1,800&family=M+PLUS+1:wght@100;400;800&family=Montserrat:ital,wght@0,100;0,500;0,800;1,100;1,500;1,800&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,900;1,100;1,500;1,800&family=M+PLUS+1:wght@100;4npm 00;800&family=Montserrat:ital,wght@0,100;0,500;0,800;1,100;1,500;1,800&display=swap');
           body {
             font-family: 'Montserrat Alternates', 'M PLUS 1';
           }
@@ -40,10 +40,11 @@ const Layout = ({ children }) => {
           h4 {
             font-weight: 500;
           }
-        `} />
-      </div> 
+        `}
+        />
+      </div>
 
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
       <div
         css={css`
           margin: 0 auto;
@@ -53,15 +54,19 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()} 9rotama
+          ©
+          {' '}
+          {new Date().getFullYear()}
+          {' '}
+          9rotama
         </footer>
       </div>
     </>
-  )
+  );
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
