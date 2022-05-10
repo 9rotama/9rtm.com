@@ -8,22 +8,21 @@ import Menu from './menu';
 
 function Header({ siteTitle }) {
   return (
-    <header
-      css={css`
-      background: transparent;
-      margin-bottom: 1.45rem;
-    `}
-    >
+    <header>
       <div
         css={css`
         margin: 0 auto;
-        max-width: 960;
-        padding: 1.45rem 1.0875rem;
-      `}
+        padding: 3rem 2rem;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(50px);
+        margin-bottom: 1.45rem;
+        `}
       >
         <Link
           to="/"
           css={css`
+            position: absolute;
+            top: 4vh; left: 10vw;
             color: #ffffff;
             text-decoration: none;
             font-size: 2em;

@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 /** @jsx jsx */
 import { Global, css, jsx } from '@emotion/react';
 
+
 import Header from './header';
 
 function Layout({ children }) {
@@ -28,19 +29,18 @@ function Layout({ children }) {
     <>
       <div>
         <Global styles={css`
-          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,700;0,800&family=M+PLUS+1:wght@100;400;700;800&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,600;0,800&family=M+PLUS+1:wght@100;400;600;800&display=swap');
           body {
             font-family: 'Montserrat Alternates', 'M PLUS 1';
             color: #ffffff;
-            background-color: #252A34;
-            
+            background-color: #121212;
+            margin: 0;
           }
           a {
             border-radius: 5px;
             transition-duration: 0.3s;
           }
           a:hover {
-            transform: scale(1.2);
 						background: rgba(255,255,255,0.2);
             transition-duration: 0.3s;
 					}

@@ -9,7 +9,6 @@ import Seo from '../components/seo';
 function IndexPage() {
   return (
     <Layout>
-
       <Seo title="about me" />
 
       <p>

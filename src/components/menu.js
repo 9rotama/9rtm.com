@@ -10,9 +10,9 @@ function MenuButton({ path, name }) {
 				css={css`
 					text-decoration: none;
 					color: #ffffff;
-					font-size: 1.7em;
+					font-size: 1.5em;
 					font-weight: 600;
-					margin: 1em;
+					margin: 1vw;
 				`}>
 					{name}
 			</Link>
@@ -21,10 +21,13 @@ function MenuButton({ path, name }) {
 
 function Menu({ data }) {
   return (
-    <>
+    <div css={css`
+			position: absolute;
+			top: 5vh; right: 10vw;
+		`}>
       <MenuButton path="/aboutme" name="about me" />
 			<MenuButton path="/works" name="works" />
-    </>
+    </div>
   );
 }
 
