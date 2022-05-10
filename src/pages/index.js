@@ -3,12 +3,18 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
-import icon from '../images/danboicon.png';
-import github from '../images/github.svg';
-import twitter from '../images/twitter.svg';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
+
+const iconStyles = {
+  main: css`
+    
+  `
+}
 
 function IndexPage() {
   return (
@@ -17,8 +23,8 @@ function IndexPage() {
       <div css={css`
         text-align: center;
       `}>
-        <img 
-          src={icon}
+        <StaticImage 
+          src='../images/danboicon.png'
           css={css`
             border-radius: 40%;
             margin: 4vw 0 2vw 0;
@@ -33,31 +39,30 @@ function IndexPage() {
         >
           welcome to 9rotama's portfolio!!
         </p>
+        <FontAwesomeIcon 
+          icon={faGithub}
+          css={css`
+          margin: 1rem;
+          font-size: 2.5em;
+          transition-duration: 0.3s;
 
-        
-          <img 
-            src={github} 
-            css={css`
-              filter: invert(50%);
-              margin: 0.5rem;
-              width: 2.5em;
-              &:hover{
-                filter: invert(8%) sepia(99%) saturate(3000%) hue-rotate(247deg) brightness(400%) contrast(145%)
-              }
-            `}
-          />
-          <img 
-            src={twitter} 
-            css={css`
-              filter: invert(50%);
-              margin: 0.5rem;
-              width: 2.5em;
-              &:hover{
-                filter: invert(8%) sepia(99%) saturate(3000%) hue-rotate(200deg) brightness(300%) contrast(145%);
-              }
-            `}
-          />
-        
+          &:hover {
+            color: #806991;
+            transform: scale(1.3);
+            transition-duration: 0.3s;
+          }`}
+        />
+        <FontAwesomeIcon icon={faTwitter} css={css`
+          margin: 1rem;
+          font-size: 2.5em;
+          transition-duration: 0.3s;
+
+          &:hover {
+            color: #118AB2;
+            transform: scale(1.3);
+            transition-duration: 0.3s;
+          }`}
+        />
       </div>
      
     </Layout>
