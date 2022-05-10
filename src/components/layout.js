@@ -8,6 +8,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Global, css } from '@emotion/react'
 
 import Header from "./header"
 
@@ -24,13 +25,31 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <div>
+        <Global styles={css`
+          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,900;1,100;1,500;1,800&family=M+PLUS+1:wght@100;400;800&family=Montserrat:ital,wght@0,100;0,500;0,800;1,100;1,500;1,800&display=swap');
+          body {
+            font-family: 'Montserrat Alternates', 'M PLUS 1';
+          }
+          h1{
+            font-weight: 800;
+          }
+          h3 {
+            font-weight: 500;
+          }
+          h4 {
+            font-weight: 500;
+          }
+        `} />
+      </div> 
+
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
+        css={css`
+          margin: 0 auto;
+          max-width: 960px;
+          padding: 0 1.0875rem 1.45rem;
+        `}
       >
         <main>{children}</main>
         <footer>

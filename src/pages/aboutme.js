@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { css } from '@emotion/react'
+import { Global, css } from '@emotion/react'
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,10 +9,11 @@ import Seo from "../components/seo"
 const IndexPage = () => (
 
   <Layout>  
-    <Seo title="home" />
+    
+    <Seo title="about me" />
     
     <p>
-      welcome to 9rotama's portfolio!!
+      Webやゲーム制作、UI・ポスターデザインを主に勉強しています。
     </p>
   </Layout>
 )

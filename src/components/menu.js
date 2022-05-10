@@ -1,10 +1,12 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { css } from '@emotion/react'
+
 
 const Menu = ({ data }) => (
     <div>
-        <Link to="/" >about me</Link>
-        <Link to="/" >works</Link>
+        <Link to="/aboutme" >about me</Link>
+        <Link to="/works" >works</Link>
     </div>
 ) 
 
