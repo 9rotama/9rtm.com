@@ -8,7 +8,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Global, css } from '@emotion/react';
+/** @jsx jsx */
+import { Global, css, jsx } from '@emotion/react';
 
 import Header from './header';
 
@@ -47,9 +48,7 @@ function Layout({ children }) {
       <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
       <div
         css={css`
-          margin: 0 auto;
-          max-width: 960px;
-          padding: 0 1.0875rem 1.45rem;
+          font-family: 'Montserrat';
         `}
       >
         <main>{children}</main>
