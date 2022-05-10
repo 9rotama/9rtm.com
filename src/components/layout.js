@@ -31,6 +31,15 @@ const Layout = ({ children }) => {
           body {
             font-family: 'Montserrat Alternates', 'M PLUS 1';
           }
+          h1{
+            font-weight: 800;
+          }
+          h3 {
+            font-weight: 500;
+          }
+          h4 {
+            font-weight: 500;
+          }
         `} />
       </div> 
 

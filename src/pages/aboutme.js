@@ -13,7 +13,7 @@ const IndexPage = () => (
     <Seo title="about me" />
     
     <p>
-      welcome to 9rotama's portfolio!!
+      Webやゲーム制作、UI・ポスターデザインを主に勉強しています。
     </p>
   </Layout>
 )

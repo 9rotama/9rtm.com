@@ -12,7 +12,16 @@ const IndexPage = () => (
     <Seo title="works" />
     
     <p>
-      welcome to 9rotama's portfolio!!
+      <h3>Websites</h3>
+      <h4>tegei.github.io/works</h4>
+      <h4>arcwebtool</h4>
+
+      <h3>Games</h3>
+      <h4>SkyWitches</h4>
+      <h4>BeySweets</h4>
+      
+      <h3>CGs/Designs/Others</h3>
+      <a href="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing">Google Drive</a>
     </p>
   </Layout>
 )
