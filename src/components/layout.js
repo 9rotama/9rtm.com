@@ -28,13 +28,22 @@ function Layout({ children }) {
     <>
       <div>
         <Global styles={css`
-          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,900;1,100;1,500;1,800&family=M+PLUS+1:wght@100;400;800&family=Montserrat:ital,wght@0,100;0,500;0,800;1,100;1,500;1,800&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,700;0,800&family=M+PLUS+1:wght@100;400;700;800&display=swap');
           body {
             font-family: 'Montserrat Alternates', 'M PLUS 1';
+            color: #ffffff;
+            background-color: #252A34;
+            
           }
-          h1{
-            font-weight: 800;
+          a {
+            border-radius: 5px;
+            transition-duration: 0.3s;
           }
+          a:hover {
+            transform: scale(1.2);
+						background: rgba(255,255,255,0.2);
+            transition-duration: 0.3s;
+					}
           h3 {
             font-weight: 500;
           }
@@ -46,11 +55,7 @@ function Layout({ children }) {
       </div>
 
       <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
-      <div
-        css={css`
-          font-family: 'Montserrat';
-        `}
-      >
+      <div>
         <main>{children}</main>
         <footer>
           ©

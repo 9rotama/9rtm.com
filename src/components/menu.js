@@ -1,13 +1,30 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { css } from '@emotion/react';
+/** @jsx jsx */
+import { Global, css, jsx } from '@emotion/react';
+
+function MenuButton({ path, name }) {
+	return(
+			<Link 
+				to={path}
+				css={css`
+					text-decoration: none;
+					color: #ffffff;
+					font-size: 1.7em;
+					font-weight: 600;
+					margin: 1em;
+				`}>
+					{name}
+			</Link>
+	);
+}
 
 function Menu({ data }) {
   return (
-    <div>
-      <Link to="/aboutme">about me</Link>
-      <Link to="/works">works</Link>
-    </div>
+    <>
+      <MenuButton path="/aboutme" name="about me" />
+			<MenuButton path="/works" name="works" />
+    </>
   );
 }
 

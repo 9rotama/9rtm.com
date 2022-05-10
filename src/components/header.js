@@ -1,7 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { css } from '@emotion/react';
+/** @jsx jsx */
+import { Global, css, jsx } from '@emotion/react';
 
 import Menu from './menu';
 
@@ -20,20 +21,18 @@ function Header({ siteTitle }) {
         padding: 1.45rem 1.0875rem;
       `}
       >
-        <h1
+        <Link
+          to="/"
           css={css`
-          color: #222222;
-          text-decoration: none;
-        `}
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 2em;
+            font-weight: 800;
+          `}
         >
-          <Link
-            to="/"
-          >
-            {siteTitle}
-          </Link>
-        </h1>
-
-        <Menu />
+          {siteTitle}
+        </Link> 
+      <Menu />
       </div>
     </header>
   );
