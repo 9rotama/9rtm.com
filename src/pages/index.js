@@ -20,7 +20,7 @@ const IndexPage = () => (
     <Seo title="Home" />
     
     <p>
-      内容内容内容...
+      welcome to 9rotama's portfolio!!
     </p>
   </Layout>
 )

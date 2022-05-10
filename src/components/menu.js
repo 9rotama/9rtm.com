@@ -1,5 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { css } from '@emotion/react'
+
 
 const Menu = ({ data }) => (
     <div>
