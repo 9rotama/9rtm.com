@@ -41,7 +41,7 @@ function Layout({ children }) {
             transition-duration: 0.3s;
           }
           a:hover {
-						background: rgba(255,255,255,0.2);
+						background-color: rgba(255,255,255,0.2);
             transition-duration: 0.3s;
 					}
           h3 {
@@ -57,7 +57,16 @@ function Layout({ children }) {
       <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
       <div>
         <main>{children}</main>
-        <footer>
+        <footer css={css`
+          position: absolute;
+          text-align: center;
+          font-size: small;
+          color: rgba(255,255,255,0.5);
+          width: 200px;
+          left: 50%;
+          bottom: 1vw;
+          margin-left: -100px;
+        `}>
           ©
           {' '}
           {new Date().getFullYear()}

@@ -15,7 +15,7 @@ function Header({ siteTitle }) {
         padding: 3rem 2rem;
         background: rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(50px);
-        margin-bottom: 1.45rem;
+        margin-bottom: 3rem;
         `}
       >
         <Link
@@ -25,8 +25,9 @@ function Header({ siteTitle }) {
             top: 4vh; left: 10vw;
             color: #ffffff;
             text-decoration: none;
-            font-size: 2em;
+            font-size: 2.1em;
             font-weight: 800;
+            letter-spacing: 0.05em;
           `}
         >
           {siteTitle}
