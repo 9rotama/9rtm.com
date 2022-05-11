@@ -64,7 +64,7 @@ function Layout({ children }) {
           color: rgba(255,255,255,0.5);
           width: 200px;
           left: 50%;
-          bottom: 1vw;
+          bottom: 14px;
           margin-left: -100px;
         `}>
           ©

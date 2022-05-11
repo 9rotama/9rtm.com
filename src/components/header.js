@@ -11,18 +11,19 @@ function Header({ siteTitle }) {
     <header>
       <div
         css={css`
-        margin: 0 auto;
-        padding: 3rem 2rem;
-        background: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(50px);
-        margin-bottom: 3rem;
+          margin: 0 auto;
+          padding: 3rem 2rem;
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(50px);
+          margin-bottom: 3rem;
+          
         `}
       >
         <Link
           to="/"
           css={css`
             position: absolute;
-            top: 4vh; left: 10vw;
+            top: 30px; left: 10vw;
             color: #ffffff;
             text-decoration: none;
             font-size: 2.1em;
@@ -31,8 +32,9 @@ function Header({ siteTitle }) {
           `}
         >
           {siteTitle}
-        </Link> 
-      <Menu />
+        </Link>
+        
+        <Menu />
       </div>
     </header>
   );
