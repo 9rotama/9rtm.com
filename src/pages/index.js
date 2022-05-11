@@ -10,10 +10,33 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
-const iconStyles = {
-  main: css`
-    
-  `
+function SnsLink({ icon, url, color }) {
+  return(
+    <a 
+      target="_blank" 
+      href={url}
+      css={css`
+        &:hover{
+          background-color: transparent;
+        }
+      `}>
+      <FontAwesomeIcon 
+        icon={icon} 
+        css={css`
+        color: white;
+        margin: 1rem;
+        font-size: 2.5em;
+        
+        transition-duration: 0.3s;
+
+        &:hover {
+          color: ${color};
+          transform: scale(1.3);
+          transition-duration: 0.3s;
+        }`}
+      />
+    </a>
+  )
 }
 
 function IndexPage() {
@@ -39,30 +62,10 @@ function IndexPage() {
         >
           welcome to 9rotama's portfolio!!
         </p>
-        <FontAwesomeIcon 
-          icon={faGithub}
-          css={css`
-          margin: 1rem;
-          font-size: 2.5em;
-          transition-duration: 0.3s;
+       
+          <SnsLink icon={faGithub} url="https://github.com/9rotama" color="#806991"/>
+          <SnsLink icon={faTwitter} url="https://twitter.com/glctose_9" color="#118ab2"/>
 
-          &:hover {
-            color: #806991;
-            transform: scale(1.3);
-            transition-duration: 0.3s;
-          }`}
-        />
-        <FontAwesomeIcon icon={faTwitter} css={css`
-          margin: 1rem;
-          font-size: 2.5em;
-          transition-duration: 0.3s;
-
-          &:hover {
-            color: #118AB2;
-            transform: scale(1.3);
-            transition-duration: 0.3s;
-          }`}
-        />
       </div>
      
     </Layout>
