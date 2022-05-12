@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[291],{9819:function(e,t,a){a.r(t);var l=a(7294),u=(a(1597),a(6112)),n=a(9376);t.default=function(){return l.createElement(u.Z,null,l.createElement(n.Z,{title:"about me"}),l.createElement("p",null,"Webやゲーム制作、UI・ポスターデザインを主に勉強しています。"))}}}]);
+//# sourceMappingURL=component---src-pages-aboutme-js-4dce514d5f9d800f5404.js.map
