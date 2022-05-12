@@ -6,6 +6,7 @@ import { css, jsx } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import Twemoji from 'react-twemoji';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
@@ -23,9 +24,9 @@ function SnsLink({ icon, url, color }) {
       <FontAwesomeIcon 
         icon={icon} 
         css={css`
-        color: white;
-        margin: 1rem;
-        font-size: 2.5em;
+        color: #ffffff88;
+        margin: 0.5rem;
+        font-size: 2.3em;
         
         transition-duration: 0.3s;
 
@@ -56,15 +57,15 @@ function IndexPage() {
         /> 
         <p 
           css={css`
-            font-size: 2em;
+            font-size: 1.3em;
             font-weight: 600;
           `}
         >
-          welcome to 9rotama's portfolio!!
+          here is 9rotama's portfolio
         </p>
        
-          <SnsLink icon={faGithub} url="https://github.com/9rotama" color="#806991"/>
-          <SnsLink icon={faTwitter} url="https://twitter.com/glctose_9" color="#118ab2"/>
+          <SnsLink icon={faGithub} url="https://github.com/9rotama" color="#9b5de5"/>
+          <SnsLink icon={faTwitter} url="https://twitter.com/glctose_9" color="#00bbf9"/>
 
       </div>
      

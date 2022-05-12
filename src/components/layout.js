@@ -31,7 +31,7 @@ function Layout({ children }) {
         <Global styles={css`
           @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,600;0,800&family=M+PLUS+1:wght@100;400;600;800&display=swap');
           body {
-            font-family: 'Montserrat Alternates', 'M PLUS 1';
+            font-family: 'Montserrat Alternates', 'M PLUS 1', sans-serif;
             color: #ffffff;
             background-color: #121212;
             margin: 0;
