@@ -1,48 +1,51 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import { css } from '@emotion/react'
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+/** @jsx jsx */
+import { Global, css, jsx } from '@emotion/react';
 
-import Menu from "./menu"
+import Menu from './menu';
 
-const Header = ({ siteTitle }) => (
-  <header 
-    css={css`
-      background: transparent;
-      margin-bottom: 1.45rem;
-    `}
-  >
-    <div
-      css={css`
-        margin: 0 auto;
-        max-width: 960;
-        padding: 1.45rem 1.0875rem;
-      `}
-    >
-      <h1 
+function Header({siteTitle}) {
+  return (
+    <header>
+      <div
         css={css`
-          color: #222222;
-          text-decoration: none;
+          margin: 0 auto;
+          padding: 3rem 2rem;
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(50px);
+          margin-bottom: 3rem;
+          
         `}
       >
         <Link
           to="/"
+          css={css`
+            position: absolute;
+            top: 30px; left: 10vw;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 2em;
+            font-weight: 800;
+            letter-spacing: 0;
+          `}
         >
-          {siteTitle}
+          {siteTitle}          
         </Link>
-      </h1>
-
-      <Menu />
-    </div>
-  </header>
-)
+        
+        <Menu />
+      </div>
+    </header>
+  );
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+  siteTitle: '',
+};
 
-export default Header
+export default Header;

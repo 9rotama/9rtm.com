@@ -5,14 +5,16 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { Global, css } from '@emotion/react'
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
+/** @jsx jsx */
+import { Global, css, jsx } from '@emotion/react';
 
-import Header from "./header"
 
-const Layout = ({ children }) => {
+import Header from './header';
+
+function Layout({ children }) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -21,47 +23,63 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
       <div>
         <Global styles={css`
-          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,900;1,100;1,500;1,800&family=M+PLUS+1:wght@100;400;800&family=Montserrat:ital,wght@0,100;0,500;0,800;1,100;1,500;1,800&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,600;0,800&family=M+PLUS+1:wght@100;400;600;800&display=swap');
           body {
-            font-family: 'Montserrat Alternates', 'M PLUS 1';
+            font-family: 'Montserrat Alternates', 'M PLUS 1', sans-serif;
+            color: #ffffff;
+            background-color: #121212;
+            margin: 0;
           }
-          h1{
-            font-weight: 800;
+          a {
+            border-radius: 5px;
+            transition-duration: 0.3s;
           }
+          a:hover {
+						background-color: rgba(255,255,255,0.2);
+            transition-duration: 0.3s;
+					}
           h3 {
             font-weight: 500;
           }
           h4 {
             font-weight: 500;
           }
-        `} />
-      </div> 
-
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        css={css`
-          margin: 0 auto;
-          max-width: 960px;
-          padding: 0 1.0875rem 1.45rem;
         `}
-      >
+        />
+      </div>
+
+      <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
+      <div>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()} 9rotama
+        <footer css={css`
+          position: absolute;
+          text-align: center;
+          font-size: small;
+          color: rgba(255,255,255,0.5);
+          width: 200px;
+          left: 50%;
+          bottom: 14px;
+          margin-left: -100px;
+        `}>
+          ©
+          {' '}
+          {new Date().getFullYear()}
+          {' '}
+          9rotama
         </footer>
       </div>
     </>
-  )
+  );
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
