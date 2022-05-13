@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-function ContextBox({pageIcon,pageTitle}) {
+function ContextBox({pageIcon,pageTitle,context}) {
 	return (
 		<>
 			<div css={css`
@@ -39,7 +39,6 @@ function ContextBox({pageIcon,pageTitle}) {
 				margin-right: auto;
 				background: rgba(0, 0, 0, 0.5);
 				backdrop-filter: blur(50px);
-				/* Note: backdrop-filter has minimal browser support */
 				border-radius: 60px;
 				z-index: -1;
 			`}>
@@ -50,8 +49,10 @@ function ContextBox({pageIcon,pageTitle}) {
 					font-weight: 600;
 					font-size: 1.5em;
 				`}>
-				{pageTitle}
-			</h2>
+					{pageTitle}
+				</h2>
+
+				{context}
 			</div>
 			
 		</>
