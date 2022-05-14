@@ -11,8 +11,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 /** @jsx jsx */
 import { Global, css, jsx } from '@emotion/react';
 
-
 import Header from './header';
+import Background from './background'
 
 function Layout({ children }) {
   const data = useStaticQuery(graphql`
@@ -53,6 +53,14 @@ function Layout({ children }) {
         `}
         />
       </div>
+      
+      <div 
+        id="WebGL-output"
+        css={css`
+        margin: 0;
+        `}
+      ></div>
+      <Background />
 
       <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
       <div>
