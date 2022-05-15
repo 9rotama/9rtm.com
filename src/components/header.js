@@ -6,17 +6,18 @@ import { Global, css, jsx } from '@emotion/react';
 
 import Menu from './menu';
 
-function Header({siteTitle}) {
+function Header({ siteTitle }) {
   return (
     <header>
       <div
         css={css`
-          margin: 0 auto;
+          position: absolute;
+          top: 0px;
+          width: 100vw;
           padding: 3rem 2rem;
           background: rgba(0, 0, 0, 0.4);
           backdrop-filter: blur(50px);
           margin-bottom: 3rem;
-          
         `}
       >
         <Link
@@ -31,9 +32,9 @@ function Header({siteTitle}) {
             letter-spacing: 0;
           `}
         >
-          {siteTitle}          
+          {siteTitle}
         </Link>
-        
+
         <Menu />
       </div>
     </header>

@@ -31,8 +31,8 @@ function WorksPage() {
   return (
     <Layout>
       <Seo title="works" />
-      <ContextBox 
-        pageIcon={faBook} 
+      <ContextBox
+        pageIcon={faBook}
         pageTitle="works"
         context={Context()}
       >

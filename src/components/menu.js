@@ -4,10 +4,10 @@ import { Link } from 'gatsby';
 import { Global, css, jsx } from '@emotion/react';
 
 function MenuButton({ path, name }) {
-	return(
-			<Link 
-				to={path}
-				css={css`
+  return (
+    <Link
+      to={path}
+      css={css`
 					text-decoration: none;
 					border-bottom:solid;
 					border-color:#ffffff50;
@@ -18,10 +18,10 @@ function MenuButton({ path, name }) {
 					margin: 0 0 0 2vw;
 					padding: 5px 10px 5px 10px;
 				`}
-			>
-					{name}
-			</Link>
-	);
+    >
+      {name}
+    </Link>
+  );
 }
 
 function Menu({ data }) {
@@ -31,7 +31,7 @@ function Menu({ data }) {
 			top: 38px; right: 10vw;
 		`}>
       <MenuButton path="/aboutme" name="about me" />
-			<MenuButton path="/works" name="works" />
+      <MenuButton path="/works" name="works" />
     </div>
   );
 }

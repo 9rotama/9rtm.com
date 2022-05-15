@@ -21,8 +21,8 @@ function AboutmePage() {
   return (
     <Layout>
       <Seo title="about me" />
-      <ContextBox 
-        pageIcon={faAddressCard} 
+      <ContextBox
+        pageIcon={faAddressCard}
         pageTitle="about me"
         context={Context()}
       >

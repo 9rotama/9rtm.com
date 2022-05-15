@@ -2,14 +2,12 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 /** @jsx jsx */
 import { Global, css, jsx } from '@emotion/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
-
-function ContextBox({pageIcon,pageTitle,context}) {
-	return (
-		<>
-			<div css={css`
+function ContextBox({ pageIcon, pageTitle, context }) {
+  return (
+    <>
+      <div css={css`
 				position: relative;
 				background-color: #ffffff;
 				border-radius: 50%;
@@ -20,18 +18,19 @@ function ContextBox({pageIcon,pageTitle,context}) {
 				margin-bottom: -50px;
 				display: flex;
 				z-index: 5;
-			`}>
-				<FontAwesomeIcon 
-					icon={pageIcon} 
-						css={css`
+			`}
+      >
+        <FontAwesomeIcon
+          icon={pageIcon}
+          css={css`
 						color: #000000;
 						margin: auto;
 						font-size: 2.8em;
 					`}
-      	/>
-			</div>
-			<div css={css`
-				position: relative;
+        />
+      </div>
+      <div css={css`
+				position: absolute ;
 				background-color: #222222a0;
 				max-width: 800px;
 				padding: 2em 2em 2em 2em;
@@ -41,22 +40,24 @@ function ContextBox({pageIcon,pageTitle,context}) {
 				backdrop-filter: blur(50px);
 				border-radius: 60px;
 				z-index: -1;
-			`}>
-				<h2 css={css`
+			`}
+      >
+        <h2 css={css`
 					color: ffffff;
 					text-align: center;
 					margin-top: 50px;
 					font-weight: 600;
 					font-size: 1.5em;
-				`}>
-					{pageTitle}
-				</h2>
+				`}
+        >
+          {pageTitle}
+        </h2>
 
-				{context}
-			</div>
-			
-		</>
-	);
+        {context}
+      </div>
+
+    </>
+  );
 }
 
 export default ContextBox;

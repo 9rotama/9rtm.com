@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Global, css, jsx } from '@emotion/react';
 
 import Header from './header';
-import Background from './background'
+import Background from './background';
 
 function Layout({ children }) {
   const data = useStaticQuery(graphql`
@@ -27,6 +27,7 @@ function Layout({ children }) {
 
   return (
     <>
+      <Background />
       <div>
         <Global styles={css`
           @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,600;0,800&family=M+PLUS+1:wght@100;400;600;800&display=swap');
@@ -50,17 +51,13 @@ function Layout({ children }) {
           h4 {
             font-weight: 500;
           }
+          canvas {
+            width: 100vw;
+            height: 100vh;
+          }
         `}
         />
       </div>
-      
-      <div 
-        id="WebGL-output"
-        css={css`
-        margin: 0;
-        `}
-      ></div>
-      <Background />
 
       <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
       <div>
@@ -74,7 +71,8 @@ function Layout({ children }) {
           left: 50%;
           bottom: 14px;
           margin-left: -100px;
-        `}>
+        `}
+        >
           ©
           {' '}
           {new Date().getFullYear()}
