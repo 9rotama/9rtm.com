@@ -27,7 +27,6 @@ function Layout({ children }) {
 
   return (
     <>
-      <Background />
       <div>
         <Global styles={css`
           @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,600;0,800&family=M+PLUS+1:wght@100;400;600;800&display=swap');
@@ -36,6 +35,7 @@ function Layout({ children }) {
             color: #ffffff;
             background-color: #121212;
             margin: 0;
+            overflow: hidden;
           }
           a {
             border-radius: 5px;
@@ -51,14 +51,10 @@ function Layout({ children }) {
           h4 {
             font-weight: 500;
           }
-          canvas {
-            width: 100vw;
-            height: 100vh;
-          }
         `}
         />
       </div>
-
+      <Background />
       <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
       <div>
         <main>{children}</main>

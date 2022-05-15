@@ -35,9 +35,7 @@ function WorksPage() {
         pageIcon={faBook}
         pageTitle="works"
         context={Context()}
-      >
-    </ContextBox>
-
+      />
     </Layout>
   );
 }

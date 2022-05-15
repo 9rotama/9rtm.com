@@ -9,41 +9,43 @@ function ContextBox({ pageIcon, pageTitle, context }) {
     <>
       <div css={css`
 				position: relative;
-				background-color: #ffffff;
-				border-radius: 50%;
-				width: 100px;
-				height: 100px;
-				margin-left: auto;
-				margin-right: auto;
-				margin-bottom: -50px;
-				display: flex;
-				z-index: 5;
-			`}
-      >
-        <FontAwesomeIcon
-          icon={pageIcon}
-          css={css`
-						color: #000000;
-						margin: auto;
-						font-size: 2.8em;
-					`}
-        />
-      </div>
-      <div css={css`
-				position: absolute ;
 				background-color: #222222a0;
 				max-width: 800px;
-				padding: 2em 2em 2em 2em;
+				padding: 2%;
+				margin-top: 200px;
 				margin-left: auto;
 				margin-right: auto;
 				background: rgba(0, 0, 0, 0.5);
 				backdrop-filter: blur(50px);
 				border-radius: 60px;
-				z-index: -1;
+				z-index: 3;
 			`}
       >
+				<div css={css`
+					position: absolute;
+					background-color: #ffffff;
+					border-radius: 50%;
+					top: -50px;
+					width: 100px;
+					height: 100px;
+					margin-left: auto;
+					margin-right: auto;
+					margin-bottom: -50px;
+					display: flex;
+					z-index: 5;
+				`}
+      	>
+					<FontAwesomeIcon
+						icon={pageIcon}
+						css={css`
+							color: #000000;
+							margin: auto;
+							font-size: 2.8em;
+						`}
+					/>
+      	</div>
         <h2 css={css`
-					color: ffffff;
+					color: #ffffff;
 					text-align: center;
 					margin-top: 50px;
 					font-weight: 600;

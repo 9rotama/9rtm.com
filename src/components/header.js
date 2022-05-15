@@ -11,13 +11,14 @@ function Header({ siteTitle }) {
     <header>
       <div
         css={css`
-          position: absolute;
+          position: fixed;
           top: 0px;
           width: 100vw;
           padding: 3rem 2rem;
           background: rgba(0, 0, 0, 0.4);
           backdrop-filter: blur(50px);
           margin-bottom: 3rem;
+          z-index: 100;
         `}
       >
         <Link
