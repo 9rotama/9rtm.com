@@ -65,7 +65,7 @@ function IndexPage() {
               font-size: 1.3em;
               font-weight: 600;
               margin-top: 30px;
-              filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4)); 
+              filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
             `}
           >
             here is 9rotama's portfolio
@@ -73,7 +73,7 @@ function IndexPage() {
           <div
             css={css`
               position: relative;
-              font-size: 1.3em;
+              font-size: 1.1em;
               font-weight: 600;
               margin-top: 30px;
             `}

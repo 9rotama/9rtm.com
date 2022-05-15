@@ -26,11 +26,17 @@ function Header({ siteTitle }) {
           css={css`
             position: absolute;
             top: 30px; left: 10vw;
-            color: #ffffff;
+            color: #ffffffaa;
             text-decoration: none;
             font-size: 2em;
             font-weight: 800;
             letter-spacing: 0;
+
+            &:hover{
+              background: transparent;
+              color: #ffffff;
+              transform: scale(1.2);
+            }
           `}
         >
           {siteTitle}

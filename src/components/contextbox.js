@@ -16,44 +16,43 @@ function ContextBox({ pageIcon, pageTitle, context }) {
 				margin-left: auto;
 				margin-right: auto;
 				background: rgba(0, 0, 0, 0.5);
-				backdrop-filter: blur(50px);
+				backdrop-filter: blur(20px);
 				border-radius: 60px;
 				z-index: 3;
 			`}
       >
 				<div css={css`
-					position: absolute;
-					background-color: #ffffff;
-					border-radius: 50%;
-					top: -50px;
-					width: 100px;
-					height: 100px;
-					margin-left: auto;
-					margin-right: auto;
-					margin-bottom: -50px;
-					display: flex;
-					z-index: 5;
-				`}
-      	>
-					<FontAwesomeIcon
-						icon={pageIcon}
-						css={css`
-							color: #000000;
-							margin: auto;
-							font-size: 2.8em;
-						`}
-					/>
-      	</div>
-        <h2 css={css`
-					color: #ffffff;
-					text-align: center;
-					margin-top: 50px;
-					font-weight: 600;
-					font-size: 1.5em;
-				`}
-        >
-          {pageTitle}
-        </h2>
+				`}>
+					<div css={css`
+						position: relative;
+						background-color: #ffffff;
+						border-radius: 50%;
+						width: 50px;
+						height: 50px;
+						margin-bottom: -50px;
+						display: flex;
+						z-index: 5;
+					`}
+					>
+						<FontAwesomeIcon
+							icon={pageIcon}
+							css={css`
+								color: #222222;
+								margin: auto;
+								font-size: 1.7em;
+							`}
+						/>
+					</div>
+					<h2 css={css`
+						color: #ffffff;
+						margin-top: 70px;
+						font-weight: 600;
+						font-size: 1.5em;
+					`}
+					>
+						{pageTitle}
+					</h2>
+				</div>
 
         {context}
       </div>
