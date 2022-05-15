@@ -28,7 +28,7 @@ function Menu({ data }) {
   return (
     <div css={css`
 			position: absolute;
-			top: 38px; right: 10vw;
+			top: 38px; right: 15vw;
 		`}>
       <MenuButton path="/aboutme" name="about me" />
       <MenuButton path="/works" name="works" />

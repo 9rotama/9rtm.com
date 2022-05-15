@@ -11,7 +11,7 @@ const tempObject = new THREE.Object3D()
 const tempColor = new THREE.Color()
 
 const amount = 100;
-const moveSpeed = 0.1;
+const moveSpeed = 0.03;
 
 let i = 0;
 const colorDataHex = Array.from({ length: amount }, () => (colorscheme[Math.floor(Math.random() * 5)]))

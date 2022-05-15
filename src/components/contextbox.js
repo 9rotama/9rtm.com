@@ -6,15 +6,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function ContextBox({ pageIcon, pageTitle, context }) {
   return (
-    <>
+    <div css={css`
+			padding-left: 20px;
+			padding-right: 20px;
+		`}>
       <div css={css`
 				position: relative;
 				background-color: #222222a0;
 				max-width: 800px;
-				padding: 2%;
+				padding: 30px;
 				margin-top: 200px;
-				margin-left: auto;
-				margin-right: auto;
+				left: 50%;
+				transform: translate(-50%);
 				background: rgba(0, 0, 0, 0.5);
 				backdrop-filter: blur(20px);
 				border-radius: 60px;
@@ -43,7 +46,7 @@ function ContextBox({ pageIcon, pageTitle, context }) {
 							`}
 						/>
 					</div>
-					<h2 css={css`
+					<div css={css`
 						color: #ffffff;
 						margin-top: 70px;
 						font-weight: 600;
@@ -51,13 +54,13 @@ function ContextBox({ pageIcon, pageTitle, context }) {
 					`}
 					>
 						{pageTitle}
-					</h2>
+					</div>
 				</div>
 
         {context}
       </div>
 
-    </>
+    </div>
   );
 }
 

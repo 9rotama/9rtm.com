@@ -11,9 +11,20 @@ import ContextBox from '../components/contextbox';
 
 function Context(){
   return(
-    <p>
-      Webやゲーム制作、UI・ポスターデザインを主に勉強しています。
-    </p>
+    <>
+      <h2>Profile</h2>
+      <StaticImage
+        src='../images/danboicon.png'
+        css={css`
+          position: relative;
+        `}
+      />
+      <p>
+        名前: 9rotama<br/>
+        誕生日: 2001/09/09<br/><br/>
+        Webやゲーム制作、UI・ポスターデザインを主に勉強しています。大学ではCSを専攻しています。
+      </p>
+    </>
   );
 }
 
