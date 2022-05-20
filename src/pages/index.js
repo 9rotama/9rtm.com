@@ -3,17 +3,14 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
-
 function SnsLink({ icon, url, color }) {
-  return(
+  return (
     <a
       target="_blank"
       href={url}
@@ -21,7 +18,9 @@ function SnsLink({ icon, url, color }) {
         &:hover{
           background-color: transparent;
         }
-      `}>
+      `}
+      rel="noreferrer"
+    >
       <FontAwesomeIcon
         icon={icon}
         css={css`
@@ -37,53 +36,52 @@ function SnsLink({ icon, url, color }) {
         }`}
       />
     </a>
-  )
+  );
 }
 
 function IndexPage() {
   return (
-    <>
-      <Layout>
-        <Seo title="home" />
-        <div css={css`
+    <Layout>
+      <Seo title="home" />
+      <div css={css`
           position: relative;
           top: 30vh;
           text-align: center;
           z-index: 101;
-        `}>
-          <StaticImage
-            src='../images/danboicon.png'
-            css={css`
+        `}
+      >
+        <StaticImage
+          src="../images/danboicon.png"
+          css={css`
               position: relative;
               border-radius: 40%;
               filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
             `}
-          />
-          <p
-            css={css`
+        />
+        <p
+          css={css`
               position: relative;
               font-size: 1.3em;
               font-weight: 600;
               margin-top: 30px;
               filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
             `}
-          >
-            here is 9rotama's portfolio
-          </p>
-          <div
-            css={css`
+        >
+          here is 9rotama's portfolio
+        </p>
+        <div
+          css={css`
               position: relative;
               font-size: 1.1em;
               font-weight: 600;
               margin-top: 30px;
             `}
-          >
-            <SnsLink icon={faGithub} url="https://github.com/9rotama" color="#9b5de5"/>
-            <SnsLink icon={faTwitter} url="https://twitter.com/glctose_9" color="#00bbf9"/>
-          </div>
+        >
+          <SnsLink icon={faGithub} url="https://github.com/9rotama" color="#9b5de5" />
+          <SnsLink icon={faTwitter} url="https://twitter.com/glctose_9" color="#00bbf9" />
         </div>
-      </Layout>
-    </>
+      </div>
+    </Layout>
   );
 }
 

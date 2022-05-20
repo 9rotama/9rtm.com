@@ -24,9 +24,10 @@ function ContextBox({ pageIcon, pageTitle, context }) {
 				z-index: 3;
 			`}
       >
-				<div css={css`
-				`}>
-					<div css={css`
+        <div css={css`
+				`}
+        >
+          <div css={css`
 						position: relative;
 						background-color: #ffffff;
 						border-radius: 50%;
@@ -36,26 +37,26 @@ function ContextBox({ pageIcon, pageTitle, context }) {
 						display: flex;
 						z-index: 5;
 					`}
-					>
-						<FontAwesomeIcon
-							icon={pageIcon}
-							css={css`
+          >
+            <FontAwesomeIcon
+              icon={pageIcon}
+              css={css`
 								color: #222222;
 								margin: auto;
 								font-size: 1.7em;
 							`}
-						/>
-					</div>
-					<div css={css`
+            />
+          </div>
+          <div css={css`
 						color: #ffffff;
 						margin-top: 70px;
 						font-weight: 600;
 						font-size: 1.5em;
 					`}
-					>
-						{pageTitle}
-					</div>
-				</div>
+          >
+            {pageTitle}
+          </div>
+        </div>
 
         {context}
       </div>

@@ -3,15 +3,15 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 /** @jsx jsx */
 import { Global, css, jsx } from '@emotion/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import ContextBox from '../components/contextbox';
 
-function Context(){
-  return(
+function Context() {
+  return (
     <p>
       <h2>Websites</h2>
       <h4>9rtm.com</h4>
