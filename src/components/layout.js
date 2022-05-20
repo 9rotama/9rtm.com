@@ -5,7 +5,6 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 /** @jsx jsx */
@@ -42,9 +41,9 @@ function Layout({ children }) {
             transition-duration: 0.3s;
           }
           a:hover {
-						background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.2);
             transition-duration: 0.3s;
-					}
+          }
           h2{
             font-weight: 100;
             font-size: 3em;

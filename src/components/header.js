@@ -1,8 +1,7 @@
-import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 /** @jsx jsx */
-import { Global, css, jsx } from '@emotion/react';
+import { css, jsx } from '@emotion/react';
 
 import Menu from './menu';
 
