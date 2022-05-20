@@ -11,8 +11,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 /** @jsx jsx */
 import { Global, css, jsx } from '@emotion/react';
 
-
 import Header from './header';
+import Background from './background';
 
 function Layout({ children }) {
   const data = useStaticQuery(graphql`
@@ -29,12 +29,13 @@ function Layout({ children }) {
     <>
       <div>
         <Global styles={css`
-          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,600;0,800&family=M+PLUS+1:wght@100;400;600;800&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,300;0,500;0,600;0,800&family=M+PLUS+1:wght@100;400;600;800&display=swap');
           body {
             font-family: 'Montserrat Alternates', 'M PLUS 1', sans-serif;
             color: #ffffff;
             background-color: #121212;
             margin: 0;
+            overflow: hidden;
           }
           a {
             border-radius: 5px;
@@ -44,6 +45,16 @@ function Layout({ children }) {
 						background-color: rgba(255,255,255,0.2);
             transition-duration: 0.3s;
 					}
+          h2{
+            font-weight: 100;
+            font-size: 3em;
+            text-decoration: none;
+            border-bottom: solid;
+            border-color: #ffffff10;
+            border-width:2px;
+            color: #ffffff;
+            margin-bottom: 15px;
+          }
           h3 {
             font-weight: 500;
           }
@@ -53,7 +64,7 @@ function Layout({ children }) {
         `}
         />
       </div>
-
+      <Background />
       <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
       <div>
         <main>{children}</main>
@@ -66,7 +77,8 @@ function Layout({ children }) {
           left: 50%;
           bottom: 14px;
           margin-left: -100px;
-        `}>
+        `}
+        >
           ©
           {' '}
           {new Date().getFullYear()}
