@@ -37,6 +37,7 @@ function ContextBox({ pageIcon, pageTitle, context }) {
         }
       `}
       >
+<<<<<<< HEAD
         <div>
           <div css={css`
             position: relative;
@@ -48,10 +49,26 @@ function ContextBox({ pageIcon, pageTitle, context }) {
             display: flex;
             z-index: 5;
           `}
+=======
+        <div css={css`
+				`}
+        >
+          <div css={css`
+						position: relative;
+						background-color: #ffffff;
+						border-radius: 50%;
+						width: 50px;
+						height: 50px;
+						margin-bottom: -50px;
+						display: flex;
+						z-index: 5;
+					`}
+>>>>>>> main
           >
             <FontAwesomeIcon
               icon={pageIcon}
               css={css`
+<<<<<<< HEAD
                 color: #222222;
                 margin: auto;
                 font-size: 1.7em;
@@ -64,6 +81,20 @@ function ContextBox({ pageIcon, pageTitle, context }) {
             font-weight: 600;
             font-size: 1.5em;
           `}
+=======
+								color: #222222;
+								margin: auto;
+								font-size: 1.7em;
+							`}
+            />
+          </div>
+          <div css={css`
+						color: #ffffff;
+						margin-top: 70px;
+						font-weight: 600;
+						font-size: 1.5em;
+					`}
+>>>>>>> main
           >
             {pageTitle}
           </div>
