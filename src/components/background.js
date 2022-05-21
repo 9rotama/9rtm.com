@@ -1,10 +1,10 @@
 import * as THREE from 'three';
-import React, { useRef, useMemo } from 'react';
+import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 
-const colorscheme = ['#ef476f', '#ffd166', '#06d6a0', '#118ab2', '#073b4c'];
+const colorscheme = ['#ef476f', '#ffd166', '#06d6a0', '#118ab2', '#073b4c']
 
 const tempObject = new THREE.Object3D();
 const tempColor = new THREE.Color();
@@ -12,7 +12,6 @@ const tempColor = new THREE.Color();
 const amount = 100;
 const moveSpeed = 0.03;
 
-const i = 0;
 const colorDataHex = Array.from({ length: amount }, () => (colorscheme[Math.floor(Math.random() * 5)]));
 const posZ = Array.from({ length: amount }, () => (Math.random() * 80 - 40));
 
@@ -23,7 +22,7 @@ function Boxes() {
   useFrame((state) => {
     const time = state.clock.getElapsedTime();
     for (let i = 0; i < amount; i++) {
-      tempObject.position.set(40 * Math.cos(time * moveSpeed + i * 0.5), 40 * Math.sin(time * moveSpeed + i * 1.3), posZ[i]);
+      tempObject.position.set(40 * Math.cos( time * moveSpeed + i * 0.5 ), 40 * Math.sin( time * moveSpeed + i * 1.3 ), posZ[i]);
       tempObject.updateMatrix();
       meshRef.current.setMatrixAt(i, tempObject.matrix);
     }
@@ -45,13 +44,14 @@ function Boxes() {
 
 function Background() {
   return (
-    <div css={css`
-      position: fixed;
-      top: 0px;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-    `}
+    <div
+      css={css`
+        position: fixed;
+        top: 0px;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+      `}
     >
       <Canvas
         gl={{ antialias: false }}
@@ -62,7 +62,6 @@ function Background() {
         <Boxes />
       </Canvas>
     </div>
-
   );
 }
 

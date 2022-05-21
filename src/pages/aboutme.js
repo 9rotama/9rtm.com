@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Global, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../components/layout';
@@ -11,7 +10,7 @@ import ContextBox from '../components/contextbox';
 function Context() {
   return (
     <>
-      <h2>Profile</h2>
+      <h1>Profile</h1>
       <StaticImage
         src="../images/danboicon.png"
         css={css`
@@ -39,7 +38,6 @@ function AboutmePage() {
         pageTitle="about me"
         context={Context()}
       />
-
     </Layout>
   );
 }

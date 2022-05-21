@@ -1,9 +1,5 @@
-import * as React from 'react';
-import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 /** @jsx jsx */
-import { Global, css, jsx } from '@emotion/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { jsx } from '@emotion/react';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../components/layout';
@@ -13,16 +9,11 @@ import ContextBox from '../components/contextbox';
 function Context() {
   return (
     <p>
-      <h2>Websites</h2>
-      <h4>9rtm.com</h4>
-      <h4>tegei.github.io/works</h4>
-      <h4>arcwebtool</h4>
+      <h1>Websites</h1>
 
-      <h2>Games</h2>
-      <h4>SkyWitches</h4>
-      <h4>BeySweets</h4>
+      <h1>Games</h1>
 
-      <h2>CGs/Designs/Others</h2>
+      <h1>CGs/Designs/Others</h1>
       <a href="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing">Google Drive</a>
     </p>
   );

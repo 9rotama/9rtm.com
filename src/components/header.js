@@ -1,8 +1,7 @@
-import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 /** @jsx jsx */
-import { Global, css, jsx } from '@emotion/react';
+import { css, jsx } from '@emotion/react';
 
 import Menu from './menu';
 
@@ -19,6 +18,12 @@ function Header({ siteTitle }) {
           backdrop-filter: blur(50px);
           margin-bottom: 3rem;
           z-index: 100;
+
+          @media (max-width: 1240px) {
+            & {
+              padding: 2.5rem 2rem;
+            }
+          }
         `}
       >
         <Link
@@ -36,6 +41,13 @@ function Header({ siteTitle }) {
               background: transparent;
               color: #ffffff;
               transform: scale(1.2);
+            }
+
+            @media (max-width: 1240px) {
+              & {
+                left: 5vw;
+                font-size: 1.5em;
+              }
             }
           `}
         >
