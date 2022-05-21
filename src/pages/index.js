@@ -2,16 +2,14 @@ import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
-import { FontAwesomeIcon, config } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
-config.autoAddCss = false;
-
 function SnsLink({ icon, url, color }) {
   SnsLink.propTypes = {
-    icon: PropTypes.instanceOf(FontAwesomeIcon).isRequired,
+    icon: PropTypes.element.isRequired,
     url: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
   };

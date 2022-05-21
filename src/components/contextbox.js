@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function ContextBox({ pageIcon, pageTitle, context }) {
   ContextBox.propTypes = {
-    pageIcon: PropTypes.InstanceOf(FontAwesomeIcon).isRequired,
+    pageIcon: PropTypes.element.isRequired,
     pageTitle: PropTypes.string.isRequired,
     context: PropTypes.string.isRequired,
   };
@@ -29,6 +29,12 @@ function ContextBox({ pageIcon, pageTitle, context }) {
         backdrop-filter: blur(20px);
         border-radius: 60px;
         z-index: 3;
+
+        @media (max-width: 1240px) {
+          & {
+            margin-top: 120px;
+          }
+        }
       `}
       >
         <div>
@@ -65,6 +71,20 @@ function ContextBox({ pageIcon, pageTitle, context }) {
 
         {context}
       </div>
+      <footer css={css`
+          text-align: center;
+          margin: 50px;
+          font-size: 100;
+          color: rgba(255,255,255,0.5);
+          z-index: 200;
+        `}
+      >
+        ©
+        {' '}
+        {new Date().getFullYear()}
+        {' '}
+        9rotama
+      </footer>
 
     </div>
   );

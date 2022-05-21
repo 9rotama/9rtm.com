@@ -21,6 +21,12 @@ function MenuButton({ path, name }) {
         font-weight: 600;
         margin: 0 0 0 2vw;
         padding: 5px 10px 5px 10px;
+
+        @media (max-width: 1240px) {
+          & {
+            font-size: 1.2em;
+          }
+        }
       `}
     >
       {name}
@@ -34,6 +40,12 @@ function Menu() {
       css={css`
         position: absolute;
         top: 38px; right: 15vw;
+
+        @media (max-width: 1240px) {
+          & {
+            top: 33px; right: 15vw;
+          }
+        }
       `}
     >
       <MenuButton path="/aboutme" name="about me" />

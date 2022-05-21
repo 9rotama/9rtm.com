@@ -5,6 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 /** @jsx jsx */
@@ -34,7 +35,6 @@ function Layout({ children }) {
             color: #ffffff;
             background-color: #121212;
             margin: 0;
-            overflow: hidden;
           }
           a {
             border-radius: 5px;
@@ -44,13 +44,13 @@ function Layout({ children }) {
             background-color: rgba(255,255,255,0.2);
             transition-duration: 0.3s;
           }
-          h2{
+          h1 {
             font-weight: 100;
             font-size: 3em;
             text-decoration: none;
             border-bottom: solid;
             border-color: #ffffff10;
-            border-width:2px;
+            border-width: 2px;
             color: #ffffff;
             margin-bottom: 15px;
           }
@@ -60,6 +60,11 @@ function Layout({ children }) {
           h4 {
             font-weight: 500;
           }
+          @media (max-width: 1240px) {
+            h1 {
+              font-size: 2em;
+            }
+          }
         `}
         />
       </div>
@@ -67,23 +72,6 @@ function Layout({ children }) {
       <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
       <div>
         <main>{children}</main>
-        <footer css={css`
-          position: absolute;
-          text-align: center;
-          font-size: small;
-          color: rgba(255,255,255,0.5);
-          width: 200px;
-          left: 50%;
-          bottom: 14px;
-          margin-left: -100px;
-        `}
-        >
-          ©
-          {' '}
-          {new Date().getFullYear()}
-          {' '}
-          9rotama
-        </footer>
       </div>
     </>
   );
