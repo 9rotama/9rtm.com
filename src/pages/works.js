@@ -1,8 +1,8 @@
+import * as React from 'react';
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 
-import Layout from '../components/layout';
 import Seo from '../components/seo';
 import ContextBox from '../components/contextbox';
 
@@ -21,14 +21,14 @@ function Context() {
 
 function WorksPage() {
   return (
-    <Layout>
+    <>
       <Seo title="works" />
       <ContextBox
         pageIcon={faBook}
         pageTitle="works"
         context={Context()}
       />
-    </Layout>
+    </>
   );
 }
 

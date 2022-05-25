@@ -3,7 +3,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { css } from '@emotion/react';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 
-import Layout from '../components/layout';
 import Seo from '../components/seo';
 import ContextBox from '../components/contextbox';
 
@@ -31,14 +30,14 @@ function Context() {
 
 function AboutmePage() {
   return (
-    <Layout>
+    <>
       <Seo title="about me" />
       <ContextBox
         pageIcon={faAddressCard}
         pageTitle="about me"
         context={Context()}
       />
-    </Layout>
+    </>
   );
 }
 

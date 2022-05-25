@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { Link } from 'react-router-dom';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 
