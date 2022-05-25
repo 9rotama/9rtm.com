@@ -9,6 +9,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 /** @jsx jsx */
 import { Global, css, jsx } from '@emotion/react';
+import 'animate.css';
 
 import Header from './header';
 import Background from './background';

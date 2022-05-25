@@ -13,8 +13,11 @@ function ContextBox({ pageIcon, pageTitle, context }) {
   return (
     <div
       css={css`
-      padding-left: 20px;
-      padding-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        animation-name: fadeInUp;
+        animation-duration: 0.3s;
       `}
     >
       <div css={css`
@@ -25,8 +28,7 @@ function ContextBox({ pageIcon, pageTitle, context }) {
         margin-top: 200px;
         left: 50%;
         transform: translate(-50%);
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(20px);
+        background: rgba(4, 4, 4, 1.0);
         border-radius: 60px;
         z-index: 3;
 
