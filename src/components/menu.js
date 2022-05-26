@@ -16,9 +16,9 @@ function MenuButton({ path, name }) {
         border-bottom:solid;
         border-color:#ffffff50;
         border-width:1px;
-        color: #ffffff;
+        color: #ffffffaa;
         font-size: 1.5em;
-        font-weight: 600;
+        font-weight: 500;
         margin: 0 0 0 2vw;
         padding: 5px 10px 5px 10px;
 
@@ -39,11 +39,11 @@ function Menu() {
     <div
       css={css`
         position: absolute;
-        top: 38px; right: 15vw;
+        top: 18px; right: 15vw;
 
         @media (max-width: 1240px) {
           & {
-            top: 33px; right: 15vw;
+            top: 15px; right: 15vw;
           }
         }
       `}

@@ -9,7 +9,6 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 /** @jsx jsx */
 import { Global, css, jsx } from '@emotion/react';
-import 'animate.css';
 
 import Header from './header';
 import Background from './background';
@@ -44,13 +43,13 @@ function Layout() {
           transition-duration: 0.3s;
         }
         h1 {
-          font-weight: 100;
-          font-size: 3em;
+          font-weight: 500;
+          font-size: 2em;
+          color: #ffffffaa;
           text-decoration: none;
           border-bottom: solid;
           border-color: #ffffff10;
           border-width: 2px;
-          color: #ffffff;
           margin-bottom: 15px;
         }
         h3 {

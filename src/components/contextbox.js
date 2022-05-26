@@ -18,23 +18,34 @@ function ContextBox({ pageIcon, pageTitle, context }) {
 
         animation-name: fadeInUp;
         animation-duration: 0.3s;
+
+        @keyframes fadeInUp{
+          0% {
+            opacity: 0;
+            filter: blur(10px);
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
       `}
     >
       <div css={css`
         position: relative;
         background-color: #222222a0;
         max-width: 800px;
-        padding: 30px;
-        margin-top: 200px;
+        padding: 50px;
+        margin-top: 150px;
         left: 50%;
         transform: translate(-50%);
-        background: rgba(4, 4, 4, 1.0);
-        border-radius: 60px;
+        background: rgba(10, 10, 10, 1);
+        border-radius: 30px;
         z-index: 3;
 
         @media (max-width: 1240px) {
           & {
-            margin-top: 120px;
+            margin-top: 100px;
           }
         }
       `}
@@ -44,8 +55,8 @@ function ContextBox({ pageIcon, pageTitle, context }) {
             position: relative;
             background-color: #ffffff;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 100px;
             margin-bottom: -50px;
             display: flex;
             z-index: 5;
@@ -56,15 +67,15 @@ function ContextBox({ pageIcon, pageTitle, context }) {
               css={css`
                 color: #222222;
                 margin: auto;
-                font-size: 1.7em;
+                font-size: 3em;
               `}
             />
           </div>
           <div css={css`
             color: #ffffff;
             margin-top: 70px;
-            font-weight: 600;
-            font-size: 1.5em;
+            font-weight: 500;
+            font-size: 3em;
           `}
           >
             {pageTitle}

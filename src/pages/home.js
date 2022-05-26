@@ -62,7 +62,7 @@ function HomePage() {
           css={css`
             position: relative;
             font-size: 1.3em;
-            font-weight: 600;
+            font-weight: 500;
             margin-top: 30px;
             filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
           `}
@@ -73,7 +73,6 @@ function HomePage() {
           css={css`
             position: relative;
             font-size: 1.1em;
-            font-weight: 600;
             margin-top: 30px;
           `}
         >

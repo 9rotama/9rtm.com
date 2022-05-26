@@ -13,7 +13,7 @@ function Header({ siteTitle }) {
           position: fixed;
           top: 0px;
           width: 100vw;
-          padding: 3rem 2rem;
+          padding: 2rem 2rem;
           background: rgba(0, 0, 0, 0.4);
           backdrop-filter: blur(50px);
           margin-bottom: 3rem;
@@ -21,7 +21,7 @@ function Header({ siteTitle }) {
 
           @media (max-width: 1240px) {
             & {
-              padding: 2.5rem 2rem;
+              padding: 1.7rem 2rem;
             }
           }
         `}
@@ -30,11 +30,11 @@ function Header({ siteTitle }) {
           to="/"
           css={css`
             position: absolute;
-            top: 30px; left: 10vw;
+            top: 13px; left: 10vw;
             color: #ffffffaa;
             text-decoration: none;
             font-size: 2em;
-            font-weight: 800;
+            font-weight: 500;
             letter-spacing: 0;
 
             &:hover{
