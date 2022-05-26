@@ -16,19 +16,8 @@ function ContextBox({ pageIcon, pageTitle, context }) {
         padding-left: 20px;
         padding-right: 20px;
 
-        animation-name: fadeInUp;
+        animation-name: BlurfadeIn;
         animation-duration: 0.3s;
-
-        @keyframes fadeInUp{
-          0% {
-            opacity: 0;
-            filter: blur(10px);
-          }
-
-          100% {
-            opacity: 1;
-          }
-        }
       `}
     >
       <div css={css`

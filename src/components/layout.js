@@ -63,6 +63,29 @@ function Layout() {
             font-size: 2em;
           }
         }
+        @keyframes BlurfadeIn{
+          0% {
+            opacity: 0;
+            filter: blur(10px);
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+
+        @keyframes BlurfadeInDown{
+          0% {
+            opacity: 0;
+            transform: translateY(-40px);
+            filter: blur(10px);
+          }
+
+          100% {
+            transform: translateY(0px);
+            opacity: 1;
+          }
+        }
       `}
       />
       <Background />

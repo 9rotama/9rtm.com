@@ -9,7 +9,7 @@ import ContextBox from '../components/contextbox';
 function Context() {
   return (
     <>
-      <h1>Profile</h1>
+      <h1>profile</h1>
       <StaticImage
         src="../images/danboicon.png"
         css={css`

@@ -9,11 +9,11 @@ import ContextBox from '../components/contextbox';
 function Context() {
   return (
     <p>
-      <h1>Websites</h1>
+      <h1>websites</h1>
 
-      <h1>Games</h1>
+      <h1>games</h1>
 
-      <h1>CGs/Designs/Others</h1>
+      <h1>graphics/designs/others</h1>
       <a href="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing">Google Drive</a>
     </p>
   );

@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTwitter,faItchIo } from '@fortawesome/free-brands-svg-icons';
 import Seo from '../components/seo';
 
 function SnsLink({ icon, url, color }) {
@@ -56,6 +56,9 @@ function HomePage() {
             position: relative;
             border-radius: 40%;
             filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
+
+            animation-name: BlurfadeInDown;
+            animation-duration: 0.3s;
           `}
         />
         <p
@@ -65,6 +68,9 @@ function HomePage() {
             font-weight: 500;
             margin-top: 30px;
             filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
+
+            animation-name: BlurfadeInDown;
+            animation-duration: 0.4s;
           `}
         >
           here is 9rotama&apos;s portfolio
@@ -74,10 +80,14 @@ function HomePage() {
             position: relative;
             font-size: 1.1em;
             margin-top: 30px;
+
+            animation-name: BlurfadeInDown;
+            animation-duration: 0.5s;
           `}
         >
           <SnsLink icon={faGithub} url="https://github.com/9rotama" color="#9b5de5" />
           <SnsLink icon={faTwitter} url="https://twitter.com/glctose_9" color="#00bbf9" />
+          <SnsLink icon={faItchIo} url="https://9rotama.itch.io" color="#F6434A" />
         </div>
       </div>
     </>
