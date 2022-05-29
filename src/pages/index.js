@@ -1,6 +1,5 @@
 import * as React from 'react';
-
-
+import { Router } from '@reach/router'
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
@@ -12,9 +11,16 @@ import NotFoundPage from './404';
 
 function IndexPage() {
   return (
-    
-      <Layout />
-      // router here
+    <>
+      <HomePage />
+      {/* <Layout />
+      <Router>
+        <HomePage path="/" />
+        <AboutmePage path="/aboutme" />
+        <WorksPage path="/works" />
+        <NotFoundPage path="/404" />
+      </Router> */}
+    </>
   );
 }
 

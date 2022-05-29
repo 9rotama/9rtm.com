@@ -4,8 +4,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faTwitter,faItchIo } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTwitter, faItchIo } from '@fortawesome/free-brands-svg-icons';
 import Seo from '../components/seo';
+import Layout from '../components/layout';
 
 function SnsLink({ icon, url, color }) {
   SnsLink.propTypes = {
@@ -24,7 +25,7 @@ function SnsLink({ icon, url, color }) {
       <FontAwesomeIcon
         icon={icon}
         css={css`
-        color: #ffffff88;
+        color: #ffffff66;
         margin: 0.5rem;
         font-size: 2.3em;
         transition-duration: 0.3s;
@@ -43,6 +44,7 @@ function HomePage() {
   return (
     <>
       <Seo title="home" />
+      <Layout />
       <div css={css`
         position: relative;
         top: 30vh;
@@ -50,10 +52,12 @@ function HomePage() {
         z-index: 101;
         `}
       >
-        <StaticImage
-          src="../images/danboicon.png"
+        <img
+          src="https://avatars.githubusercontent.com/u/65887771?v=4"
           css={css`
             position: relative;
+            width: 180px;
+            height: 180px;
             border-radius: 40%;
             filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
 

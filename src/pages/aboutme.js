@@ -5,6 +5,8 @@ import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 
 import Seo from '../components/seo';
 import ContextBox from '../components/contextbox';
+import Layout from '../components/layout';
+
 
 function Context() {
   return (
@@ -32,6 +34,7 @@ function AboutmePage() {
   return (
     <>
       <Seo title="about me" />
+      <Layout />
       <ContextBox
         pageIcon={faAddressCard}
         pageTitle="about me"

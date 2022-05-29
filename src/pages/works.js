@@ -5,6 +5,8 @@ import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 import Seo from '../components/seo';
 import ContextBox from '../components/contextbox';
+import Layout from '../components/layout';
+
 
 function Context() {
   return (
@@ -23,6 +25,7 @@ function WorksPage() {
   return (
     <>
       <Seo title="works" />
+      <Layout />
       <ContextBox
         pageIcon={faBook}
         pageTitle="works"

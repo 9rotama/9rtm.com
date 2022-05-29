@@ -11,9 +11,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Global, css, jsx } from '@emotion/react';
 
 import Header from './header';
-import Background from './background';
 
-function Layout() {
+function Layout({children}) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -86,9 +85,18 @@ function Layout() {
             opacity: 1;
           }
         }
+
+        @keyframes Down{
+          0% {
+            transform: translateY(-70px);
+          }
+
+          100% {
+            transform: translateY(0px);
+          }
+        }
       `}
       />
-      <Background />
       <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
     </div>
   );
