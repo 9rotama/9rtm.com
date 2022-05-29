@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame } from 'react-three-fiber';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 

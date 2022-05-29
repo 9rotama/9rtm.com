@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
@@ -12,14 +12,9 @@ import NotFoundPage from './404';
 
 function IndexPage() {
   return (
-    <Router>
+    
       <Layout />
-      <Routes>
-        <Route path="/aboutme" element={<AboutmePage />} />
-        <Route path="/works" element={<WorksPage />} />
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </Router>
+      // router here
   );
 }
 

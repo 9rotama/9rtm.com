@@ -11,6 +11,6 @@ module.exports = {
     description: `portfolio`,
     author: `@9rotama`,
     siteUrl: `https://9rtm.com/`,
-  }
+  },
   plugins: [],
 }
