@@ -1,34 +1,27 @@
-import * as React from 'react';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
+import * as React from "react"
+import { faBook } from "@fortawesome/free-solid-svg-icons"
 
-import Seo from '../seo';
-import ContextBox from '../contextbox';
-
-
-function Context() {
-  return (
-    <p>
-      <h1>websites</h1>
-
-      <h1>games</h1>
-
-      <h1>graphics/designs/others</h1>
-      <a href="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing">Google Drive</a>
-    </p>
-  );
-}
+import Seo from "../seo"
+import ContextBox from "../contextbox"
 
 function WorksPage() {
   return (
     <>
       <Seo title="works" />
-      <ContextBox
-        pageIcon={faBook}
-        pageTitle="works"
-        context={Context()}
-      />
+      <ContextBox pageIcon={faBook} pageTitle="works">
+        <p>
+          <h1>websites</h1>
+
+          <h1>games</h1>
+
+          <h1>graphics/designs/others</h1>
+          <a href="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing">
+            Google Drive
+          </a>
+        </p>
+      </ContextBox>
     </>
-  );
+  )
 }
 
-export default WorksPage;
+export default WorksPage

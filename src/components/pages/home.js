@@ -1,53 +1,59 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { StaticImage } from 'gatsby-plugin-image';
+import * as React from "react"
+import PropTypes from "prop-types"
 /** @jsx jsx */
-import { css, jsx } from '@emotion/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faTwitter, faItchIo } from '@fortawesome/free-brands-svg-icons';
-import Seo from '../seo';
+import { css, jsx } from "@emotion/react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faGithub,
+  faTwitter,
+  faItchIo,
+} from "@fortawesome/free-brands-svg-icons"
+import Seo from "../seo"
 
 function SnsLink({ icon, url, color }) {
   SnsLink.propTypes = {
     icon: PropTypes.element.isRequired,
     url: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
-  };
+  }
   return (
     <a
       href={url}
       css={css`
-        &:hover{
+        &:hover {
           background-color: transparent;
-        }`}
+        }
+      `}
     >
       <FontAwesomeIcon
         icon={icon}
         css={css`
-        color: #ffffff66;
-        margin: 0.5rem;
-        font-size: 2.3em;
-        transition-duration: 0.3s;
-
-        &:hover {
-          color: ${color};
-          transform: scale(1.3);
+          color: #ffffff66;
+          margin: 0.5rem;
+          font-size: 2.3em;
           transition-duration: 0.3s;
-        }`}
+
+          &:hover {
+            color: ${color};
+            transform: scale(1.3);
+            transition-duration: 0.3s;
+          }
+        `}
       />
     </a>
-  );
+  )
 }
 
 function HomePage() {
   return (
     <>
       <Seo title="home" />
-      <div css={css`
-        position: relative;
-        top: 30vh;
-        text-align: center;
-        z-index: 101;
+      <div
+        css={css`
+          position: relative;
+          top: 30vh;
+          text-align: center;
+          z-index: 101;
         `}
       >
         <img
@@ -87,13 +93,25 @@ function HomePage() {
             animation-duration: 0.5s;
           `}
         >
-          <SnsLink icon={faGithub} url="https://github.com/9rotama" color="#9b5de5" />
-          <SnsLink icon={faTwitter} url="https://twitter.com/glctose_9" color="#00bbf9" />
-          <SnsLink icon={faItchIo} url="https://9rotama.itch.io" color="#F6434A" />
+          <SnsLink
+            icon={faGithub}
+            url="https://github.com/9rotama"
+            color="#9b5de5"
+          />
+          <SnsLink
+            icon={faTwitter}
+            url="https://twitter.com/glctose_9"
+            color="#00bbf9"
+          />
+          <SnsLink
+            icon={faItchIo}
+            url="https://9rotama.itch.io"
+            color="#F6434A"
+          />
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage
