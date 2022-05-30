@@ -35,9 +35,6 @@ const menuButton = css`
     }
   }
 `
-
-
-
 function Menu() {
   return (
     <div
