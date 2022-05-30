@@ -48,7 +48,7 @@ function Menu() {
         }
       `}
     >
-      <MenuButton path="/aboutme" name="about me" />
+      <MenuButton path="/about" name="about" />
       <MenuButton path="/works" name="works" />
     </div>
   );
