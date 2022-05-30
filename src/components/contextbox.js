@@ -17,20 +17,19 @@ function ContextBox({ pageIcon, pageTitle, children }) {
         padding-left: 20px;
         padding-right: 20px;
 
-        animation-name: BlurfadeIn;
+        animation-name: BlurUp;
         animation-duration: 0.3s;
       `}
     >
       <div
         css={css`
           position: relative;
-          background-color: #222222a0;
           max-width: 800px;
           padding: 50px;
           margin-top: 150px;
           left: 50%;
           transform: translate(-50%);
-          background: rgba(10, 10, 10, 1);
+          background: #ffffff77;
           border-radius: 30px;
           z-index: 3;
 
@@ -45,7 +44,7 @@ function ContextBox({ pageIcon, pageTitle, children }) {
           <div
             css={css`
               position: relative;
-              background-color: #ffffff;
+              background-color: #252A34;
               border-radius: 50%;
               width: 100px;
               height: 100px;
@@ -57,7 +56,7 @@ function ContextBox({ pageIcon, pageTitle, children }) {
             <FontAwesomeIcon
               icon={pageIcon}
               css={css`
-                color: #222222;
+                color: #EAEAEA;
                 margin: auto;
                 font-size: 3em;
               `}
@@ -65,9 +64,9 @@ function ContextBox({ pageIcon, pageTitle, children }) {
           </div>
           <div
             css={css`
-              color: #ffffff;
+              color: #252A34;
               margin-top: 70px;
-              font-weight: 500;
+              font-weight: 600;
               font-size: 3em;
             `}
           >
@@ -79,9 +78,9 @@ function ContextBox({ pageIcon, pageTitle, children }) {
       <footer
         css={css`
           text-align: center;
-          margin: 50px;
+          margin: 40px;
           font-size: 100;
-          color: rgba(255, 255, 255, 0.5);
+          color: #252A3499;
           z-index: 200;
         `}
       >

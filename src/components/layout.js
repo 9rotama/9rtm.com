@@ -21,13 +21,19 @@ import NotFoundPage from "./pages/404"
 const menuButton = css`
   text-decoration: none;
   border-bottom: solid;
-  border-color: #ffffff50;
+  border-color: #252A3450;
   border-width: 1px;
-  color: #ffffffaa;
+  border-radius: 5px;
+  color: #252A34;
   font-size: 1.5em;
   font-weight: 500;
   margin: 0 0 0 2vw;
   padding: 5px 10px 5px 10px;
+
+  &:hover {
+    background: #252A34;
+    color: #EAEAEA;
+  }
 
   @media (max-width: 1240px) {
     & {
@@ -70,7 +76,7 @@ function Header({ siteTitle }) {
           top: 0px;
           width: 100vw;
           padding: 2rem 2rem;
-          background: rgba(0, 0, 0, 0.4);
+          background: rgba(0, 0, 0, 0);
           margin-bottom: 3rem;
           z-index: 100;
 
@@ -90,16 +96,20 @@ function Header({ siteTitle }) {
             position: absolute;
             top: 13px;
             left: 10vw;
-            color: #ffffffaa;
+            color: #252A34;
             text-decoration: none;
             font-size: 2em;
             font-weight: 500;
             letter-spacing: 0;
+            padding: 0 0.4em 0 0.4em;
+            border-radius: 50px;
 
             &:hover {
               background: transparent;
-              color: #ffffff;
+              background: #FF2E63;
+              filter: drop-shadow(0px 2px 3px #FF2E63a0);
               transform: scale(1.2);
+              color: white;
             }
 
             @media (max-width: 1240px) {
@@ -145,27 +155,27 @@ function Layout() {
           @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,300;0,500;0,600;0,800&family=M+PLUS+1:wght@100;400;600;800&display=swap");
           body {
             font-family: "Montserrat Alternates", "M PLUS 1", sans-serif;
-            color: #ffffff;
-            background-color: #121212;
+            color: #252A34;
+            background-color: #EAEAEA;
             margin: 0;
           }
           a {
-            border-radius: 5px;
             transition-duration: 0.3s;
+            color: #FF2E63;
           }
           a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: #252A3411;
             transition-duration: 0.3s;
           }
           h1 {
             font-weight: 500;
             font-size: 2em;
-            color: #ffffffaa;
+            color: #252A34;
             text-decoration: none;
             border-bottom: solid;
-            border-color: #ffffff10;
-            border-width: 2px;
-            margin-bottom: 15px;
+            border-color: #252A3430;
+            border-width: 1px;
+            margin: 60px 0px 30px 0px;
           }
           h2 {
             font-weight: 500
@@ -189,6 +199,16 @@ function Layout() {
 
             100% {
               opacity: 1;
+            }
+          }
+          @keyframes BlurUp{
+            0% {
+              transform: translateY(70px);
+              filter: blur(20px);
+            }
+
+            100% {
+              transform: translateY(0px);
             }
           }
 

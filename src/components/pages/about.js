@@ -11,7 +11,7 @@ function Devicon({ src }) {
       src={src}
       css={css`
         width: 45px;
-        margin-left: 4px;
+        margin-right: 10px;
       `}
     />
   )
@@ -26,12 +26,18 @@ function AboutPage() {
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
       />
       <ContextBox pageIcon={faAddressCard} pageTitle="about me">
-        <h1>profile</h1>
+        <h1>📘 profile</h1>
         <img
           src="https://avatars.githubusercontent.com/u/65887771?v=4"
           css={css`
             float: left;
             margin: 0 40px 20px 0;
+            position: relative;
+            width: 180px;
+            height: 180px;
+            border-radius: 10%;
+            filter: drop-shadow(0px 3px 5px #252A3455);
+
           `}
         />
         <p>
@@ -46,13 +52,13 @@ function AboutPage() {
             clear: both;
           `}
         />
-        <h1>tools</h1>
+        <h1>🪛 tools</h1>
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" />
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg" />
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" />
-        <h1>programming</h1>
+        <h1>⌨️ programming</h1>
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" />
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />

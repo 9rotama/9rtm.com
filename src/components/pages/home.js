@@ -10,11 +10,11 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import Seo from "../seo"
 
-function SnsLink({ icon, url, color }) {
+function SnsLink({ icon, url, hoverColor }) {
   SnsLink.propTypes = {
     icon: PropTypes.element.isRequired,
     url: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
+    hoverColor: PropTypes.string.isRequired,
   }
   return (
     <a
@@ -28,13 +28,14 @@ function SnsLink({ icon, url, color }) {
       <FontAwesomeIcon
         icon={icon}
         css={css`
-          color: #ffffff66;
+          color: #252A60a0;
           margin: 0.5rem;
           font-size: 2.3em;
           transition-duration: 0.3s;
 
           &:hover {
-            color: ${color};
+            color: ${hoverColor};
+            filter: drop-shadow(0px 2px 3px ${hoverColor}a0);
             transform: scale(1.3);
             transition-duration: 0.3s;
           }
@@ -62,8 +63,8 @@ function HomePage() {
             position: relative;
             width: 180px;
             height: 180px;
-            border-radius: 40%;
-            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
+            border-radius: 10%;
+            filter: drop-shadow(0px 3px 5px #252A3455);
 
             animation-name: BlurfadeInDown;
             animation-duration: 0.3s;
@@ -75,7 +76,6 @@ function HomePage() {
             font-size: 1.3em;
             font-weight: 500;
             margin-top: 30px;
-            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
 
             animation-name: BlurfadeInDown;
             animation-duration: 0.4s;
@@ -96,17 +96,17 @@ function HomePage() {
           <SnsLink
             icon={faGithub}
             url="https://github.com/9rotama"
-            color="#9b5de5"
+            hoverColor="#9b5de5"
           />
           <SnsLink
             icon={faTwitter}
             url="https://twitter.com/glctose_9"
-            color="#00bbf9"
+            hoverColor="#00bbf9"
           />
           <SnsLink
             icon={faItchIo}
             url="https://9rotama.itch.io"
-            color="#F6434A"
+            hoverColor="#F6434A"
           />
         </div>
       </div>
