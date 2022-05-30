@@ -5,8 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { css, jsx } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter, faItchIo } from '@fortawesome/free-brands-svg-icons';
-import Seo from '../components/seo';
-import Layout from '../components/layout';
+import Seo from '../seo';
 
 function SnsLink({ icon, url, color }) {
   SnsLink.propTypes = {
@@ -44,7 +43,6 @@ function HomePage() {
   return (
     <>
       <Seo title="home" />
-      <Layout />
       <div css={css`
         position: relative;
         top: 30vh;
