@@ -1,9 +1,19 @@
-exports.createPages = async ({ actions }) => {
-  const { createPage } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions;
+  if (page.path === `/`) {
+      page.matchPath = `/*`;
+      createPage(page);
+  }
+};
+
+const resolve = require('path').resolve
+exports.onCreateWebpackConfig = ({ actions }) => {
+
+  actions.setWebpackConfig({
+      resolve: {
+          alias: {
+              '@': resolve(__dirname, 'src')
+          },
+      }
   })
 }
