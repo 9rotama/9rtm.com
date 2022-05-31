@@ -62,10 +62,10 @@ function Menu() {
         }
       `}
     >
-      <Link to="/about" css={menuButton}>
+      <Link to="/about" css={menuButton} onClick="">
         about
       </Link>
-      <Link to="/works" css={menuButton}>
+      <Link to="/works" css={menuButton} onClick="">
         works
       </Link>
     </div>
@@ -98,6 +98,7 @@ function Header({ siteTitle }) {
           color: #252A34;
           text-decoration: none;
           font-size: 2em;
+          font-weight: 600;
           padding: 0px 10px 0px 10px;
           margin: 15px 0 0 10vw;
 

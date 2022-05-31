@@ -40,9 +40,8 @@ function Text3D() {
 
   return (
     <mesh ref={meshRef} >
-      <pointLight />
       <textGeometry ref={geoRef} args={[text, {font, size:20, height: 4}]}/>
-      <meshToonMaterial attach='material' color="#afc0db" />
+      <meshStandardMaterial attach='material' color="#afc0db" roughness={0.3} metalness={0.8}/>
     </mesh>
   )
 }
@@ -67,6 +66,8 @@ function Background() {
           position: [-60, 0, 0],
         }}
       >
+        <pointLight position={[0, 0, 10]} intensity={0.8}/>
+        <ambientLight intensity={0.8}/>
         <Text3D />
       </Canvas>
     </div>
