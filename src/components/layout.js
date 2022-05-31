@@ -30,10 +30,12 @@ const menuButton = css`
   font-weight: 500;
   margin: 0 0 0 2vw;
   padding: 5px 10px 5px 10px;
+  transition-duration: 0.3s;
 
   &:hover {
     background: #252A34;
     color: #EAEAEA;
+    transition-duration: 0.3s;
   }
 
   @media (max-width: 1240px) {
@@ -105,12 +107,16 @@ function Header({ siteTitle }) {
             padding: 0 0.4em 0 0.4em;
             border-radius: 50px;
 
+            transition-duration: 0.3s;
+
             &:hover {
               background: transparent;
               background: #FF2E63;
               filter: drop-shadow(0px 2px 3px #FF2E63a0);
               transform: scale(1.2);
               color: white;
+
+              transition-duration: 0.3s;
             }
 
             @media (max-width: 1240px) {
@@ -159,14 +165,6 @@ function Layout() {
             color: #252A34;
             background-color: #EAEAEA;
             margin: 0;
-          }
-          a {
-            transition-duration: 0.3s;
-            color: #FF2E63;
-          }
-          a:hover {
-            background-color: #252A3411;
-            transition-duration: 0.3s;
           }
           h1 {
             font-weight: 500;

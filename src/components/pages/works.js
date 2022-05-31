@@ -1,5 +1,9 @@
 import * as React from "react"
 import { faBook } from "@fortawesome/free-solid-svg-icons"
+import { faUserGroup } from "@fortawesome/free-solid-svg-icons"
+import { faUser } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react"
 import Seo from "../seo"
@@ -17,29 +21,43 @@ function DeviconSmall({ name }){
   )
 }
 
-function Card({ title, url, desc, use, ss }){
+function Card({ title, url, desc, use, ss, isTeam }){
   return (
-    <div
+    <a
       css={css`
         width: 40%;
         height: 150px;
-        background: white;
+        background: #FBFBFD;
         border-radius: 20px;
         padding: 1px 30px 10px 30px;
         margin-bottom: 20px;
+        transition-duration: 0.3s;
+        text-decoration: none;
+        color: #252A34;
+
+        &:hover {
+          filter: drop-shadow(0px 6px 8px #252A3422);
+          background: #FFFFFF;
+          transition-duration: 0.3s;
+          transform: translateY(-5px);
+        }
       `}
+      href={url}
     >
-      <h2 href={url}>{title}</h2>
+      <h2>{title}</h2>
       <p>{desc}</p>
       {use.map(e => <DeviconSmall name={e} />)}
-      <img
-        src={ss}
+
+      <FontAwesomeIcon
+        icon={isTeam ?  faUserGroup : faUser}
         css={css`
+          color: #252f6022;
+          margin-bottom: auto;
+          font-size: 2em;
           float: right;
-          height: 100%;
         `}
       />
-    </div>
+    </a>
   );
 }
 
@@ -64,24 +82,28 @@ function WorksPage() {
           >
             <Card
               title="9rtm.com"
-              url="9rtm.com"
+              url="https://9rtm.com"
               use={["react","gatsby"]}
               desc="ポートフォリオ"
             />
             <Card
               title="arcwebtool"
+              url="https://9rotama.github.io/arcwebtool/"
               use={["javascript","bootstrap"]}
               desc="譜面制作用マクロ"
             />
             <Card
-              title="web-slide"
-              use={["react"]}
-              desc="ダサいスライドを作れるwebアプリ"
-            />
-            <Card
               title="tegei.github.io/works"
+              url="https://tegei.github.io/works"
               use={["react","gatsby"]}
               desc="作品紹介ページ"
+            />
+            <Card
+              title="web-slide"
+              url="https://web-slide-puce.vercel.app"
+              use={["react"]}
+              desc="ダサいスライドを作れるwebアプリ"
+              isTeam
             />
           </div>
 
@@ -95,13 +117,17 @@ function WorksPage() {
           >
             <Card
               title="SkyWitches"
+              url="https://9rotama.itch.io/skywitches"
               use={["unity"]}
               desc="ホウキの魔女を操作するレースゲーム"
+              isTeam
             />
             <Card
               title="BeySweets"
+              url="https://potekumakun.itch.io/bey-sweets"
               use={["unity"]}
               desc="お菓子なコマで遊ぶゲーム"
+              isTeam
             />
           </div>
 
