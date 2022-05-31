@@ -1,45 +1,50 @@
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
+import { useRef, useEffect } from "react"
 import * as THREE from 'three';
-import { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, extend } from "react-three-fiber"
 /** @jsx jsx */
-import { css, jsx } from '@emotion/react';
+import { css, jsx } from "@emotion/react"
+import fontJson from "three/examples/fonts/helvetiker_regular.typeface.json"
 
-const colorscheme = ['#ef476f', '#ffd166', '#06d6a0', '#118ab2', '#073b4c']
+extend({ TextGeometry })
 
-const tempObject = new THREE.Object3D();
-const tempColor = new THREE.Color();
+const moveSpeed = 0.7;
+const kao = ["(=_=)", "(>_<)", "(^v^)", "(o_o)", "($_$)", "(@w@)"]
+const text = kao[parseInt(Math.random() * kao.length)];
 
-const amount = 100;
-const moveSpeed = 0.03;
+function Text3D() {
+  const font = new FontLoader().parse(fontJson);
 
-const colorDataHex = Array.from({ length: amount }, () => (colorscheme[Math.floor(Math.random() * 5)]));
-const posZ = Array.from({ length: amount }, () => (Math.random() * 80 - 40));
+  const meshRef = useRef()
+  const geoRef = useRef()
 
-function Boxes() {
-  const colorDataFloat = useMemo(() => Float32Array.from(new Array(amount).fill().flatMap((_, i) => tempColor.set(colorDataHex[i]).toArray())), []);
-  const meshRef = useRef();
+  useEffect( () => {
+    meshRef.current.geometry.computeBoundingBox();
+    const boundingBox = meshRef.current.geometry.boundingBox;
+    const center = new THREE.Vector3();
+    boundingBox.getCenter(center);
+    meshRef.current.geometry.translate(-center.x,-center.y,-center.z);
+    meshRef.current.rotation.x = Math.random() * 360;
+    meshRef.current.rotation.y = Math.random() * 360;
+    meshRef.current.rotation.z = Math.random() * 360;
+  })
 
-  useFrame((state) => {
-    const time = state.clock.getElapsedTime();
-    for (let i = 0; i < amount; i++) {
-      tempObject.position.set(40 * Math.cos( time * moveSpeed + i * 0.5 ), 40 * Math.sin( time * moveSpeed + i * 1.3 ), posZ[i]);
-      tempObject.updateMatrix();
-      meshRef.current.setMatrixAt(i, tempObject.matrix);
-    }
-    meshRef.current.instanceMatrix.needsUpdate = true;
-  });
+  useFrame(state => {
+    const time = state.clock.getElapsedTime()
+    meshRef.current.rotation.x = time * moveSpeed;
+    meshRef.current.rotation.y = time/3 * moveSpeed;
+    meshRef.current.rotation.z = time/5 * moveSpeed;
+
+  })
 
   return (
-    <instancedMesh
-      ref={meshRef}
-      args={[undefined, undefined, amount]}
-    >
-      <sphereGeometry args={[1, 16, 16]}>
-        <instancedBufferAttribute attach="attributes-color" args={[colorDataFloat, 3]} />
-      </sphereGeometry>
-      <meshBasicMaterial toneMapped={false} vertexColors={THREE.VertexColors} />
-    </instancedMesh>
-  );
+    <mesh ref={meshRef} >
+      <pointLight />
+      <textGeometry ref={geoRef} args={[text, {font, size:20, height: 4}]}/>
+      <meshToonMaterial attach='material' color="#afc0db" />
+    </mesh>
+  )
 }
 
 function Background() {
@@ -56,13 +61,16 @@ function Background() {
       <Canvas
         gl={{ antialias: false }}
         camera={{
-          fov: 45, near: 0.1, far: 1000, position: [-30, 40, 30],
+          fov: 45,
+          near: 0.1,
+          far: 1000,
+          position: [-60, 0, 0],
         }}
       >
-        <Boxes />
+        <Text3D />
       </Canvas>
     </div>
-  );
+  )
 }
 
-export default Background;
+export default Background
