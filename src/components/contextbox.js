@@ -33,9 +33,10 @@ function ContextBox({ pageIcon, pageTitle, children }) {
           border-radius: 30px;
           z-index: 3;
 
-          @media (max-width: 1240px) {
+          @media (max-width: 720px) {
             & {
               margin-top: 100px;
+              padding: 25px;
             }
           }
         `}
@@ -68,6 +69,12 @@ function ContextBox({ pageIcon, pageTitle, children }) {
               margin-top: 70px;
               font-weight: 600;
               font-size: 3em;
+              @media (max-width: 960px) {
+                font-size: 2.5em;
+              }
+              @media (max-width: 480px) {
+                font-size: 2em;
+              }
             `}
           >
             {pageTitle}
