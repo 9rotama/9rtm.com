@@ -16,7 +16,7 @@ function WorksPage() {
 
           <h1>🎨 graphics / designs / others</h1>
           <a href="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing">
-            Google Drive
+            Go to Google Drive
           </a>
         </p>
       </ContextBox>

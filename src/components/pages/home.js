@@ -81,7 +81,7 @@ function HomePage() {
             animation-duration: 0.4s;
           `}
         >
-          here is 9rotama&apos;s portfolio
+          ＊ here is 9rotama&apos;s portfolio ＊
         </p>
         <div
           css={css`

@@ -29,7 +29,7 @@ function ContextBox({ pageIcon, pageTitle, children }) {
           margin-top: 150px;
           left: 50%;
           transform: translate(-50%);
-          background: #ffffff77;
+          background: #ffffff55;
           border-radius: 30px;
           z-index: 3;
 

@@ -17,6 +17,7 @@ import HomePage from "./pages/home"
 import AboutPage from "./pages/about"
 import WorksPage from "./pages/works"
 import NotFoundPage from "./pages/404"
+import Background from "./background"
 
 const menuButton = css`
   text-decoration: none;
@@ -236,6 +237,7 @@ function Layout() {
           }
         `}
       />
+      <Background />
       <Header siteTitle={data.site.siteMetadata?.title || "Title"} />
       <Router>
         <AboutPage path="/about" />
