@@ -41,6 +41,12 @@ function Card({ title, url, desc, use, ss, isTeam }){
           transition-duration: 0.3s;
           transform: translateY(-5px);
         }
+
+        @media (max-width: 1080px) {
+          & {
+            width: 100%;
+          }
+        }
       `}
       href={url}
     >

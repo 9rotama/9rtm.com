@@ -38,6 +38,11 @@ function AboutPage() {
             border-radius: 10%;
             filter: drop-shadow(0px 3px 5px #252A3455);
 
+            @media (max-width: 600px) {
+              & {
+                float: none;
+              }
+            }
           `}
         />
         <p>
