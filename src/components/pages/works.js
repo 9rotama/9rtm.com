@@ -26,11 +26,10 @@ function Card({ title, url, desc, use, ss, isTeam }){
     <a
       css={css`
         width: 40%;
-        height: 150px;
         background: #FBFBFD;
         border-radius: 20px;
-        padding: 1px 30px 10px 30px;
-        margin-bottom: 20px;
+        padding: 1px 30px 20px 30px;
+        margin: 10px;
         transition-duration: 0.3s;
         text-decoration: none;
         color: #252A34;
@@ -42,9 +41,15 @@ function Card({ title, url, desc, use, ss, isTeam }){
           transform: translateY(-5px);
         }
 
-        @media (max-width: 1080px) {
+        @media (max-width: 960px) {
           & {
             width: 100%;
+            margin: 5px;
+          }
+        }
+        @media (max-width: 480px) {
+          & {
+            margin: 5px -5px 5px -5px;
           }
         }
       `}
@@ -138,7 +143,7 @@ function WorksPage() {
           </div>
 
           <h1>🎨 graphics / designs / others</h1>
-          　　GoogleDriveに載せています。
+          GoogleDriveに載せています。
           <a href="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing">
             link
           </a>

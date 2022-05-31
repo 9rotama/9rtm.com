@@ -27,18 +27,21 @@ const menuButton = css`
   border-radius: 5px;
   color: #252A34;
   font-size: 1.5em;
-  font-weight: 500;
-  margin: 0 0 0 2vw;
-  padding: 5px 10px 5px 10px;
+  margin-left: 10px;
+  padding: 2px 10px 2px 10px;
   transition-duration: 0.3s;
 
   &:hover {
+    background: #252A3410;
+    transition-duration: 0.3s;
+  }
+  &:active {
     background: #252A34;
     color: #EAEAEA;
     transition-duration: 0.3s;
   }
 
-  @media (max-width: 1240px) {
+  @media (max-width: 960px) {
     & {
       font-size: 1.2em;
     }
@@ -48,14 +51,13 @@ function Menu() {
   return (
     <div
       css={css`
-        position: absolute;
-        top: 18px;
-        right: 15vw;
+        display: flex;
+        justify-content: right;
+        margin: 15px 10vw 0 0;
 
-        @media (max-width: 1240px) {
+        @media (max-width: 960px) {
           & {
-            top: 15px;
-            right: 15vw;
+            margin: 10px 10px 0 0;
           }
         }
       `}
@@ -72,66 +74,58 @@ function Menu() {
 
 function Header({ siteTitle }) {
   return (
-    <header>
-      <div
-        css={css`
-          position: fixed;
-          top: 0px;
-          width: 100vw;
-          padding: 2rem 2rem;
-          background: rgba(0, 0, 0, 0);
-          margin-bottom: 3rem;
-          z-index: 100;
+    <header
+      css={css`
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        margin-bottom: 3rem;
+        z-index: 100;
 
-          @media (max-width: 1240px) {
+        @media (max-width: 600px) {
+          & {
+          }
+        }
+
+        animation-name: Down;
+        animation-duration: 0.5s;
+      `}
+    >
+      <Link
+        to="/"
+        css={css`
+          position: absolute;
+          color: #252A34;
+          text-decoration: none;
+          font-size: 2em;
+          padding: 0px 10px 0px 10px;
+          margin: 15px 0 0 10vw;
+
+          transition-duration: 0.3s;
+
+          @media (max-width: 960px) {
             & {
-              padding: 1.7rem 2rem;
+              font-size: 1.5em;
+              margin: 10px 0 0 10px;
             }
           }
 
-          animation-name: Down;
-          animation-duration: 0.5s;
-        `}
-      >
-        <Link
-          to="/"
-          css={css`
-            position: absolute;
-            top: 13px;
-            left: 10vw;
-            color: #252A34;
-            text-decoration: none;
-            font-size: 2em;
-            font-weight: 500;
-            letter-spacing: 0;
-            padding: 0 0.4em 0 0.4em;
-            border-radius: 50px;
+          &:hover {
+            transform: scale(1.1);
 
             transition-duration: 0.3s;
+          }
+          &:active {
+            color: #FF2E63;
 
-            &:hover {
-              background: transparent;
-              background: #FF2E63;
-              filter: drop-shadow(0px 2px 3px #FF2E63a0);
-              transform: scale(1.2);
-              color: white;
+            transition-duration: 0.3s;
+          }
+        `}
+      >
+        {siteTitle}
+      </Link>
 
-              transition-duration: 0.3s;
-            }
-
-            @media (max-width: 1240px) {
-              & {
-                left: 5vw;
-                font-size: 1.5em;
-              }
-            }
-          `}
-        >
-          {siteTitle}
-        </Link>
-
-        <Menu />
-      </div>
+      <Menu />
     </header>
   )
 }
@@ -185,11 +179,37 @@ function Layout() {
           h4 {
             font-weight: 500;
           }
-          @media (max-width: 1240px) {
+          @media (max-width: 960px) {
             h1 {
-              font-size: 2em;
+              font-size: 1.8em;
+              font-weight: 500;
+            }
+            h2 {
+              font-weight: 600;
+            }
+            h3 {
+              font-weight: 500;
+            }
+            h4 {
+              font-weight: 500;
             }
           }
+          @media (max-width: 480px) {
+            h1 {
+              font-size: 1.6em;
+              font-weight: 500;
+            }
+            h2 {
+              font-size: 1.2em;
+              font-weight: 600;
+            }
+            h3 {
+              font-weight: 500;
+            }
+            h4 {
+              font-weight: 500;
+            }
+        }
           @keyframes BlurfadeIn {
             0% {
               opacity: 0;
