@@ -179,7 +179,7 @@ function Layout() {
             margin: 60px 0px 30px 0px;
           }
           h2 {
-            font-weight: 500
+            font-weight: 600;
           }
           h3 {
             font-weight: 500;
