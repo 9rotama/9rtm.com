@@ -258,9 +258,9 @@ function Layout() {
       <Background />
       <Header siteTitle={data.site.siteMetadata?.title || "Title"} />
       <Router>
+        <HomePage path="/" />
         <AboutPage path="/about" />
         <WorksPage path="/works" />
-        <HomePage default />
       </Router>
     </div>
   )
