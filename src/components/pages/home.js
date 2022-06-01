@@ -55,6 +55,21 @@ function HomePage() {
           top: 30vh;
           text-align: center;
           z-index: 101;
+          background: #ffffffb0;
+          backdrop-filter: blur(10px);
+          padding: 40px 40px 40px 40px;
+          margin: 0 auto;
+          max-width: 350px;
+          border-radius: 40px;
+
+          @media (max-width: 480px) {
+            & {
+              margin: 0 auto;
+              padding: 40px 20px 40px 20px;
+              max-width: 100%;
+              border-radius: 0px;
+            }
+          }
         `}
       >
         <img
@@ -79,6 +94,12 @@ function HomePage() {
 
             animation-name: BlurfadeInDown;
             animation-duration: 0.4s;
+
+            @media (max-width: 480px) {
+              & {
+                font-size: 1.1em;
+              }
+            }
           `}
         >
           ＊ here is 9rotama&apos;s portfolio ＊
