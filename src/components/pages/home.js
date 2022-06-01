@@ -51,21 +51,21 @@ function HomePage() {
       <Seo title="home" />
       <div
         css={css`
-          position: relative;
-          top: 30vh;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateY(-50%) translateX(-50%);
           text-align: center;
           z-index: 101;
           background: #E3ECF4EE;
           padding: 40px 40px 40px 40px;
-          margin: 0 auto;
-          max-width: 350px;
+          width: 350px;
           border-radius: 40px;
 
           @media (max-width: 480px) {
             & {
-              margin: 0 auto;
-              padding: 40px 20px 40px 20px;
-              max-width: 100%;
+              padding: 40px 0 40px 0;
+              width: 100%;
               border-radius: 0px;
             }
           }
