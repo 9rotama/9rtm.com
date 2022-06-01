@@ -260,7 +260,7 @@ function Layout() {
       <Router>
         <AboutPage path="/about" />
         <WorksPage path="/works" />
-        <HomePage path='/' />
+        <HomePage default />
       </Router>
     </div>
   )
