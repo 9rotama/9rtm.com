@@ -28,7 +28,7 @@ function SnsLink({ icon, url, hoverColor }) {
       <FontAwesomeIcon
         icon={icon}
         css={css`
-          color: #252A60a0;
+          color: #252a60a0;
           margin: 0.5rem;
           font-size: 2.3em;
           transition-duration: 0.3s;
@@ -57,7 +57,7 @@ function HomePage() {
           transform: translateY(-50%) translateX(-50%);
           text-align: center;
           z-index: 101;
-          background: #E3ECF4EE;
+          background: #e3ecf4ee;
           padding: 40px 40px 40px 40px;
           width: 350px;
           border-radius: 40px;
@@ -78,7 +78,7 @@ function HomePage() {
             width: 180px;
             height: 180px;
             border-radius: 10%;
-            filter: drop-shadow(0px 3px 5px #252A3455);
+            filter: drop-shadow(0px 3px 5px #252a3455);
 
             animation-name: BlurfadeInDown;
             animation-duration: 0.3s;
