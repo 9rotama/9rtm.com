@@ -9,10 +9,16 @@ import { css, jsx } from "@emotion/react"
 import Seo from "../seo"
 import ContextBox from "../contextbox"
 
-function DeviconSmall({ name }){
+function DeviconSmall({ name }) {
   return (
     <img
-      src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/"+name+"/"+name+"-original.svg"}
+      src={
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/" +
+        name +
+        "/" +
+        name +
+        "-original.svg"
+      }
       css={css`
         width: 30px;
         margin-right: 10px;
@@ -21,7 +27,7 @@ function DeviconSmall({ name }){
   )
 }
 
-function Card({ title, url, desc, use, ss, isTeam }){
+function Card({ title, url, desc, use, ss, isTeam }) {
   return (
     <a
       css={css`
@@ -33,11 +39,11 @@ function Card({ title, url, desc, use, ss, isTeam }){
         margin: 10px;
         transition-duration: 0.3s;
         text-decoration: none;
-        color: #252A34;
+        color: #252a34;
 
         &:hover {
-          filter: drop-shadow(0px 6px 8px #252A3422);
-          background: #FFFFFF;
+          filter: drop-shadow(0px 6px 8px #252a3422);
+          background: #ffffff;
           transition-duration: 0.3s;
           transform: translateY(-5px);
         }
@@ -63,12 +69,14 @@ function Card({ title, url, desc, use, ss, isTeam }){
             font-size: 1.3em;
           }
         `}
-      >{title}</h2>
+      >
+        {title}
+      </h2>
       <p
         css={css`
           margin-bottom: 40px;
           @media (max-width: 960px) {
-              font-size: 0.9em;
+            font-size: 0.9em;
           }
         `}
       >
@@ -81,11 +89,13 @@ function Card({ title, url, desc, use, ss, isTeam }){
           bottom: 15px;
         `}
       >
-        {use.map(e => <DeviconSmall name={e} />)}
+        {use.map(e => (
+          <DeviconSmall name={e} />
+        ))}
       </div>
 
       <FontAwesomeIcon
-        icon={isTeam ?  faUserGroup : faUser}
+        icon={isTeam ? faUserGroup : faUser}
         css={css`
           position: absolute;
           color: #252f6022;
@@ -96,10 +106,10 @@ function Card({ title, url, desc, use, ss, isTeam }){
         `}
       />
     </a>
-  );
+  )
 }
 
-function CardWrapper({ children }){
+function CardWrapper({ children }) {
   return (
     <div
       css={css`
@@ -110,7 +120,7 @@ function CardWrapper({ children }){
     >
       {children}
     </div>
-  );
+  )
 }
 
 function WorksPage() {
@@ -123,25 +133,24 @@ function WorksPage() {
       />
       <ContextBox pageIcon={faBook} pageTitle="works">
         <p>
-
           <h1>🌎 websites</h1>
           <CardWrapper>
             <Card
               title="9rtm.com"
               url="https://9rtm.com"
-              use={["react","gatsby"]}
+              use={["react", "gatsby"]}
               desc="ポートフォリオ"
             />
             <Card
               title="arcwebtool"
               url="https://9rotama.github.io/arcwebtool/"
-              use={["javascript","bootstrap"]}
+              use={["javascript", "bootstrap"]}
               desc="譜面制作用マクロ"
             />
             <Card
               title="tegei.github.io/works"
               url="https://tegei.github.io/works"
-              use={["react","gatsby"]}
+              use={["react", "gatsby"]}
               desc="作品紹介ページ"
             />
             <Card
@@ -152,7 +161,6 @@ function WorksPage() {
               isTeam
             />
           </CardWrapper>
-
           <h1>🕹️ games</h1>
           <CardWrapper>
             <Card
@@ -170,7 +178,6 @@ function WorksPage() {
               isTeam
             />
           </CardWrapper>
-
           <h1>🎨 graphics / designs / others</h1>
           GoogleDriveに載せています。
           <a href="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing">

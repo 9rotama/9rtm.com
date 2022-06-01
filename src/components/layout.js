@@ -21,22 +21,22 @@ import Background from "./background"
 const menuButton = css`
   text-decoration: none;
   border-bottom: solid;
-  border-color: #252A3450;
+  border-color: #252a3450;
   border-width: 1px;
   border-radius: 5px;
-  color: #252A34;
+  color: #252a34;
   font-size: 1.5em;
   margin-left: 10px;
   padding: 2px 10px 2px 10px;
   transition-duration: 0.3s;
 
   &:hover {
-    background: #252A3410;
+    background: #252a3410;
     transition-duration: 0.3s;
   }
   &:active {
-    background: #252A34;
-    color: #EAEAEA;
+    background: #252a34;
+    color: #eaeaea;
     transition-duration: 0.3s;
   }
 
@@ -94,7 +94,7 @@ function Header({ siteTitle }) {
         to="/"
         css={css`
           position: absolute;
-          color: #252A34;
+          color: #252a34;
           text-decoration: none;
           font-size: 2em;
           font-weight: 600;
@@ -116,7 +116,7 @@ function Header({ siteTitle }) {
             transition-duration: 0.3s;
           }
           &:active {
-            color: #FF2E63;
+            color: #ff2e63;
 
             transition-duration: 0.3s;
           }
@@ -156,17 +156,17 @@ function Layout() {
           @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,300;0,500;0,600;0,800&family=M+PLUS+1:wght@100;400;600;800&display=swap");
           body {
             font-family: "Montserrat Alternates", "M PLUS 1", sans-serif;
-            color: #252A34;
-            background-color: #D0DDE9;
+            color: #252a34;
+            background-color: #d0dde9;
             margin: 0;
           }
           h1 {
             font-weight: 500;
             font-size: 2em;
-            color: #252A34;
+            color: #252a34;
             text-decoration: none;
             border-bottom: solid;
-            border-color: #252A3430;
+            border-color: #252a3430;
             border-width: 1px;
             margin: 60px 0px 30px 0px;
           }
@@ -209,7 +209,7 @@ function Layout() {
             h4 {
               font-weight: 500;
             }
-        }
+          }
           @keyframes BlurfadeIn {
             0% {
               opacity: 0;
@@ -220,7 +220,7 @@ function Layout() {
               opacity: 1;
             }
           }
-          @keyframes BlurUp{
+          @keyframes BlurUp {
             0% {
               transform: translateY(70px);
               filter: blur(20px);

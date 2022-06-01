@@ -36,7 +36,7 @@ function ContextBox({ pageIcon, pageTitle, children }) {
           margin-top: 150px;
           left: 50%;
           transform: translate(-50%);
-          background: #E3ECF4EE;
+          background: #e3ecf4ee;
           border-radius: 30px;
           z-index: 3;
           @media (max-width: 720px) {
@@ -57,7 +57,7 @@ function ContextBox({ pageIcon, pageTitle, children }) {
           <div
             css={css`
               position: relative;
-              background-color: #252A34;
+              background-color: #252a34;
               border-radius: 50%;
               width: 100px;
               height: 100px;
@@ -69,7 +69,7 @@ function ContextBox({ pageIcon, pageTitle, children }) {
             <FontAwesomeIcon
               icon={pageIcon}
               css={css`
-                color: #EAEAEA;
+                color: #eaeaea;
                 margin: auto;
                 font-size: 3em;
               `}
@@ -77,7 +77,7 @@ function ContextBox({ pageIcon, pageTitle, children }) {
           </div>
           <div
             css={css`
-              color: #252A34;
+              color: #252a34;
               margin-top: 70px;
               font-weight: 600;
               font-size: 3em;
@@ -99,7 +99,7 @@ function ContextBox({ pageIcon, pageTitle, children }) {
           text-align: center;
           margin: 40px;
           font-size: 100;
-          color: #252A3499;
+          color: #252a3499;
           z-index: 200;
         `}
       >
