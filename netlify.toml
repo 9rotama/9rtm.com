@@ -1,1 +1,7 @@
-/*    /index.html   200
+[[redirects]]
+  from = "/*"
+  to = "https://9rtm.com"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
