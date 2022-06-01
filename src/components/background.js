@@ -2,7 +2,8 @@ import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
 import { useRef, useEffect } from "react"
 import * as THREE from 'three';
-import { Canvas, useFrame, extend } from "react-three-fiber"
+import { Canvas, useFrame, extend } from "@react-three/fiber"
+import { EffectComposer, ToneMapping, DotScreen } from '@react-three/postprocessing'
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react"
 import fontJson from "three/examples/fonts/helvetiker_regular.typeface.json"
@@ -40,8 +41,8 @@ function Text3D() {
 
   return (
     <mesh ref={meshRef} >
-      <textGeometry ref={geoRef} args={[text, {font, size:20, height: 4}]}/>
-      <meshStandardMaterial attach='material' color="#afc0db" roughness={0.3} metalness={0.8}/>
+      <textGeometry ref={geoRef} args={[text, {font, size:20, height: 4}]} />
+      <meshMatcapMaterial attach='material' color="#cfe0fb"/>
     </mesh>
   )
 }
@@ -66,8 +67,10 @@ function Background() {
           position: [-60, 0, 0],
         }}
       >
-        <pointLight position={[0, 0, 10]} intensity={0.8}/>
-        <ambientLight intensity={0.8}/>
+        <EffectComposer>
+          <ToneMapping />
+          <DotScreen angle={Math.PI * 0.5} scale={0.6}/>
+        </EffectComposer>
         <Text3D />
       </Canvas>
     </div>

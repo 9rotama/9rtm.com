@@ -25,10 +25,11 @@ function Card({ title, url, desc, use, ss, isTeam }){
   return (
     <a
       css={css`
+        position: relative;
         width: 40%;
-        background: #FBFBFD;
+        background: #f5faff;
         border-radius: 20px;
-        padding: 1px 30px 20px 30px;
+        padding: 0px 30px 30px 30px;
         margin: 10px;
         transition-duration: 0.3s;
         text-decoration: none;
@@ -43,32 +44,72 @@ function Card({ title, url, desc, use, ss, isTeam }){
 
         @media (max-width: 960px) {
           & {
-            width: 100%;
-            margin: 5px;
+            margin: 10px 2.5px 10px 2.5px;
+            padding: 0px 20px 30px 20px;
+            width: 40%;
           }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 640px) {
           & {
-            margin: 5px -5px 5px -5px;
+            width: 100%;
           }
         }
       `}
       href={url}
     >
-      <h2>{title}</h2>
-      <p>{desc}</p>
-      {use.map(e => <DeviconSmall name={e} />)}
+      <h2
+        css={css`
+          @media (max-width: 960px) {
+            font-size: 1.3em;
+          }
+        `}
+      >{title}</h2>
+      <p
+        css={css`
+          margin-bottom: 40px;
+          @media (max-width: 960px) {
+              font-size: 0.9em;
+          }
+        `}
+      >
+        {desc}
+      </p>
+      <div
+        css={css`
+          position: absolute;
+          float: left;
+          bottom: 15px;
+        `}
+      >
+        {use.map(e => <DeviconSmall name={e} />)}
+      </div>
 
       <FontAwesomeIcon
         icon={isTeam ?  faUserGroup : faUser}
         css={css`
+          position: absolute;
           color: #252f6022;
           margin-bottom: auto;
           font-size: 2em;
-          float: right;
+          bottom: 20px;
+          right: 8%;
         `}
       />
     </a>
+  );
+}
+
+function CardWrapper({ children }){
+  return (
+    <div
+      css={css`
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      `}
+    >
+      {children}
+    </div>
   );
 }
 
@@ -84,13 +125,7 @@ function WorksPage() {
         <p>
 
           <h1>🌎 websites</h1>
-          <div
-            css={css`
-              display:flex;
-              flex-wrap:wrap;
-              justify-content: space-around;
-            `}
-          >
+          <CardWrapper>
             <Card
               title="9rtm.com"
               url="https://9rtm.com"
@@ -116,16 +151,10 @@ function WorksPage() {
               desc="ダサいスライドを作れるwebアプリ"
               isTeam
             />
-          </div>
+          </CardWrapper>
 
           <h1>🕹️ games</h1>
-          <div
-            css={css`
-              display:flex;
-              flex-wrap:wrap;
-              justify-content: space-around;
-            `}
-          >
+          <CardWrapper>
             <Card
               title="SkyWitches"
               url="https://9rotama.itch.io/skywitches"
@@ -140,7 +169,7 @@ function WorksPage() {
               desc="お菓子なコマで遊ぶゲーム"
               isTeam
             />
-          </div>
+          </CardWrapper>
 
           <h1>🎨 graphics / designs / others</h1>
           GoogleDriveに載せています。

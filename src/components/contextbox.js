@@ -19,6 +19,13 @@ function ContextBox({ pageIcon, pageTitle, children }) {
 
         animation-name: BlurUp;
         animation-duration: 0.3s;
+
+        @media (max-width: 480px) {
+          & {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        }
       `}
     >
       <div
@@ -29,13 +36,18 @@ function ContextBox({ pageIcon, pageTitle, children }) {
           margin-top: 150px;
           left: 50%;
           transform: translate(-50%);
-          background: #ffffff55;
+          background: #E3ECF4EE;
           border-radius: 30px;
           z-index: 3;
-
           @media (max-width: 720px) {
             & {
               margin-top: 100px;
+              padding: 25px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            & {
               padding: 25px;
             }
           }
@@ -69,7 +81,7 @@ function ContextBox({ pageIcon, pageTitle, children }) {
               margin-top: 70px;
               font-weight: 600;
               font-size: 3em;
-              @media (max-width: 960px) {
+              @media (max-width: 720px) {
                 font-size: 2.5em;
               }
               @media (max-width: 480px) {

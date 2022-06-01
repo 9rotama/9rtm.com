@@ -16,7 +16,6 @@ import { Global, css, jsx } from "@emotion/react"
 import HomePage from "./pages/home"
 import AboutPage from "./pages/about"
 import WorksPage from "./pages/works"
-import NotFoundPage from "./pages/404"
 import Background from "./background"
 
 const menuButton = css`
@@ -158,7 +157,7 @@ function Layout() {
           body {
             font-family: "Montserrat Alternates", "M PLUS 1", sans-serif;
             color: #252A34;
-            background-color: #EAEAEA;
+            background-color: #D0DDE9;
             margin: 0;
           }
           h1 {
@@ -261,8 +260,7 @@ function Layout() {
       <Router>
         <AboutPage path="/about" />
         <WorksPage path="/works" />
-        <NotFoundPage path="/404" />
-        <HomePage path="/" />
+        <HomePage default />
       </Router>
     </div>
   )
