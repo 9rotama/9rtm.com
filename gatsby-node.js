@@ -10,10 +10,9 @@ const resolve = require('path').resolve
 exports.onCreateWebpackConfig = ({ actions }) => {
 
   actions.setWebpackConfig({
-      resolve: {
-          alias: {
-              '@': resolve(__dirname, 'src')
-          },
-      }
+    devServer: {
+      contentBase: `${__dirname}/dist`,
+      historyApiFallback: true
+    }
   })
 }

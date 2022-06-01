@@ -158,7 +158,7 @@ function Layout() {
           body {
             font-family: "Montserrat Alternates", "M PLUS 1", sans-serif;
             color: #252A34;
-            background-color: #EAEAEA;
+            background-color: #D0DDE9;
             margin: 0;
           }
           h1 {
@@ -262,7 +262,7 @@ function Layout() {
         <AboutPage path="/about" />
         <WorksPage path="/works" />
         <NotFoundPage path="/404" />
-        <HomePage path="/" />
+        <HomePage default/>
       </Router>
     </div>
   )

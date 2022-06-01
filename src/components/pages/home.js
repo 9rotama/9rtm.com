@@ -55,8 +55,7 @@ function HomePage() {
           top: 30vh;
           text-align: center;
           z-index: 101;
-          background: #ffffffb0;
-          backdrop-filter: blur(10px);
+          background: #E3ECF4EE;
           padding: 40px 40px 40px 40px;
           margin: 0 auto;
           max-width: 350px;

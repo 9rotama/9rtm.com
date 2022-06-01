@@ -36,7 +36,7 @@ function ContextBox({ pageIcon, pageTitle, children }) {
           margin-top: 150px;
           left: 50%;
           transform: translate(-50%);
-          background: #ffffffb0;
+          background: #E3ECF4EE;
           border-radius: 30px;
           z-index: 3;
           @media (max-width: 720px) {
