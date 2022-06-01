@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/*"
-  to = "https://9rtm.com"
+  to = "/"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
