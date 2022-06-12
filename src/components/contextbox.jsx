@@ -63,7 +63,7 @@ function ContextBox({ pageIcon, pageTitle, children }) {
             <FontAwesomeIcon
               icon={pageIcon}
               css={css`
-                color: #eaeaea;
+                color: #d0dde9;
                 margin: auto;
                 font-size: 3em;
               `}
