@@ -29,14 +29,13 @@ function SnsLink({ icon, url, hoverColor }) {
       <FontAwesomeIcon
         icon={icon}
         css={css`
-          color: #252a60a0;
+          color: #253a60a0;
           margin: 0.5rem;
           font-size: 2.3em;
           transition-duration: 0.3s;
 
           &:hover {
             color: ${hoverColor};
-            filter: drop-shadow(0px 2px 3px ${hoverColor}a0);
             transform: scale(1.3);
             transition-duration: 0.3s;
           }
@@ -52,87 +51,97 @@ function HomePage() {
       <Seo title="home" />
       <div
         css={css`
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translateY(-50%) translateX(-50%);
-          text-align: center;
-          z-index: 101;
-          background: #e3ecf4ee;
-          padding: 40px 40px 40px 40px;
-          width: 350px;
-          border-radius: 40px;
-
-          @media (max-width: 480px) {
-            & {
-              padding: 40px 0 40px 0;
-              width: 100%;
-              border-radius: 0px;
-            }
-          }
+          display: flex;
+          height: 100vh;
+          justify-content: center;
+          align-items: center;
         `}
       >
-        <img
-          src="https://avatars.githubusercontent.com/u/65887771?v=4"
+        <div
           css={css`
-            position: relative;
-            width: 180px;
-            height: 180px;
-            border-radius: 10%;
-            filter: drop-shadow(0px 3px 5px #252a3455);
+            display: block;
+            text-align: center;
+            z-index: 101;
+            background: #e3ecf4ee;
+            padding: 40px 40px 40px 40px;
+            width: 350px;
+            border-radius: 40px;
+            box-shadow: 0 10px #baccd4ee;
 
             animation-name: BlurfadeInDown;
-            animation-duration: 0.3s;
-          `}
-        />
-        <p
-          css={css`
-            position: relative;
-            font-size: 1.3em;
-            font-weight: 500;
-            margin-top: 30px;
-
-            animation-name: BlurfadeInDown;
-            animation-duration: 0.4s;
+            animation-duration: 0.5s;
 
             @media (max-width: 480px) {
               & {
-                font-size: 1.1em;
+                padding: 40px 0 40px 0;
+                width: 100%;
+                border-radius: 0px;
               }
             }
           `}
         >
-          ＊ ポートフォリオへようこそ ＊
-        </p>
-        <div
-          css={css`
-            position: relative;
-            font-size: 1.1em;
-            margin-top: 30px;
+          <img
+            src="https://avatars.githubusercontent.com/u/65887771?v=4"
+            css={css`
+              position: relative;
+              width: 180px;
+              height: 180px;
+              border-radius: 10%;
+              filter: drop-shadow(0px 3px 5px #252a3455);
 
-            animation-name: BlurfadeInDown;
-            animation-duration: 0.5s;
-          `}
-        >
-          <SnsLink
-            icon={faGithub}
-            url="https://github.com/9rotama"
-            hoverColor="#9b5de5"
+              animation-name: BlurfadeInDown;
+              animation-duration: 0.3s;
+            `}
           />
-          <SnsLink
-            icon={faTwitter}
-            url="https://twitter.com/glctose_9"
-            hoverColor="#00bbf9"
-          />
-          <SnsLink
-            icon={faItchIo}
-            url="https://9rotama.itch.io"
-            hoverColor="#F6434A"
-          />
+          <p
+            css={css`
+              position: relative;
+              font-size: 1.3em;
+              font-weight: 500;
+              margin-top: 30px;
+
+              animation-name: BlurfadeInDown;
+              animation-duration: 0.4s;
+
+              @media (max-width: 480px) {
+                & {
+                  font-size: 1.1em;
+                }
+              }
+            `}
+          >
+            ＊ Welcome to my portfolio!! ＊
+          </p>
+          <div
+            css={css`
+              position: relative;
+              font-size: 1.1em;
+              margin-top: 30px;
+
+              animation-name: BlurfadeInDown;
+              animation-duration: 0.5s;
+            `}
+          >
+            <SnsLink
+              icon={faGithub}
+              url="https://github.com/9rotama"
+              hoverColor="#9b5de5"
+            />
+            <SnsLink
+              icon={faTwitter}
+              url="https://twitter.com/glctose_9"
+              hoverColor="#00bbf9"
+            />
+            <SnsLink
+              icon={faItchIo}
+              url="https://9rotama.itch.io"
+              hoverColor="#F6434A"
+            />
+          </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;

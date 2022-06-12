@@ -10,7 +10,7 @@ import {
 } from "@react-three/postprocessing"
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react"
-import fontJson from "three/examples/fonts/helvetiker_regular.typeface.json"
+import fontJson from "three/examples/fonts/helvetiker_bold.typeface.json"
 
 extend({ TextGeometry })
 
@@ -44,7 +44,7 @@ function Text3D() {
 
   return (
     <mesh ref={meshRef}>
-      <textGeometry ref={geoRef} args={[text, { font, size: 20, height: 4 }]} />
+      <textGeometry ref={geoRef} args={[text, { font, size: 40, height: 10 }]} />
       <meshMatcapMaterial attach="material" color="#cfe0fb" />
     </mesh>
   )

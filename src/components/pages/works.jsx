@@ -8,6 +8,7 @@ import PropTypes from "prop-types"
 import { css, jsx } from "@emotion/react"
 import Seo from "../seo"
 import ContextBox from "../contextbox"
+import LinkButton from "../linkButton"
 
 function DeviconSmall({ name }) {
   return (
@@ -31,13 +32,13 @@ DeviconSmall.propTypes = {
   name: PropTypes.string.isRequired,
 }
 
-function Card({ title, url, desc, use, isTeam }) {
+function Card({ title, url, desc, use, ss, isTeam }) {
   return (
     <a
       css={css`
         position: relative;
         width: 40%;
-        background: #f5faff;
+        background-image: url("${ss}");
         border-radius: 20px;
         padding: 0px 30px 30px 30px;
         margin: 10px;
@@ -150,6 +151,7 @@ function WorksPage() {
               title="9rtm.com"
               url="https://9rtm.com"
               use={["react", "gatsby"]}
+              ss="../assets/images/works_ss/portfolio.png"
               desc="ポートフォリオ"
             />
             <Card
@@ -171,6 +173,12 @@ function WorksPage() {
               desc="ダサいスライドを作れるwebアプリ"
               isTeam
             />
+            <Card
+              title="re-translate-bot"
+              url="https://github.com/9rotama/re-translate-bot"
+              use={["python", "heroku"]}
+              desc="Discordのメッセージを自動で再翻訳"
+            />
           </CardWrapper>
           <h1>🕹️ games</h1>
           <CardWrapper>
@@ -188,12 +196,17 @@ function WorksPage() {
               desc="お菓子なコマで遊ぶゲーム"
               isTeam
             />
+            <Card
+              title="Solitude Sniper"
+              url="https://unityroom.com/games/solitude-sniper"
+              use={["unity"]}
+              desc="スナイパーFPS"
+              isTeam
+            />
           </CardWrapper>
           <h1>🎨 graphics / designs / others</h1>
-          GoogleDriveに載せています。
-          <a href="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing">
-            link
-          </a>
+          <LinkButton color="#FF2E63" hoverColor="#c21943" url="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing">Google Drive</LinkButton>
+
         </p>
       </ContextBox>
     </>
