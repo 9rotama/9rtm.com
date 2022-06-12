@@ -81,6 +81,9 @@ function Header({ siteTitle }) {
         width: 100%;
         margin-bottom: 3rem;
         z-index: 100;
+        padding-bottom: 20px;
+        background-color: #e3ecf470;
+        backdrop-filter: blur(10px);
 
         @media (max-width: 600px) {
           & {
