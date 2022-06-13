@@ -32,13 +32,13 @@ DeviconSmall.propTypes = {
   name: PropTypes.string.isRequired,
 }
 
-function Card({ title, url, desc, use,   }) {
+function Card({ title, url, desc, use, isTeam }) {
   return (
     <a
       css={css`
         position: relative;
         width: 40%;
-        background-image: url("${ss}");
+        background: #f5faff;
         border-radius: 20px;
         padding: 0px 30px 30px 30px;
         margin: 10px;
