@@ -12,5 +12,12 @@ module.exports = {
     author: `@9rotama`,
     siteUrl: `https://9rtm.com/`,
   },
-  plugins: [],
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/assets/images/favicon.png',
+      },
+    },
+  ],
 }
