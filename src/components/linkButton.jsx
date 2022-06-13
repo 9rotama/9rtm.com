@@ -7,7 +7,7 @@ function LinkButton({ color, hoverColor, url, children }) {
     <a
       css={css`
         padding: 10px;
-        border-radius: 50px;
+        border-radius: 50vh;
         background: ${color};
         color: white;
         text-decoration: none;

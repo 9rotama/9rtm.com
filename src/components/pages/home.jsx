@@ -30,8 +30,8 @@ function SnsLink({ icon, url, hoverColor }) {
         icon={icon}
         css={css`
           color: #253a60a0;
-          margin: 0.5rem;
-          font-size: 2.3em;
+          margin: 0 0.8rem 0 0.8rem;
+          font-size: 1.8em;
           transition-duration: 0.3s;
 
           &:hover {
@@ -43,6 +43,46 @@ function SnsLink({ icon, url, hoverColor }) {
       />
     </a>
   )
+}
+
+function SnsLinkWrapper(){
+  return (
+    <div
+      css={css`
+        position: relative;
+        font-size: 1.1em;
+        margin-top: 30px;
+        background: #eff6faf8;
+        padding: 15px;
+        border-radius: 50vh;
+
+        animation-name: BlurfadeInDown;
+        animation-duration: 0.5s;
+
+        @media (max-width: 480px) {
+          & {
+            border-radius: 0px;
+          }
+        }
+      `}
+    >
+      <SnsLink
+        icon={faGithub}
+        url="https://github.com/9rotama"
+        hoverColor="#9b5de5"
+      />
+      <SnsLink
+        icon={faTwitter}
+        url="https://twitter.com/glctose_9"
+        hoverColor="#00bbf9"
+      />
+      <SnsLink
+        icon={faItchIo}
+        url="https://9rotama.itch.io"
+        hoverColor="#F6434A"
+      />
+    </div>
+  );
 }
 
 function HomePage() {
@@ -59,7 +99,6 @@ function HomePage() {
       >
         <div
           css={css`
-            display: block;
             text-align: center;
             z-index: 101;
             background: #e3ecf4ee;
@@ -110,34 +149,9 @@ function HomePage() {
               }
             `}
           >
-            ＊ Welcome to my portfolio!! ＊
+            ＊ Welcome to my portfolio ＊
           </p>
-          <div
-            css={css`
-              position: relative;
-              font-size: 1.1em;
-              margin-top: 30px;
-
-              animation-name: BlurfadeInDown;
-              animation-duration: 0.5s;
-            `}
-          >
-            <SnsLink
-              icon={faGithub}
-              url="https://github.com/9rotama"
-              hoverColor="#9b5de5"
-            />
-            <SnsLink
-              icon={faTwitter}
-              url="https://twitter.com/glctose_9"
-              hoverColor="#00bbf9"
-            />
-            <SnsLink
-              icon={faItchIo}
-              url="https://9rotama.itch.io"
-              hoverColor="#F6434A"
-            />
-          </div>
+          <SnsLinkWrapper />
         </div>
       </div>
     </>

@@ -32,7 +32,7 @@ DeviconSmall.propTypes = {
   name: PropTypes.string.isRequired,
 }
 
-function Card({ title, url, desc, use, ss, isTeam }) {
+function Card({ title, url, desc, use,   }) {
   return (
     <a
       css={css`
