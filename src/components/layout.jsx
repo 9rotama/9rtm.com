@@ -26,7 +26,7 @@ const menuButton = css`
   border-radius: 5px;
   color: #252a34;
   font-size: 1.5em;
-  font-weight: 600;
+  font-weight: 500;
   margin-left: 10px;
   padding: 2px 10px 2px 10px;
   transition-duration: 0.3s;
@@ -51,15 +51,7 @@ function Menu() {
   return (
     <div
       css={css`
-        display: flex;
-        justify-content: right;
-        margin: 15px 10vw 0 0;
 
-        @media (max-width: 960px) {
-          & {
-            margin: 10px 10px 0 0;
-          }
-        }
       `}
     >
       <Link to="/about" css={menuButton} onClick="">
@@ -78,58 +70,64 @@ function Header({ siteTitle }) {
       css={css`
         position: fixed;
         top: 0px;
-        width: 100%;
-        margin-bottom: 3rem;
         z-index: 100;
-        padding-bottom: 20px;
+        width: 100%;
         background-color: #e3ecf470;
         backdrop-filter: blur(10px);
-
-        @media (max-width: 600px) {
-          & {
-          }
-        }
 
         animation-name: Down;
         animation-duration: 0.5s;
       `}
     >
-      <Link
-        to="/"
+      <div
         css={css`
-          position: absolute;
-          color: #252a34;
-          text-decoration: none;
-          font-size: 2em;
-          font-weight: 600;
-          padding: 0px 10px 0px 10px;
-          margin: 15px 0 0 10vw;
-
-          transition-duration: 0.3s;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 10px 10vw 10px 10vw;
 
           @media (max-width: 960px) {
             & {
-              font-size: 1.5em;
-              margin: 10px 0 0 10px;
+              padding: 7px 30px 7px 30px;
             }
-          }
-
-          &:hover {
-            transform: scale(1.2);
-
-            transition-duration: 0.3s;
-          }
-          &:active {
-            color: #ff2e63;
-
-            transition-duration: 0.3s;
           }
         `}
       >
-        {siteTitle}
-      </Link>
+        <Link
+          to="/"
+          css={css`
+            color: #252a34;
+            text-decoration: none;
+            font-size: 2em;
+            font-weight: 600;
+            padding: 0 10px 0 10px;
+            margin-right: auto;
 
-      <Menu />
+            transition-duration: 0.3s;
+
+            @media (max-width: 960px) {
+              & {
+                font-size: 1.5em;
+              }
+            }
+
+            &:hover {
+              transform: scale(1.2);
+
+              transition-duration: 0.3s;
+            }
+            &:active {
+              color: #ff2e63;
+
+              transition-duration: 0.3s;
+            }
+          `}
+        >
+          {siteTitle}
+        </Link>
+
+        <Menu />
+      </div>
     </header>
   )
 }
@@ -166,13 +164,13 @@ function Layout() {
           }
           h1 {
             font-weight: 500;
-            font-size: 2em;
+            font-size: 1.8em;
             color: #252a34;
             text-decoration: none;
             border-bottom: solid;
             border-color: #252a3430;
             border-width: 1px;
-            padding-bottom: 5px;
+            padding-bottom: 2px;
             margin: 60px 0px 30px 0px;
           }
           h2 {

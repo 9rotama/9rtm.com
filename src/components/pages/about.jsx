@@ -62,7 +62,7 @@ function AboutPage() {
             clear: both;
           `}
         />
-        <h1>🪛 tools</h1>
+        <h1>🧰 tools / services</h1>
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" />
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg" />
