@@ -1,7 +1,14 @@
-/** @jsx jsx */
+import * as React from "react"
 import { css } from "@emotion/react"
 
-function LinkButton({ color, hoverColor, url, children }) {
+type LinkButtonProps = {
+  color: string;
+  hoverColor: string;
+  url: string;
+  children: React.ReactNode;
+}
+
+const LinkButton: React.FC<LinkButtonProps> = ({ color, hoverColor, url, children }) => {
   return (
     <a
       css={css`
