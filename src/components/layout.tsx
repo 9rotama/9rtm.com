@@ -1,15 +1,6 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import * as React from "react"
-import { Router } from "@gatsbyjs/reach-router"
-import { Link } from "gatsby"
+import { Router, RouteComponentProps, Link } from "@gatsbyjs/reach-router"
 import { useStaticQuery, graphql } from "gatsby"
-/** @jsx jsx */
 import { Global, css } from "@emotion/react"
 
 import HomePage from "./pages/home"
@@ -17,7 +8,7 @@ import AboutPage from "./pages/about"
 import WorksPage from "./pages/works"
 import Background from "./background"
 
-const menuButton = css`
+const menuButtonStyle = css`
   text-decoration: none;
   border-bottom: solid;
   border-color: #252a3450;
@@ -46,20 +37,24 @@ const menuButton = css`
     }
   }
 `
-function Menu() {
+const Menu = () => {
   return (
     <div css={css``}>
-      <Link to="/about" css={menuButton} onClick="">
+      <Link to="/about" css={menuButtonStyle}>
         about
       </Link>
-      <Link to="/works" css={menuButton} onClick="">
+      <Link to="/works" css={menuButtonStyle}>
         works
       </Link>
     </div>
   )
 }
 
-function Header({ siteTitle }) {
+type HeaderProps = {
+  siteTitle: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
   return (
     <header
       css={css`
@@ -127,15 +122,7 @@ function Header({ siteTitle }) {
   )
 }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: "",
-}
-
-function Layout() {
+const Layout = () => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -262,10 +249,6 @@ function Layout() {
       </Router>
     </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

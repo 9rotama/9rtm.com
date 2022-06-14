@@ -1,6 +1,7 @@
 import * as React from "react"
 import { css } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faGithub,
   faTwitter,
@@ -8,7 +9,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import Seo from "../seo"
 
-function SnsLink({ icon, url, hoverColor }) {
+type SnsLinkProps = {
+  icon: IconDefinition,
+  url: string,
+  hoverColor: string
+}
+
+const SnsLink: React.FC<SnsLinkProps> = ({ icon, url, hoverColor }) => {
   return (
     <a
       href={url}
@@ -37,7 +44,7 @@ function SnsLink({ icon, url, hoverColor }) {
   )
 }
 
-function SnsLinkWrapper() {
+const SnsLinkWrapper = () => {
   return (
     <div
       css={css`
@@ -77,7 +84,7 @@ function SnsLinkWrapper() {
   )
 }
 
-function HomePage() {
+const HomePage = () => {
   return (
     <>
       <Seo title="home" />

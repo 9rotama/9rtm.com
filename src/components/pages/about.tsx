@@ -1,10 +1,14 @@
 import * as React from "react"
-import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
 import { css } from "@emotion/react"
+import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
 import Seo from "../seo"
 import ContextBox from "../contextbox"
 
-function Devicon({ src }) {
+type DeviconProps = {
+  src: string;
+}
+
+const Devicon: React.FC<DeviconProps> = ({ src }) => {
   return (
     <img
       src={src}
@@ -13,10 +17,10 @@ function Devicon({ src }) {
         margin-right: 10px;
       `}
     />
-  )
+  );
 }
 
-function AboutPage() {
+const AboutPage = () => {
   return (
     <>
       <Seo title="about me" />
@@ -73,7 +77,7 @@ function AboutPage() {
         <Devicon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
       </ContextBox>
     </>
-  )
+  );
 }
 
 export default AboutPage

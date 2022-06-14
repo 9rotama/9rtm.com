@@ -1,15 +1,20 @@
 import * as React from "react"
-import { faBook } from "@fortawesome/free-solid-svg-icons"
-import { faUserGroup } from "@fortawesome/free-solid-svg-icons"
-import { faUser } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-/** @jsx jsx */
 import { css } from "@emotion/react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faBook,
+  faUserGroup,
+  faUser
+} from "@fortawesome/free-solid-svg-icons"
 import Seo from "../seo"
 import ContextBox from "../contextbox"
 import LinkButton from "../linkButton"
 
-function DeviconSmall({ name }) {
+type DeviconSmallProps = {
+  name: string;
+}
+
+const DeviconSmall:React.FC<DeviconSmallProps> = ({ name }) => {
   return (
     <img
       src={
@@ -27,7 +32,15 @@ function DeviconSmall({ name }) {
   )
 }
 
-function Card({ title, url, desc, use, isTeam }) {
+type CardProps = {
+  title: string;
+  url: string;
+  description: string;
+  techStack: Array<string>;
+  isTeam: boolean;
+}
+
+const Card: React.FC<CardProps> = ({ title, url, description, techStack, isTeam }) => {
   return (
     <a
       css={css`
@@ -80,7 +93,7 @@ function Card({ title, url, desc, use, isTeam }) {
           }
         `}
       >
-        {desc}
+        {description}
       </p>
       <div
         css={css`
@@ -89,7 +102,7 @@ function Card({ title, url, desc, use, isTeam }) {
           bottom: 15px;
         `}
       >
-        {use.map(e => (
+        {techStack.map(e => (
           <DeviconSmall name={e} />
         ))}
       </div>
@@ -109,8 +122,11 @@ function Card({ title, url, desc, use, isTeam }) {
   )
 }
 
+type CardWrapperProps = {
+  children?: React.ReactNode;
+}
 
-function CardWrapper({ children }) {
+const CardWrapper: React.FC<CardWrapperProps> = ({ children }) => {
   return (
     <div
       css={css`
@@ -124,7 +140,7 @@ function CardWrapper({ children }) {
   )
 }
 
-function WorksPage() {
+const WorksPage = () => {
   return (
     <>
       <Seo title="works" />
@@ -139,34 +155,37 @@ function WorksPage() {
             <Card
               title="9rtm.com"
               url="https://9rtm.com"
-              use={["react", "gatsby"]}
-              ss="../assets/images/works_ss/portfolio.png"
-              desc="ポートフォリオ"
+              techStack={["react", "gatsby"]}
+              description="ポートフォリオ"
+              isTeam={false}
             />
             <Card
               title="arcwebtool"
               url="https://9rotama.github.io/arcwebtool/"
-              use={["javascript", "bootstrap"]}
-              desc="譜面制作用マクロ"
+              techStack={["javascript", "bootstrap"]}
+              description="譜面制作用マクロ"
+              isTeam={false}
             />
             <Card
               title="tegei.github.io/works"
               url="https://tegei.github.io/works"
-              use={["react", "gatsby"]}
-              desc="作品紹介ページ"
+              techStack={["react", "gatsby"]}
+              description="作品紹介ページ"
+              isTeam={false}
             />
             <Card
               title="web-slide"
               url="https://web-slide-puce.vercel.app"
-              use={["react"]}
-              desc="ダサいスライドを作れるwebアプリ"
+              techStack={["react"]}
+              description="ダサいスライドを作れるwebアプリ"
               isTeam
             />
             <Card
               title="re-translate-bot"
               url="https://github.com/9rotama/re-translate-bot"
-              use={["python", "heroku"]}
-              desc="Discordのメッセージを自動で再翻訳"
+              techStack={["python", "heroku"]}
+              description="Discordのメッセージを自動で再翻訳"
+              isTeam={false}
             />
           </CardWrapper>
           <h1>🕹️ games</h1>
@@ -174,22 +193,22 @@ function WorksPage() {
             <Card
               title="SkyWitches"
               url="https://9rotama.itch.io/skywitches"
-              use={["unity"]}
-              desc="ホウキの魔女を操作するレースゲーム"
+              techStack={["unity"]}
+              description="ホウキの魔女を操作するレースゲーム"
               isTeam
             />
             <Card
               title="BeySweets"
               url="https://potekumakun.itch.io/bey-sweets"
-              use={["unity"]}
-              desc="お菓子なコマで遊ぶゲーム"
+              techStack={["unity"]}
+              description="お菓子なコマで遊ぶゲーム"
               isTeam
             />
             <Card
               title="Solitude Sniper"
               url="https://unityroom.com/games/solitude-sniper"
-              use={["unity"]}
-              desc="スナイパーFPS"
+              techStack={["unity"]}
+              description="スナイパーFPS"
               isTeam
             />
           </CardWrapper>

@@ -1,24 +1,24 @@
-import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
-import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
+import * as React from "react"
 import { useRef, useEffect } from "react"
-import * as THREE from "three"
+import { css } from "@emotion/react"
 import { Canvas, useFrame, extend } from "@react-three/fiber"
 import {
   EffectComposer,
   ToneMapping,
   DotScreen,
 } from "@react-three/postprocessing"
-/** @jsx jsx */
-import { css, jsx } from "@emotion/react"
+import * as THREE from "three"
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
 import fontJson from "three/examples/fonts/helvetiker_bold.typeface.json"
 
 extend({ TextGeometry })
 
 const moveSpeed = 0.7
 const kao = ["(=_=)", "(>_<)", "(^v^)", "(o_o)", "($_$)", "(@w@)"]
-const text = kao[parseInt(Math.random() * kao.length)]
+const text = kao[Math.floor(Math.random() * kao.length)]
 
-function Text3D() {
+const Text3D = () => {
   const font = new FontLoader().parse(fontJson)
 
   const meshRef = useRef()
@@ -53,7 +53,7 @@ function Text3D() {
   )
 }
 
-function Background() {
+const Background = () => {
   return (
     <div
       css={css`

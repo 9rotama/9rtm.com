@@ -1,7 +1,7 @@
 import * as React from "react"
 import Seo from "../seo"
 
-function NotFoundPage() {
+const NotFoundPage = () => {
   return (
     <>
       <Seo title="404: Not found" />
