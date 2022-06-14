@@ -1,10 +1,8 @@
-import PropTypes from "prop-types"
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 function ContextBox({ pageIcon, pageTitle, children }) {
-
   return (
     <div
       css={css`
@@ -103,11 +101,5 @@ function ContextBox({ pageIcon, pageTitle, children }) {
   )
 }
 
-ContextBox.propTypes = {
-  pageIcon: PropTypes.element.isRequired,
-  pageTitle: PropTypes.string.isRequired,
-  context: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
-}
 
 export default ContextBox

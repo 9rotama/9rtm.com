@@ -3,9 +3,8 @@ import { faBook } from "@fortawesome/free-solid-svg-icons"
 import { faUserGroup } from "@fortawesome/free-solid-svg-icons"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import PropTypes from "prop-types"
 /** @jsx jsx */
-import { css, jsx } from "@emotion/react"
+import { css } from "@emotion/react"
 import Seo from "../seo"
 import ContextBox from "../contextbox"
 import LinkButton from "../linkButton"
@@ -26,10 +25,6 @@ function DeviconSmall({ name }) {
       `}
     />
   )
-}
-
-DeviconSmall.propTypes = {
-  name: PropTypes.string.isRequired,
 }
 
 function Card({ title, url, desc, use, isTeam }) {
@@ -114,12 +109,6 @@ function Card({ title, url, desc, use, isTeam }) {
   )
 }
 
-Card.propTypes = {
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
-  use: PropTypes.string.isRequired,
-}
 
 function CardWrapper({ children }) {
   return (
@@ -205,16 +194,17 @@ function WorksPage() {
             />
           </CardWrapper>
           <h1>🎨 graphics / designs / others</h1>
-          <LinkButton color="#FF2E63" hoverColor="#c21943" url="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing">Google Drive</LinkButton>
-
+          <LinkButton
+            color="#FF2E63"
+            hoverColor="#c21943"
+            url="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing"
+          >
+            Google Drive
+          </LinkButton>
         </p>
       </ContextBox>
     </>
   )
-}
-
-CardWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default WorksPage

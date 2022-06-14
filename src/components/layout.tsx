@@ -6,12 +6,11 @@
  */
 
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Router } from "@gatsbyjs/reach-router"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 /** @jsx jsx */
-import { Global, css, jsx } from "@emotion/react"
+import { Global, css } from "@emotion/react"
 
 import HomePage from "./pages/home"
 import AboutPage from "./pages/about"
@@ -49,11 +48,7 @@ const menuButton = css`
 `
 function Menu() {
   return (
-    <div
-      css={css`
-
-      `}
-    >
+    <div css={css``}>
       <Link to="/about" css={menuButton} onClick="">
         about
       </Link>

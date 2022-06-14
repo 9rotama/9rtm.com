@@ -1,16 +1,10 @@
 import * as React from "react"
-import PropTypes from "prop-types"
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
-/** @jsx jsx */
-import { css, jsx } from "@emotion/react"
+import { css } from "@emotion/react"
 import Seo from "../seo"
 import ContextBox from "../contextbox"
 
 function Devicon({ src }) {
-  Devicon.propTypes = {
-    src: PropTypes.string.isRequired,
-  }
-
   return (
     <img
       src={src}

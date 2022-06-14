@@ -44,7 +44,10 @@ function Text3D() {
 
   return (
     <mesh ref={meshRef}>
-      <textGeometry ref={geoRef} args={[text, { font, size: 40, height: 10 }]} />
+      <textGeometry
+        ref={geoRef}
+        args={[text, { font, size: 40, height: 10 }]}
+      />
       <meshMatcapMaterial attach="material" color="#cfe0fb" />
     </mesh>
   )

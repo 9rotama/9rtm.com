@@ -1,6 +1,5 @@
-import PropTypes from "prop-types"
 /** @jsx jsx */
-import { css, jsx } from "@emotion/react"
+import { css } from "@emotion/react"
 
 function LinkButton({ color, hoverColor, url, children }) {
   return (
@@ -23,7 +22,7 @@ function LinkButton({ color, hoverColor, url, children }) {
     >
       {children}
     </a>
-  );
+  )
 }
 
-export default LinkButton;
+export default LinkButton
