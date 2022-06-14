@@ -1,7 +1,5 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-/** @jsx jsx */
-import { css, jsx } from "@emotion/react"
+import { css } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithub,
@@ -11,12 +9,6 @@ import {
 import Seo from "../seo"
 
 function SnsLink({ icon, url, hoverColor }) {
-  SnsLink.propTypes = {
-    icon: PropTypes.element.isRequired,
-    url: PropTypes.string.isRequired,
-    hoverColor: PropTypes.string.isRequired,
-  }
-
   return (
     <a
       href={url}
@@ -45,7 +37,7 @@ function SnsLink({ icon, url, hoverColor }) {
   )
 }
 
-function SnsLinkWrapper(){
+function SnsLinkWrapper() {
   return (
     <div
       css={css`
@@ -82,7 +74,7 @@ function SnsLinkWrapper(){
         hoverColor="#F6434A"
       />
     </div>
-  );
+  )
 }
 
 function HomePage() {
@@ -155,7 +147,7 @@ function HomePage() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage
