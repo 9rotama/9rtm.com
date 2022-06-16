@@ -2,10 +2,12 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+type metaObject = React.DetailedHTMLProps<React.MetaHTMLAttributes<HTMLMetaElement>, HTMLMetaElement>[] | undefined
+
 type SeoProps = {
   description?: string;
   lang?: string;
-  meta?: string;
+  meta?: any;
   title: string;
 }
 
@@ -33,7 +35,7 @@ const Seo: React.FC<SeoProps> = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s // ${defaultTitle}` : undefined}
       meta={[
         {
           name: "description",
