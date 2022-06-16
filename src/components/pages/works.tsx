@@ -6,7 +6,6 @@ import {
   faUserGroup,
   faUser
 } from "@fortawesome/free-solid-svg-icons"
-import Seo from "../seo"
 import ContextBox from "../contextbox"
 import LinkButton from "../linkButton"
 
@@ -37,7 +36,7 @@ type CardProps = {
   url: string;
   description: string;
   techStack: Array<string>;
-  isTeam: boolean;
+  isTeam?: boolean;
 }
 
 const Card: React.FC<CardProps> = ({ title, url, description, techStack, isTeam }) => {
@@ -143,7 +142,6 @@ const CardWrapper: React.FC<CardWrapperProps> = ({ children }) => {
 const WorksPage = () => {
   return (
     <>
-      <Seo title="works" />
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
@@ -157,21 +155,18 @@ const WorksPage = () => {
               url="https://9rtm.com"
               techStack={["react", "gatsby"]}
               description="ポートフォリオ"
-              isTeam={false}
             />
             <Card
               title="arcwebtool"
               url="https://9rotama.github.io/arcwebtool/"
               techStack={["javascript", "bootstrap"]}
               description="譜面制作用マクロ"
-              isTeam={false}
             />
             <Card
               title="tegei.github.io/works"
               url="https://tegei.github.io/works"
               techStack={["react", "gatsby"]}
               description="作品紹介ページ"
-              isTeam={false}
             />
             <Card
               title="web-slide"
@@ -185,7 +180,6 @@ const WorksPage = () => {
               url="https://github.com/9rotama/re-translate-bot"
               techStack={["python", "heroku"]}
               description="Discordのメッセージを自動で再翻訳"
-              isTeam={false}
             />
           </CardWrapper>
           <h1>🕹️ games</h1>

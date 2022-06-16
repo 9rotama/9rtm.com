@@ -8,6 +8,10 @@ import AboutPage from "./pages/about"
 import WorksPage from "./pages/works"
 import Background from "./background"
 
+let Home = (props: RouteComponentProps) => <HomePage />
+let Works = (props: RouteComponentProps) => <WorksPage />
+let About = (props: RouteComponentProps) => <AboutPage />
+
 const menuButtonStyle = css`
   text-decoration: none;
   border-bottom: solid;
@@ -243,9 +247,9 @@ const Layout = () => {
       <Background />
       <Header siteTitle={data.site.siteMetadata?.title || "Title"} />
       <Router>
-        <AboutPage path="/about" />
-        <WorksPage path="/works" />
-        <HomePage default />
+        <About path="/about" />
+        <Works path="/works" />
+        <Home default />
       </Router>
     </div>
   )

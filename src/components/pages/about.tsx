@@ -1,7 +1,6 @@
 import * as React from "react"
 import { css } from "@emotion/react"
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
-import Seo from "../seo"
 import ContextBox from "../contextbox"
 
 type DeviconProps = {
@@ -23,7 +22,6 @@ const Devicon: React.FC<DeviconProps> = ({ src }) => {
 const AboutPage = () => {
   return (
     <>
-      <Seo title="about me" />
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"

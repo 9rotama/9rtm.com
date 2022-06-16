@@ -7,7 +7,6 @@ import {
   faTwitter,
   faItchIo,
 } from "@fortawesome/free-brands-svg-icons"
-import Seo from "../seo"
 
 type SnsLinkProps = {
   icon: IconDefinition,
@@ -87,7 +86,6 @@ const SnsLinkWrapper = () => {
 const HomePage = () => {
   return (
     <>
-      <Seo title="home" />
       <div
         css={css`
           display: flex;
