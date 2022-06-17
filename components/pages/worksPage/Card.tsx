@@ -3,7 +3,6 @@ import Image from "next/image"
 import { css } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
-  faBook,
   faUserGroup,
   faUser
 } from "@fortawesome/free-solid-svg-icons"
