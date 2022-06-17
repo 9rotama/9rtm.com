@@ -78,7 +78,7 @@ const ContextBox: React.FC<ContextBoxProps> = ({ pageIcon, pageTitle, children }
             css={css`
               color: #252a34;
               margin-top: 70px;
-              font-weight: 600;
+              font-weight: 500;
               font-size: 3em;
               @media (max-width: 720px) {
                 font-size: 2.5em;

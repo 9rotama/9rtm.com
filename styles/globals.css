@@ -14,7 +14,7 @@ a {
 
 h1 {
   font-weight: 500;
-  font-size: 1.8em;
+  font-size: 1.3em;
   color: #252a34;
   text-decoration: none;
   border-bottom: solid;
@@ -22,33 +22,36 @@ h1 {
   border-width: 1px;
   padding-bottom: 2px;
   margin: 60px 0px 30px 0px;
+  background-color: #252a34;
+  color: #f0fdf9;
+  padding: 10px 20px 10px 20px;
+  border-radius: 50vh;
 }
 
 h2 {
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 1.6em;
 }
 
 h3 {
   font-weight: 500;
+  font-size: 1.4em;
 }
 
 h4 {
   font-weight: 500;
 }
+p
 
 @media (max-width: 960px) {
   h1 {
     font-size: 1.8em;
-    font-weight: 500;
   }
   h2 {
-    font-weight: 600;
   }
   h3 {
-    font-weight: 500;
   }
   h4 {
-    font-weight: 500;
   }
 }
 
