@@ -36,6 +36,11 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
               padding: 7px 30px 7px 30px;
             }
           }
+          @media (max-width: 480px) {
+            & {
+              padding: 7px 15px 7px 15px;
+            }
+          }
         `}
       >
         <TitleButton name={siteTitle} />

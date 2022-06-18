@@ -14,6 +14,7 @@ const CardWrapper: React.FC<CardWrapperProps> = ({ children }) => {
         justify-content: space-around;
       `}
     >
+      {/*ラッパーで囲んだCardがchildrenに入る*/}
       {children}
     </div>
   )

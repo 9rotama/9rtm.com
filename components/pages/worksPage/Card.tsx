@@ -25,7 +25,7 @@ const Card: React.FC<CardProps> = ({ title, url, description, techStack, isTeam 
         background: #f5faff;
         border-radius: 20px;
         padding: 0px 30px 30px 30px;
-        margin: 10px;
+        margin-bottom: 20px;
         transition-duration: 0.3s;
         text-decoration: none;
         color: #252a34;
@@ -39,7 +39,7 @@ const Card: React.FC<CardProps> = ({ title, url, description, techStack, isTeam 
 
         @media (max-width: 960px) {
           & {
-            margin: 10px 2.5px 10px 2.5px;
+            margin: 0px 2.5px 20px 2.5px;
             padding: 0px 20px 30px 20px;
             width: 40%;
           }
@@ -78,6 +78,7 @@ const Card: React.FC<CardProps> = ({ title, url, description, techStack, isTeam 
           bottom: 15px;
         `}
       >
+        {/*error: keyのpropが設定されていない(動きはする)*/}
         {techStack.map(e => (
           <DeviconSmall name={e} />
         ))}

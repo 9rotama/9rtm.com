@@ -21,6 +21,13 @@ const SnsLinkButtonList = () => {
 
         animation-name: BlurfadeInDown;
         animation-duration: 0.5s;
+
+        @media (max-width: 480px) {
+          & {
+            margin-left: 0px;
+            margin-right: 0px;
+          }
+        }
       `}
     >
       <SnsLinkButton

@@ -32,6 +32,7 @@ const ContextBox: React.FC<ContextBoxProps> = ({ pageIcon, pageTitle, children }
           position: relative;
           max-width: 800px;
           padding: 50px;
+          padding-bottom: 70px;
           margin-top: 150px;
           left: 50%;
           transform: translate(-50%);
@@ -42,17 +43,14 @@ const ContextBox: React.FC<ContextBoxProps> = ({ pageIcon, pageTitle, children }
             & {
               margin-top: 100px;
               padding: 25px;
+              padding-bottom: 50px;
             }
           }
 
-          @media (max-width: 480px) {
-            & {
-              padding: 25px;
-            }
-          }
         `}
       >
         <div>
+          {/*トップに来る円*/}
           <div
             css={css`
               position: relative;
@@ -65,6 +63,7 @@ const ContextBox: React.FC<ContextBoxProps> = ({ pageIcon, pageTitle, children }
               z-index: 5;
             `}
           >
+            {/*ページごとのアイコン*/}
             <FontAwesomeIcon
               icon={pageIcon}
               css={css`
@@ -74,6 +73,7 @@ const ContextBox: React.FC<ContextBoxProps> = ({ pageIcon, pageTitle, children }
               `}
             />
           </div>
+          {/*ページタイトル*/}
           <div
             css={css`
               color: #252a34;
@@ -91,6 +91,7 @@ const ContextBox: React.FC<ContextBoxProps> = ({ pageIcon, pageTitle, children }
             {pageTitle}
           </div>
         </div>
+        {/*ページ内容*/}
         {children}
       </div>
       <footer
