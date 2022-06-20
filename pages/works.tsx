@@ -6,6 +6,7 @@ import ContextBox from "../components/ContextBox"
 import LinkButton from "../components/LinkButton"
 import CardWrapper from "../components/pages/worksPage/CardWrapper"
 import Card from "../components/pages/worksPage/Card"
+import Background from "../components/background/Background"
 
 const WorksPage = () => {
   return (

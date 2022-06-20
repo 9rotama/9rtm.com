@@ -46,7 +46,6 @@ const ContextBox: React.FC<ContextBoxProps> = ({ pageIcon, pageTitle, children }
               padding-bottom: 50px;
             }
           }
-
         `}
       >
         <div>
@@ -78,6 +77,7 @@ const ContextBox: React.FC<ContextBoxProps> = ({ pageIcon, pageTitle, children }
             css={css`
               color: #252a34;
               margin-top: 70px;
+              margin-bottom: 70px;
               font-weight: 500;
               font-size: 3em;
               @media (max-width: 720px) {
