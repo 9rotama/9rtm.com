@@ -87,7 +87,7 @@ const WorksPage = () => {
         <CardWrapper>
           {webApps.map((e) => (
             <Card
-              key={e.title}
+              key={e.title + "-workscard"}
               title={e.title}
               url={e.url}
               description={e.description}
@@ -100,7 +100,7 @@ const WorksPage = () => {
         <CardWrapper>
           {games.map((e) => (
             <Card
-              key={e.title}
+              key={e.title + "-workscard"}
               title={e.title}
               url={e.url}
               description={e.description}

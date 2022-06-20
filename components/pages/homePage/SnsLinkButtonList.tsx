@@ -23,7 +23,7 @@ const snsLinks: Array<snsLink> = [
     hoverColor: "#9b5de5",
   },
   {
-    name: "github",
+    name: "twitter",
     icon: faTwitter,
     url: "https://twitter.com/glctose_9",
     hoverColor: "#00bbf9",
@@ -61,7 +61,7 @@ const SnsLinkButtonList = () => {
     >
       {snsLinks.map((e) => (
         <SnsLinkButton
-          key={e.name}
+          key={e.name + "-snslinks"}
           icon={e.icon}
           url={e.url}
           hoverColor={e.hoverColor}

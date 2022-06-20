@@ -6,7 +6,7 @@ type DeviconSmallProps = {
   key: string;
 };
 
-const DeviconSmall: React.FC<DeviconSmallProps> = ({ name, key }) => {
+const DeviconSmall: React.FC<DeviconSmallProps> = ({ name }) => {
   return (
     <img
       src={
