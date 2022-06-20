@@ -1,12 +1,12 @@
-import * as React from "react"
-import Image from "next/image"
-import { css } from "@emotion/react"
+import * as React from "react";
+import { css } from "@emotion/react";
 
 type DeviconSmallProps = {
   name: string;
-}
+  key: string;
+};
 
-const DeviconSmall:React.FC<DeviconSmallProps> = ({ name }) => {
+const DeviconSmall: React.FC<DeviconSmallProps> = ({ name, key }) => {
   return (
     <img
       src={
@@ -22,7 +22,7 @@ const DeviconSmall:React.FC<DeviconSmallProps> = ({ name }) => {
         margin-right: 10px;
       `}
     />
-  )
-}
+  );
+};
 
-export default DeviconSmall
+export default DeviconSmall;

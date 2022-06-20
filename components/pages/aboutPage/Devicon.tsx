@@ -1,18 +1,20 @@
-import * as React from "react"
-import { css } from "@emotion/react"
+import * as React from "react";
+import { css } from "@emotion/react";
 
 type DeviconProps = {
   name: string;
-}
+};
 
 const Devicon: React.FC<DeviconProps> = ({ name }) => {
   return (
     <img
-      src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/"
-      + name
-      + "/"
-      + name
-      + "-original.svg"}
+      src={
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/" +
+        name +
+        "/" +
+        name +
+        "-original.svg"
+      }
       alt={name}
       css={css`
         width: 45px;
@@ -20,6 +22,6 @@ const Devicon: React.FC<DeviconProps> = ({ name }) => {
       `}
     />
   );
-}
+};
 
-export default Devicon
+export default Devicon;

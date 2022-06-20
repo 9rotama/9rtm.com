@@ -1,15 +1,19 @@
-import * as React from "react"
-import { css } from "@emotion/react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core"
+import * as React from "react";
+import { css } from "@emotion/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 type SnsLinkButtonProps = {
-  icon: IconDefinition,
-  url: string,
-  hoverColor: string
-}
+  icon: IconDefinition;
+  url: string;
+  hoverColor: string;
+};
 
-const SnsLinkButton: React.FC<SnsLinkButtonProps> = ({ icon, url, hoverColor }) => {
+const SnsLinkButton: React.FC<SnsLinkButtonProps> = ({
+  icon,
+  url,
+  hoverColor,
+}) => {
   return (
     <a
       href={url}
@@ -35,7 +39,7 @@ const SnsLinkButton: React.FC<SnsLinkButtonProps> = ({ icon, url, hoverColor }) 
         `}
       />
     </a>
-  )
-}
+  );
+};
 
 export default SnsLinkButton;

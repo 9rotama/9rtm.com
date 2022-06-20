@@ -1,7 +1,6 @@
-import * as React from "react"
-import { css } from "@emotion/react"
-import Layout from "../components/Layout"
-import SnsLinkButtonlist from "../components/pages/homePage/SnsLinkButtonList"
+import * as React from "react";
+import { css } from "@emotion/react";
+import SnsLinkButtonlist from "../components/pages/homePage/SnsLinkButtonList";
 
 const HomePage = () => {
   return (
@@ -26,7 +25,7 @@ const HomePage = () => {
             box-shadow: 0 10px #baccd4ee;
 
             animation-name: BlurfadeInDown;
-            animation-duration: 0.5s;
+            animation-duration: 0.3s;
 
             @media (max-width: 480px) {
               & {
@@ -35,7 +34,7 @@ const HomePage = () => {
             }
           `}
         >
-        {/*TODO: ここにGIFアニメを入れる*/}
+          {/*TODO: ここにGIFアニメを入れる*/}
           <div
             css={css`
               position: relative;
@@ -43,7 +42,7 @@ const HomePage = () => {
               font-weight: 500;
 
               animation-name: BlurfadeInDown;
-              animation-duration: 0.4s;
+              animation-duration: 0.5s;
 
               @media (max-width: 480px) {
                 & {
@@ -52,13 +51,14 @@ const HomePage = () => {
               }
             `}
           >
-            ＼welcome to my portfolio !! ／ <br />（っ ‘ ᵕ ‘ ｃ）（っ ‘ ᵕ ‘ ｃ)
+            ＼welcome to my portfolio !! ／ <br />
+            （っ ‘ ᵕ ‘ ｃ）（っ ‘ ᵕ ‘ ｃ)
           </div>
           <SnsLinkButtonlist />
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

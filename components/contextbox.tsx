@@ -1,15 +1,19 @@
-import * as React from "react"
-import { css, jsx } from "@emotion/react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import * as React from "react";
+import { css } from "@emotion/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 type ContextBoxProps = {
   pageIcon: IconDefinition;
   pageTitle: string;
   children: React.ReactNode;
-}
+};
 
-const ContextBox: React.FC<ContextBoxProps> = ({ pageIcon, pageTitle, children }) => {
+const ContextBox: React.FC<ContextBoxProps> = ({
+  pageIcon,
+  pageTitle,
+  children,
+}) => {
   return (
     <div
       css={css`
@@ -106,8 +110,7 @@ const ContextBox: React.FC<ContextBoxProps> = ({ pageIcon, pageTitle, children }
         © {new Date().getFullYear()} 9rotama
       </footer>
     </div>
-  )
-}
+  );
+};
 
-
-export default ContextBox
+export default ContextBox;
