@@ -36,10 +36,11 @@ const GithubActivity = () => {
           icon={faGithub}
           css={css`
             color: #253a60a0;
-            margin: 0 0.8rem 0.8rem 0.8rem;
+            margin: 0 0.8rem 0rem 0.8rem;
             font-size: 1.8em;
           `}
         />
+        <p css={css`margin-bottom: 20px;`}>9rotama&apos;s github calender</p>
         <GitHubCalendar
           username="9rotama"
           year={new Date().getFullYear()}
