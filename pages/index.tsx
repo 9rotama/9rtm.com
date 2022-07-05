@@ -34,7 +34,6 @@ const HomePage = () => {
             }
           `}
         >
-          <iframe src="https://giphy.com/embed/3oz8xKZfsJNTgEdWw0" width="300" height="200" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>o
           <div
             css={css`
               position: relative;

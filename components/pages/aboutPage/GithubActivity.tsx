@@ -2,7 +2,6 @@ import * as React from "react";
 import { css } from "@emotion/react";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import GitHubCalendar from "react-github-calendar";
 
 const GithubActivity = () => {
   const theme = {
@@ -41,14 +40,9 @@ const GithubActivity = () => {
           `}
         />
         <p css={css`margin-bottom: 20px;`}>9rotama&apos;s github calender</p>
-        <GitHubCalendar
-          username="9rotama"
-          year={new Date().getFullYear()}
-          theme={theme}
-        />
       </div>
     </div>
   );
 };
 
-export default GithubActivity;
+//export default GithubActivity;
