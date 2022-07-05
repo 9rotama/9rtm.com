@@ -28,14 +28,15 @@ const SnsLinkButton: React.FC<SnsLinkButtonProps> = ({
         css={css`
           color: #253a60a0;
           margin: 0 0.8rem 0 0.8rem;
-          font-size: 1.8em;
-          transition-duration: 0.3s;
+          font-size: 1.5em;
+          transition-duration: 0.2s;
+          animation-name: BlurfadeInDown;
+          animation-duration: 0.4s;
 
           &:hover {
             color: ${hoverColor};
-            filter: drop-shadow(0px 4px 2px #252a3432);
             transform: scale(1.3);
-            transition-duration: 0.3s;
+            transition-duration: 0.2s;
           }
         `}
       />

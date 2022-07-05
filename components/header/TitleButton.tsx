@@ -12,8 +12,9 @@ const TitleButton: React.FC<TitleButtonProps> = ({ name }) => {
       css={css`
         color: #252a34;
         text-decoration: none;
-        font-size: 2em;
-        font-weight: 600;
+        font-family: "Dosis", "M PLUS 1", sans-serif;
+        font-size: 2.3em;
+        font-weight: 400;
         padding: 0 10px 0 10px;
         margin-right: auto;
 

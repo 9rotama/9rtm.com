@@ -4,7 +4,7 @@ import { Vector3 }from "three";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { useFrame, extend, ReactThreeFiber } from "@react-three/fiber";
-import fontJson from "three/examples/fonts/helvetiker_regular.typeface.json";
+import fontJson from "three/examples/fonts/helvetiker_bold.typeface.json";
 
 
 declare global {
@@ -15,12 +15,12 @@ declare global {
   }
 }
 
-
+const moveSpeed = 0.7;
+const kao = ["(=_=)", "(>_<)", "(+~+)", "(o_o)", "($_$)", "(@w@)"];
+const text = kao[Math.floor(Math.random() * kao.length)*0];
 
 const ThreeText = () => {
-  const moveSpeed = 0.7;
-  const kao = ["(=_=)", "(>_<)", "(+~+)", "(o_o)", "($_$)", "(@w@)"];
-  const text = kao[Math.floor(Math.random() * kao.length)];
+
   const font = new FontLoader().parse(fontJson);
 
   const meshRef = useRef<any>(null);

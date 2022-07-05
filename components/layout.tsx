@@ -9,7 +9,7 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
-      <Header siteTitle={"9rtm.com"} />
+      <Header siteTitle={"9RTM.COM"} />
       <Background />
       {children}
     </div>

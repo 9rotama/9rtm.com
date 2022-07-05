@@ -55,15 +55,16 @@ const Card: React.FC<CardProps> = ({
       `}
       href={url}
     >
-      <h2
+      <h3
         css={css`
+        font-size: 1.3em;
           @media (max-width: 960px) {
-            font-size: 1.3em;
+            font-size: 1.1em;
           }
         `}
       >
         {title}
-      </h2>
+      </h3>
       <p
         css={css`
           margin-bottom: 40px;
@@ -94,7 +95,7 @@ const Card: React.FC<CardProps> = ({
           color: #252f6022;
           margin-bottom: auto;
           font-size: 2em;
-          bottom: 20px;
+          bottom: 17px;
           right: 8%;
         `}
       />

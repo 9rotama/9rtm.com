@@ -6,15 +6,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type LinkButtonProps = {
-  color: string;
-  hoverColor: string;
   url: string;
   children: React.ReactNode;
 };
 
 const LinkButton: React.FC<LinkButtonProps> = ({
-  color,
-  hoverColor,
   url,
   children,
 }) => {
@@ -27,16 +23,15 @@ const LinkButton: React.FC<LinkButtonProps> = ({
     >
       <a
         css={css`
-          padding: 10px 20px 10px 10px;
+          padding: 20px 20px 20px 10px;
           border-radius: 50vh;
-          background: ${color};
-          color: white;
+          background: #252a34;
+          color: #d0dde9;
           text-decoration: none;
           transition-duration: 0.2s;
 
           &:hover {
-            background: ${hoverColor};
-
+            background: #090b0d;
             transition-duration: 0.2s;
           }
         `}
@@ -45,7 +40,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
         <FontAwesomeIcon
           icon={faArrowUpRightFromSquare}
           css={css`
-            color: #ffffff;
+            color: #d0dde9;
             margin: 0 0.8rem 0 0.8rem;
             font-size: 1.3em;
             transition-duration: 0.3s;
@@ -54,7 +49,6 @@ const LinkButton: React.FC<LinkButtonProps> = ({
         {children}
       </a>
     </div>
-    
   );
 };
 

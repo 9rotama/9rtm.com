@@ -15,6 +15,7 @@ const toolsAndServices: Array<Technology> = [
   {id: "inkscape", name: "INKSCAPE"},
   {id: "git", name: "GIT"},
   {id: "blender", name: "BLENDER"},
+  {id: "docker", name: "DOCKER"},
 ];
 
 const programming: Array<Technology> = [
@@ -23,7 +24,6 @@ const programming: Array<Technology> = [
   {id: "css3", name: "CSS3"},
   {id: "react", name: "REACT"},
   {id: "cplusplus", name: "C++"},
-  {id: "csharp", name: "C#"},
   {id: "javascript", name: "JAVASCRIPT"},
   {id: "typescript", name: "TYPESCRIPT"},
   {id: "python", name: "PYTHON"},
@@ -36,38 +36,46 @@ const AboutPage = () => {
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
       />
-      <ContextBox pageIcon={faAddressCard} pageTitle="about me">
+      <ContextBox pageIcon={faAddressCard} pageTitle="about me" pageDescription="自己紹介、スキルなど">
         <h1>📘 profile</h1>
         <img
           src="https://avatars.githubusercontent.com/u/65887771?v=4"
           alt={"prof"}
           css={css`
-            float: left;
-            margin: 0 40px 20px 0;
+            margin: 20px 0 20px 0;
             position: relative;
             width: 180px;
             height: 180px;
-            border-radius: 10%;
-            filter: drop-shadow(0px 10px 10px #252a4f55);
+            border-radius: 50%;
+
+            transition-duration: 0.2s;
 
             @media (max-width: 600px) {
               & {
                 float: none;
               }
             }
+
+            &:hover {
+              border-radius: 10%;
+
+              transition-duration: 0.2s;
+            }
           `}
         />
         <div>
-          <span
+          <h2
             css={css`
-              font-size: 2em;
-              font-weight: 600;
-              border-bottom: dashed #08d9d6 6px;
+              font-size: 1.5em;
+              border-bottom: dotted #027775 5px;
+              display: inline-block;
             `}
           >
             9rotama
-          </span>
-          <h3>frontend dev / game dev / UI design</h3>
+          </h2>
+          <h3>
+            frontend dev / game dev / UI design
+          </h3>
           情報系大学の3年です。音楽ゲームが好きです。
           <br />
           ごく稀にイラストを描きます。
@@ -85,7 +93,7 @@ const AboutPage = () => {
         {programming.map((e) => (
           <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
         ))}
-        <h1>🧰 git-contributes</h1>
+        <h1>🧰 github-calender</h1>
         {/*<GithubActivity />*/}
       </ContextBox>
     </>

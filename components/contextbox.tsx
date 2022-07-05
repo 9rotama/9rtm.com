@@ -6,17 +6,20 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 type ContextBoxProps = {
   pageIcon: IconDefinition;
   pageTitle: string;
+  pageDescription: string;
   children: React.ReactNode;
 };
 
 const ContextBox: React.FC<ContextBoxProps> = ({
   pageIcon,
   pageTitle,
+  pageDescription,
   children,
 }) => {
   return (
     <div
       css={css`
+        text-align: center;
         padding-left: 20px;
         padding-right: 20px;
 
@@ -35,8 +38,7 @@ const ContextBox: React.FC<ContextBoxProps> = ({
         css={css`
           position: relative;
           max-width: 800px;
-          padding: 50px;
-          padding-bottom: 70px;
+          padding: 50px 50px 70px 50px;
           margin-top: 150px;
           left: 50%;
           transform: translate(-50%);
@@ -61,9 +63,10 @@ const ContextBox: React.FC<ContextBoxProps> = ({
               border-radius: 50%;
               width: 100px;
               height: 100px;
-              margin-bottom: -50px;
+              margin: 0 auto -50px auto;
               display: flex;
               z-index: 5;
+
             `}
           >
             {/*ページごとのアイコン*/}
@@ -72,18 +75,20 @@ const ContextBox: React.FC<ContextBoxProps> = ({
               css={css`
                 color: #d0dde9;
                 margin: auto;
-                font-size: 3em;
+                font-size: 2.5em;
               `}
             />
           </div>
           {/*ページタイトル*/}
           <div
             css={css`
+            display: inline-block;
               color: #252a34;
-              margin-top: 70px;
-              margin-bottom: 70px;
-              font-weight: 600;
-              font-size: 3em;
+              margin: 70px 0 0 0;
+              text-transform: uppercase;
+              font-family: "Dosis", "M PLUS 1", sans-serif;
+              font-weight: 500;
+              font-size: 2.8em;
               @media (max-width: 720px) {
                 font-size: 2.5em;
               }
@@ -94,6 +99,9 @@ const ContextBox: React.FC<ContextBoxProps> = ({
           >
             {pageTitle}
           </div>
+          <p>
+            {pageDescription}
+          </p>
         </div>
         {/*ページ内容*/}
         {children}

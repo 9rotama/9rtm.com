@@ -82,7 +82,7 @@ const WorksPage = () => {
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
       />
-      <ContextBox pageIcon={faBook} pageTitle="works">
+      <ContextBox pageIcon={faBook} pageTitle="works" pageDescription="作ったもの">
         <h1>🌎 web-apps</h1>
         <CardWrapper>
           {webApps.map((e) => (
@@ -111,11 +111,9 @@ const WorksPage = () => {
         </CardWrapper>
         <h1>🎨 graphics / designs / others</h1>
         <LinkButton
-          color="#FF2E63"
-          hoverColor="#c21943"
           url="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing"
         >
-          jump to drive
+          jump to google drive
         </LinkButton>
       </ContextBox>
     </>
