@@ -19,12 +19,12 @@ const activeTheme: colorTheme = {
   textColor: "#d0dde9",
 };
 
-type MenuButtonProps = {
+type Props = {
   name: string;
   path: string;
 };
 
-const MenuButton: React.FC<MenuButtonProps> = ({ name, path }) => {
+const MenuButton: React.FC<Props> = ({ name, path }) => {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
 

@@ -1,12 +1,12 @@
 import * as React from "react";
 import Header from "./header/Header";
-import Background from "../components/background/Background";
+import Background from "./background/Background";
 
-type LayoutProps = {
+type Props = {
   children: React.ReactNode;
 };
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div>
       <Header siteTitle={"9RTM.COM"} />

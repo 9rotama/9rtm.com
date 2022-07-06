@@ -4,11 +4,11 @@ import { Global, css } from "@emotion/react";
 import TitleButton from "./TitleButton";
 import Menu from "./Menu";
 
-type HeaderProps = {
+type Props = {
   siteTitle: string;
 };
 
-const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
+const Header: React.FC<Props> = ({ siteTitle }) => {
   return (
     <header
       css={css`
