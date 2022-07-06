@@ -69,7 +69,6 @@ const Devicon: React.FC<DeviconProps> = ({ name, id }) => {
           font-family: "Roboto Mono", monospace;
 
           transition-duration: 0.2s;
-
         `}
         ref={tipRef}
       >
