@@ -45,7 +45,7 @@ const webApps: Array<workContexts> = [
   {
     title: "re-translate-bot",
     url: "https://github.com/9rotama/re-translate-bot",
-    techStack: ["python", "heroku"],
+    techStack: ["python", "amazonwebservices"],
     description: "Discordのメッセージを自動で再翻訳",
     isTeam: false,
   },

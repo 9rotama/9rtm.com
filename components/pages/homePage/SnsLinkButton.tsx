@@ -18,25 +18,30 @@ const SnsLinkButton: React.FC<SnsLinkButtonProps> = ({
     <a
       href={url}
       css={css`
+        display: flex;
+        background: #eff6fadd;
+        color: #253a60a0;
+        width: 50px;
+        height: 50px;
+        padding: 2px;
+        margin: 3px;
+        border-radius: 50%;
+        transition-duration: 0.2s;
+
         &:hover {
-          background-color: transparent;
+          background: ${hoverColor};
+          color: #ffffffdd;
+          transition-duration: 0.2s;
         }
       `}
     >
       <FontAwesomeIcon
         icon={icon}
         css={css`
-          color: #253a60a0;
-          margin: 0 0.8rem 0 0.8rem;
+          margin: auto;
           font-size: 1.5em;
-          transition-duration: 0.2s;
-          animation-name: BlurfadeInDown;
-          animation-duration: 0.4s;
 
           &:hover {
-            color: ${hoverColor};
-            transform: scale(1.3);
-            transition-duration: 0.2s;
           }
         `}
       />
