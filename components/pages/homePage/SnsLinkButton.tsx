@@ -3,13 +3,13 @@ import { css } from "@emotion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-type SnsLinkButtonProps = {
+type Props = {
   icon: IconDefinition;
   url: string;
   hoverColor: string;
 };
 
-const SnsLinkButton: React.FC<SnsLinkButtonProps> = ({
+const SnsLinkButton: React.FC<Props> = ({
   icon,
   url,
   hoverColor,

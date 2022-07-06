@@ -3,14 +3,14 @@ import { css } from "@emotion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-type ContextBoxProps = {
+type Props = {
   pageIcon: IconDefinition;
   pageTitle: string;
   pageDescription: string;
   children: React.ReactNode;
 };
 
-const ContextBox: React.FC<ContextBoxProps> = ({
+const ContextBox: React.FC<Props> = ({
   pageIcon,
   pageTitle,
   pageDescription,

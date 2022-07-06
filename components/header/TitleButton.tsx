@@ -2,11 +2,11 @@ import * as React from "react";
 import Link from "next/link";
 import { css } from "@emotion/react";
 
-type TitleButtonProps = {
+type Props = {
   name: string;
 };
 
-const TitleButton: React.FC<TitleButtonProps> = ({ name }) => {
+const TitleButton: React.FC<Props> = ({ name }) => {
   return (
     <div
       css={css`

@@ -2,12 +2,12 @@ import * as React from "react";
 import { css } from "@emotion/react";
 import { useRef } from "react";
 
-type DeviconProps = {
+type Props = {
   name: string;
   id: string;
 };
 
-const Devicon: React.FC<DeviconProps> = ({ name, id }) => {
+const Devicon: React.FC<Props> = ({ name, id }) => {
   const tipRef = useRef<HTMLDivElement>(null);
 
   const handleMouseEnter = () => {

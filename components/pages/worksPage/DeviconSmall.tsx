@@ -1,12 +1,12 @@
 import * as React from "react";
 import { css } from "@emotion/react";
 
-type DeviconSmallProps = {
+type Props = {
   name: string;
   key: string;
 };
 
-const DeviconSmall: React.FC<DeviconSmallProps> = ({ name }) => {
+const DeviconSmall: React.FC<Props> = ({ name }) => {
   return (
     <img
       src={

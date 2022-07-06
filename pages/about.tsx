@@ -93,8 +93,6 @@ const AboutPage = () => {
         {programming.map((e) => (
           <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
         ))}
-        <h1>🧰 github-calender</h1>
-        {/*<GithubActivity />*/}
       </ContextBox>
     </>
   );
