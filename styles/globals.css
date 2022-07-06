@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=M+PLUS+1:wght@100;400;600;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;600;800&display=swap');
+
+body {
+  font-family: "Inter", "M PLUS 1", sans-serif;
+  font-weight: 400;
+  color: #252a34;
+  background-color: #d0dde9;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-family: "Dosis", "M PLUS 1", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.7em;
+  color: #252a34;
+  text-decoration: none;
+  margin: 80px -10px 30px -10px;
+  padding: 10px 20px 10px 20px;
+  border-bottom: 1px solid #252a3455;
+  color: #252a34;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+h4 {
+  font-weight: 500;
+}
+
+@media (max-width: 960px) {
+  h1 {
+    font-size: 1.15em;
+    padding: 7px 15px 7px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1em;
+    padding: 5px 10px 5px 10px;
+  }
+}
+
+@keyframes BlurfadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes BlurUp {
+  0% {
+    transform: translateY(70px);
+    filter: blur(20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes BlurfadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+    filter: blur(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes Down {
+  0% {
+    transform: translateY(-70px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
