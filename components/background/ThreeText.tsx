@@ -28,7 +28,7 @@ const ThreeText = () => {
   useEffect(() => {
     setText(KAOMOJIS[Math.floor(Math.random() * KAOMOJIS.length)]);
     setInitRot(new Vector3(Math.random() * 360, Math.random() * 360, Math.random() * 360));
-  },[text])
+  },[]);
 
   useFrame((state) => {
     meshRef.current!.geometry.computeBoundingBox();
