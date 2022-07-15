@@ -17,12 +17,14 @@ const DeviconSmall: React.FC<Props> = ({ name }) => {
         "-original.svg"
       }
       alt={name}
-      css={css`
-        width: 30px;
-        margin-right: 10px;
-      `}
+      css={css`${iconStyle}`}
     />
   );
 };
+
+const iconStyle = css`
+  width: 30px;
+  margin-right: 10px;
+`;
 
 export default DeviconSmall;

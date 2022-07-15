@@ -29,6 +29,7 @@ const programming: Array<Technology> = [
   {id: "python", name: "PYTHON"},
 ];
 
+
 const AboutPage = () => {
   return (
     <>
@@ -41,35 +42,11 @@ const AboutPage = () => {
         <img
           src="https://avatars.githubusercontent.com/u/65887771?v=4"
           alt={"prof"}
-          css={css`
-            margin: 20px 0 20px 0;
-            position: relative;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-
-            transition-duration: 0.2s;
-
-            @media (max-width: 600px) {
-              & {
-                float: none;
-              }
-            }
-
-            &:hover {
-              border-radius: 10%;
-
-              transition-duration: 0.2s;
-            }
-          `}
+          css={css`${profImgStyle}`}
         />
         <div>
           <h2
-            css={css`
-              font-size: 1.5em;
-              border-bottom: dotted #027775 5px;
-              display: inline-block;
-            `}
+            css={css`${nameStyle}`}
           >
             9rotama
           </h2>
@@ -80,11 +57,6 @@ const AboutPage = () => {
           <br />
           ごく稀にイラストを描きます。
         </div>
-        <p
-          css={css`
-            clear: both;
-          `}
-        />
         <h1>🧰 tools / services</h1>
         {toolsAndServices.map((e) => (
           <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
@@ -97,5 +69,29 @@ const AboutPage = () => {
     </>
   );
 };
+
+const profImgStyle = css`
+  position: relative;
+  margin: 20px 0 20px 0;
+
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+
+  transition-duration: 0.2s;
+
+  &:hover {
+    border-radius: 10%;
+
+    transition-duration: 0.2s;
+  }
+`
+
+const nameStyle = css`
+  display: inline-block;
+
+  font-size: 1.5em;
+  border-bottom: dotted #027775 5px;
+`
 
 export default AboutPage;

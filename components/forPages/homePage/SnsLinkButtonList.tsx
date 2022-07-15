@@ -39,19 +39,7 @@ const snsLinks: Array<snsLink> = [
 const SnsLinkButtonList = () => {
   return (
     <div
-      css={css`
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        padding: 10px 10px 10px 10px;
-
-        @media (max-width: 480px) {
-          & {
-            margin-left: 0px;
-            margin-right: 0px;
-          }
-        }
-      `}
+      css={css`${listStyle}`}
     >
       {snsLinks.map((e) => (
         <SnsLinkButton
@@ -64,5 +52,21 @@ const SnsLinkButtonList = () => {
     </div>
   );
 };
+
+const listStyle = css`
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+
+  padding: 10px 10px 10px 10px;
+
+  @media (max-width: 480px) {
+    & {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+`;
 
 export default SnsLinkButtonList;
