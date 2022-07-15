@@ -18,32 +18,39 @@ const ContextBox: React.FC<Props> = ({
 }) => {
   return (
     <div
-      css={css`${wrapperStyle}`}
+      css={css`
+        ${wrapperStyle}
+      `}
     >
       <div
-        css={css`${bgStyle}`}
+        css={css`
+          ${bgStyle}
+        `}
       >
-
         <div>
           {/*ページごとのアイコンの背景になる円*/}
           <div
-            css={css`${iconBgStyle}`}
+            css={css`
+              ${iconBgStyle}
+            `}
           >
             {/*ページごとのアイコン*/}
             <FontAwesomeIcon
               icon={pageIcon}
-              css={css`${iconStyle}`}
+              css={css`
+                ${iconStyle}
+              `}
             />
           </div>
           {/*ページタイトル*/}
           <div
-            css={css`${titleStyle}`}
+            css={css`
+              ${titleStyle}
+            `}
           >
             {pageTitle}
           </div>
-          <p>
-            {pageDescription}
-          </p>
+          <p>{pageDescription}</p>
         </div>
 
         {/*ページ内容*/}
@@ -51,7 +58,9 @@ const ContextBox: React.FC<Props> = ({
       </div>
 
       <footer
-        css={css`${footerStyle}`}
+        css={css`
+          ${footerStyle}
+        `}
       >
         © {new Date().getFullYear()} 9rotama
       </footer>
@@ -74,7 +83,7 @@ const wrapperStyle = css`
       padding-right: 10px;
     }
   }
-`
+`;
 
 const bgStyle = css`
   position: relative;

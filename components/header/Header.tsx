@@ -39,7 +39,7 @@ const headerStyle = css`
   animation-duration: 0.5s;
 
   z-index: 100;
-`
+`;
 
 const itemDisplayStyle = css`
   display: flex;
@@ -58,6 +58,6 @@ const itemDisplayStyle = css`
       padding: 7px 15px 7px 15px;
     }
   }
-`
+`;
 
 export default Header;

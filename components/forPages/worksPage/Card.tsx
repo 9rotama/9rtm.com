@@ -22,21 +22,29 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <a
-      css={css`${cardStyle}`}
+      css={css`
+        ${cardStyle}
+      `}
       href={url}
     >
       <h3
-        css={css`${titleStyle}`}
+        css={css`
+          ${titleStyle}
+        `}
       >
         {title}
       </h3>
       <p
-        css={css`${descriptionStyle}`}
+        css={css`
+          ${descriptionStyle}
+        `}
       >
         {description}
       </p>
       <div
-        css={css`${techStackListStyle}`}
+        css={css`
+          ${techStackListStyle}
+        `}
       >
         {techStack.map((e) => (
           <DeviconSmall name={e} key={e} />
@@ -44,7 +52,9 @@ const Card: React.FC<CardProps> = ({
       </div>
       <FontAwesomeIcon
         icon={isTeam ? faUserGroup : faUser}
-        css={css`${iconStyle}`}
+        css={css`
+          ${iconStyle}
+        `}
       />
     </a>
   );

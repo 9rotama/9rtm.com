@@ -6,15 +6,21 @@ const HomePage = () => {
   return (
     <>
       <div
-        css={css`${wrapStyle}`}
+        css={css`
+          ${wrapStyle}
+        `}
       >
         <div
-          css={css`${welcomeStyle}`}
+          css={css`
+            ${welcomeStyle}
+          `}
         >
           welcome.
         </div>
         <div
-          css={css`${borderStyle}`}
+          css={css`
+            ${borderStyle}
+          `}
         />
         <SnsLinkButtonlist />
       </div>
@@ -34,7 +40,7 @@ const wrapStyle = css`
 
   animation-name: BlurfadeInDown;
   animation-duration: 0.4s;
-`
+`;
 
 const welcomeStyle = css`
   font-size: 10em;
@@ -53,12 +59,12 @@ const welcomeStyle = css`
       font-size: 6em;
     }
   }
-`
+`;
 
 const borderStyle = css`
   border-bottom: 1px solid #252a3477;
   width: 50px;
   margin: -5px 0px 10px 0px;
-`
+`;
 
 export default HomePage;
