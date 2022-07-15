@@ -1,7 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Global, css } from "@emotion/react";
-import MenuButton from "./MenuButton";
+import MenuButton from "../../atoms/header/MenuButton";
 
 type menuItem = {
   name: string;
