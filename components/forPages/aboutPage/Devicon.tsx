@@ -7,8 +7,6 @@ type Props = {
   id: string;
 };
 
-
-
 const Devicon: React.FC<Props> = ({ name, id }) => {
   const tipRef = useRef<HTMLDivElement>(null);
 
@@ -88,7 +86,7 @@ const tipStyle = css`
   font-family: "Roboto Mono", monospace;
 
   transition-duration: 0.2s;
-`
+`;
 
 
 export default Devicon;

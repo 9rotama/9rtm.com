@@ -117,6 +117,6 @@ const techStackListStyle = css`
   position: absolute;
   float: left;
   bottom: 15px;
-`
+`;
 
 export default Card;
