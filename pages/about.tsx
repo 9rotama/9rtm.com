@@ -9,27 +9,6 @@ type Technology = {
   name: string;
 }
 
-const toolsAndServices: Array<Technology> = [
-  {id: "vscode", name: "VSCODE"},
-  {id: "figma", name: "FIGMA"},
-  {id: "inkscape", name: "INKSCAPE"},
-  {id: "git", name: "GIT"},
-  {id: "blender", name: "BLENDER"},
-  {id: "docker", name: "DOCKER"},
-];
-
-const programming: Array<Technology> = [
-  {id: "unity", name: "UNITY"},
-  {id: "html5", name: "HTML5"},
-  {id: "css3", name: "CSS3"},
-  {id: "react", name: "REACT"},
-  {id: "cplusplus", name: "C++"},
-  {id: "javascript", name: "JAVASCRIPT"},
-  {id: "typescript", name: "TYPESCRIPT"},
-  {id: "python", name: "PYTHON"},
-];
-
-
 const AboutPage = () => {
   return (
     <>
@@ -69,6 +48,26 @@ const AboutPage = () => {
     </>
   );
 };
+
+const toolsAndServices: Array<Technology> = [
+  {id: "vscode", name: "VSCODE"},
+  {id: "figma", name: "FIGMA"},
+  {id: "inkscape", name: "INKSCAPE"},
+  {id: "git", name: "GIT"},
+  {id: "blender", name: "BLENDER"},
+  {id: "docker", name: "DOCKER"},
+];
+
+const programming: Array<Technology> = [
+  {id: "unity", name: "UNITY"},
+  {id: "html5", name: "HTML5"},
+  {id: "css3", name: "CSS3"},
+  {id: "react", name: "REACT"},
+  {id: "cplusplus", name: "C++"},
+  {id: "javascript", name: "JAVASCRIPT"},
+  {id: "typescript", name: "TYPESCRIPT"},
+  {id: "python", name: "PYTHON"},
+];
 
 const profImgStyle = css`
   position: relative;
