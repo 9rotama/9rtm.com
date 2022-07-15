@@ -23,84 +23,110 @@ const Card: React.FC<CardProps> = ({
   return (
     <a
       css={css`
-        position: relative;
-        width: 40%;
-        background: #f5faff;
-        border-radius: 20px;
-        padding: 0px 30px 30px 30px;
-        margin-bottom: 20px;
-        transition-duration: 0.3s;
-        text-decoration: none;
-        color: #252a34;
-
-        &:hover {
-          filter: drop-shadow(0px 6px 8px #252a3422);
-          background: #ffffff;
-          transition-duration: 0.3s;
-          transform: translateY(-5px);
-        }
-
-        @media (max-width: 960px) {
-          & {
-            margin: 0px 2.5px 20px 2.5px;
-            padding: 0px 20px 30px 20px;
-            width: 40%;
-          }
-        }
-        @media (max-width: 640px) {
-          & {
-            width: 100%;
-          }
-        }
+        ${cardStyle}
       `}
       href={url}
     >
       <h3
         css={css`
-        font-size: 1.3em;
-          @media (max-width: 960px) {
-            font-size: 1.1em;
-          }
+          ${titleStyle}
         `}
       >
         {title}
       </h3>
       <p
         css={css`
-          margin-bottom: 40px;
-          @media (max-width: 960px) {
-            font-size: 0.9em;
-          }
+          ${descriptionStyle}
         `}
       >
         {description}
       </p>
       <div
         css={css`
-          position: absolute;
-          float: left;
-          bottom: 15px;
+          ${techStackListStyle}
         `}
       >
-        {/*error: keyのpropが設定されていない(動きはする)*/}
         {techStack.map((e) => (
           <DeviconSmall name={e} key={e} />
         ))}
       </div>
-
       <FontAwesomeIcon
         icon={isTeam ? faUserGroup : faUser}
         css={css`
-          position: absolute;
-          color: #252f6022;
-          margin-bottom: auto;
-          font-size: 2em;
-          bottom: 17px;
-          right: 8%;
+          ${iconStyle}
         `}
       />
     </a>
   );
 };
+
+const cardStyle = css`
+  position: relative;
+
+  width: 40%;
+  background: #f5faff;
+  border-radius: 20px;
+  margin: 0 0 20px 0;
+  padding: 0px 30px 30px 30px;
+
+  text-decoration: none;
+  color: #252a34;
+
+  transition-duration: 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+
+    background: #ffffff;
+    filter: drop-shadow(0px 6px 8px #252a3422);
+
+    transition-duration: 0.3s;
+  }
+
+  @media (max-width: 960px) {
+    & {
+      margin: 0px 2.5px 20px 2.5px;
+      padding: 0px 20px 30px 20px;
+    }
+  }
+  @media (max-width: 640px) {
+    & {
+      width: 100%;
+    }
+  }
+`;
+
+const iconStyle = css`
+  position: absolute;
+  bottom: 17px;
+  right: 8%;
+
+  margin-bottom: auto;
+
+  color: #252f6022;
+  font-size: 2em;
+`;
+
+const titleStyle = css`
+  font-size: 1.3em;
+
+  @media (max-width: 960px) {
+    font-size: 1.1em;
+  }
+`;
+
+const descriptionStyle = css`
+  margin-bottom: 40px;
+
+  @media (max-width: 960px) {
+    font-size: 0.9em;
+  }
+`;
+
+const techStackListStyle = css`
+  position: absolute;
+  float: left;
+  bottom: 15px;
+`;
 
 export default Card;

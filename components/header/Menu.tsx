@@ -8,6 +8,20 @@ type menuItem = {
   path: string;
 };
 
+const Menu = () => {
+  return (
+    <div
+      css={css`
+        ${menuDisplayStyle}
+      `}
+    >
+      {menuItems.map((e) => (
+        <MenuButton key={e.name} name={e.name} path={e.path} />
+      ))}
+    </div>
+  );
+};
+
 const menuItems: Array<menuItem> = [
   {
     name: "about",
@@ -19,19 +33,9 @@ const menuItems: Array<menuItem> = [
   },
 ];
 
-const Menu = () => {
-  return (
-    <div
-      css={css`
-        display: flex;
-        justify-content: flex-end;
-      `}
-    >
-      {menuItems.map((e) => (
-        <MenuButton key={e.name} name={e.name} path={e.path} />
-      ))}
-    </div>
-  );
-};
+const menuDisplayStyle = css`
+  display: flex;
+  justify-content: flex-end;
+`;
 
 export default Menu;

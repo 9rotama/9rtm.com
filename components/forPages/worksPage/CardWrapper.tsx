@@ -9,9 +9,7 @@ const CardWrapper: React.FC<Props> = ({ children }) => {
   return (
     <div
       css={css`
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        ${wrapperStyle}
       `}
     >
       {/*ラッパーで囲んだCardがchildrenに入る*/}
@@ -19,5 +17,11 @@ const CardWrapper: React.FC<Props> = ({ children }) => {
     </div>
   );
 };
+
+const wrapperStyle = css`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+`;
 
 export default CardWrapper;

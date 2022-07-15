@@ -18,11 +18,15 @@ const DeviconSmall: React.FC<Props> = ({ name }) => {
       }
       alt={name}
       css={css`
-        width: 30px;
-        margin-right: 10px;
+        ${iconStyle}
       `}
     />
   );
 };
+
+const iconStyle = css`
+  width: 30px;
+  margin-right: 10px;
+`;
 
 export default DeviconSmall;

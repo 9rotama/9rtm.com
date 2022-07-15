@@ -13,24 +13,16 @@ const Devicon: React.FC<Props> = ({ name, id }) => {
   const handleMouseEnter = () => {
     tipRef.current!.style.opacity = "1";
     tipRef.current!.style.marginTop = "0px";
-  }
+  };
   const handleMouseLeave = () => {
     tipRef.current!.style.opacity = "0";
     tipRef.current!.style.marginTop = "-10px";
-  }
+  };
 
   return (
     <div
       css={css`
-        position: relative;
-        display: inline-block;
-        margin-bottom: 20px;
-        transition-duration: 0.2s;
-
-        &:hover {
-          transform: scale(1.2);
-          transition-duration: 0.2s;
-        }
+        ${divStyle}
       `}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -45,30 +37,12 @@ const Devicon: React.FC<Props> = ({ name, id }) => {
         }
         alt={name}
         css={css`
-          width: 45px;
-          margin: 5px;
+          ${imgStyle}
         `}
       />
       <div
         css={css`
-          /*onMouseEnter,onMouseLeaveで変更されるプロパティ(最初に表示しないよう初期化)*/
-          opacity: 0;
-          margin-top: -10px;
-
-          position: absolute;
-          left: 50%;
-          transform: initial;
-          transform: translateX(-50%);
-          border-radius: 5px;
-          padding: 5px;
-          background: linear-gradient(#FFFFFFFF, #FFFFFF66);
-          color: black;
-          text-align: center;
-          font-size: 0.7rem;
-          font-weight: 600;
-          font-family: "Roboto Mono", monospace;
-
-          transition-duration: 0.2s;
+          ${tipStyle}
         `}
         ref={tipRef}
       >
@@ -77,5 +51,47 @@ const Devicon: React.FC<Props> = ({ name, id }) => {
     </div>
   );
 };
+
+const divStyle = css`
+  position: relative;
+  margin-bottom: 20px;
+
+  display: inline-block;
+
+  transition-duration: 0.2s;
+
+  &:hover {
+    transform: scale(1.2);
+    transition-duration: 0.2s;
+  }
+`;
+
+const imgStyle = css`
+  width: 45px;
+  margin: 5px;
+`;
+
+const tipStyle = css`
+  /*onMouseEnter,onMouseLeaveで変更されるプロパティ(最初に表示しないよう初期化)*/
+  opacity: 0;
+  margin-top: -10px;
+
+  position: absolute;
+  left: 50%;
+  transform: initial;
+  transform: translateX(-50%);
+
+  border-radius: 5px;
+  background: linear-gradient(#ffffffff, #ffffff66);
+
+  color: black;
+  text-align: center;
+  padding: 5px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: "Roboto Mono", monospace;
+
+  transition-duration: 0.2s;
+`;
 
 export default Devicon;

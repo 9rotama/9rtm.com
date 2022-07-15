@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fmt": "prettier --write 'components/**/*.tsx' | prettier --write 'components/**/*.tsx'"
+    "fmt": "prettier --write 'components/**/*.tsx' | prettier --write 'pages/**/*.tsx'"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
