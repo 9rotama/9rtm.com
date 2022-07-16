@@ -6,7 +6,7 @@ import {
   faItchIo,
   IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
-import SnsLinkButton from "./SnsLinkButton";
+import SnsLinkButton from "../../atoms/home/SnsLinkButton";
 
 type snsLink = {
   name: string;

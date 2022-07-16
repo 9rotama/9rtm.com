@@ -1,8 +1,8 @@
 import * as React from "react";
 import { css } from "@emotion/react";
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
-import ContextBox from "../components/ContextBox";
-import Devicon from "../components/forPages/aboutPage/Devicon";
+import ContextBox from "../components/templates/ContextBox";
+import Devicon from "../components/atoms/about/Devicon";
 
 type Technology = {
   id: string;
