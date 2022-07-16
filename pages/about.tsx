@@ -42,12 +42,12 @@ const AboutPage = () => {
           <br />
           ごく稀にイラストを描きます。
         </div>
-        <h1>🧰 tools / services</h1>
-        {toolsAndServices.map((e) => (
-          <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
-        ))}
         <h1>⌨️ programming</h1>
         {programming.map((e) => (
+          <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
+        ))}
+        <h1>🧰 tools / services</h1>
+        {toolsAndServices.map((e) => (
           <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
         ))}
       </ContextBox>
@@ -65,14 +65,14 @@ const toolsAndServices: Array<Technology> = [
 ];
 
 const programming: Array<Technology> = [
-  { id: "unity", name: "UNITY" },
-  { id: "html5", name: "HTML5" },
-  { id: "css3", name: "CSS3" },
   { id: "react", name: "REACT" },
-  { id: "cplusplus", name: "C++" },
   { id: "javascript", name: "JAVASCRIPT" },
   { id: "typescript", name: "TYPESCRIPT" },
+  { id: "html5", name: "CSS3" },
+  { id: "css3", name: "CSS3" },
   { id: "python", name: "PYTHON" },
+  { id: "cplusplus", name: "C++" },
+  { id: "unity", name: "UNITY" },
 ];
 
 const profImgStyle = css`

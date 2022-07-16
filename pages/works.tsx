@@ -64,7 +64,7 @@ const webApps: Array<workContexts> = [
   {
     title: "9rtm.com",
     url: "https://9rtm.com",
-    techStack: ["react", "gatsby"],
+    techStack: ["nextjs", "typescript"],
     description: "ポートフォリオ",
     isTeam: false,
   },
@@ -78,14 +78,14 @@ const webApps: Array<workContexts> = [
   {
     title: "tegei.github.io/works",
     url: "https://tegei.github.io/works",
-    techStack: ["react", "gatsby"],
+    techStack: ["gatsby", "javascript"],
     description: "作品紹介ページ",
     isTeam: false,
   },
   {
     title: "web-slide",
     url: "https://web-slide-puce.vercel.app",
-    techStack: ["react"],
+    techStack: ["react", "javascript"],
     description: "ダサいスライドを作れるwebアプリ",
     isTeam: true,
   },
