@@ -75,11 +75,11 @@ const AboutPage = () => {
         />
         <h1>🧰 tools / services</h1>
         {toolsAndServices.map((e) => (
-          <Devicon key={e} name={e} />
+          <Devicon key={e + "-abouticon"} name={e} />
         ))}
         <h1>⌨️ programming</h1>
         {programming.map((e) => (
-          <Devicon key={e} name={e} />
+          <Devicon key={e + "-abouticon"} name={e} />
         ))}
         <h1>🧰 git-contributes</h1>
         <GithubActivity />
