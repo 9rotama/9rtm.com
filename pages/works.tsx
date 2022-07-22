@@ -1,9 +1,9 @@
 import * as React from "react";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 import ContextBox from "../components/templates/ContextBox";
-import LinkButton from "../components/atoms/LinkButton";
+import LinkButton from "../components/atoms/common/LinkButton";
 import CardWrapper from "../components/organisms/works/CardWrapper";
-import Card from "../components/molecules/works/Card";
+import Card from "../components/organisms/works/Card";
 
 type workContexts = {
   title: string;
