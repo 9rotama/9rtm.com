@@ -26,10 +26,12 @@ const ThreeText = () => {
   const meshRef = useRef<any>(null);
 
   useEffect(() => {
+    {/*回転軸を計算し直す*/}
     meshRef.current!.geometry.computeBoundingBox();
     const boundingBox = meshRef.current?.geometry.boundingBox;
     const center = new THREE.Vector3(0, 0, 0);
     boundingBox?.getCenter(center);
+
     meshRef.current!.geometry.translate(-center.x, -center.y, -center.z);
     meshRef.current!.rotation.x = Math.random() * 360;
     meshRef.current!.rotation.y = Math.random() * 360;

@@ -3,7 +3,7 @@ import { css } from "@emotion/react"
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
 import ContextBox from "../components/ContextBox"
 import Devicon from "../components/pages/aboutPage/Devicon"
-import GitHubCalendar from "react-github-calendar"
+import GithubActivity from "../components/pages/aboutPage/GithubActivity"
 
 const AboutPage = () => {
   return (
@@ -24,7 +24,7 @@ const AboutPage = () => {
             width: 180px;
             height: 180px;
             border-radius: 10%;
-            filter: drop-shadow(0px 3px 5px #252a3455);
+            filter: drop-shadow(0px 10px 10px #252a4f55);
 
             @media (max-width: 600px) {
               & {
@@ -44,7 +44,7 @@ const AboutPage = () => {
           <h3>frontend dev / game dev / UI design</h3>
           情報系大学の3年です。音楽ゲームが好きです。
           <br />
-          ごく稀にイラストを描きます。アイコンは自作ドット絵のnikoです。
+          ごく稀にイラストを描きます。
         </p>
         <p
           css={css`
@@ -67,7 +67,12 @@ const AboutPage = () => {
         <Devicon name="javascript" />
         <Devicon name="python" />
         <h1>🧰  git-contributes</h1>
-        <GitHubCalendar username="9rotama" year={new Date().getFullYear()} color="#FF2E63"/>
+        <div css={css`
+          overflow-x: auto;
+        `}>
+          <GithubActivity />
+        </div>
+        
       </ContextBox>
     </>
   );

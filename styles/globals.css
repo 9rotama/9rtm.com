@@ -20,8 +20,7 @@ h1 {
   border-bottom: solid;
   border-color: #252a3430;
   border-width: 1px;
-  padding-bottom: 2px;
-  margin: 60px 0px 30px 0px;
+  margin: 30px -10px 30px -10px;
   background-color: #252a34;
   color: #f0fdf9;
   padding: 10px 20px 10px 20px;
@@ -41,34 +40,18 @@ h3 {
 h4 {
   font-weight: 500;
 }
-p
 
 @media (max-width: 960px) {
   h1 {
-    font-size: 1.8em;
-  }
-  h2 {
-  }
-  h3 {
-  }
-  h4 {
+    font-size: 1.15em;
+    padding: 7px 15px 7px 15px;
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.6em;
-    font-weight: 500;
-  }
-  h2 {
-    font-size: 1.2em;
-    font-weight: 600;
-  }
-  h3 {
-    font-weight: 500;
-  }
-  h4 {
-    font-weight: 500;
+    font-size: 1em;
+    padding: 5px 10px 5px 10px;
   }
 }
 

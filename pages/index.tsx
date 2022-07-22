@@ -14,6 +14,7 @@ const HomePage = () => {
           align-items: center;
         `}
       >
+        {/*立体的なボックス部分*/}
         <div
           css={css`
             text-align: center;
@@ -30,31 +31,16 @@ const HomePage = () => {
             @media (max-width: 480px) {
               & {
                 padding: 40px 0 40px 0;
-                width: 90%;
               }
             }
           `}
         >
-          <img
-            src="https://avatars.githubusercontent.com/u/65887771?v=4"
-            alt="prof"
-            css={css`
-              position: relative;
-              width: 180px;
-              height: 180px;
-              border-radius: 10%;
-              filter: drop-shadow(0px 3px 5px #252a3455);
-
-              animation-name: BlurfadeInDown;
-              animation-duration: 0.3s;
-            `}
-          />
+        {/*TODO: ここにGIFアニメを入れる*/}
           <div
             css={css`
               position: relative;
               font-size: 1.3em;
               font-weight: 500;
-              margin-top: 30px;
 
               animation-name: BlurfadeInDown;
               animation-duration: 0.4s;
@@ -66,12 +52,7 @@ const HomePage = () => {
               }
             `}
           >
-            <p
-              css={css`
-              
-            `}>
-              ＼welcome to my portfolio !! ／
-            </p>（っ ‘ ᵕ ‘ ｃ）（っ ‘ ᵕ ‘ ｃ)
+            ＼welcome to my portfolio !! ／ <br />（っ ‘ ᵕ ‘ ｃ）（っ ‘ ᵕ ‘ ｃ)
           </div>
           <SnsLinkButtonlist />
         </div>

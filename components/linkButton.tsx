@@ -1,5 +1,7 @@
 import * as React from "react"
 import { css } from "@emotion/react"
+import { IconDefinition,faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 type LinkButtonProps = {
   color: string;
@@ -27,6 +29,15 @@ const LinkButton: React.FC<LinkButtonProps> = ({ color, hoverColor, url, childre
       `}
       href={url}
     >
+      <FontAwesomeIcon
+        icon={faArrowUpRightFromSquare}
+        css={css`
+          color: #FFFFFF;
+          margin: 0 0.8rem 0 0.8rem;
+          font-size: 1.3em;
+          transition-duration: 0.3s;
+        `}
+      />
       {children}
     </a>
   )
