@@ -66,7 +66,6 @@ const ContextBox: React.FC<ContextBoxProps> = ({
               margin: 0 auto -50px auto;
               display: flex;
               z-index: 5;
-
             `}
           >
             {/*ページごとのアイコン*/}
@@ -82,7 +81,7 @@ const ContextBox: React.FC<ContextBoxProps> = ({
           {/*ページタイトル*/}
           <div
             css={css`
-            display: inline-block;
+              display: inline-block;
               color: #252a34;
               margin: 70px 0 0 0;
               text-transform: uppercase;

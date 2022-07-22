@@ -41,13 +41,11 @@ const SnsLinkButtonList = () => {
     <div
       css={css`
         position: relative;
-        font-size: 1.1em;
-        margin-top: 30px;
-        margin-left: -40px;
-        margin-right: -40px;
-        background: #eff6faaa;
-        padding: 15px 10px 20px 10px;
-        border-radius: 0 0px 40px 40px;
+        display: flex;
+        flex-direction: row;
+        padding: 10px 10px 10px 10px;
+        animation-name: BlurfadeInDown;
+        animation-duration: 0.4s;
 
         @media (max-width: 480px) {
           & {
