@@ -8,15 +8,6 @@ import {
 } from "@react-three/postprocessing";
 import ThreeText from "./ThreeText";
 
-const canvasWrapStyle = css`
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-`
-
 const Background = () => {
   return (
     <div
@@ -42,5 +33,14 @@ const Background = () => {
     </div>
   );
 };
+
+const canvasWrapStyle = css`
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+`;
 
 export default Background;

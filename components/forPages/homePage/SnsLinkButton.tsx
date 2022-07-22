@@ -51,11 +51,11 @@ const linkStyle = css`
     color: #ffffffdd;
     transition-duration: 0.2s;
   }
-`
+`;
 
 const iconStyle = css`
   margin: auto;
   font-size: 1.5em;
-`
+`;
 
 export default SnsLinkButton;

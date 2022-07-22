@@ -31,7 +31,7 @@ const MenuButton: React.FC<Props> = ({ name, path }) => {
   useEffect( () => {
     if ( router.pathname == path ) {
       setIsActive(true);
-    }else{
+    } else {
       setIsActive(false);
     }
   },[router.pathname, path, isActive]);
@@ -39,26 +39,9 @@ const MenuButton: React.FC<Props> = ({ name, path }) => {
   return (
     <div
       css={css`
-        text-decoration: none;
-        border-bottom: solid;
-        border-color: ${normalTheme.textColor}50;
-        border-width: 1px;
-        border-radius: 5px;
+        ${menuButtonStyle}
         background-color: ${isActive ? activeTheme.backgroundColor : normalTheme.backgroundColor};
         color: ${isActive ? activeTheme.textColor : normalTheme.textColor};
-        text-transform: uppercase;
-        font-family: "Dosis", "M PLUS 1", sans-serif;
-        font-size: 1.5em;
-        font-weight: 500;
-        margin-left: 10px;
-        padding: 2px 10px 2px 10px;
-        transition-duration: 0.3s;
-
-        @media (max-width: 960px) {
-          & {
-            font-size: 1.2em;
-          }
-        }
       `}
     >
       <Link href={path} passHref>
@@ -67,5 +50,31 @@ const MenuButton: React.FC<Props> = ({ name, path }) => {
     </div>
   );
 };
+
+const menuButtonStyle = css`
+  margin-left: 10px;
+  padding: 2px 10px 2px 10px;
+
+  border-bottom: solid;
+  border-color: ${normalTheme.textColor}50;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: ${normalTheme.backgroundColor};
+
+  color: ${normalTheme.textColor};
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Dosis", "M PLUS 1", sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+
+  transition-duration: 0.3s;
+
+  @media (max-width: 960px) {
+    & {
+      font-size: 1.2em;
+    }
+  }
+`;
 
 export default MenuButton;
