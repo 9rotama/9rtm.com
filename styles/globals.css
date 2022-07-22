@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,300;0,500;0,600;0,800&family=M+PLUS+1:wght@100;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=M+PLUS+1:wght@100;400;600;800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;800&display=swap');
 
 body {
-  font-family: "Montserrat Alternates", "M PLUS 1", sans-serif;
+  font-family: "Inter", "M PLUS 1", sans-serif;
+  font-weight: 400;
   color: #252a34;
   background-color: #d0dde9;
   margin: 0;
@@ -14,28 +16,26 @@ a {
 }
 
 h1 {
-  font-weight: 500;
-  font-size: 1.3em;
+  font-family: "Dosis", "M PLUS 1", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.7em;
   color: #252a34;
   text-decoration: none;
-  border-bottom: solid;
-  border-color: #252a3430;
-  border-width: 1px;
-  margin: 30px -10px 30px -10px;
-  background-color: #252a34;
-  color: #f0fdf9;
+  margin: 80px -10px 30px -10px;
   padding: 10px 20px 10px 20px;
-  border-radius: 50vh;
+  border-bottom: 1px solid #252a3455;
+  color: #252a34;
 }
 
 h2 {
-  font-weight: 500;
-  font-size: 1.6em;
+  font-weight: 400;
+  font-size: 1.5em;
 }
 
 h3 {
-  font-weight: 500;
-  font-size: 1.4em;
+  font-weight: 400;
+  font-size: 1.2em;
 }
 
 h4 {

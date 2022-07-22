@@ -46,6 +46,8 @@ const MenuButton: React.FC<MenuButtonProps> = ({ name, path }) => {
         border-radius: 5px;
         background-color: ${isActive ? activeTheme.backgroundColor : normalTheme.backgroundColor};
         color: ${isActive ? activeTheme.textColor : normalTheme.textColor};
+        text-transform: uppercase;
+        font-family: "Dosis", "M PLUS 1", sans-serif;
         font-size: 1.5em;
         font-weight: 500;
         margin-left: 10px;
