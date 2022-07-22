@@ -34,11 +34,17 @@ const AboutPage = () => {
           `}
         />
         <p>
-          <h2>9rotama</h2>
+          <span css={css`
+            font-size: 2em;
+            font-weight: 600;
+            border-bottom: dashed #08D9D6 6px;
+          `}>
+            9rotama
+          </span>
           <h3>frontend dev / game dev / UI design</h3>
-          大学でCSを学んでいます。音楽ゲームが好きです。
+          情報系大学の3年です。音楽ゲームが好きです。
           <br />
-          ごく稀にイラストを描きます。
+          ごく稀にイラストを描きます。アイコンは自作ドット絵のnikoです。
         </p>
         <p
           css={css`
@@ -61,7 +67,7 @@ const AboutPage = () => {
         <Devicon name="javascript" />
         <Devicon name="python" />
         <h1>🧰  git-contributes</h1>
-        <GitHubCalendar username="9rotama" year={new Date().getFullYear()} color="#FF2E63" style={{}}/>
+        <GitHubCalendar username="9rotama" year={new Date().getFullYear()} color="#FF2E63"/>
       </ContextBox>
     </>
   );

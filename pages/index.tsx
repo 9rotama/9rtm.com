@@ -68,7 +68,7 @@ const HomePage = () => {
           >
             <p
               css={css`
-              font-weight: 600;
+              
             `}>
               ＼welcome to my portfolio !! ／
             </p>（っ ‘ ᵕ ‘ ｃ）（っ ‘ ᵕ ‘ ｃ)
