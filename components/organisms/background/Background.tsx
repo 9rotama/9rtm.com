@@ -6,7 +6,7 @@ import {
   ToneMapping,
   DotScreen,
 } from "@react-three/postprocessing";
-import ThreeText from "./ThreeText";
+import ThreeText from "../../atoms/background/ThreeText";
 
 const Background = () => {
   return (
