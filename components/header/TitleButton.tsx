@@ -13,7 +13,7 @@ const TitleButton: React.FC<TitleButtonProps> = ({ name }) => {
         color: #252a34;
         text-decoration: none;
         font-size: 2em;
-        font-weight: 500;
+        font-weight: 600;
         padding: 0 10px 0 10px;
         margin-right: auto;
 

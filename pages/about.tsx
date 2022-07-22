@@ -3,7 +3,6 @@ import { css } from "@emotion/react";
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import ContextBox from "../components/ContextBox";
 import Devicon from "../components/pages/aboutPage/Devicon";
-import GithubActivity from "../components/pages/aboutPage/GithubActivity";
 
 type Technology = {
   id: string;
@@ -58,7 +57,7 @@ const AboutPage = () => {
             }
           `}
         />
-        <p>
+        <div>
           <span
             css={css`
               font-size: 2em;
@@ -72,7 +71,7 @@ const AboutPage = () => {
           情報系大学の3年です。音楽ゲームが好きです。
           <br />
           ごく稀にイラストを描きます。
-        </p>
+        </div>
         <p
           css={css`
             clear: both;
@@ -87,7 +86,7 @@ const AboutPage = () => {
           <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
         ))}
         <h1>🧰 git-contributes</h1>
-        <GithubActivity />
+        {/*<GithubActivity />*/}
       </ContextBox>
     </>
   );

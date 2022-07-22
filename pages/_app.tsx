@@ -6,7 +6,6 @@ import Background from "../components/background/Background";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <Background />
       <Component {...pageProps} />
     </Layout>
   );

@@ -1,12 +1,11 @@
 import * as React from "react";
 import { useRef, useEffect } from "react";
-import * as THREE from "three";
-import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
+import { Vector3 }from "three";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { useFrame, extend, ReactThreeFiber } from "@react-three/fiber";
-import fontJson from "three/examples/fonts/helvetiker_bold.typeface.json";
+import fontJson from "three/examples/fonts/helvetiker_regular.typeface.json";
 
-extend({ TextGeometry });
 
 declare global {
   namespace JSX {
@@ -16,22 +15,23 @@ declare global {
   }
 }
 
-const moveSpeed = 0.7;
-const kao = ["(=_=)", "(>_<)", "(^v^)", "(o_o)", "($_$)", "(@w@)"];
-const text = kao[Math.floor(Math.random() * kao.length)];
+
 
 const ThreeText = () => {
+  const moveSpeed = 0.7;
+  const kao = ["(=_=)", "(>_<)", "(+~+)", "(o_o)", "($_$)", "(@w@)"];
+  const text = kao[Math.floor(Math.random() * kao.length)];
   const font = new FontLoader().parse(fontJson);
 
   const meshRef = useRef<any>(null);
+  extend({ TextGeometry });
+
 
   useEffect(() => {
-    {
-      /*回転軸を計算し直す*/
-    }
+    /*回転軸を計算し直す*/
     meshRef.current!.geometry.computeBoundingBox();
     const boundingBox = meshRef.current?.geometry.boundingBox;
-    const center = new THREE.Vector3(0, 0, 0);
+    const center = new Vector3(0, 0, 0);
     boundingBox?.getCenter(center);
 
     meshRef.current!.geometry.translate(-center.x, -center.y, -center.z);
@@ -49,7 +49,7 @@ const ThreeText = () => {
 
   return (
     <mesh ref={meshRef}>
-      <textGeometry args={[text, { font, size: 40, height: 10 }]} />
+      <textGeometry args={[text, { font, size: 25, height: 5 }]} />
       <meshMatcapMaterial attach="material" color="#cfe0fb" />
     </mesh>
   );

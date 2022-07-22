@@ -53,7 +53,7 @@ const ContextBox: React.FC<ContextBoxProps> = ({
         `}
       >
         <div>
-          {/*トップに来る円*/}
+          {/*ページ毎アイコンの背景になる円*/}
           <div
             css={css`
               position: relative;
@@ -82,7 +82,7 @@ const ContextBox: React.FC<ContextBoxProps> = ({
               color: #252a34;
               margin-top: 70px;
               margin-bottom: 70px;
-              font-weight: 500;
+              font-weight: 600;
               font-size: 3em;
               @media (max-width: 720px) {
                 font-size: 2.5em;
