@@ -1,11 +1,40 @@
-import * as React from "react"
-import { css } from "@emotion/react"
+import * as React from "react";
+import { css } from "@emotion/react";
 import {
   faGithub,
   faTwitter,
   faItchIo,
-} from "@fortawesome/free-brands-svg-icons"
-import SnsLinkButton from "./SnsLinkButton"
+  IconDefinition,
+} from "@fortawesome/free-brands-svg-icons";
+import SnsLinkButton from "./SnsLinkButton";
+
+type snsLink = {
+  name: string;
+  icon: IconDefinition;
+  url: string;
+  hoverColor: string;
+};
+
+const snsLinks: Array<snsLink> = [
+  {
+    name: "github",
+    icon: faGithub,
+    url: "https://github.com/9rotama",
+    hoverColor: "#9b5de5",
+  },
+  {
+    name: "github",
+    icon: faTwitter,
+    url: "https://twitter.com/glctose_9",
+    hoverColor: "#00bbf9",
+  },
+  {
+    name: "itchio",
+    icon: faItchIo,
+    url: "https://9rotama.itch.io",
+    hoverColor: "#F6434A",
+  },
+];
 
 const SnsLinkButtonList = () => {
   return (
@@ -20,7 +49,7 @@ const SnsLinkButtonList = () => {
         padding: 15px;
 
         animation-name: BlurfadeInDown;
-        animation-duration: 0.5s;
+        animation-duration: 0.8s;
 
         @media (max-width: 480px) {
           & {
@@ -30,23 +59,16 @@ const SnsLinkButtonList = () => {
         }
       `}
     >
-      <SnsLinkButton
-        icon={faGithub}
-        url="https://github.com/9rotama"
-        hoverColor="#9b5de5"
-      />
-      <SnsLinkButton
-        icon={faTwitter}
-        url="https://twitter.com/glctose_9"
-        hoverColor="#00bbf9"
-      />
-      <SnsLinkButton
-        icon={faItchIo}
-        url="https://9rotama.itch.io"
-        hoverColor="#F6434A"
-      />
+      {snsLinks.map((e) => (
+        <SnsLinkButton
+          key={e.name}
+          icon={e.icon}
+          url={e.url}
+          hoverColor={e.hoverColor}
+        />
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default SnsLinkButtonList
+export default SnsLinkButtonList;

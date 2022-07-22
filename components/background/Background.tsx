@@ -1,13 +1,12 @@
-import * as React from "react"
-import { css } from "@emotion/react"
-import { Canvas } from "@react-three/fiber"
+import * as React from "react";
+import { css } from "@emotion/react";
+import { Canvas } from "@react-three/fiber";
 import {
   EffectComposer,
   ToneMapping,
   DotScreen,
-} from "@react-three/postprocessing"
-import ThreeText from "./ThreeText"
-
+} from "@react-three/postprocessing";
+import ThreeText from "./ThreeText";
 
 const Background = () => {
   return (
@@ -36,7 +35,7 @@ const Background = () => {
         <ThreeText />
       </Canvas>
     </div>
-  )
-}
+  );
+};
 
-export default Background
+export default Background;

@@ -1,12 +1,9 @@
-import * as React from "react"
-import Image from "next/image"
-import { css } from "@emotion/react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faUserGroup,
-  faUser
-} from "@fortawesome/free-solid-svg-icons"
-import DeviconSmall from "./DeviconSmall"
+import * as React from "react";
+import Image from "next/image";
+import { css } from "@emotion/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserGroup, faUser } from "@fortawesome/free-solid-svg-icons";
+import DeviconSmall from "./DeviconSmall";
 
 type CardProps = {
   title: string;
@@ -14,9 +11,15 @@ type CardProps = {
   description: string;
   techStack: Array<string>;
   isTeam?: boolean;
-}
+};
 
-const Card: React.FC<CardProps> = ({ title, url, description, techStack, isTeam }) => {
+const Card: React.FC<CardProps> = ({
+  title,
+  url,
+  description,
+  techStack,
+  isTeam,
+}) => {
   return (
     <a
       css={css`
@@ -79,8 +82,8 @@ const Card: React.FC<CardProps> = ({ title, url, description, techStack, isTeam 
         `}
       >
         {/*error: keyのpropが設定されていない(動きはする)*/}
-        {techStack.map(e => (
-          <DeviconSmall name={e} />
+        {techStack.map((e) => (
+          <DeviconSmall name={e} key={e} />
         ))}
       </div>
 
@@ -96,7 +99,7 @@ const Card: React.FC<CardProps> = ({ title, url, description, techStack, isTeam 
         `}
       />
     </a>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

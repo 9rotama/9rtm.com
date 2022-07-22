@@ -1,9 +1,9 @@
-import * as React from "react"
-import { css } from "@emotion/react"
+import * as React from "react";
+import { css } from "@emotion/react";
 
 type CardWrapperProps = {
   children?: React.ReactNode;
-}
+};
 
 const CardWrapper: React.FC<CardWrapperProps> = ({ children }) => {
   return (
@@ -17,7 +17,7 @@ const CardWrapper: React.FC<CardWrapperProps> = ({ children }) => {
       {/*ラッパーで囲んだCardがchildrenに入る*/}
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default CardWrapper
+export default CardWrapper;

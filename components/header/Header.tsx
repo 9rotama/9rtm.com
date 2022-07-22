@@ -1,13 +1,12 @@
-import * as React from "react"
-import Link from "next/link"
-import { Global, css } from "@emotion/react"
-import TitleButton from "./TitleButton"
-import Menu from "./Menu"
-
+import * as React from "react";
+import Link from "next/link";
+import { Global, css } from "@emotion/react";
+import TitleButton from "./TitleButton";
+import Menu from "./Menu";
 
 type HeaderProps = {
   siteTitle: string;
-}
+};
 
 const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
   return (
@@ -47,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
         <Menu />
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

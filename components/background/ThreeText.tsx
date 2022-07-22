@@ -1,17 +1,17 @@
-import * as React from "react"
-import { useRef, useEffect } from "react"
-import * as THREE from "three"
-import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
-import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
-import { useFrame, extend, ReactThreeFiber } from "@react-three/fiber"
-import fontJson from "three/examples/fonts/helvetiker_bold.typeface.json"
+import * as React from "react";
+import { useRef, useEffect } from "react";
+import * as THREE from "three";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
+import { useFrame, extend, ReactThreeFiber } from "@react-three/fiber";
+import fontJson from "three/examples/fonts/helvetiker_bold.typeface.json";
 
 extend({ TextGeometry });
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      textGeometry: ReactThreeFiber.Node<TextGeometry, typeof TextGeometry>
+      textGeometry: ReactThreeFiber.Node<TextGeometry, typeof TextGeometry>;
     }
   }
 }
@@ -26,7 +26,9 @@ const ThreeText = () => {
   const meshRef = useRef<any>(null);
 
   useEffect(() => {
-    {/*回転軸を計算し直す*/}
+    {
+      /*回転軸を計算し直す*/
+    }
     meshRef.current!.geometry.computeBoundingBox();
     const boundingBox = meshRef.current?.geometry.boundingBox;
     const center = new THREE.Vector3(0, 0, 0);
@@ -36,23 +38,21 @@ const ThreeText = () => {
     meshRef.current!.rotation.x = Math.random() * 360;
     meshRef.current!.rotation.y = Math.random() * 360;
     meshRef.current!.rotation.z = Math.random() * 360;
-  })
+  });
 
-  useFrame(state => {
+  useFrame((state) => {
     const time = state.clock.getElapsedTime();
     meshRef.current!.rotation.x = time * moveSpeed;
     meshRef.current!.rotation.y = (time / 3) * moveSpeed;
     meshRef.current!.rotation.z = (time / 5) * moveSpeed;
-  })
+  });
 
   return (
     <mesh ref={meshRef}>
-      <textGeometry
-        args={[text, { font, size: 40, height: 10 }]}
-      />
+      <textGeometry args={[text, { font, size: 40, height: 10 }]} />
       <meshMatcapMaterial attach="material" color="#cfe0fb" />
     </mesh>
-  )
-}
+  );
+};
 
-export default ThreeText
+export default ThreeText;

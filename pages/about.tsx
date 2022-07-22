@@ -1,9 +1,29 @@
-import * as React from "react"
-import { css } from "@emotion/react"
-import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
-import ContextBox from "../components/ContextBox"
-import Devicon from "../components/pages/aboutPage/Devicon"
-import GithubActivity from "../components/pages/aboutPage/GithubActivity"
+import * as React from "react";
+import { css } from "@emotion/react";
+import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
+import ContextBox from "../components/ContextBox";
+import Devicon from "../components/pages/aboutPage/Devicon";
+import GithubActivity from "../components/pages/aboutPage/GithubActivity";
+
+const toolsAndServices: Array<string> = [
+  "vscode",
+  "figma",
+  "inkscape",
+  "git",
+  "blender",
+];
+
+const programming: Array<string> = [
+  "unity",
+  "html5",
+  "css3",
+  "react",
+  "cplusplus",
+  "csharp",
+  "javascript",
+  "typescript",
+  "python",
+];
 
 const AboutPage = () => {
   return (
@@ -13,7 +33,7 @@ const AboutPage = () => {
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
       />
       <ContextBox pageIcon={faAddressCard} pageTitle="about me">
-        <h1>📘  profile</h1>
+        <h1>📘 profile</h1>
         <img
           src="https://avatars.githubusercontent.com/u/65887771?v=4"
           alt={"prof"}
@@ -34,11 +54,13 @@ const AboutPage = () => {
           `}
         />
         <p>
-          <span css={css`
-            font-size: 2em;
-            font-weight: 600;
-            border-bottom: dashed #08D9D6 6px;
-          `}>
+          <span
+            css={css`
+              font-size: 2em;
+              font-weight: 600;
+              border-bottom: dashed #08d9d6 6px;
+            `}
+          >
             9rotama
           </span>
           <h3>frontend dev / game dev / UI design</h3>
@@ -51,31 +73,19 @@ const AboutPage = () => {
             clear: both;
           `}
         />
-        <h1>🧰  tools / services</h1>
-        <Devicon name="vscode" />
-        <Devicon name="figma" />
-        <Devicon name="inkscape" />
-        <Devicon name="git" />
-        <Devicon name="blender" />
-        <h1>⌨️  programming</h1>
-        <Devicon name="unity" />
-        <Devicon name="html5" />
-        <Devicon name="css3" />
-        <Devicon name="react" />
-        <Devicon name="cplusplus" />
-        <Devicon name="csharp" />
-        <Devicon name="javascript" />
-        <Devicon name="python" />
-        <h1>🧰  git-contributes</h1>
-        <div css={css`
-          overflow-x: auto;
-        `}>
-          <GithubActivity />
-        </div>
-        
+        <h1>🧰 tools / services</h1>
+        {toolsAndServices.map((e) => (
+          <Devicon key={e} name={e} />
+        ))}
+        <h1>⌨️ programming</h1>
+        {programming.map((e) => (
+          <Devicon key={e} name={e} />
+        ))}
+        <h1>🧰 git-contributes</h1>
+        <GithubActivity />
       </ContextBox>
     </>
   );
-}
+};
 
-export default AboutPage
+export default AboutPage;
