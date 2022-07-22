@@ -3,7 +3,6 @@ import { css, jsx } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-
 type ContextBoxProps = {
   pageIcon: IconDefinition;
   pageTitle: string;

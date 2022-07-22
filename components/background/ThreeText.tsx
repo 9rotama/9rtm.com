@@ -1,15 +1,9 @@
 import * as React from "react"
 import { useRef, useEffect } from "react"
-import { css } from "@emotion/react"
-import { Canvas, useFrame, extend, ReactThreeFiber } from "@react-three/fiber"
-import {
-  EffectComposer,
-  ToneMapping,
-  DotScreen,
-} from "@react-three/postprocessing"
 import * as THREE from "three"
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
+import { useFrame, extend, ReactThreeFiber } from "@react-three/fiber"
 import fontJson from "three/examples/fonts/helvetiker_bold.typeface.json"
 
 extend({ TextGeometry });
@@ -26,7 +20,7 @@ const moveSpeed = 0.7;
 const kao = ["(=_=)", "(>_<)", "(^v^)", "(o_o)", "($_$)", "(@w@)"];
 const text = kao[Math.floor(Math.random() * kao.length)];
 
-const Text3D = () => {
+const ThreeText = () => {
   const font = new FontLoader().parse(fontJson);
 
   const meshRef = useRef<any>(null);
@@ -59,34 +53,4 @@ const Text3D = () => {
   )
 }
 
-const Background = () => {
-  return (
-    <div
-      css={css`
-        position: fixed;
-        top: 0px;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
-      `}
-    >
-      <Canvas
-        gl={{ antialias: false }}
-        camera={{
-          fov: 45,
-          near: 0.1,
-          far: 1000,
-          position: [-60, 0, 0],
-        }}
-      >
-        <EffectComposer>
-          <ToneMapping />
-          <DotScreen angle={Math.PI * 0.5} scale={0.6} />
-        </EffectComposer>
-        <Text3D />
-      </Canvas>
-    </div>
-  )
-}
-
-export default Background
+export default ThreeText
