@@ -5,12 +5,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-type LinkButtonProps = {
+type Props = {
   url: string;
   children: React.ReactNode;
 };
 
-const LinkButton: React.FC<LinkButtonProps> = ({
+const LinkButton: React.FC<Props> = ({
   url,
   children,
 }) => {

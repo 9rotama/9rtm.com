@@ -1,11 +1,11 @@
 import * as React from "react";
 import { css } from "@emotion/react";
 
-type CardWrapperProps = {
+type Props = {
   children?: React.ReactNode;
 };
 
-const CardWrapper: React.FC<CardWrapperProps> = ({ children }) => {
+const CardWrapper: React.FC<Props> = ({ children }) => {
   return (
     <div
       css={css`
