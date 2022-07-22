@@ -18,35 +18,44 @@ const SnsLinkButton: React.FC<Props> = ({
     <a
       href={url}
       css={css`
-        display: flex;
-        background: #eff6fadd;
-        color: #253a60a0;
-        width: 50px;
-        height: 50px;
-        padding: 2px;
-        margin: 3px;
-        border-radius: 50%;
-        transition-duration: 0.2s;
-
+        ${linkStyle}
         &:hover {
           background: ${hoverColor};
-          color: #ffffffdd;
-          transition-duration: 0.2s;
         }
       `}
     >
       <FontAwesomeIcon
         icon={icon}
-        css={css`
-          margin: auto;
-          font-size: 1.5em;
-
-          &:hover {
-          }
-        `}
+        css={css`${iconStyle}`}
       />
     </a>
   );
 };
+
+const linkStyle = css`
+  display: flex;
+
+  background: #eff6fadd;
+  width: 50px;
+  height: 50px;
+  padding: 2px;
+  margin: 3px;
+  border-radius: 50%;
+
+  transition-duration: 0.2s;
+
+  color: #253a60a0;
+
+  &:hover {
+    background: #253a60a0;
+    color: #ffffffdd;
+    transition-duration: 0.2s;
+  }
+`
+
+const iconStyle = css`
+  margin: auto;
+  font-size: 1.5em;
+`
 
 export default SnsLinkButton;

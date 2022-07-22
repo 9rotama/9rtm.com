@@ -13,6 +13,52 @@ type workContexts = {
   isTeam: boolean;
 };
 
+const WorksPage = () => {
+  return (
+    <>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+      />
+      <ContextBox pageIcon={faBook} pageTitle="works" pageDescription="作ったもの">
+        <h1>🌎 web-apps</h1>
+        <CardWrapper>
+          {webApps.map((e) => (
+            <Card
+              key={e.title + "-workscard"}
+              title={e.title}
+              url={e.url}
+              description={e.description}
+              techStack={e.techStack}
+              isTeam={e.isTeam}
+            />
+          ))}
+        </CardWrapper>
+        <h1>🕹️ games</h1>
+        <CardWrapper>
+          {games.map((e) => (
+            <Card
+              key={e.title + "-workscard"}
+              title={e.title}
+              url={e.url}
+              description={e.description}
+              techStack={e.techStack}
+              isTeam={e.isTeam}
+            />
+          ))}
+        </CardWrapper>
+        <h1>🎨 graphics / designs / others</h1>
+        <LinkButton
+          url="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing"
+        >
+          jump to google drive
+        </LinkButton>
+      </ContextBox>
+    </>
+  );
+};
+
+
 const webApps: Array<workContexts> = [
   {
     title: "9rtm.com",
@@ -74,50 +120,5 @@ const games: Array<workContexts> = [
     isTeam: true,
   },
 ];
-
-const WorksPage = () => {
-  return (
-    <>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
-      />
-      <ContextBox pageIcon={faBook} pageTitle="works" pageDescription="作ったもの">
-        <h1>🌎 web-apps</h1>
-        <CardWrapper>
-          {webApps.map((e) => (
-            <Card
-              key={e.title + "-workscard"}
-              title={e.title}
-              url={e.url}
-              description={e.description}
-              techStack={e.techStack}
-              isTeam={e.isTeam}
-            />
-          ))}
-        </CardWrapper>
-        <h1>🕹️ games</h1>
-        <CardWrapper>
-          {games.map((e) => (
-            <Card
-              key={e.title + "-workscard"}
-              title={e.title}
-              url={e.url}
-              description={e.description}
-              techStack={e.techStack}
-              isTeam={e.isTeam}
-            />
-          ))}
-        </CardWrapper>
-        <h1>🎨 graphics / designs / others</h1>
-        <LinkButton
-          url="https://drive.google.com/drive/folders/1gOM3VzAkHeZK05HKfPlGGLTR5jneGcgQ?usp=sharing"
-        >
-          jump to google drive
-        </LinkButton>
-      </ContextBox>
-    </>
-  );
-};
 
 export default WorksPage;
