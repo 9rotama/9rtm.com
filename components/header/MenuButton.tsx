@@ -28,19 +28,21 @@ const MenuButton: React.FC<Props> = ({ name, path }) => {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
 
-  useEffect( () => {
-    if ( router.pathname == path ) {
+  useEffect(() => {
+    if (router.pathname == path) {
       setIsActive(true);
     } else {
       setIsActive(false);
     }
-  },[router.pathname, path, isActive]);
+  }, [router.pathname, path, isActive]);
 
   return (
     <div
       css={css`
         ${menuButtonStyle}
-        background-color: ${isActive ? activeTheme.backgroundColor : normalTheme.backgroundColor};
+        background-color: ${isActive
+          ? activeTheme.backgroundColor
+          : normalTheme.backgroundColor};
         color: ${isActive ? activeTheme.textColor : normalTheme.textColor};
       `}
     >

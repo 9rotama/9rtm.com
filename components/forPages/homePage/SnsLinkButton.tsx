@@ -9,11 +9,7 @@ type Props = {
   hoverColor: string;
 };
 
-const SnsLinkButton: React.FC<Props> = ({
-  icon,
-  url,
-  hoverColor,
-}) => {
+const SnsLinkButton: React.FC<Props> = ({ icon, url, hoverColor }) => {
   return (
     <a
       href={url}
@@ -26,7 +22,9 @@ const SnsLinkButton: React.FC<Props> = ({
     >
       <FontAwesomeIcon
         icon={icon}
-        css={css`${iconStyle}`}
+        css={css`
+          ${iconStyle}
+        `}
       />
     </a>
   );

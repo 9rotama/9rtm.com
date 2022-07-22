@@ -9,7 +9,9 @@ type Props = {
 const TitleButton: React.FC<Props> = ({ name }) => {
   return (
     <div
-      css={css`${titleStyle}`}
+      css={css`
+        ${titleStyle}
+      `}
     >
       <Link href="/" passHref>
         {name}
@@ -46,6 +48,6 @@ const titleStyle = css`
 
     transition-duration: 0.3s;
   }
-`
+`;
 
 export default TitleButton;

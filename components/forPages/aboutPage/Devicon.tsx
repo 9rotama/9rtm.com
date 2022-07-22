@@ -13,15 +13,17 @@ const Devicon: React.FC<Props> = ({ name, id }) => {
   const handleMouseEnter = () => {
     tipRef.current!.style.opacity = "1";
     tipRef.current!.style.marginTop = "0px";
-  }
+  };
   const handleMouseLeave = () => {
     tipRef.current!.style.opacity = "0";
     tipRef.current!.style.marginTop = "-10px";
-  }
+  };
 
   return (
     <div
-      css={css`${divStyle}`}
+      css={css`
+        ${divStyle}
+      `}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -34,10 +36,14 @@ const Devicon: React.FC<Props> = ({ name, id }) => {
           "-original.svg"
         }
         alt={name}
-        css={css`${imgStyle}`}
+        css={css`
+          ${imgStyle}
+        `}
       />
       <div
-        css={css`${tipStyle}`}
+        css={css`
+          ${tipStyle}
+        `}
         ref={tipRef}
       >
         {name}
@@ -76,7 +82,7 @@ const tipStyle = css`
   transform: translateX(-50%);
 
   border-radius: 5px;
-  background: linear-gradient(#FFFFFFFF, #FFFFFF66);
+  background: linear-gradient(#ffffffff, #ffffff66);
 
   color: black;
   text-align: center;
@@ -87,6 +93,5 @@ const tipStyle = css`
 
   transition-duration: 0.2s;
 `;
-
 
 export default Devicon;

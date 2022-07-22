@@ -1,8 +1,6 @@
 import * as React from "react";
 import { css } from "@emotion/react";
-import {
-  faArrowUpRightFromSquare,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type Props = {
@@ -10,18 +8,19 @@ type Props = {
   children: React.ReactNode;
 };
 
-const LinkButton: React.FC<Props> = ({
-  url,
-  children,
-}) => {
+const LinkButton: React.FC<Props> = ({ url, children }) => {
   return (
     <a
-      css={css`${linkStyle}`}
+      css={css`
+        ${linkStyle}
+      `}
       href={url}
     >
       <FontAwesomeIcon
         icon={faArrowUpRightFromSquare}
-        css={css`${iconStyle}`}
+        css={css`
+          ${iconStyle}
+        `}
       />
       {children}
     </a>
@@ -44,7 +43,7 @@ const linkStyle = css`
 
     transition-duration: 0.2s;
   }
-`
+`;
 
 const iconStyle = css`
   margin: 0 0.8rem 0 0.8rem;
@@ -53,6 +52,6 @@ const iconStyle = css`
   font-size: 1.3em;
 
   transition-duration: 0.3s;
-`
+`;
 
 export default LinkButton;

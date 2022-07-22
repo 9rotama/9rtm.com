@@ -17,7 +17,9 @@ const DeviconSmall: React.FC<Props> = ({ name }) => {
         "-original.svg"
       }
       alt={name}
-      css={css`${iconStyle}`}
+      css={css`
+        ${iconStyle}
+      `}
     />
   );
 };

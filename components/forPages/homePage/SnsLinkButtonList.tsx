@@ -39,7 +39,9 @@ const snsLinks: Array<snsLink> = [
 const SnsLinkButtonList = () => {
   return (
     <div
-      css={css`${listStyle}`}
+      css={css`
+        ${listStyle}
+      `}
     >
       {snsLinks.map((e) => (
         <SnsLinkButton

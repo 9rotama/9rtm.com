@@ -11,7 +11,9 @@ import ThreeText from "./ThreeText";
 const Background = () => {
   return (
     <div
-      css={css`${canvasWrapStyle}`}
+      css={css`
+        ${canvasWrapStyle}
+      `}
     >
       <React.Suspense fallback={<span>loading...</span>}>
         <Canvas

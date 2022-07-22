@@ -8,7 +8,9 @@ type Props = {
 const CardWrapper: React.FC<Props> = ({ children }) => {
   return (
     <div
-      css={css`${wrapperStyle}`}
+      css={css`
+        ${wrapperStyle}
+      `}
     >
       {/*ラッパーで囲んだCardがchildrenに入る*/}
       {children}
