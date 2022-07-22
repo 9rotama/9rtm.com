@@ -2,6 +2,8 @@ import * as React from "react"
 import Link from "next/link"
 import { css } from "@emotion/react"
 import Header from "./header/Header"
+import Background from "./background/Background"
+
 type LayoutProps = {
   children: React.ReactNode;
 }
@@ -9,7 +11,6 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
-      {/*<Background />*/}
       <Header siteTitle={"9rtm.com"} />
       {children}
     </div>

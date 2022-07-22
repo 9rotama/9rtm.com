@@ -2,19 +2,18 @@ import * as React from "react"
 import { css } from "@emotion/react"
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
 import ContextBox from "../components/ContextBox"
-import Layout from "../components/Layout"
 import Devicon from "../components/pages/aboutPage/Devicon"
-
+import GitHubCalendar from "react-github-calendar"
 
 const AboutPage = () => {
   return (
-    <Layout>
+    <>
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
       />
       <ContextBox pageIcon={faAddressCard} pageTitle="about me">
-        <h1>📘 profile</h1>
+        <h1>📘  profile</h1>
         <img
           src="https://avatars.githubusercontent.com/u/65887771?v=4"
           alt={"prof"}
@@ -46,13 +45,13 @@ const AboutPage = () => {
             clear: both;
           `}
         />
-        <h1>🧰 tools / services</h1>
+        <h1>🧰  tools / services</h1>
         <Devicon name="vscode" />
         <Devicon name="figma" />
         <Devicon name="inkscape" />
         <Devicon name="git" />
         <Devicon name="blender" />
-        <h1>⌨️ programming</h1>
+        <h1>⌨️  programming</h1>
         <Devicon name="unity" />
         <Devicon name="html5" />
         <Devicon name="css3" />
@@ -61,8 +60,10 @@ const AboutPage = () => {
         <Devicon name="csharp" />
         <Devicon name="javascript" />
         <Devicon name="python" />
+        <h1>🧰  git-contributes</h1>
+        <GitHubCalendar username="9rotama" year={new Date().getFullYear()} color="#FF2E63" style={{}}/>
       </ContextBox>
-    </Layout>
+    </>
   );
 }
 

@@ -1,28 +1,22 @@
 import * as React from "react"
-import Image from "next/image"
-import { css } from "@emotion/react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faBook,
-  faUserGroup,
-  faUser
 } from "@fortawesome/free-solid-svg-icons"
 import ContextBox from "../components/ContextBox"
 import LinkButton from "../components/LinkButton"
-import Layout from "../components/Layout"
 import CardWrapper from "../components/pages/worksPage/CardWrapper"
 import Card from "../components/pages/worksPage/Card"
 
 const WorksPage = () => {
   return (
-    <Layout>
+    <>
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
       />
       <ContextBox pageIcon={faBook} pageTitle="works">
         <p>
-          <h1>🌎 websites</h1>
+          <h1>🌎  web-apps</h1>
           <CardWrapper>
             <Card
               title="9rtm.com"
@@ -56,7 +50,7 @@ const WorksPage = () => {
               description="Discordのメッセージを自動で再翻訳"
             />
           </CardWrapper>
-          <h1>🕹️ games</h1>
+          <h1>🕹️  games</h1>
           <CardWrapper>
             <Card
               title="SkyWitches"
@@ -80,7 +74,7 @@ const WorksPage = () => {
               isTeam
             />
           </CardWrapper>
-          <h1>🎨 graphics / designs / others</h1>
+          <h1>🎨  graphics / designs / others</h1>
           <LinkButton
             color="#FF2E63"
             hoverColor="#c21943"
@@ -90,7 +84,7 @@ const WorksPage = () => {
           </LinkButton>
         </p>
       </ContextBox>
-    </Layout>
+    </>
   )
 }
 

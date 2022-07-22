@@ -5,7 +5,7 @@ import SnsLinkButtonlist from "../components/pages/homePage/SnsLinkButtonList"
 
 const HomePage = () => {
   return (
-    <Layout>
+    <>
       <div
         css={css`
           display: flex;
@@ -30,8 +30,7 @@ const HomePage = () => {
             @media (max-width: 480px) {
               & {
                 padding: 40px 0 40px 0;
-                width: 100%;
-                border-radius: 0px;
+                width: 90%;
               }
             }
           `}
@@ -50,7 +49,7 @@ const HomePage = () => {
               animation-duration: 0.3s;
             `}
           />
-          <p
+          <div
             css={css`
               position: relative;
               font-size: 1.3em;
@@ -67,12 +66,17 @@ const HomePage = () => {
               }
             `}
           >
-            ＊ Welcome to my portfolio ＊
-          </p>
+            <p
+              css={css`
+              font-weight: 600;
+            `}>
+              ＼welcome to my portfolio !! ／
+            </p>（っ ‘ ᵕ ‘ ｃ）（っ ‘ ᵕ ‘ ｃ)
+          </div>
           <SnsLinkButtonlist />
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 
