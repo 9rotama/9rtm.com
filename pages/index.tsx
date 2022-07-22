@@ -1,6 +1,6 @@
 import * as React from "react";
 import { css } from "@emotion/react";
-import SnsLinkButtonlist from "../components/pages/homePage/SnsLinkButtonList";
+import SnsLinkButtonlist from "../components/forPages/homePage/SnsLinkButtonList";
 
 const HomePage = () => {
   return (
