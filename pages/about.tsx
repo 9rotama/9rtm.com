@@ -5,24 +5,29 @@ import ContextBox from "../components/ContextBox";
 import Devicon from "../components/pages/aboutPage/Devicon";
 import GithubActivity from "../components/pages/aboutPage/GithubActivity";
 
-const toolsAndServices: Array<string> = [
-  "vscode",
-  "figma",
-  "inkscape",
-  "git",
-  "blender",
+type Technology = {
+  id: string;
+  name: string;
+}
+
+const toolsAndServices: Array<Technology> = [
+  {id: "vscode", name: "VSCODE"},
+  {id: "figma", name: "FIGMA"},
+  {id: "inkscape", name: "INKSCAPE"},
+  {id: "git", name: "GIT"},
+  {id: "blender", name: "BLENDER"},
 ];
 
-const programming: Array<string> = [
-  "unity",
-  "html5",
-  "css3",
-  "react",
-  "cplusplus",
-  "csharp",
-  "javascript",
-  "typescript",
-  "python",
+const programming: Array<Technology> = [
+  {id: "unity", name: "UNITY"},
+  {id: "html5", name: "HTML5"},
+  {id: "css3", name: "CSS3"},
+  {id: "react", name: "REACT"},
+  {id: "cplusplus", name: "C++"},
+  {id: "csharp", name: "C#"},
+  {id: "javascript", name: "JAVASCRIPT"},
+  {id: "typescript", name: "TYPESCRIPT"},
+  {id: "python", name: "PYTHON"},
 ];
 
 const AboutPage = () => {
@@ -75,11 +80,11 @@ const AboutPage = () => {
         />
         <h1>🧰 tools / services</h1>
         {toolsAndServices.map((e) => (
-          <Devicon key={e + "-abouticon"} name={e} />
+          <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
         ))}
         <h1>⌨️ programming</h1>
         {programming.map((e) => (
-          <Devicon key={e + "-abouticon"} name={e} />
+          <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
         ))}
         <h1>🧰 git-contributes</h1>
         <GithubActivity />

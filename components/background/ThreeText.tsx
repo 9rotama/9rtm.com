@@ -48,9 +48,8 @@ const ThreeText = () => {
   });
 
   return (
-    <mesh>
-      {/*<textGeometry args={[text, { font, size: 40, height: 10 }]} />*/}
-      <sphereGeometry args={[1, 16, 16]} />
+    <mesh ref={meshRef}>
+      <textGeometry args={[text, { font, size: 40, height: 10 }]} />
       <meshMatcapMaterial attach="material" color="#cfe0fb" />
     </mesh>
   );
