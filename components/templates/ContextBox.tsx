@@ -2,6 +2,8 @@ import * as React from "react";
 import { css } from "@emotion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import ContextBoxIcon from "../atoms/common/ContextBoxIcon";
+import Footer from "../atoms/common/Footer"
 
 type Props = {
   pageIcon: IconDefinition;
@@ -28,20 +30,7 @@ const ContextBox: React.FC<Props> = ({
         `}
       >
         <div>
-          {/*ページごとのアイコンの背景になる円*/}
-          <div
-            css={css`
-              ${iconBgStyle}
-            `}
-          >
-            {/*ページごとのアイコン*/}
-            <FontAwesomeIcon
-              icon={pageIcon}
-              css={css`
-                ${iconStyle}
-              `}
-            />
-          </div>
+          <ContextBoxIcon pageIcon={pageIcon}/>
           {/*ページタイトル*/}
           <div
             css={css`
@@ -56,14 +45,7 @@ const ContextBox: React.FC<Props> = ({
         {/*ページ内容*/}
         {children}
       </div>
-
-      <footer
-        css={css`
-          ${footerStyle}
-        `}
-      >
-        © {new Date().getFullYear()} 9rotama
-      </footer>
+      <Footer />
     </div>
   );
 };
@@ -108,26 +90,6 @@ const bgStyle = css`
   }
 `;
 
-const iconBgStyle = css`
-  position: relative;
-  display: flex;
-  z-index: 5;
-
-  margin: 0 auto -50px auto;
-
-  width: 100px;
-  height: 100px;
-  background-color: #252a34;
-  border-radius: 50%;
-`;
-
-const iconStyle = css`
-  margin: auto;
-
-  color: #d0dde9;
-  font-size: 2.5em;
-`;
-
 const titleStyle = css`
   display: inline-block;
 
@@ -145,14 +107,6 @@ const titleStyle = css`
   @media (max-width: 480px) {
     font-size: 2em;
   }
-`;
-
-const footerStyle = css`
-  text-align: center;
-  margin: 40px;
-  font-size: 100;
-  color: #252a3499;
-  z-index: 200;
 `;
 
 export default ContextBox;
