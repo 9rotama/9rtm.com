@@ -19,34 +19,42 @@ const LinkButton: React.FC<LinkButtonProps> = ({
   children,
 }) => {
   return (
-    <a
+    <div
       css={css`
-        padding: 10px;
-        border-radius: 50vh;
-        background: ${color};
-        color: white;
-        text-decoration: none;
-        transition-duration: 0.2s;
-
-        &:hover {
-          background: ${hoverColor};
-
-          transition-duration: 0.2s;
-        }
+        width: 100%;
+        height: auto;
       `}
-      href={url}
     >
-      <FontAwesomeIcon
-        icon={faArrowUpRightFromSquare}
+      <a
         css={css`
-          color: #ffffff;
-          margin: 0 0.8rem 0 0.8rem;
-          font-size: 1.3em;
-          transition-duration: 0.3s;
+          padding: 10px 20px 10px 10px;
+          border-radius: 50vh;
+          background: ${color};
+          color: white;
+          text-decoration: none;
+          transition-duration: 0.2s;
+
+          &:hover {
+            background: ${hoverColor};
+
+            transition-duration: 0.2s;
+          }
         `}
-      />
-      {children}
-    </a>
+        href={url}
+      >
+        <FontAwesomeIcon
+          icon={faArrowUpRightFromSquare}
+          css={css`
+            color: #ffffff;
+            margin: 0 0.8rem 0 0.8rem;
+            font-size: 1.3em;
+            transition-duration: 0.3s;
+          `}
+        />
+        {children}
+      </a>
+    </div>
+    
   );
 };
 

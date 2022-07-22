@@ -33,6 +33,7 @@ const SnsLinkButton: React.FC<SnsLinkButtonProps> = ({
 
           &:hover {
             color: ${hoverColor};
+            filter: drop-shadow(0px 4px 2px #252a3432);
             transform: scale(1.3);
             transition-duration: 0.3s;
           }
