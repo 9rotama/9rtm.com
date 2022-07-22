@@ -1,20 +1,18 @@
 # 9rtm.com
 
-A personal website with my profile and some links
+プロフィールとか制作物をリンクを載せたポートフォリオ
 
-## Technology
+## 技術スタック
 
 - Next
+- Typescript
 - Emotion
 - React Three Fiber
+- Vercel
 
-## Fonts
+## フォント
 
 - M PLUS 1
 - Dosis
 - Inter
-
-## Deploy
-
-- Vercel
 
