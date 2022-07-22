@@ -13,6 +13,8 @@ const HomePage = () => {
           text-align: center;
           justify-content: center;
           align-items: center;
+          animation-name: BlurfadeInDown;
+          animation-duration: 0.4s;
         `}
       >
         <div
@@ -22,12 +24,28 @@ const HomePage = () => {
             text-shadow: 0 0 10px #ffffffc2, 0 0 10px #ffffffc2;
             font-family: "Dosis", "M PLUS 1", sans-serif;
             z-index: 200;
-            animation-name: BlurfadeInDown;
-            animation-duration: 0.4s;
+
+            @media (max-width: 600px) {
+              & {
+                font-size: 8em;
+              }
+            }
+            @media (max-width: 480px) {
+              & {
+                font-size: 6em;
+              }
+            }
         `}
         >
           welcome.
         </div>
+        <div
+          css={css`
+            border-bottom: 1px solid #252a3477;
+            width: 50px;
+            margin: -5px 0px 10px 0px;
+          `}
+        />
         <SnsLinkButtonlist />
       </div>
     </>

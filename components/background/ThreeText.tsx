@@ -1,11 +1,11 @@
 import * as React from "react";
-import { useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Vector3 }from "three";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
+import { Font } from "three/examples/jsm/loaders/FontLoader";
 import { useFrame, extend, ReactThreeFiber } from "@react-three/fiber";
 import fontJson from "three/examples/fonts/helvetiker_bold.typeface.json";
-
 
 declare global {
   namespace JSX {
@@ -15,41 +15,38 @@ declare global {
   }
 }
 
-const moveSpeed = 0.7;
-const kao = ["(=_=)", "(>_<)", "(+~+)", "(o_o)", "($_$)", "(@w@)"];
-const text = kao[Math.floor(Math.random() * kao.length)*0];
+const KAOMOJIS = ["(=_=)", "(>_<)", "(+_+)", "(o_o)", "($_$)", "(@_@)", "(#_#)"];
 
 const ThreeText = () => {
-
-  const font = new FontLoader().parse(fontJson);
-
-  const meshRef = useRef<any>(null);
   extend({ TextGeometry });
-
+  const [moveSpeed] = useState<number>(0.5);
+  const [initRot, setInitRot] = useState<Vector3>(new Vector3(0, 0, 0));
+  const [font, setFont] = useState<Font>(new FontLoader().parse(fontJson));
+  const [text, setText] = useState<string>(KAOMOJIS[0])
+  const meshRef = useRef<THREE.Mesh>(null);
 
   useEffect(() => {
-    /*回転軸を計算し直す*/
+    setText(KAOMOJIS[Math.floor(Math.random() * KAOMOJIS.length)]);
+    setInitRot(new Vector3(Math.random() * 360, Math.random() * 360, Math.random() * 360));
+  },[text])
+
+  useFrame((state) => {
     meshRef.current!.geometry.computeBoundingBox();
     const boundingBox = meshRef.current?.geometry.boundingBox;
     const center = new Vector3(0, 0, 0);
     boundingBox?.getCenter(center);
 
     meshRef.current!.geometry.translate(-center.x, -center.y, -center.z);
-    meshRef.current!.rotation.x = Math.random() * 360;
-    meshRef.current!.rotation.y = Math.random() * 360;
-    meshRef.current!.rotation.z = Math.random() * 360;
-  });
 
-  useFrame((state) => {
     const time = state.clock.getElapsedTime();
-    meshRef.current!.rotation.x = time * moveSpeed;
-    meshRef.current!.rotation.y = (time / 3) * moveSpeed;
-    meshRef.current!.rotation.z = (time / 5) * moveSpeed;
+    meshRef.current!.rotation.x = time * moveSpeed + initRot.x;
+    meshRef.current!.rotation.y = (time / 3) * moveSpeed + initRot.y;
+    meshRef.current!.rotation.z = (time / 5) * moveSpeed + initRot.z;
   });
 
   return (
     <mesh ref={meshRef}>
-      <textGeometry args={[text, { font, size: 25, height: 5 }]} />
+      <textGeometry args={[text, { font, size: 25, height: 10 }]} />
       <meshMatcapMaterial attach="material" color="#cfe0fb" />
     </mesh>
   );
