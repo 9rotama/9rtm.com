@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import ContextBox from "../components/templates/ContextBox";
 import Devicon from "../components/atoms/about/Devicon";
+import ProfImage from "../components/atoms/about/ProfImage";
 
 type Technology = {
   id: string;
@@ -22,13 +23,7 @@ const AboutPage = () => {
         pageDescription="自己紹介、スキルなど"
       >
         <h1>📘 profile</h1>
-        <img
-          src="https://avatars.githubusercontent.com/u/65887771?v=4"
-          alt={"prof"}
-          css={css`
-            ${profImgStyle}
-          `}
-        />
+        <ProfImage />
         <div>
           <h2
             css={css`
@@ -74,23 +69,6 @@ const programming: Array<Technology> = [
   { id: "cplusplus", name: "C++" },
   { id: "unity", name: "UNITY" },
 ];
-
-const profImgStyle = css`
-  position: relative;
-  margin: 20px 0 20px 0;
-
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-
-  transition-duration: 0.2s;
-
-  &:hover {
-    border-radius: 10%;
-
-    transition-duration: 0.2s;
-  }
-`;
 
 const nameStyle = css`
   display: inline-block;
