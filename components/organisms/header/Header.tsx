@@ -1,8 +1,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { Global, css } from "@emotion/react";
-import TitleButton from "./TitleButton";
-import Menu from "./Menu";
+import TitleButton from "../../atoms/works/TitleButton";
+import Menu from "../../molecules/header/Menu";
 
 type Props = {
   siteTitle: string;
