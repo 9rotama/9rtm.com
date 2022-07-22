@@ -1,6 +1,6 @@
 import * as React from "react";
 import Header from "../organisms/header/Header";
-import Background from "../background/Background";
+import Background from "../organisms/background/Background";
 
 type Props = {
   children: React.ReactNode;
