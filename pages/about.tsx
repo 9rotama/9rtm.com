@@ -70,7 +70,7 @@ const programming: Array<Technology> = [
   { id: "cplusplus", name: "C++" },
   { id: "c", name: "C" },
   { id: "unity", name: "UNITY" },
-  { id: "csharp", name: "C#" },
+  { id: "csharp", name: "C#" }
 ];
 
 const nameStyle = css`
