@@ -57,17 +57,20 @@ const toolsAndServices: Array<Technology> = [
   { id: "git", name: "GIT" },
   { id: "blender", name: "BLENDER" },
   { id: "docker", name: "DOCKER" },
+  { id: "ubuntu", name: "UBUNTU" }
 ];
 
 const programming: Array<Technology> = [
   { id: "react", name: "REACT" },
   { id: "javascript", name: "JAVASCRIPT" },
   { id: "typescript", name: "TYPESCRIPT" },
-  { id: "html5", name: "CSS3" },
+  { id: "html5", name: "HTML5" },
   { id: "css3", name: "CSS3" },
   { id: "python", name: "PYTHON" },
   { id: "cplusplus", name: "C++" },
+  { id: "c", name: "C" },
   { id: "unity", name: "UNITY" },
+  { id: "csharp", name: "C#" },
 ];
 
 const nameStyle = css`
