@@ -98,7 +98,7 @@ const titleStyle = css`
   color: #252a34;
   font-family: "Dosis", "M PLUS 1", sans-serif;
   font-weight: 500;
-  font-size: 2.8em;
+  font-size: 2.5em;
   text-transform: uppercase;
 
   @media (max-width: 720px) {

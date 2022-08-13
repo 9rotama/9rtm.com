@@ -2,13 +2,14 @@ import * as React from "react";
 import { css } from "@emotion/react";
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import ContextBox from "../components/templates/ContextBox";
-import TechIcon from "../components/atoms/about/TechIcon";
 import ProfImage from "../components/atoms/about/ProfImage";
+import { SkillCard } from "../components/organisms/about/SkillCard";
+import CardWrapper from "../components/organisms/common/CardWrapper";
 
 type Technology = {
   id: string;
   name: string;
-  src: string;
+  iconSrc: string;
 };
 
 const AboutPage = () => {
@@ -38,9 +39,12 @@ const AboutPage = () => {
           主にクライアント側の開発に興味があります。
         </div>
         <h1>⌨️ i use</h1>
-        {Skills.map((e) => (
-          <TechIcon key={e.id + "-skillicon"} id={e.id} src={e.src} name={e.name} />
-        ))}
+        <CardWrapper>
+          {Skills.map((e) => (
+            <SkillCard key={e.id + "-skillicon"} id={e.id} name={e.name} iconSrc={e.iconSrc} rank={5} description={"test,test"} url={"9rtm.com"} />
+          ))}
+        </CardWrapper>
+        
         <h1>🎮 i play</h1>
       </ContextBox>
     </>
@@ -48,12 +52,12 @@ const AboutPage = () => {
 };
 
 const Skills: Array<Technology> = [
-  { id: "unity", name: "Unity", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"},
-  { id: "react", name: "React", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { id: "python", name: "Python3", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"},
-  { id: "figma", name: "Figma", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"},
-  { id: "blender", name: "Blender", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg"},
-  { id: "ubuntu", name: "Ubuntu", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg"},
+  { id: "unity", name: "Unity", iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"},
+  { id: "react", name: "React", iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { id: "python", name: "Python3", iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"},
+  { id: "figma", name: "Figma", iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"},
+  { id: "blender", name: "Blender", iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg"},
+  { id: "ubuntu", name: "Ubuntu", iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg"},
 ];
 
 const nameStyle = css`
