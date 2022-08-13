@@ -5,9 +5,10 @@ import { useRef } from "react";
 type Props = {
   name: string;
   id: string;
+  src: string;
 };
 
-const Devicon: React.FC<Props> = ({ name, id }) => {
+const TechIcon: React.FC<Props> = ({ id, name, src }) => {
   const tipRef = useRef<HTMLDivElement>(null);
 
   const handleMouseEnter = () => {
@@ -28,13 +29,7 @@ const Devicon: React.FC<Props> = ({ name, id }) => {
       onMouseLeave={handleMouseLeave}
     >
       <img
-        src={
-          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/" +
-          id +
-          "/" +
-          id +
-          "-original.svg"
-        }
+        src={src}
         alt={name}
         css={css`
           ${imgStyle}
@@ -94,4 +89,4 @@ const tipStyle = css`
   transition-duration: 0.2s;
 `;
 
-export default Devicon;
+export default TechIcon;

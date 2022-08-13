@@ -2,12 +2,13 @@ import * as React from "react";
 import { css } from "@emotion/react";
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import ContextBox from "../components/templates/ContextBox";
-import Devicon from "../components/atoms/about/Devicon";
+import TechIcon from "../components/atoms/about/TechIcon";
 import ProfImage from "../components/atoms/about/ProfImage";
 
 type Technology = {
   id: string;
   name: string;
+  src: string;
 };
 
 const AboutPage = () => {
@@ -33,24 +34,26 @@ const AboutPage = () => {
             9rotama
           </h2>
           <h3>game dev / UI design</h3>
-          情報系大学の3年です。音楽ゲームが好きです。
+          情報系大学の3年です。音楽ゲームが好きです。<br />
+          主にクライアント側の開発に興味があります。
         </div>
-        <h1>⌨️i use</h1>
+        <h1>⌨️ i use</h1>
         {Skills.map((e) => (
-          <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
+          <TechIcon key={e.id + "-skillicon"} id={e.id} src={e.src} name={e.name} />
         ))}
+        <h1>🎮 i play</h1>
       </ContextBox>
     </>
   );
 };
 
 const Skills: Array<Technology> = [
-  { id: "vscode", name: "VSCODE" },
-  { id: "figma", name: "FIGMA" },
-  { id: "blender", name: "BLENDER" },
-  { id: "unity", name: "UNITY" },
-  { id: "react", name: "REACT" },
-  { id: "python", name: "PYTHON" },
+  { id: "unity", name: "Unity", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"},
+  { id: "react", name: "React", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { id: "python", name: "Python3", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"},
+  { id: "figma", name: "Figma", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"},
+  { id: "blender", name: "Blender", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg"},
+  { id: "ubuntu", name: "Ubuntu", src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg"},
 ];
 
 const nameStyle = css`
