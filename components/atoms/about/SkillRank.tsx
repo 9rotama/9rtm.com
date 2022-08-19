@@ -26,15 +26,17 @@ export const SkillRank: React.FC<Props> = ({ rank }) => {
       `}
     >
       <div>
-        {stars.map((e) => (    
+        {stars.map((e, _) => (    
           e ? 
           <FontAwesomeIcon
+            key={_}
             icon={faStar}
             css={css`
               ${StarTrueStyle}
             `}
           /> : 
           <FontAwesomeIcon
+            key={_}
             icon={faStar}
             css={css`
               ${StarFalseStyle}
