@@ -41,7 +41,7 @@ export const SkillCard: React.FC<Props> = ({ id, name, iconSrc, rank, descriptio
         >
           {name}
         </h3>
-        <SkillRank rank={3} />
+        <SkillRank rank={rank} />
       </div>
       
       <div
@@ -72,7 +72,6 @@ const skillCardStyle = css`
   width: 40%;
   height: 130px;
   text-align: left;
-  -webkit-line-clamp: 2;
 
   @media (max-width: 640px) {
     & {

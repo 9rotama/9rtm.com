@@ -1,4 +1,7 @@
 import * as React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState, useRef, useEffect } from "react";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { css } from "@emotion/react";
 
 type Props = {
@@ -6,14 +9,38 @@ type Props = {
 };
 
 export const SkillRank: React.FC<Props> = ({ rank }) => {
+  const [rankState, setRankState] = useState<number>(0);
+  const stars: boolean[] = [];
+  for (let i = 0; i < 5; i++) {
+    if( i < rank ) {
+      stars.push(true);
+    } else {
+      stars.push(false);
+    }
+  }
+  
   return (
     <div 
       css={css`
         ${wrapStyle}
       `}
     >
-      <div >
-        ★★★★★
+      <div>
+        {stars.map((e) => (    
+          e ? 
+          <FontAwesomeIcon
+            icon={faStar}
+            css={css`
+              ${StarTrueStyle}
+            `}
+          /> : 
+          <FontAwesomeIcon
+            icon={faStar}
+            css={css`
+              ${StarFalseStyle}
+            `}
+          />
+        ))}
       </div>
     </div>
   );
@@ -21,4 +48,11 @@ export const SkillRank: React.FC<Props> = ({ rank }) => {
 
 const wrapStyle = css`
   margin: 0 0 0 10px;
+`
+const StarTrueStyle = css`
+  color: #73a2d8;
+`
+
+const StarFalseStyle = css`
+  color: #00111d16;
 `
