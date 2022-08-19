@@ -27,6 +27,7 @@ type Props = {
 const WorksPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   works
 }: Props) => {
+  console.log(works)
   return (
     <>
       <link
@@ -45,9 +46,9 @@ const WorksPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               key={e.title + "-workscard"}
               title={e.title}
               url={e.url}
-              imgSrc={e.imgSrc}
+              imgSrc={e.imgSrc.url}
               description={e.description}
-              techStack={e.techStack}
+              techStack={e.techStack.map((obj) => obj.tech)}
               isTeam={e.isTeam}
             />
           ))}
@@ -70,50 +71,9 @@ type workContexts = {
   isTeam: boolean;
 };
 
-const webApps: Array<workContexts> = [
-  {
-    title: "arcwebtool",
-    url: "https://9rotama.github.io/arcwebtool",
-    imgSrc: "",
-    techStack: ["javascript", "bootstrap"],
-    description: "譜面制作用マクロ",
-    isTeam: false,
-  },
-  {
-    title: "tegei.github.io/works",
-    url: "https://tegei.github.io/works",
-    imgSrc: "",
-    techStack: ["gatsby", "javascript"],
-    description: "作品紹介ページ",
-    isTeam: false,
-  },
-  {
-    title: "web-slide",
-    url: "https://web-slide-puce.vercel.app",
-    imgSrc: "",
-    techStack: ["react", "javascript"],
-    description: "ダサいスライドを作れるwebアプリ",
-    isTeam: true,
-  },
-  {
-    title: "re-translate-bot",
-    url: "https://github.com/9rotama/re-translate-bot",
-    imgSrc: "",
-    techStack: ["python", "amazonwebservices"],
-    description: "Discordのメッセージを自動で再翻訳",
-    isTeam: false,
-  },
-];
 
 const games: Array<workContexts> = [
-  {
-    title: "SkyWitches",
-    url: "https://9rotama.itch.io/skywitches",
-    imgSrc: "",
-    techStack: ["unity"],
-    description: "ホウキの魔女を操作するレースゲーム",
-    isTeam: true,
-  },
+  
   {
     title: "BeySweets",
     url: "https://potekumakun.itch.io/bey-sweets",

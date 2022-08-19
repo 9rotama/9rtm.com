@@ -65,7 +65,7 @@ export const WorkCard: React.FC<Props> = ({
         `}
       >
         {techStack.map((e) => (
-          <DeviconSmall name={e} key={e} />
+          <DeviconSmall src={e} key={e} />
         ))}
       </div>
       <FontAwesomeIcon

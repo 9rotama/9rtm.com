@@ -2,21 +2,15 @@ import * as React from "react";
 import { css } from "@emotion/react";
 
 type Props = {
-  name: string;
+  src: string;
   key: string;
 };
 
-const DeviconSmall: React.FC<Props> = ({ name }) => {
+const DeviconSmall: React.FC<Props> = ({ src }) => {
   return (
     <img
-      src={
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/" +
-        name +
-        "/" +
-        name +
-        "-original.svg"
-      }
-      alt={name}
+      src={src}
+      alt={src}
       css={css`
         ${iconStyle}
       `}

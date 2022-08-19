@@ -16,7 +16,7 @@ const TechStack: React.FC<CardProps> = ({
       `}
     >
       {list.map((e) => (
-        <DeviconSmall name={e} key={e} />
+        <DeviconSmall src={e} key={e} />
       ))}
     </div>
   );
