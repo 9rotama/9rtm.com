@@ -2,8 +2,8 @@ import * as React from "react";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 import ContextBox from "../components/templates/ContextBox";
 import LinkButton from "../components/atoms/common/LinkButton";
-import CardWrapper from "../components/organisms/works/CardWrapper";
-import Card from "../components/organisms/works/Card";
+import CardWrapper from "../components/organisms/common/CardWrapper";
+import { WorkCard } from "../components/organisms/works/WorkCard";
 
 type workContexts = {
   title: string;
@@ -28,7 +28,7 @@ const WorksPage = () => {
         <h1>🌎 web-apps</h1>
         <CardWrapper>
           {webApps.map((e) => (
-            <Card
+            <WorkCard
               key={e.title + "-workscard"}
               title={e.title}
               url={e.url}
@@ -41,7 +41,7 @@ const WorksPage = () => {
         <h1>🕹️ games</h1>
         <CardWrapper>
           {games.map((e) => (
-            <Card
+            <WorkCard
               key={e.title + "-workscard"}
               title={e.title}
               url={e.url}

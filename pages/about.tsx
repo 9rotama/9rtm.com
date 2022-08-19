@@ -2,12 +2,17 @@ import * as React from "react";
 import { css } from "@emotion/react";
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import ContextBox from "../components/templates/ContextBox";
-import Devicon from "../components/atoms/about/Devicon";
 import ProfImage from "../components/atoms/about/ProfImage";
+import { SkillCard } from "../components/organisms/about/SkillCard";
+import CardWrapper from "../components/organisms/common/CardWrapper";
 
 type Technology = {
   id: string;
   name: string;
+  iconSrc: string;
+  rank: number;
+  description: string;
+  url: string;
 };
 
 const AboutPage = () => {
@@ -32,45 +37,72 @@ const AboutPage = () => {
           >
             9rotama
           </h2>
-          <h3>frontend dev / game dev / UI design</h3>
-          情報系大学の3年です。音楽ゲームが好きです。
-          <br />
-          ごく稀にイラストを描きます。
+          <h3>game dev / UI design</h3>
+          情報系大学の3年です。音楽ゲームが好きです。<br />
+          主にクライアント側の開発に興味があります。
         </div>
-        <h1>⌨️ programming</h1>
-        {programming.map((e) => (
-          <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
-        ))}
-        <h1>🧰 tools / services</h1>
-        {toolsAndServices.map((e) => (
-          <Devicon key={e.id + "-abouticon"} id={e.id} name={e.name} />
-        ))}
+        <h1>⌨️ i use</h1>
+        <CardWrapper>
+          {Skills.map((e) => (
+            <SkillCard key={e.id + "-skillicon"} id={e.id} name={e.name} iconSrc={e.iconSrc} rank={e.rank} description={e.description} url={e.url} />
+          ))}
+        </CardWrapper>
+        
+        <h1>🎮 i play</h1>
       </ContextBox>
     </>
   );
 };
 
-const toolsAndServices: Array<Technology> = [
-  { id: "vscode", name: "VSCODE" },
-  { id: "figma", name: "FIGMA" },
-  { id: "inkscape", name: "INKSCAPE" },
-  { id: "git", name: "GIT" },
-  { id: "blender", name: "BLENDER" },
-  { id: "docker", name: "DOCKER" },
-  { id: "ubuntu", name: "UBUNTU" }
-];
-
-const programming: Array<Technology> = [
-  { id: "react", name: "REACT" },
-  { id: "javascript", name: "JAVASCRIPT" },
-  { id: "typescript", name: "TYPESCRIPT" },
-  { id: "html5", name: "HTML5" },
-  { id: "css3", name: "CSS3" },
-  { id: "python", name: "PYTHON" },
-  { id: "cplusplus", name: "C++" },
-  { id: "c", name: "C" },
-  { id: "unity", name: "UNITY" },
-  { id: "csharp", name: "C#" }
+const Skills: Array<Technology> = [
+  { 
+    id: "unity",
+    name: "Unity",
+    iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg",
+    rank: 4,
+    description: "ゲームジャムやハッカソンの開発で使用。2D/3D両方経験。",
+    url: "/"
+  },
+  {
+    id: "react",
+    name: "React",
+    iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    rank: 3,
+    description: "最近はNext.js, Typescriptを使用。",
+    url: "/"
+  },
+  {
+    id: "python",
+    name: "Python3",
+    iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    rank: 3,
+    description: "レポートのグラフ作成やマクロの開発、簡単な画像処理等で使用。",
+    url: "/"
+  },
+  {
+    id: "figma",
+    name: "Figma",
+    iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+    rank: 4,
+    description: "学内イベントのポスター、UIデザイン、スライド制作等で使用。",
+    url: "/"
+  },
+  { 
+    id: "blender",
+    name: "Blender",
+    iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg",
+    rank: 2,
+    description: "サークルで勉強した後モーショングラフィックもどきの映像を作った。",
+    url: "/"
+  },
+  {
+    id: "ubuntu",
+    name: "Ubuntu",
+    iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg",
+    rank: 2,
+    description: "新PCで使用中。",
+    url: "/"
+  },
 ];
 
 const nameStyle = css`
