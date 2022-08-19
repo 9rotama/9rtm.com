@@ -62,34 +62,4 @@ const WorksPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   );
 };
 
-type workContexts = {
-  title: string;
-  url: string;
-  imgSrc: string;
-  techStack: Array<string> /*deviconのurlにそのまま変換するため、devicon上の名前を参照する*/;
-  description: string;
-  isTeam: boolean;
-};
-
-
-const games: Array<workContexts> = [
-  
-  {
-    title: "BeySweets",
-    url: "https://potekumakun.itch.io/bey-sweets",
-    imgSrc: "",
-    techStack: ["unity"],
-    description: "お菓子なコマで遊ぶゲーム",
-    isTeam: true,
-  },
-  {
-    title: "Solitude Sniper",
-    url: "https://unityroom.com/games/solitude-sniper",
-    imgSrc: "",
-    techStack: ["unity"],
-    description: "スナイパーFPS",
-    isTeam: true,
-  },
-];
-
 export default WorksPage;
