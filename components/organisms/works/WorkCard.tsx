@@ -4,11 +4,12 @@ import { css } from "@emotion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGroup, faUser } from "@fortawesome/free-solid-svg-icons";
 import DeviconSmall from "../../atoms/works/DeviconSmall";
-import { descriptionStyle, titleStyle, floatCardStyle } from "../../molecules/common/floatCardStyle";
+import { cardPaddingX, cardPaddingY, descriptionStyle, titleStyle, floatCardStyle } from "../../molecules/common/floatCardStyle";
 
 type Props = {
   title: string;
   url: string;
+  imgSrc: string;
   description: string;
   techStack: Array<string>;
   isTeam?: boolean;
@@ -17,6 +18,7 @@ type Props = {
 export const WorkCard: React.FC<Props> = ({
   title,
   url,
+  imgSrc,
   description,
   techStack,
   isTeam,
@@ -24,11 +26,24 @@ export const WorkCard: React.FC<Props> = ({
   return (
     <a
       css={css`
-        ${workCardStyle}
         ${floatCardStyle}
+        ${workCardStyle}
       `}
       href={url}
     >
+      <div
+        css={css`
+          ${imgContainerStyle}
+        `}
+      >
+        <img 
+          src={imgSrc}
+          css={css`
+            ${imgStyle}
+          `}
+        />
+      </div>
+      
       <h3
         css={css`
           ${titleStyle}
@@ -65,12 +80,13 @@ export const WorkCard: React.FC<Props> = ({
 
 const workCardStyle = css`
   width: 300px;
-  height: 130px;
+  height: 270px;
+  
 
   @media (max-width: 960px) {
     & {
-      width: 300px;
-      height: 120px;
+      width: 270px;
+      height: 260px;
     }
   }
   @media (max-width: 640px) {
@@ -79,6 +95,16 @@ const workCardStyle = css`
     }
   }
 `;
+
+const imgContainerStyle = css`
+  margin: -${cardPaddingY}px -${cardPaddingX}px 15px -${cardPaddingX}px;
+  overflow: hidden;
+  height: 150px;
+`
+const imgStyle = css`
+  object-fit: cover;
+  width: 101%;
+`
 
 const iconStyle = css`
   position: absolute;

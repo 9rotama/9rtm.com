@@ -8,6 +8,7 @@ import { WorkCard } from "../components/organisms/works/WorkCard";
 type workContexts = {
   title: string;
   url: string;
+  imgSrc: string;
   techStack: Array<string> /*deviconのurlにそのまま変換するため、devicon上の名前を参照する*/;
   description: string;
   isTeam: boolean;
@@ -32,6 +33,7 @@ const WorksPage = () => {
               key={e.title + "-workscard"}
               title={e.title}
               url={e.url}
+              imgSrc={e.imgSrc}
               description={e.description}
               techStack={e.techStack}
               isTeam={e.isTeam}
@@ -45,6 +47,7 @@ const WorksPage = () => {
               key={e.title + "-workscard"}
               title={e.title}
               url={e.url}
+              imgSrc={e.imgSrc}
               description={e.description}
               techStack={e.techStack}
               isTeam={e.isTeam}
@@ -64,6 +67,7 @@ const webApps: Array<workContexts> = [
   {
     title: "9rtm.com",
     url: "https://9rtm.com",
+    imgSrc: "https://cdn.discordapp.com/attachments/591971228823322627/1007655045459869819/unknown.png",
     techStack: ["nextjs", "typescript"],
     description: "ポートフォリオ",
     isTeam: false,
@@ -71,6 +75,7 @@ const webApps: Array<workContexts> = [
   {
     title: "arcwebtool",
     url: "https://9rotama.github.io/arcwebtool",
+    imgSrc: "",
     techStack: ["javascript", "bootstrap"],
     description: "譜面制作用マクロ",
     isTeam: false,
@@ -78,6 +83,7 @@ const webApps: Array<workContexts> = [
   {
     title: "tegei.github.io/works",
     url: "https://tegei.github.io/works",
+    imgSrc: "",
     techStack: ["gatsby", "javascript"],
     description: "作品紹介ページ",
     isTeam: false,
@@ -85,6 +91,7 @@ const webApps: Array<workContexts> = [
   {
     title: "web-slide",
     url: "https://web-slide-puce.vercel.app",
+    imgSrc: "",
     techStack: ["react", "javascript"],
     description: "ダサいスライドを作れるwebアプリ",
     isTeam: true,
@@ -92,6 +99,7 @@ const webApps: Array<workContexts> = [
   {
     title: "re-translate-bot",
     url: "https://github.com/9rotama/re-translate-bot",
+    imgSrc: "",
     techStack: ["python", "amazonwebservices"],
     description: "Discordのメッセージを自動で再翻訳",
     isTeam: false,
@@ -102,6 +110,7 @@ const games: Array<workContexts> = [
   {
     title: "SkyWitches",
     url: "https://9rotama.itch.io/skywitches",
+    imgSrc: "",
     techStack: ["unity"],
     description: "ホウキの魔女を操作するレースゲーム",
     isTeam: true,
@@ -109,6 +118,7 @@ const games: Array<workContexts> = [
   {
     title: "BeySweets",
     url: "https://potekumakun.itch.io/bey-sweets",
+    imgSrc: "",
     techStack: ["unity"],
     description: "お菓子なコマで遊ぶゲーム",
     isTeam: true,
@@ -116,6 +126,7 @@ const games: Array<workContexts> = [
   {
     title: "Solitude Sniper",
     url: "https://unityroom.com/games/solitude-sniper",
+    imgSrc: "",
     techStack: ["unity"],
     description: "スナイパーFPS",
     isTeam: true,

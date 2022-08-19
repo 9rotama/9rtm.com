@@ -1,4 +1,7 @@
-  import { css } from "@emotion/react";
+import { css } from "@emotion/react";
+
+export const cardPaddingX = 30;
+export const cardPaddingY = 10;
 
 export const floatCardStyle = css`
   position: relative;
@@ -6,7 +9,8 @@ export const floatCardStyle = css`
   background: #f5faff;
   border-radius: 20px;
   margin: 0 0 20px 0;
-  padding: 10px 30px 10px 30px;
+  padding: ${cardPaddingY}px ${cardPaddingX}px ${cardPaddingY}px ${cardPaddingX}px;
+  overflow: hidden;
 
   text-decoration: none;
   color: #252a34;
@@ -24,7 +28,6 @@ export const floatCardStyle = css`
   @media (max-width: 960px) {
     & {
       margin: 0px 2.5px 20px 2.5px;
-      padding: 10px 20px 10px 20px;
     }
   }
 `
