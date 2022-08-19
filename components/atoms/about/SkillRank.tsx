@@ -5,9 +5,20 @@ type Props = {
   rank: number;
 };
 
-const SkillRank: React.FC<Props> = ({ rank }) => {
+export const SkillRank: React.FC<Props> = ({ rank }) => {
   return (
-    <div>
+    <div 
+      css={css`
+        ${wrapStyle}
+      `}
+    >
+      <div >
+        ★★★★★
+      </div>
     </div>
   );
 }
+
+const wrapStyle = css`
+  margin: 0 0 0 10px;
+`

@@ -39,6 +39,7 @@ export const WorkCard: React.FC<Props> = ({
       <p
         css={css`
           ${descriptionStyle}
+          ${workDescriptionStyle}
         `}
       >
         {description}
@@ -95,3 +96,10 @@ const techStackListStyle = css`
   float: left;
   bottom: 15px;
 `;
+
+const workDescriptionStyle = css`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+`

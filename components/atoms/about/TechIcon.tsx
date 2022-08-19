@@ -39,8 +39,7 @@ const divStyle = css`
 `;
 
 const imgStyle = css`
-  width: 45px;
-  margin: 10px;
+  width: 40px;
 `;
 
 export default TechIcon;

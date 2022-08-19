@@ -2,7 +2,7 @@ import * as React from "react";
 import { css } from "@emotion/react";
 import { descriptionStyle, titleStyle, floatCardStyle } from "../../molecules/common/floatCardStyle";
 import TechIcon from "../../atoms/about/TechIcon";
-
+import { SkillRank } from "../../atoms/about/SkillRank";
 
 type Props = {
   id: string;
@@ -22,40 +22,57 @@ export const SkillCard: React.FC<Props> = ({ id, name, iconSrc, rank, descriptio
       `}
       href={url}
     >
-      <div css={iconStyle}>
+      <div
+        css={css`
+          ${iconStyle}
+        `}
+      >
         <TechIcon
           name={name}
           src={iconSrc}
         />
       </div>
+
+      <div>
+        <h3
+          css={css`
+            ${titleStyle}
+          `}
+        >
+          {name}
+        </h3>
+        <SkillRank rank={3} />
+      </div>
       
-      <h3
+      <div
         css={css`
-          ${titleStyle}
+          ${verticalCenterStyle}
         `}
       >
-        {name}
-      </h3>
-      <p
-        css={css`
-          ${descriptionStyle}
-        `}
-      >
-        {description}
-      </p>
+        <p
+          css={css`
+            ${descriptionStyle}
+            ${skillDescriptionStyle}
+          `}
+        >
+          {description}
+        </p>
+      </div>
+      
     </a>
   );
 }
 
 const iconStyle = css`
-  float: left;
-  margin-right: 30px;
+  margin: 10px 15px 0px 0px;
+  float: right;
 `
 
 const skillCardStyle = css`
   width: 40%;
-  height: 70px;
+  height: 130px;
   text-align: left;
+  -webkit-line-clamp: 2;
 
   @media (max-width: 640px) {
     & {
@@ -64,3 +81,14 @@ const skillCardStyle = css`
   }
 `;
 
+const verticalCenterStyle = css`
+  display: flex;
+  align-items: center;
+`
+
+const skillDescriptionStyle = css`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+`
