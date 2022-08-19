@@ -1,20 +1,32 @@
 import * as React from "react";
+import type { InferGetStaticPropsType, NextPage } from "next";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 import ContextBox from "../components/templates/ContextBox";
 import LinkButton from "../components/atoms/common/LinkButton";
 import CardWrapper from "../components/organisms/common/CardWrapper";
 import { WorkCard } from "../components/organisms/works/WorkCard";
+import { client } from "../libs/client";
+import type { work } from "../types/work";
 
-type workContexts = {
-  title: string;
-  url: string;
-  imgSrc: string;
-  techStack: Array<string> /*deviconのurlにそのまま変換するため、devicon上の名前を参照する*/;
-  description: string;
-  isTeam: boolean;
-};
 
-const WorksPage = () => {
+
+export const getStaticProps = async () => {
+  const work = await client.get({ endpoint: "works" });
+  
+  return {
+    props: {
+      works: work.contents,
+    }
+  }
+}
+
+type Props = {
+  works: Array<work>
+}
+
+const WorksPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  works
+}: Props) => {
   return (
     <>
       <link
@@ -26,23 +38,9 @@ const WorksPage = () => {
         pageTitle="works"
         pageDescription="作ったもの"
       >
-        <h1>🌎 web-apps</h1>
+      <h1>⌨️ programming</h1>
         <CardWrapper>
-          {webApps.map((e) => (
-            <WorkCard
-              key={e.title + "-workscard"}
-              title={e.title}
-              url={e.url}
-              imgSrc={e.imgSrc}
-              description={e.description}
-              techStack={e.techStack}
-              isTeam={e.isTeam}
-            />
-          ))}
-        </CardWrapper>
-        <h1>🕹️ games</h1>
-        <CardWrapper>
-          {games.map((e) => (
+          {works.map((e: work) => (
             <WorkCard
               key={e.title + "-workscard"}
               title={e.title}
@@ -63,15 +61,16 @@ const WorksPage = () => {
   );
 };
 
+type workContexts = {
+  title: string;
+  url: string;
+  imgSrc: string;
+  techStack: Array<string> /*deviconのurlにそのまま変換するため、devicon上の名前を参照する*/;
+  description: string;
+  isTeam: boolean;
+};
+
 const webApps: Array<workContexts> = [
-  {
-    title: "9rtm.com",
-    url: "https://9rtm.com",
-    imgSrc: "https://cdn.discordapp.com/attachments/591971228823322627/1007655045459869819/unknown.png",
-    techStack: ["nextjs", "typescript"],
-    description: "ポートフォリオ",
-    isTeam: false,
-  },
   {
     title: "arcwebtool",
     url: "https://9rotama.github.io/arcwebtool",
