@@ -5,7 +5,6 @@ import TechIcon from "../../atoms/about/TechIcon";
 import { SkillRank } from "../../atoms/about/SkillRank";
 
 type Props = {
-  id: string;
   name: string;
   iconSrc: string;
   rank: number;
@@ -13,7 +12,7 @@ type Props = {
   url: string;
 };
 
-export const SkillCard: React.FC<Props> = ({ id, name, iconSrc, rank, description, url }) => {
+export const SkillCard: React.FC<Props> = ({ name, iconSrc, rank, description, url }) => {
   return (
     <a
       css={css`
