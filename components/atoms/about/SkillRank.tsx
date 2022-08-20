@@ -9,7 +9,6 @@ type Props = {
 };
 
 export const SkillRank: React.FC<Props> = ({ rank }) => {
-  const [rankState, setRankState] = useState<number>(0);
   const stars: boolean[] = [];
   for (let i = 0; i < 5; i++) {
     if( i < rank ) {

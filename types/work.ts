@@ -6,10 +6,10 @@ export type work = {
   title: string;
   url: string;
   imgSrc: {
-    url: string
+    url: string //オブジェクトからurlのみ受け取る
   };
   description: string;
-  techStack: Array<tech> /*deviconのurlにそのまま変換するため、devicon上の名前を参照する*/;
+  techStack: Array<tech>; //アイコンのURL(文字列)の配列
   isTeam: boolean;
   type: string;
 };

@@ -6,16 +6,14 @@ import LinkButton from "../components/atoms/common/LinkButton";
 import CardWrapper from "../components/organisms/common/CardWrapper";
 import { WorkCard } from "../components/organisms/works/WorkCard";
 import { client } from "../libs/client";
-import type { work } from "../types/work";
-
-
+import type { work } from "../types/work"
 
 export const getStaticProps = async () => {
-  const work = await client.get({ endpoint: "works" });
+  const data = await client.get({ endpoint: "works" });
   
   return {
     props: {
-      works: work.contents,
+      works: data.contents,
     }
   }
 }
@@ -27,7 +25,6 @@ type Props = {
 const WorksPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   works
 }: Props) => {
-  console.log(works)
   return (
     <>
       <link
