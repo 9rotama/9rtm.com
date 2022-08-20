@@ -17,7 +17,7 @@ const welcomeStyle = css`
   font-size: 10em;
   font-weight: 200;
   font-family: "Dosis", "M PLUS 1", sans-serif;
-  text-shadow: 0 0 10px #ffffffc2, 0 0 10px #ffffffc2;
+  text-shadow: 0 0 20px #ffffffff, 0 0 20px #ffffffff;
 
   z-index: 200;
   @media (max-width: 600px) {
