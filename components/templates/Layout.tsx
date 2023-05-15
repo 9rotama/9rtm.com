@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState, createContext, useContext } from "react";
 import Header from "../organisms/header/Header";
 import Background from "../organisms/background/Background";
 
