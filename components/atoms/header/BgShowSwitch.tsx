@@ -1,5 +1,9 @@
 import { css } from "@emotion/react";
-import { useState } from "react";
+import { useContext } from "react";
+import {
+  showBackgroundContext,
+  setShowBackgroundContext,
+} from "../../templates/Layout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceMehBlank } from "@fortawesome/free-solid-svg-icons";
 
@@ -21,14 +25,15 @@ const activeTheme: colorTheme = {
 };
 
 const BgShowSwitch: React.FC<Props> = () => {
-  const [checked, setChecked] = useState<boolean>(false);
+  const showBackground = useContext(showBackgroundContext);
+  const setShowBackground = useContext(setShowBackgroundContext);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(e.target.checked);
+    setShowBackground(e.target.checked);
   };
 
   const iconStyle = css`
-    color: ${checked ? activeTheme.textColor : normalTheme.textColor};
+    color: ${showBackground ? activeTheme.textColor : normalTheme.textColor};
 
     transition-duration: 0.3s;
   `;
@@ -41,7 +46,7 @@ const BgShowSwitch: React.FC<Props> = () => {
     height: 36px;
     border-radius: 50vh;
     border: 0.01px solid #252a3442;
-    background-color: ${checked
+    background-color: ${showBackground
       ? activeTheme.backgroundColor
       : normalTheme.backgroundColor};
 
@@ -64,7 +69,7 @@ const BgShowSwitch: React.FC<Props> = () => {
         css={css`
           ${inputStyle}
         `}
-        checked={checked}
+        checked={showBackground}
         onChange={handleChange}
       />
     </label>
