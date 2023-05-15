@@ -1,7 +1,7 @@
 import * as React from "react";
 import { css } from "@emotion/react";
 import SnsLinkButtonlist from "../components/molecules/home/SnsLinkButtonList";
-import Welcome from "../components/atoms/home/Welcome"
+import Welcome from "../components/atoms/home/Welcome";
 
 const HomePage = () => {
   return (
