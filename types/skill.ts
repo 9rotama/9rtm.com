@@ -5,4 +5,3 @@ export type skill = {
   iconSrc: string;
   url: string;
 };
-  

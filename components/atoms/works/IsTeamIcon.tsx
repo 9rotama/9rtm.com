@@ -9,9 +9,7 @@ type CardProps = {
   isTeam?: boolean;
 };
 
-const IsTeamIcon: React.FC<CardProps> = ({
-  isTeam,
-}) => {
+const IsTeamIcon: React.FC<CardProps> = ({ isTeam }) => {
   return (
     <FontAwesomeIcon
       icon={isTeam ? faUserGroup : faUser}

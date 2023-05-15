@@ -6,24 +6,24 @@ import LinkButton from "../components/atoms/common/LinkButton";
 import CardWrapper from "../components/organisms/common/CardWrapper";
 import { WorkCard } from "../components/organisms/works/WorkCard";
 import { client } from "../libs/client";
-import type { work } from "../types/work"
+import type { work } from "../types/work";
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "works" });
-  
+
   return {
     props: {
       works: data.contents,
-    }
-  }
-}
+    },
+  };
+};
 
 type Props = {
-  works: Array<work>
-}
+  works: Array<work>;
+};
 
 const WorksPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  works
+  works,
 }: Props) => {
   return (
     <>
@@ -36,7 +36,7 @@ const WorksPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         pageTitle="works"
         pageDescription="作ったもの"
       >
-      <h1>⌨️ programming</h1>
+        <h1>⌨️ programming</h1>
         <CardWrapper>
           {works.map((e: work) => (
             <WorkCard

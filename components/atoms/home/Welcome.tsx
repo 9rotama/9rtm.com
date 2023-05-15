@@ -32,4 +32,4 @@ const welcomeStyle = css`
   }
 `;
 
-export default Welcome
+export default Welcome;

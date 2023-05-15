@@ -7,9 +7,7 @@ type Props = {
   pageIcon: IconDefinition;
 };
 
-const ContextBoxIcon: React.FC<Props> = ({
-  pageIcon,
-}) => {
+const ContextBoxIcon: React.FC<Props> = ({ pageIcon }) => {
   return (
     <div
       css={css`

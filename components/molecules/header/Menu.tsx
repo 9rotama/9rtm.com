@@ -1,7 +1,6 @@
-import * as React from "react";
-import Link from "next/link";
-import { Global, css } from "@emotion/react";
+import { css } from "@emotion/react";
 import MenuButton from "../../atoms/header/MenuButton";
+import BgShowSwitch from "../../atoms/header/BgShowSwitch";
 
 type menuItem = {
   name: string;
@@ -18,6 +17,7 @@ const Menu = () => {
       {menuItems.map((e) => (
         <MenuButton key={e.name} name={e.name} path={e.path} />
       ))}
+      <BgShowSwitch />
     </div>
   );
 };
@@ -36,6 +36,8 @@ const menuItems: Array<menuItem> = [
 const menuDisplayStyle = css`
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
 `;
 
 export default Menu;

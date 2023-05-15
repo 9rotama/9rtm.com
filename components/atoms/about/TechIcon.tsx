@@ -8,7 +8,6 @@ type Props = {
 };
 
 const TechIcon: React.FC<Props> = ({ name, src }) => {
-
   return (
     <div
       css={css`
