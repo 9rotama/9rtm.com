@@ -9,7 +9,8 @@ export const floatCardStyle = css`
   background: #f5faff;
   border-radius: 20px;
   margin: 0 0 20px 0;
-  padding: ${cardPaddingY}px ${cardPaddingX}px ${cardPaddingY}px ${cardPaddingX}px;
+  padding: ${cardPaddingY}px ${cardPaddingX}px ${cardPaddingY}px
+    ${cardPaddingX}px;
   overflow: hidden;
 
   text-decoration: none;
@@ -30,7 +31,7 @@ export const floatCardStyle = css`
       margin: 0px 2.5px 20px 2.5px;
     }
   }
-`
+`;
 
 export const titleStyle = css`
   margin: 10px;

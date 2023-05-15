@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fmt": "prettier --write 'components/**/*.tsx' | prettier --write 'pages/**/*.tsx'",
+    "fmt": "prettier --write './**/*.{tsx,ts,tsx,js,json,css,md,mdx}'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

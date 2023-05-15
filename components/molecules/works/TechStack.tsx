@@ -6,9 +6,7 @@ type CardProps = {
   list: Array<string>;
 };
 
-const TechStack: React.FC<CardProps> = ({
-  list,
-}) => {
+const TechStack: React.FC<CardProps> = ({ list }) => {
   return (
     <div
       css={css`

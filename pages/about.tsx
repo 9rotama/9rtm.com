@@ -7,25 +7,25 @@ import ProfImage from "../components/atoms/about/ProfImage";
 import { SkillCard } from "../components/organisms/about/SkillCard";
 import CardWrapper from "../components/organisms/common/CardWrapper";
 import { client } from "../libs/client";
-import type { skill } from "../types/skill"
+import type { skill } from "../types/skill";
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "skills" });
-  
+
   return {
     props: {
       skills: data.contents,
-    }
-  }
-}
+    },
+  };
+};
 
 type Props = {
-  skills: Array<skill>
-}
+  skills: Array<skill>;
+};
 
-
-
-const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ skills }: Props) => {
+const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  skills,
+}: Props) => {
   return (
     <>
       <link
@@ -48,19 +48,21 @@ const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ s
             9rotama
           </h2>
           <h3>game dev / UI design</h3>
-          情報系大学の3年です。音楽ゲームが好きです。<br />
+          情報系大学の3年です。音楽ゲームが好きです。
+          <br />
           主にクライアント側の開発に興味があります。
         </div>
         <h1>⌨️ i use</h1>
         <CardWrapper>
           {skills.map((e) => (
-            <SkillCard 
+            <SkillCard
               key={e.name + "-skillicon"}
               name={e.name}
               iconSrc={e.iconSrc}
               rank={e.rank}
               description={e.description}
-              url={e.url} />
+              url={e.url}
+            />
           ))}
         </CardWrapper>
       </ContextBox>

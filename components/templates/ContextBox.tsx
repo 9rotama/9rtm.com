@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import ContextBoxIcon from "../atoms/common/ContextBoxIcon";
-import Footer from "../atoms/common/Footer"
+import Footer from "../atoms/common/Footer";
 
 type Props = {
   pageIcon: IconDefinition;
@@ -30,7 +30,7 @@ const ContextBox: React.FC<Props> = ({
         `}
       >
         <div>
-          <ContextBoxIcon pageIcon={pageIcon}/>
+          <ContextBoxIcon pageIcon={pageIcon} />
           {/*ページタイトル*/}
           <div
             css={css`

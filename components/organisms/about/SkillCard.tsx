@@ -1,6 +1,10 @@
 import * as React from "react";
 import { css } from "@emotion/react";
-import { descriptionStyle, titleStyle, floatCardStyle } from "../../molecules/common/floatCardStyle";
+import {
+  descriptionStyle,
+  titleStyle,
+  floatCardStyle,
+} from "../../molecules/common/floatCardStyle";
 import TechIcon from "../../atoms/about/TechIcon";
 import { SkillRank } from "../../atoms/about/SkillRank";
 
@@ -12,7 +16,13 @@ type Props = {
   url: string;
 };
 
-export const SkillCard: React.FC<Props> = ({ name, iconSrc, rank, description, url }) => {
+export const SkillCard: React.FC<Props> = ({
+  name,
+  iconSrc,
+  rank,
+  description,
+  url,
+}) => {
   return (
     <a
       css={css`
@@ -26,10 +36,7 @@ export const SkillCard: React.FC<Props> = ({ name, iconSrc, rank, description, u
           ${iconStyle}
         `}
       >
-        <TechIcon
-          name={name}
-          src={iconSrc}
-        />
+        <TechIcon name={name} src={iconSrc} />
       </div>
 
       <div>
@@ -42,7 +49,7 @@ export const SkillCard: React.FC<Props> = ({ name, iconSrc, rank, description, u
         </h3>
         <SkillRank rank={rank} />
       </div>
-      
+
       <div
         css={css`
           ${verticalCenterStyle}
@@ -57,15 +64,14 @@ export const SkillCard: React.FC<Props> = ({ name, iconSrc, rank, description, u
           {description}
         </p>
       </div>
-      
     </a>
   );
-}
+};
 
 const iconStyle = css`
   margin: 10px 15px 0px 0px;
   float: right;
-`
+`;
 
 const skillCardStyle = css`
   width: 40%;
@@ -82,11 +88,11 @@ const skillCardStyle = css`
 const verticalCenterStyle = css`
   display: flex;
   align-items: center;
-`
+`;
 
 const skillDescriptionStyle = css`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-`
+`;
