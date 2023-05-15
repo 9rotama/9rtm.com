@@ -54,7 +54,6 @@ const MenuButton: React.FC<Props> = ({ name, path }) => {
 };
 
 const menuButtonStyle = css`
-  margin-left: 10px;
   padding: 2px 10px 2px 10px;
 
   border-bottom: solid;
