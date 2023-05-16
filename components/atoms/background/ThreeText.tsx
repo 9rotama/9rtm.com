@@ -57,7 +57,6 @@ const ThreeText = () => {
     boundingBox?.getCenter(center);
 
     meshRef.current!.geometry.translate(-center.x, -center.y, -center.z);
-    console.log("a");
   });
 
   useFrame((state) => {

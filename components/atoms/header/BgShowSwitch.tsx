@@ -5,7 +5,7 @@ import {
   setShowBackgroundContext,
 } from "../../templates/Layout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFaceMehBlank } from "@fortawesome/free-solid-svg-icons";
+import { faCube } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {};
 
@@ -63,7 +63,7 @@ const BgShowSwitch: React.FC<Props> = () => {
         ${labelStyle}
       `}
     >
-      <FontAwesomeIcon icon={faFaceMehBlank} css={iconStyle}></FontAwesomeIcon>
+      <FontAwesomeIcon icon={faCube} css={iconStyle}></FontAwesomeIcon>
       <input
         type="checkbox"
         css={css`
