@@ -23,6 +23,16 @@ const KAOMOJIS = [
   "(#_#)",
 ];
 
+function easeOutElastic(x: number): number {
+  const c4 = (2 * Math.PI) / 3;
+
+  return x === 0
+    ? 0
+    : x === 1
+    ? 1
+    : Math.pow(2, -10 * x) * Math.sin((x * 10 - 0.75) * c4) + 1;
+}
+
 const ThreeText = () => {
   extend({ TextGeometry });
   const moveSpeed = 0.5;
@@ -35,6 +45,9 @@ const ThreeText = () => {
   const text = KAOMOJIS[Math.floor(Math.random() * KAOMOJIS.length)];
   const meshRef = useRef<THREE.Mesh>(null);
 
+  const zoomingDur = 1; //s
+  const zoomingScaleFac = 3;
+
   useEffect(() => {
     meshRef.current!.geometry.computeBoundingBox();
     const boundingBox = meshRef.current?.geometry.boundingBox;
@@ -45,10 +58,18 @@ const ThreeText = () => {
   }, [meshRef]);
 
   useFrame((state) => {
-    const time = state.clock.getElapsedTime();
-    meshRef.current!.rotation.x = time * moveSpeed + initRot.x;
-    meshRef.current!.rotation.y = (time / 3) * moveSpeed + initRot.y;
-    meshRef.current!.rotation.z = (time / 5) * moveSpeed + initRot.z;
+    if (meshRef.current) {
+      const time = state.clock.getElapsedTime();
+      const zoomingRemain = zoomingDur - time > 0 ? zoomingDur - time : 0;
+      const easing = 1 - zoomingRemain / zoomingDur;
+      const scaleAdd = (1 - easeOutElastic(easing)) * zoomingScaleFac;
+      meshRef.current.scale.x = 1 + scaleAdd;
+      meshRef.current.scale.y = 1 + scaleAdd;
+      meshRef.current.scale.z = 1 + scaleAdd;
+      meshRef.current.rotation.x = time * moveSpeed + initRot.x;
+      meshRef.current.rotation.y = (time / 3) * moveSpeed + initRot.y;
+      meshRef.current.rotation.z = (time / 5) * moveSpeed + initRot.z;
+    }
   });
 
   return (
