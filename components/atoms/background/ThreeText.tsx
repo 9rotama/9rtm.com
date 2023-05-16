@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Vector3 } from "three";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
@@ -23,7 +23,9 @@ const KAOMOJIS = [
   "(#_#)",
 ];
 
-function easeOutElastic(x: number): number {
+const font = new FontLoader().parse(fontJson);
+
+const easeOutElastic = (x: number): number => {
   const c4 = (2 * Math.PI) / 3;
 
   return x === 0
@@ -31,22 +33,22 @@ function easeOutElastic(x: number): number {
     : x === 1
     ? 1
     : Math.pow(2, -10 * x) * Math.sin((x * 10 - 0.75) * c4) + 1;
-}
+};
+
+const rotateSpeed = 0.5;
+
+const zoomingDur = 1; //s
+const zoomingScaleFac = 3;
 
 const ThreeText = () => {
   extend({ TextGeometry });
-  const moveSpeed = 0.5;
-  const initRot = new Vector3(
-    Math.random() * 360,
-    Math.random() * 360,
-    Math.random() * 360
+  const [initRot, setInitRot] = useState(
+    new Vector3(Math.random() * 360, Math.random() * 360, Math.random() * 360)
   );
-  const font = new FontLoader().parse(fontJson);
-  const text = KAOMOJIS[Math.floor(Math.random() * KAOMOJIS.length)];
+  const [text, setText] = useState(
+    KAOMOJIS[Math.floor(Math.random() * KAOMOJIS.length)]
+  );
   const meshRef = useRef<THREE.Mesh>(null);
-
-  const zoomingDur = 1; //s
-  const zoomingScaleFac = 3;
 
   useEffect(() => {
     meshRef.current!.geometry.computeBoundingBox();
@@ -55,7 +57,8 @@ const ThreeText = () => {
     boundingBox?.getCenter(center);
 
     meshRef.current!.geometry.translate(-center.x, -center.y, -center.z);
-  }, [meshRef]);
+    console.log("a");
+  });
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -66,9 +69,9 @@ const ThreeText = () => {
       meshRef.current.scale.x = 1 + scaleAdd;
       meshRef.current.scale.y = 1 + scaleAdd;
       meshRef.current.scale.z = 1 + scaleAdd;
-      meshRef.current.rotation.x = time * moveSpeed + initRot.x;
-      meshRef.current.rotation.y = (time / 3) * moveSpeed + initRot.y;
-      meshRef.current.rotation.z = (time / 5) * moveSpeed + initRot.z;
+      meshRef.current.rotation.x = time * rotateSpeed + initRot.x;
+      meshRef.current.rotation.y = (time / 3) * rotateSpeed + initRot.y;
+      meshRef.current.rotation.z = (time / 5) * rotateSpeed + initRot.z;
     }
   });
 
