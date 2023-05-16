@@ -1,9 +1,7 @@
-import * as React from "react";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Vector3 } from "three";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
-import { Font } from "three/examples/jsm/loaders/FontLoader";
 import { useFrame, extend, ReactThreeFiber } from "@react-three/fiber";
 import fontJson from "three/examples/fonts/helvetiker_bold.typeface.json";
 
@@ -27,27 +25,26 @@ const KAOMOJIS = [
 
 const ThreeText = () => {
   extend({ TextGeometry });
-  const [moveSpeed] = useState<number>(0.5);
-  const [initRot, setInitRot] = useState<Vector3>(new Vector3(0, 0, 0));
-  const [font, setFont] = useState<Font>(new FontLoader().parse(fontJson));
-  const [text, setText] = useState<string>(KAOMOJIS[0]);
+  const moveSpeed = 0.5;
+  const initRot = new Vector3(
+    Math.random() * 360,
+    Math.random() * 360,
+    Math.random() * 360
+  );
+  const font = new FontLoader().parse(fontJson);
+  const text = KAOMOJIS[Math.floor(Math.random() * KAOMOJIS.length)];
   const meshRef = useRef<THREE.Mesh>(null);
 
   useEffect(() => {
-    setText(KAOMOJIS[Math.floor(Math.random() * KAOMOJIS.length)]);
-    setInitRot(
-      new Vector3(Math.random() * 360, Math.random() * 360, Math.random() * 360)
-    );
-  }, []);
-
-  useFrame((state) => {
     meshRef.current!.geometry.computeBoundingBox();
     const boundingBox = meshRef.current?.geometry.boundingBox;
     const center = new Vector3(0, 0, 0);
     boundingBox?.getCenter(center);
 
     meshRef.current!.geometry.translate(-center.x, -center.y, -center.z);
+  }, [meshRef]);
 
+  useFrame((state) => {
     const time = state.clock.getElapsedTime();
     meshRef.current!.rotation.x = time * moveSpeed + initRot.x;
     meshRef.current!.rotation.y = (time / 3) * moveSpeed + initRot.y;
