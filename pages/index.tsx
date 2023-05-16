@@ -2,10 +2,15 @@ import * as React from "react";
 import { css } from "@emotion/react";
 import SnsLinkButtonlist from "../components/molecules/home/SnsLinkButtonList";
 import Welcome from "../components/atoms/home/Welcome";
+import MyHead from "../components/MyHead";
 
 const HomePage = () => {
+  const pageTitle = "home";
+  const pageDescription = "ホーム";
   return (
     <>
+      <MyHead title={pageTitle} description={pageDescription} />
+
       <div
         css={css`
           ${wrapStyle}

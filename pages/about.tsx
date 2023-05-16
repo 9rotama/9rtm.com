@@ -8,6 +8,7 @@ import { SkillCard } from "../components/organisms/about/SkillCard";
 import CardWrapper from "../components/organisms/common/CardWrapper";
 import { client } from "../libs/client";
 import type { skill } from "../types/skill";
+import MyHead from "../components/MyHead";
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "skills" });
@@ -26,16 +27,20 @@ type Props = {
 const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   skills,
 }: Props) => {
+  const pageTitle = "about me";
+  const pageDescription = "自己紹介、スキルなど";
+
   return (
     <>
+      <MyHead title={pageTitle} description={pageDescription} />
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
       />
       <ContextBox
         pageIcon={faAddressCard}
-        pageTitle="about me"
-        pageDescription="自己紹介、スキルなど"
+        pageTitle={pageTitle}
+        pageDescription={pageDescription}
       >
         <h1>📘 profile</h1>
         <ProfImage />

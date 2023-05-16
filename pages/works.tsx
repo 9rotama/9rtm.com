@@ -7,6 +7,7 @@ import CardWrapper from "../components/organisms/common/CardWrapper";
 import { WorkCard } from "../components/organisms/works/WorkCard";
 import { client } from "../libs/client";
 import type { work } from "../types/work";
+import MyHead from "../components/MyHead";
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "works" });
@@ -25,16 +26,20 @@ type Props = {
 const WorksPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   works,
 }: Props) => {
+  const pageTitle = "works";
+  const pageDescription = "作ったもの";
   return (
     <>
+      <MyHead title={pageTitle} description={pageDescription} />
+
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
       />
       <ContextBox
         pageIcon={faBook}
-        pageTitle="works"
-        pageDescription="作ったもの"
+        pageTitle={pageTitle}
+        pageDescription={pageDescription}
       >
         <h1>⌨️ programming</h1>
         <CardWrapper>
