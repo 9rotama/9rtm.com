@@ -18,6 +18,43 @@ type Props = {
 };
 
 export const WorkCard: React.FC<Props> = ({ data }) => {
+  const imgContainerStyle = css`
+    margin: -${cardPaddingY}px -${cardPaddingX}px 15px -${cardPaddingX}px;
+    overflow: hidden;
+    height: 150px;
+  `;
+  const imgStyle = css`
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  `;
+
+  const iconStyle = css`
+    position: absolute;
+    bottom: 17px;
+    right: 8%;
+
+    margin-bottom: auto;
+
+    color: #252f6022;
+    font-size: 2em;
+  `;
+
+  const techStackListStyle = css`
+    position: absolute;
+    float: left;
+    display: flex;
+    bottom: 15px;
+    gap: 6px;
+  `;
+
+  const workDescriptionStyle = css`
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  `;
+
   return (
     <a
       css={css`
@@ -88,40 +125,4 @@ const workCardStyle = css`
       width: 100%;
     }
   }
-`;
-
-const imgContainerStyle = css`
-  margin: -${cardPaddingY}px -${cardPaddingX}px 15px -${cardPaddingX}px;
-  overflow: hidden;
-  height: 150px;
-`;
-const imgStyle = css`
-  object-fit: cover;
-  width: 101%;
-`;
-
-const iconStyle = css`
-  position: absolute;
-  bottom: 17px;
-  right: 8%;
-
-  margin-bottom: auto;
-
-  color: #252f6022;
-  font-size: 2em;
-`;
-
-const techStackListStyle = css`
-  position: absolute;
-  float: left;
-  display: flex;
-  bottom: 15px;
-  gap: 6px;
-`;
-
-const workDescriptionStyle = css`
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
 `;

@@ -16,6 +16,16 @@ export const SkillRank: React.FC<Props> = ({ rank }) => {
       stars.push(false);
     }
   }
+  const wrapStyle = css`
+    margin: 0 0 0 10px;
+  `;
+  const StarTrueStyle = css`
+    color: #73a2d8;
+  `;
+
+  const StarFalseStyle = css`
+    color: #00111d16;
+  `;
 
   return (
     <div
@@ -47,14 +57,3 @@ export const SkillRank: React.FC<Props> = ({ rank }) => {
     </div>
   );
 };
-
-const wrapStyle = css`
-  margin: 0 0 0 10px;
-`;
-const StarTrueStyle = css`
-  color: #73a2d8;
-`;
-
-const StarFalseStyle = css`
-  color: #00111d16;
-`;
