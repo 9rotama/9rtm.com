@@ -7,7 +7,7 @@ import ProfImage from "../components/about/ProfImage";
 import { SkillCard } from "../components/about/SkillCard";
 import CardWrapper from "../components/common/CardWrapper";
 import { client } from "../libs/client";
-import type { skill } from "../types/skill";
+import { Skill } from "../types/Skill";
 import MyHead from "../components/common/MyHead";
 
 export const getStaticProps = async () => {
@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
 };
 
 type Props = {
-  skills: Array<skill>;
+  skills: Array<Skill>;
 };
 
 const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({

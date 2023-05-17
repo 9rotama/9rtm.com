@@ -1,9 +1,7 @@
 import * as React from "react";
-import Image from "next/image";
 import { css } from "@emotion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGroup, faUser } from "@fortawesome/free-solid-svg-icons";
-import DeviconSmall from "./DeviconSmall";
 
 type CardProps = {
   isTeam?: boolean;

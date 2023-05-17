@@ -3,7 +3,7 @@ import Image from "next/image";
 import { css } from "@emotion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGroup, faUser } from "@fortawesome/free-solid-svg-icons";
-import DeviconSmall from "./DeviconSmall";
+import TechIcon from "../common/TechIcon";
 import {
   cardPaddingX,
   cardPaddingY,
@@ -11,31 +11,20 @@ import {
   titleStyle,
   cardStyle,
 } from "../common/CardStyle";
+import { Work } from "../../types/Work";
 
 type Props = {
-  title: string;
-  url: string;
-  imgSrc: string;
-  description: string;
-  techStack: Array<string>;
-  isTeam?: boolean;
+  data: Work;
 };
 
-export const WorkCard: React.FC<Props> = ({
-  title,
-  url,
-  imgSrc,
-  description,
-  techStack,
-  isTeam,
-}) => {
+export const WorkCard: React.FC<Props> = ({ data }) => {
   return (
     <a
       css={css`
         ${cardStyle}
         ${workCardStyle}
       `}
-      href={url}
+      href={data.url}
     >
       <div
         css={css`
@@ -43,7 +32,7 @@ export const WorkCard: React.FC<Props> = ({
         `}
       >
         <img
-          src={imgSrc}
+          src={data.imgSrc.url}
           css={css`
             ${imgStyle}
           `}
@@ -55,7 +44,7 @@ export const WorkCard: React.FC<Props> = ({
           ${titleStyle}
         `}
       >
-        {title}
+        {data.title}
       </h3>
       <p
         css={css`
@@ -63,19 +52,19 @@ export const WorkCard: React.FC<Props> = ({
           ${workDescriptionStyle}
         `}
       >
-        {description}
+        {data.description}
       </p>
       <div
         css={css`
           ${techStackListStyle}
         `}
       >
-        {techStack.map((e) => (
-          <DeviconSmall src={e} key={e} />
+        {data.techStack.map((e) => (
+          <TechIcon src={e.iconUrl} key={e.name} size="small" name={e.name} />
         ))}
       </div>
       <FontAwesomeIcon
-        icon={isTeam ? faUserGroup : faUser}
+        icon={data.isTeam ? faUserGroup : faUser}
         css={css`
           ${iconStyle}
         `}
@@ -125,7 +114,9 @@ const iconStyle = css`
 const techStackListStyle = css`
   position: absolute;
   float: left;
+  display: flex;
   bottom: 15px;
+  gap: 6px;
 `;
 
 const workDescriptionStyle = css`

@@ -1,15 +1,16 @@
-type tech = {
-  tech: string;
+type Tech = {
+  name: string;
+  iconUrl: string;
 };
 
-export type work = {
+export type Work = {
   title: string;
   url: string;
   imgSrc: {
-    url: string; //オブジェクトからurlのみ受け取る
+    url: string;
   };
   description: string;
-  techStack: Array<tech>; //アイコンのURL(文字列)の配列
+  techStack: Array<Tech>; //アイコンのURL(文字列)の配列
   isTeam: boolean;
   type: string;
 };

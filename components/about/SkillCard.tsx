@@ -1,7 +1,7 @@
 import * as React from "react";
 import { css } from "@emotion/react";
 import { descriptionStyle, titleStyle, cardStyle } from "../common/CardStyle";
-import TechIcon from "./TechIcon";
+import TechIcon from "../common/TechIcon";
 import { SkillRank } from "./SkillRank";
 
 type Props = {
@@ -61,7 +61,7 @@ export const SkillCard: React.FC<Props> = ({
           ${iconStyle}
         `}
       >
-        <TechIcon name={name} src={iconSrc} />
+        <TechIcon name={name} size="medium" src={iconSrc} />
       </div>
 
       <div>
