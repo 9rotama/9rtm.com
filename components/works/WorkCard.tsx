@@ -12,12 +12,30 @@ import {
   cardStyle,
 } from "../common/CardStyle";
 import { Work } from "../../types/Work";
+import { ToolTip } from "./ToolTip";
 
 type Props = {
   data: Work;
 };
 
 export const WorkCard: React.FC<Props> = ({ data }) => {
+  const workCardStyle = css`
+    width: 300px;
+    height: 270px;
+
+    @media (max-width: 960px) {
+      & {
+        width: 270px;
+        height: 260px;
+      }
+    }
+    @media (max-width: 640px) {
+      & {
+        width: 100%;
+      }
+    }
+  `;
+
   const imgContainerStyle = css`
     margin: -${cardPaddingY}px -${cardPaddingX}px 15px -${cardPaddingX}px;
     overflow: hidden;
@@ -97,7 +115,9 @@ export const WorkCard: React.FC<Props> = ({ data }) => {
         `}
       >
         {data.techStack.map((e) => (
-          <TechIcon src={e.iconUrl} key={e.name} size="small" name={e.name} />
+          <ToolTip text={e.name}>
+            <TechIcon src={e.iconUrl} key={e.name} size="small" name={e.name} />
+          </ToolTip>
         ))}
       </div>
       <FontAwesomeIcon
@@ -109,20 +129,3 @@ export const WorkCard: React.FC<Props> = ({ data }) => {
     </a>
   );
 };
-
-const workCardStyle = css`
-  width: 300px;
-  height: 270px;
-
-  @media (max-width: 960px) {
-    & {
-      width: 270px;
-      height: 260px;
-    }
-  }
-  @media (max-width: 640px) {
-    & {
-      width: 100%;
-    }
-  }
-`;
