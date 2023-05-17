@@ -1,4 +1,4 @@
-export type tech = {
+type tech = {
   tech: string;
 };
 

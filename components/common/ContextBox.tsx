@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import ContextBoxIcon from "./ContextBoxIcon";
-import Footer from "./Footer";
+import Footer from "../footer/Footer";
 
 type Props = {
   pageIcon: IconDefinition;
