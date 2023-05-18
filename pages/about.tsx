@@ -2,13 +2,13 @@ import * as React from "react";
 import type { InferGetStaticPropsType, NextPage } from "next";
 import { css } from "@emotion/react";
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
-import ContextBox from "../components/templates/ContextBox";
-import ProfImage from "../components/atoms/about/ProfImage";
-import { SkillCard } from "../components/organisms/about/SkillCard";
-import CardWrapper from "../components/organisms/common/CardWrapper";
+import ContextBox from "../components/common/ContextBox";
+import ProfImage from "../components/about/ProfImage";
+import { SkillCard } from "../components/about/SkillCard";
+import CardWrapper from "../components/common/CardWrapper";
 import { client } from "../libs/client";
-import type { skill } from "../types/skill";
-import MyHead from "../components/MyHead";
+import { Skill } from "../types/skill";
+import MyHead from "../components/common/MyHead";
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "skills" });
@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
 };
 
 type Props = {
-  skills: Array<skill>;
+  skills: Array<Skill>;
 };
 
 const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
@@ -29,6 +29,13 @@ const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }: Props) => {
   const pageTitle = "about me";
   const pageDescription = "自己紹介、スキルなど";
+
+  const nameStyle = css`
+    display: inline-block;
+
+    font-size: 1.5em;
+    border-bottom: dotted #027775 5px;
+  `;
 
   return (
     <>
@@ -74,12 +81,5 @@ const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     </>
   );
 };
-
-const nameStyle = css`
-  display: inline-block;
-
-  font-size: 1.5em;
-  border-bottom: dotted #027775 5px;
-`;
 
 export default AboutPage;
