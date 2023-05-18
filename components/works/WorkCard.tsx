@@ -1,8 +1,5 @@
 import * as React from "react";
-import Image from "next/image";
 import { css } from "@emotion/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserGroup, faUser } from "@fortawesome/free-solid-svg-icons";
 import TechIcon from "../common/TechIcon";
 import {
   cardPaddingX,
@@ -116,7 +113,7 @@ export const WorkCard: React.FC<Props> = ({ data }) => {
         `}
       >
         {data.techStack.map((e) => (
-          <ToolTip text={e.name}>
+          <ToolTip text={e.name} key={e.name}>
             <TechIcon src={e.iconUrl} key={e.name} size="small" name={e.name} />
           </ToolTip>
         ))}
