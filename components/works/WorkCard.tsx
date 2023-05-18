@@ -13,6 +13,7 @@ import {
 } from "../common/CardStyle";
 import { Work } from "../../types/Work";
 import { ToolTip } from "./ToolTip";
+import IsTeamIcon from "./IsTeamIcon";
 
 type Props = {
   data: Work;
@@ -120,12 +121,7 @@ export const WorkCard: React.FC<Props> = ({ data }) => {
           </ToolTip>
         ))}
       </div>
-      <FontAwesomeIcon
-        icon={data.isTeam ? faUserGroup : faUser}
-        css={css`
-          ${iconStyle}
-        `}
-      />
+      <IsTeamIcon isTeam={data.isTeam} />
     </a>
   );
 };

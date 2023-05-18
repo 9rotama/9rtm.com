@@ -18,7 +18,7 @@ export const setShowBackgroundContext = createContext<
 >(() => undefined);
 
 const Layout: React.FC<Props> = ({ children }) => {
-  const [showBackground, setShowBackground] = useState<boolean>(false);
+  const [showBackground, setShowBackground] = useState<boolean>(true);
 
   return (
     <div>

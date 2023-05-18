@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGroup, faUser } from "@fortawesome/free-solid-svg-icons";
 
 type CardProps = {
-  isTeam?: boolean;
+  isTeam: boolean;
 };
 
 const IsTeamIcon: React.FC<CardProps> = ({ isTeam }) => {
