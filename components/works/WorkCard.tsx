@@ -8,7 +8,7 @@ import {
   titleStyle,
   cardStyle,
 } from "../common/CardStyle";
-import { Work } from "../../types/Work";
+import { Work } from "../../types/work";
 import { ToolTip } from "./ToolTip";
 import IsTeamIcon from "./IsTeamIcon";
 
@@ -45,17 +45,6 @@ export const WorkCard: React.FC<Props> = ({ data }) => {
     height: 100%;
   `;
 
-  const iconStyle = css`
-    position: absolute;
-    bottom: 17px;
-    right: 8%;
-
-    margin-bottom: auto;
-
-    color: #252f6022;
-    font-size: 2em;
-  `;
-
   const techStackListStyle = css`
     position: absolute;
     float: left;
@@ -86,6 +75,7 @@ export const WorkCard: React.FC<Props> = ({ data }) => {
       >
         <img
           src={data.imgSrc.url}
+          alt={data.title}
           css={css`
             ${imgStyle}
           `}

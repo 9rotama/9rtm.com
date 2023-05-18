@@ -7,7 +7,7 @@ import ProfImage from "../components/about/ProfImage";
 import { SkillCard } from "../components/about/SkillCard";
 import CardWrapper from "../components/common/CardWrapper";
 import { client } from "../libs/client";
-import { Skill } from "../types/Skill";
+import { Skill } from "../types/skill";
 import MyHead from "../components/common/MyHead";
 
 export const getStaticProps = async () => {

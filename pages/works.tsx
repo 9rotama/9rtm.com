@@ -6,7 +6,7 @@ import LinkButton from "../components/common/LinkButton";
 import CardWrapper from "../components/common/CardWrapper";
 import { WorkCard } from "../components/works/WorkCard";
 import { client } from "../libs/client";
-import { Work } from "../types/Work";
+import { Work } from "../types/work";
 import MyHead from "../components/common/MyHead";
 
 export const getStaticProps = async () => {
