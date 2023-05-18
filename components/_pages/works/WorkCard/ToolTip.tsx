@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { css } from "@emotion/react";
-import { cx } from "@emotion/css";
 
 type Props = {
   text: string;

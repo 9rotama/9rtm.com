@@ -1,14 +1,14 @@
 import * as React from "react";
 import { css } from "@emotion/react";
-import TechIcon from "../common/TechIcon";
+import TechIcon from "../../../_common/CardCommon/TechIcon";
 import {
   cardPaddingX,
   cardPaddingY,
   descriptionStyle,
   titleStyle,
   cardStyle,
-} from "../common/CardStyle";
-import { Work } from "../../types/work";
+} from "../../../_common/CardCommon/CardStyle";
+import { Work } from "../../../../types/work";
 import { ToolTip } from "./ToolTip";
 import IsTeamIcon from "./IsTeamIcon";
 
@@ -16,7 +16,7 @@ type Props = {
   data: Work;
 };
 
-export const WorkCard: React.FC<Props> = ({ data }) => {
+const WorkCard: React.FC<Props> = ({ data }) => {
   const workCardStyle = css`
     width: 300px;
     height: 270px;
@@ -112,3 +112,5 @@ export const WorkCard: React.FC<Props> = ({ data }) => {
     </a>
   );
 };
+
+export default WorkCard;

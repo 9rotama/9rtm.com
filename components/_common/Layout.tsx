@@ -1,12 +1,6 @@
-import {
-  useState,
-  createContext,
-  useContext,
-  Dispatch,
-  SetStateAction,
-} from "react";
-import Header from "../../header/Header";
-import Background from "../../background/Background";
+import { useState, createContext, Dispatch, SetStateAction } from "react";
+import Header from "../Header/Header";
+import Background from "../Background/Background";
 
 type Props = {
   children: React.ReactNode;

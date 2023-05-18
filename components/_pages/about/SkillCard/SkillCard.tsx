@@ -1,7 +1,11 @@
 import * as React from "react";
 import { css } from "@emotion/react";
-import { descriptionStyle, titleStyle, cardStyle } from "../common/CardStyle";
-import TechIcon from "../common/TechIcon";
+import {
+  descriptionStyle,
+  titleStyle,
+  cardStyle,
+} from "../../../_common/CardCommon/CardStyle";
+import TechIcon from "../../../_common/CardCommon/TechIcon";
 import { SkillRank } from "./SkillRank";
 
 type Props = {
@@ -92,3 +96,5 @@ export const SkillCard: React.FC<Props> = ({
     </a>
   );
 };
+
+export default SkillCard;

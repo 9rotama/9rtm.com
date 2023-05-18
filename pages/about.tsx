@@ -2,13 +2,13 @@ import * as React from "react";
 import type { InferGetStaticPropsType, NextPage } from "next";
 import { css } from "@emotion/react";
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
-import ContextBox from "../components/common/ContextBox";
-import ProfImage from "../components/about/ProfImage";
-import { SkillCard } from "../components/about/SkillCard";
-import CardWrapper from "../components/common/CardWrapper";
+import ContextBox from "../components/_common/ContextBox/ContextBox";
+import ProfImage from "../components/_pages/about/ProfImage";
+import { SkillCard } from "../components/_pages/about/SkillCard/SkillCard";
+import CardWrapper from "../components/_common/CardCommon/CardWrapper";
 import { client } from "../libs/client";
 import { Skill } from "../types/skill";
-import MyHead from "../components/common/MyHead";
+import MyHead from "../components/_common/MyHead";
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "skills" });

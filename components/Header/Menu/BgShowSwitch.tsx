@@ -3,7 +3,7 @@ import { useContext } from "react";
 import {
   showBackgroundContext,
   setShowBackgroundContext,
-} from "../common/layout/Layout";
+} from "../../_common/Layout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCube } from "@fortawesome/free-solid-svg-icons";
 
