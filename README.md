@@ -18,7 +18,7 @@ microCMS
 - Dosis
 - Inter
 
-##　開発
+## 開発
 
 - 環境変数
 ルートディレクトリに`/env.local`を作成し`/env.example`に従って環境変数を記述する
