@@ -20,11 +20,11 @@ microCMS
 
 ## 開発
 
-- 環境変数
+### 環境変数
 ルートディレクトリに`/env.local`を作成し`/env.example`に従って環境変数を記述する
 (ドメイン、APIキーが必要なためmicroCMSにログインする)
 
-- 開発サーバの起動
+### 開発サーバの起動
 1.
 ```
 cd 9rtm.com
@@ -33,7 +33,7 @@ npm run dev
 ```
 2. `localhost:3000`にアクセス
 
-- storybookの起動
+### storybookの起動
 1.
 ```
 npm run storybook
