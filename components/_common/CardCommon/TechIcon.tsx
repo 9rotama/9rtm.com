@@ -15,10 +15,14 @@ const getSizeValues = (size: "medium" | "small"): string => {
   }
 };
 
-const TechIcon: React.FC<Props> = ({ name, size, src }) => {
+const TechIcon = ({ name, size, src }: Props) => {
   const iconStyle = css`
     width: ${getSizeValues(size)};
     height: ${getSizeValues(size)};
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   `;
 
   return (

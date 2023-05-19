@@ -4,9 +4,10 @@ import {
   descriptionStyle,
   titleStyle,
   cardStyle,
+  flexColWithGap,
 } from "../../../_common/CardCommon/CardStyle";
 import TechIcon from "../../../_common/CardCommon/TechIcon";
-import { SkillRank } from "./SkillRank";
+import SkillRank from "./SkillRank";
 
 type Props = {
   name: string;
@@ -16,33 +17,17 @@ type Props = {
   url: string;
 };
 
-export const SkillCard: React.FC<Props> = ({
-  name,
-  iconSrc,
-  rank,
-  description,
-  url,
-}) => {
+export const SkillCard = ({ name, iconSrc, rank, description, url }: Props) => {
   const iconStyle = css`
-    margin: 10px 15px 0px 0px;
     float: right;
   `;
 
   const skillCardStyle = css`
-    width: 40%;
-    height: 130px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    height: 110px;
     text-align: left;
-
-    @media (max-width: 640px) {
-      & {
-        width: 100%;
-      }
-    }
-  `;
-
-  const verticalCenterStyle = css`
-    display: flex;
-    align-items: center;
   `;
 
   const skillDescriptionStyle = css`
@@ -54,44 +39,59 @@ export const SkillCard: React.FC<Props> = ({
 
   return (
     <a
-      css={css`
-        ${skillCardStyle}
-        ${cardStyle}
-      `}
       href={url}
+      css={css`
+        display: block;
+        width: 47%;
+
+        @media screen and (max-width: 640px) {
+          width: 100%;
+        }
+      `}
     >
       <div
         css={css`
-          ${iconStyle}
+          ${cardStyle}
+          ${skillCardStyle}
         `}
       >
-        <TechIcon name={name} size="medium" src={iconSrc} />
-      </div>
-
-      <div>
-        <h3
+        <div
           css={css`
-            ${titleStyle}
+            ${iconStyle}
           `}
         >
-          {name}
-        </h3>
-        <SkillRank rank={rank} />
-      </div>
+          <TechIcon name={name} size="medium" src={iconSrc} />
+        </div>
 
-      <div
-        css={css`
-          ${verticalCenterStyle}
-        `}
-      >
-        <p
+        <div
           css={css`
-            ${descriptionStyle}
-            ${skillDescriptionStyle}
+            ${flexColWithGap(10)}
           `}
         >
-          {description}
-        </p>
+          <div
+            css={css`
+              ${flexColWithGap(5)}
+            `}
+          >
+            <h3
+              css={css`
+                ${titleStyle}
+              `}
+            >
+              {name}
+            </h3>
+            <SkillRank rank={rank} />
+          </div>
+
+          <p
+            css={css`
+              ${descriptionStyle}
+              ${skillDescriptionStyle}
+            `}
+          >
+            {description}
+          </p>
+        </div>
       </div>
     </a>
   );

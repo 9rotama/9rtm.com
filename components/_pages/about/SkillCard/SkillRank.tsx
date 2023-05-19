@@ -7,7 +7,7 @@ type Props = {
   rank: number;
 };
 
-export const SkillRank: React.FC<Props> = ({ rank }) => {
+const SkillRank = ({ rank }: Props) => {
   const stars: boolean[] = [];
   for (let i = 0; i < 5; i++) {
     if (i < rank) {
@@ -17,7 +17,7 @@ export const SkillRank: React.FC<Props> = ({ rank }) => {
     }
   }
   const wrapStyle = css`
-    margin: 0 0 0 10px;
+    margin: 0 0 0 0;
   `;
   const StarTrueStyle = css`
     color: #73a2d8;
@@ -57,3 +57,5 @@ export const SkillRank: React.FC<Props> = ({ rank }) => {
     </div>
   );
 };
+
+export default SkillRank;

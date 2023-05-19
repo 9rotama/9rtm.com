@@ -6,7 +6,7 @@ type Props = {
   name: string;
 };
 
-const TitleButton: React.FC<Props> = ({ name }) => {
+const TitleButton = ({ name }: Props) => {
   const titleStyle = css`
     padding: 0 10px 0 10px;
     margin-right: auto;
@@ -16,6 +16,7 @@ const TitleButton: React.FC<Props> = ({ name }) => {
     font-family: "Dosis", "M PLUS 1", sans-serif;
     font-size: 2.3em;
     font-weight: 400;
+    width: fit-content;
 
     transition-duration: 0.3s;
 

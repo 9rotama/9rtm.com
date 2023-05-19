@@ -1,4 +1,6 @@
 import { css } from "@emotion/react";
+import { useRouter } from "next/router";
+import { useState } from "react";
 import MenuButton from "./MenuButton";
 import BgShowSwitch from "./BgShowSwitch";
 
@@ -15,15 +17,21 @@ const Menu = () => {
     gap: 5px;
   `;
 
+  const router = useRouter();
+
   return (
     <div
       css={css`
         ${menuDisplayStyle}
       `}
     >
-      {menuItems.map((e) => (
-        <MenuButton key={e.name} name={e.name} path={e.path} />
-      ))}
+      {menuItems.map((e) =>
+        router.pathname == e.path ? (
+          <MenuButton key={e.name} name={e.name} path={e.path} isActive />
+        ) : (
+          <MenuButton key={e.name} name={e.name} path={e.path} />
+        )
+      )}
       <BgShowSwitch />
     </div>
   );

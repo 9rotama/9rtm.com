@@ -10,6 +10,8 @@ const CardWrapper: React.FC<Props> = ({ children }) => {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    column-gap: 10px;
+    row-gap: 15px;
   `;
 
   return (

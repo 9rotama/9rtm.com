@@ -11,12 +11,12 @@ type Props = {
   children: React.ReactNode;
 };
 
-const ContextBox: React.FC<Props> = ({
+const ContextBox = ({
   pageIcon,
   pageTitle,
   pageDescription,
   children,
-}) => {
+}: Props) => {
   const bgStyle = css`
     position: relative;
     left: 50%;
@@ -43,7 +43,7 @@ const ContextBox: React.FC<Props> = ({
   const titleStyle = css`
     display: inline-block;
 
-    margin: 70px 0 0 0;
+    margin: 30px 0 0 0;
 
     color: #252a34;
     font-family: "Dosis", "M PLUS 1", sans-serif;
@@ -59,6 +59,11 @@ const ContextBox: React.FC<Props> = ({
     }
   `;
 
+  const iconCenterStyle = css`
+    display: flex;
+    justify-content: center;
+  `;
+
   return (
     <div
       css={css`
@@ -71,7 +76,14 @@ const ContextBox: React.FC<Props> = ({
         `}
       >
         <div>
-          <ContextBoxIcon pageIcon={pageIcon} />
+          <div
+            css={css`
+              ${iconCenterStyle}
+            `}
+          >
+            <ContextBoxIcon pageIcon={pageIcon} />
+          </div>
+
           {/*ページタイトル*/}
           <div
             css={css`

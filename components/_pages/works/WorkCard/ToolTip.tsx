@@ -6,7 +6,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export const ToolTip: React.FC<Props> = ({ text, children }) => {
+const ToolTip = ({ text, children }: Props) => {
   const [show, setShow] = useState(false);
 
   const handleShow = () => {
@@ -18,6 +18,7 @@ export const ToolTip: React.FC<Props> = ({ text, children }) => {
 
   const divStyle = css`
     position: relative;
+    width: fit-content;
   `;
 
   const toolTipStyle = css`
@@ -51,3 +52,5 @@ export const ToolTip: React.FC<Props> = ({ text, children }) => {
     </div>
   );
 };
+
+export default ToolTip;

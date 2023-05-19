@@ -42,6 +42,7 @@ const SnsLinkButtonList = () => {
 
     display: flex;
     flex-direction: row;
+    gap: 6px;
 
     padding: 10px 10px 10px 10px;
 

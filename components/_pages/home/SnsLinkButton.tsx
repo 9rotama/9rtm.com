@@ -9,7 +9,7 @@ type Props = {
   hoverColor: string;
 };
 
-const SnsLinkButton: React.FC<Props> = ({ icon, url, hoverColor }) => {
+const SnsLinkButton = ({ icon, url, hoverColor }: Props) => {
   const linkStyle = css`
     display: flex;
 
@@ -17,7 +17,6 @@ const SnsLinkButton: React.FC<Props> = ({ icon, url, hoverColor }) => {
     width: 50px;
     height: 50px;
     padding: 2px;
-    margin: 3px;
     border-radius: 50%;
 
     transition-duration: 0.2s;

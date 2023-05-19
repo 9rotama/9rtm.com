@@ -7,31 +7,28 @@ import {
   descriptionStyle,
   titleStyle,
   cardStyle,
+  flexColWithGap,
 } from "../../../_common/CardCommon/CardStyle";
 import { Work } from "../../../../types/work";
-import { ToolTip } from "./ToolTip";
+import ToolTip from "./ToolTip";
 import IsTeamIcon from "./IsTeamIcon";
 
 type Props = {
   data: Work;
 };
 
-const WorkCard: React.FC<Props> = ({ data }) => {
+const WorkCard = ({ data }: Props) => {
   const workCardStyle = css`
-    width: 300px;
+    text-align: center;
     height: 270px;
+  `;
 
-    @media (max-width: 960px) {
-      & {
-        width: 270px;
-        height: 260px;
-      }
-    }
-    @media (max-width: 640px) {
-      & {
-        width: 100%;
-      }
-    }
+  const isTeamIconStyle = css`
+    position: absolute;
+    bottom: 17px;
+    right: 8%;
+
+    margin-bottom: auto;
   `;
 
   const imgContainerStyle = css`
@@ -56,59 +53,86 @@ const WorkCard: React.FC<Props> = ({ data }) => {
   const workDescriptionStyle = css`
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     overflow: hidden;
   `;
 
   return (
     <a
-      css={css`
-        ${cardStyle}
-        ${workCardStyle}
-      `}
       href={data.url}
+      css={css`
+        display: block;
+        width: 47%;
+
+        @media screen and (max-width: 640px) {
+          width: 100%;
+        }
+      `}
     >
       <div
         css={css`
-          ${imgContainerStyle}
+          ${cardStyle}
+          ${workCardStyle}
         `}
       >
-        <img
-          src={data.imgSrc.url}
-          alt={data.title}
+        <div
           css={css`
-            ${imgStyle}
+            ${imgContainerStyle}
           `}
-        />
+        >
+          <img
+            src={data.imgSrc.url}
+            alt={data.title}
+            css={css`
+              ${imgStyle}
+            `}
+          />
+        </div>
+        <div
+          css={css`
+            ${flexColWithGap(10)}
+          `}
+        >
+          <h3
+            css={css`
+              ${titleStyle}
+            `}
+          >
+            {data.title}
+          </h3>
+          <p
+            css={css`
+              ${descriptionStyle}
+              ${workDescriptionStyle}
+            `}
+          >
+            {data.description}
+          </p>
+        </div>
+        <div
+          css={css`
+            ${techStackListStyle}
+          `}
+        >
+          {data.techStack.map((e) => (
+            <ToolTip text={e.name} key={e.name}>
+              <TechIcon
+                src={e.iconUrl}
+                key={e.name}
+                size="small"
+                name={e.name}
+              />
+            </ToolTip>
+          ))}
+        </div>
+        <div
+          css={css`
+            ${isTeamIconStyle}
+          `}
+        >
+          <IsTeamIcon isTeam={data.isTeam} />
+        </div>
       </div>
-
-      <h3
-        css={css`
-          ${titleStyle}
-        `}
-      >
-        {data.title}
-      </h3>
-      <p
-        css={css`
-          ${descriptionStyle}
-          ${workDescriptionStyle}
-        `}
-      >
-        {data.description}
-      </p>
-      <div
-        css={css`
-          ${techStackListStyle}
-        `}
-      >
-        {data.techStack.map((e) => (
-          <ToolTip text={e.name} key={e.name}>
-            <TechIcon src={e.iconUrl} key={e.name} size="small" name={e.name} />
-          </ToolTip>
-        ))}
-      </div>
-      <IsTeamIcon isTeam={data.isTeam} />
     </a>
   );
 };

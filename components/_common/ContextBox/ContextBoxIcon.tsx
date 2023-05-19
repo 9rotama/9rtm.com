@@ -7,13 +7,11 @@ type Props = {
   pageIcon: IconDefinition;
 };
 
-const ContextBoxIcon: React.FC<Props> = ({ pageIcon }) => {
+const ContextBoxIcon = ({ pageIcon }: Props) => {
   const iconBgStyle = css`
     position: relative;
     display: flex;
     z-index: 5;
-
-    margin: 0 auto -50px auto;
 
     width: 100px;
     height: 100px;

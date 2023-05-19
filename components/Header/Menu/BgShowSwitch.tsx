@@ -7,8 +7,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCube } from "@fortawesome/free-solid-svg-icons";
 
-type Props = {};
-
 type colorTheme = {
   backgroundColor: string;
   textColor?: string;
@@ -24,7 +22,7 @@ const activeTheme: colorTheme = {
   textColor: "#d0dde9",
 };
 
-const BgShowSwitch: React.FC<Props> = () => {
+const BgShowSwitch = () => {
   const showBackground = useContext(showBackgroundContext);
   const setShowBackground = useContext(setShowBackgroundContext);
 

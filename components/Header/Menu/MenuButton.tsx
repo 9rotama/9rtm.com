@@ -1,7 +1,6 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { css } from "@emotion/react";
 
 type colorTheme = {
@@ -22,13 +21,12 @@ const activeTheme: colorTheme = {
 type Props = {
   name: string;
   path: string;
+  isActive?: boolean;
 };
 
-const MenuButton: React.FC<Props> = ({ name, path }) => {
-  const router = useRouter();
-  const [isActive, setIsActive] = useState(false);
-
+const MenuButton = ({ name, path, isActive }: Props) => {
   const menuButtonStyle = css`
+    width: fit-content;
     padding: 2px 10px 2px 10px;
 
     border-bottom: solid;
@@ -52,14 +50,6 @@ const MenuButton: React.FC<Props> = ({ name, path }) => {
       }
     }
   `;
-
-  useEffect(() => {
-    if (router.pathname == path) {
-      setIsActive(true);
-    } else {
-      setIsActive(false);
-    }
-  }, [router.pathname, path, isActive]);
 
   return (
     <div

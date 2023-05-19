@@ -8,7 +8,6 @@ export const cardStyle = css`
 
   background: #f5faff;
   border-radius: 20px;
-  margin: 0 0 20px 0;
   padding: ${cardPaddingY}px ${cardPaddingX}px ${cardPaddingY}px
     ${cardPaddingX}px;
   overflow: hidden;
@@ -26,20 +25,23 @@ export const cardStyle = css`
 
     transition-duration: 0.3s;
   }
-  @media (max-width: 960px) {
-    & {
-      margin: 0px 2.5px 20px 2.5px;
-    }
-  }
 `;
 
 export const titleStyle = css`
-  margin: 10px;
+  margin: 0px;
   font-size: 1.1em;
   font-weight: 600;
 `;
 
 export const descriptionStyle = css`
-  margin: 10px;
+  margin: 0px;
   font-size: 0.9em;
 `;
+
+export const flexColWithGap = (gap: number) => {
+  return css`
+    display: flex;
+    flex-direction: column;
+    gap: ${gap}px;
+  `;
+};

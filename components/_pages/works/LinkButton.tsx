@@ -8,7 +8,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const LinkButton: React.FC<Props> = ({ url, children }) => {
+const LinkButton = ({ url, children }: Props) => {
   const linkStyle = css`
     padding: 20px 20px 20px 10px;
 

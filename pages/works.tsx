@@ -2,7 +2,7 @@ import * as React from "react";
 import type { InferGetStaticPropsType, NextPage } from "next";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 import ContextBox from "../components/_common/ContextBox/ContextBox";
-import LinkButton from "../components/_pages/about/LinkButton";
+import LinkButton from "../components/_pages/works/LinkButton";
 import CardWrapper from "../components/_common/CardCommon/CardWrapper";
 import WorkCard from "../components/_pages/works/WorkCard/WorkCard";
 import { client } from "../libs/client";
