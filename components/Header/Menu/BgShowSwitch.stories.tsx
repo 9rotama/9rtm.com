@@ -2,12 +2,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 
 import {
-  showBackgroundContext,
-  setShowBackgroundContext,
+  backgroundStateContext,
+  setBackgroundStateContext,
 } from "../../_common/Layout";
 
 import BgShowSwitch from "./BgShowSwitch";
-import Background from "../../Background/Background";
 
 const meta: Meta<typeof BgShowSwitch> = {
   title: "BgShowSwitch",
@@ -21,13 +20,16 @@ type Story = StoryObj<typeof BgShowSwitch>;
 export const Active: Story = {
   decorators: [
     (Story) => {
-      const [showBackground, setShowBackground] = useState<boolean>(true);
+      const [backgroundState, setBackgroundState] = useState({
+        render: true,
+        switch: true,
+      });
       return (
-        <showBackgroundContext.Provider value={showBackground}>
-          <setShowBackgroundContext.Provider value={setShowBackground}>
+        <backgroundStateContext.Provider value={backgroundState}>
+          <setBackgroundStateContext.Provider value={setBackgroundState}>
             <Story />
-          </setShowBackgroundContext.Provider>
-        </showBackgroundContext.Provider>
+          </setBackgroundStateContext.Provider>
+        </backgroundStateContext.Provider>
       );
     },
   ],
@@ -36,13 +38,16 @@ export const Active: Story = {
 export const Passive: Story = {
   decorators: [
     (Story) => {
-      const [showBackground, setShowBackground] = useState<boolean>(false);
+      const [backgroundState, setBackgroundState] = useState({
+        render: true,
+        switch: false,
+      });
       return (
-        <showBackgroundContext.Provider value={showBackground}>
-          <setShowBackgroundContext.Provider value={setShowBackground}>
+        <backgroundStateContext.Provider value={backgroundState}>
+          <setBackgroundStateContext.Provider value={setBackgroundState}>
             <Story />
-          </setShowBackgroundContext.Provider>
-        </showBackgroundContext.Provider>
+          </setBackgroundStateContext.Provider>
+        </backgroundStateContext.Provider>
       );
     },
   ],
