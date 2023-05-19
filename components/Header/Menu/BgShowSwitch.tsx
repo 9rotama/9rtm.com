@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 import { useContext } from "react";
 import {
-  showBackgroundContext,
-  setShowBackgroundContext,
+  backgroundStateContext,
+  setBackgroundStateContext,
 } from "../../_common/Layout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCube } from "@fortawesome/free-solid-svg-icons";
@@ -23,15 +23,25 @@ const activeTheme: colorTheme = {
 };
 
 const BgShowSwitch = () => {
-  const showBackground = useContext(showBackgroundContext);
-  const setShowBackground = useContext(setShowBackgroundContext);
+  const backgroundState = useContext(backgroundStateContext);
+  const setBackgroundState = useContext(setBackgroundStateContext);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setShowBackground(e.target.checked);
+  const handleClick = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      setBackgroundState({ render: true, switch: true });
+    } else {
+      setBackgroundState({ render: true, switch: false });
+
+      setTimeout(() => {
+        setBackgroundState({ render: false, switch: false });
+      }, 300);
+    }
   };
 
   const iconStyle = css`
-    color: ${showBackground ? activeTheme.textColor : normalTheme.textColor};
+    color: ${backgroundState.switch
+      ? activeTheme.textColor
+      : normalTheme.textColor};
 
     transition-duration: 0.3s;
   `;
@@ -44,7 +54,7 @@ const BgShowSwitch = () => {
     height: 36px;
     border-radius: 50vh;
     border: 0.01px solid #252a3442;
-    background-color: ${showBackground
+    background-color: ${backgroundState.switch
       ? activeTheme.backgroundColor
       : normalTheme.backgroundColor};
 
@@ -67,8 +77,8 @@ const BgShowSwitch = () => {
         css={css`
           ${inputStyle}
         `}
-        checked={showBackground}
-        onChange={handleChange}
+        checked={backgroundState.switch}
+        onChange={handleClick}
       />
     </label>
   );

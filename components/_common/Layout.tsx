@@ -6,22 +6,33 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const showBackgroundContext = createContext<boolean>(false);
-export const setShowBackgroundContext = createContext<
-  Dispatch<SetStateAction<boolean>>
+type BackgroundState = {
+  render: boolean;
+  switch: boolean;
+};
+
+export const backgroundStateContext = createContext<BackgroundState>({
+  render: true,
+  switch: true,
+});
+export const setBackgroundStateContext = createContext<
+  Dispatch<SetStateAction<BackgroundState>>
 >(() => undefined);
 
 const Layout: React.FC<Props> = ({ children }) => {
-  const [showBackground, setShowBackground] = useState<boolean>(true);
+  const [backgroundState, setBackgroundState] = useState({
+    render: true,
+    switch: true,
+  });
 
   return (
     <div>
-      <showBackgroundContext.Provider value={showBackground}>
-        <setShowBackgroundContext.Provider value={setShowBackground}>
+      <backgroundStateContext.Provider value={backgroundState}>
+        <setBackgroundStateContext.Provider value={setBackgroundState}>
           <Header siteTitle={"9RTM.COM"} />
           <Background />
-        </setShowBackgroundContext.Provider>
-      </showBackgroundContext.Provider>
+        </setBackgroundStateContext.Provider>
+      </backgroundStateContext.Provider>
 
       {children}
     </div>

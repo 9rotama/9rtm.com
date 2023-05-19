@@ -7,10 +7,10 @@ import {
   DotScreen,
 } from "@react-three/postprocessing";
 import ThreeText from "./ThreeText";
-import { showBackgroundContext } from "../_common/Layout";
+import { backgroundStateContext } from "../_common/Layout";
 
 const Background = () => {
-  const showBackground = useContext(showBackgroundContext);
+  const backgroundState = useContext(backgroundStateContext);
 
   const canvasWrapStyle = css`
     position: fixed;
@@ -19,16 +19,16 @@ const Background = () => {
     width: 100%;
     height: 100%;
     z-index: 0;
+
+    opacity: ${backgroundState.switch ? "1" : "0"};
+    transition-duration: 0.3s;
   `;
 
   return (
-    <div
-      css={css`
-        ${canvasWrapStyle}
-      `}
-    >
-      {showBackground ? (
-        <Suspense fallback={<span>loading...</span>}>
+    <div css={canvasWrapStyle}>
+      {backgroundState.render ? (
+        //ローディング中は表示がおかしくなるので何も表示しない
+        <Suspense fallback={<></>}>
           <Canvas
             gl={{ antialias: false }}
             camera={{
