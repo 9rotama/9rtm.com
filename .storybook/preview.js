@@ -12,6 +12,7 @@ export const parameters = {
 };
 
 addDecorator((Story) => (
+  //nextRouterを使うための設定
   <MemoryRouterProvider>
     <Story />
   </MemoryRouterProvider>

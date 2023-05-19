@@ -9,10 +9,11 @@ Next.js 12, Typescript
 ### ライブラリ
 - スタイリング: Emotion
 - 背景: React Three Fiber
-### デプロイ 
+### デプロイ
 Vercel
 ### コンテンツ管理
 microCMS
+*(CMS側で変更があった時Vercelで自動ビルドが走ります)*
 ### フォント
 - M PLUS 1
 - Dosis
