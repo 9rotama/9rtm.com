@@ -1,13 +1,13 @@
 import * as React from "react";
 import type { InferGetStaticPropsType, NextPage } from "next";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
-import ContextBox from "../components/common/ContextBox";
-import LinkButton from "../components/common/LinkButton";
-import CardWrapper from "../components/common/CardWrapper";
-import { WorkCard } from "../components/works/WorkCard";
+import ContextBox from "../components/_common/ContextBox/ContextBox";
+import LinkButton from "../components/_pages/works/LinkButton";
+import CardWrapper from "../components/_common/CardCommon/CardWrapper";
+import WorkCard from "../components/_pages/works/WorkCard/WorkCard";
 import { client } from "../libs/client";
 import { Work } from "../types/work";
-import MyHead from "../components/common/MyHead";
+import MyHead from "../components/_common/MyHead";
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "works" });

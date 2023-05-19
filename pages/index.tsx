@@ -1,8 +1,8 @@
 import * as React from "react";
 import { css } from "@emotion/react";
-import SnsLinkButtonlist from "../components/home/SnsLinkButtonList";
-import Welcome from "../components/home/Welcome";
-import MyHead from "../components/common/MyHead";
+import SnsLinkButtonlist from "../components/_pages/home/SnsLinkButtonList";
+import Welcome from "../components/_pages/home/Welcome";
+import MyHead from "../components/_common/MyHead";
 
 const HomePage = () => {
   const pageTitle = "home";

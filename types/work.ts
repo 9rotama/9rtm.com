@@ -10,7 +10,7 @@ export type Work = {
     url: string;
   };
   description: string;
-  techStack: Array<Tech>; //アイコンのURL(文字列)の配列
+  techStack: Array<Tech>;
   isTeam: boolean;
   type: string;
 };

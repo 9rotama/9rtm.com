@@ -1,3 +1,6 @@
+import { addDecorator } from '@storybook/react'
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider'
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +10,9 @@ export const parameters = {
     },
   },
 };
+
+addDecorator((Story) => (
+  <MemoryRouterProvider>
+    <Story />
+  </MemoryRouterProvider>
+))
