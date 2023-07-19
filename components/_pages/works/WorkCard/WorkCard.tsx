@@ -10,7 +10,7 @@ import {
   flexColWithGap,
 } from "../../../_common/CardCommon/CardStyle";
 import { Work } from "../../../../types/work";
-import ToolTip from "./ToolTip";
+import ToolTip from "../../../_common/ToolTip";
 import IsTeamIcon from "./IsTeamIcon";
 import Image from "next/image";
 

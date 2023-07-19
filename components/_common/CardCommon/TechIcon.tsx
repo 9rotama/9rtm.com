@@ -1,11 +1,11 @@
 import * as React from "react";
 import { css } from "@emotion/react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 type Props = {
   name: string;
   size: "medium" | "small";
-  src: string;
+  src: string | StaticImageData;
 };
 
 const getSizeValues = (size: "medium" | "small"): number => {
