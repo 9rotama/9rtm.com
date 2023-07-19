@@ -70,7 +70,7 @@ const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <SkillCard
               key={e.name + "-skillicon"}
               name={e.name}
-              iconSrc={e.iconSrc}
+              iconSrc={e.icon.url}
               rank={e.rank}
               description={e.description}
               url={e.url}

@@ -1,14 +1,12 @@
 type Tech = {
   name: string;
-  iconUrl: string;
+  icon: Image;
 };
 
 export type Work = {
   title: string;
   url: string;
-  imgSrc: {
-    url: string;
-  };
+  screenshot: Image;
   description: string;
   techStack: Array<Tech>;
   isTeam: boolean;

@@ -12,6 +12,7 @@ import {
 import { Work } from "../../../../types/work";
 import ToolTip from "./ToolTip";
 import IsTeamIcon from "./IsTeamIcon";
+import Image from "next/image";
 
 type Props = {
   data: Work;
@@ -32,6 +33,7 @@ const WorkCard = ({ data }: Props) => {
   `;
 
   const imgContainerStyle = css`
+    position: relative;
     margin: -${cardPaddingY}px -${cardPaddingX}px 15px -${cardPaddingX}px;
     overflow: hidden;
     height: 150px;
@@ -80,8 +82,9 @@ const WorkCard = ({ data }: Props) => {
             ${imgContainerStyle}
           `}
         >
-          <img
-            src={data.imgSrc.url}
+          <Image
+            src={data.screenshot.url}
+            layout="fill"
             alt={data.title}
             css={css`
               ${imgStyle}
@@ -117,7 +120,7 @@ const WorkCard = ({ data }: Props) => {
           {data.techStack.map((e) => (
             <ToolTip text={e.name} key={e.name}>
               <TechIcon
-                src={e.iconUrl}
+                src={e.icon.url}
                 key={e.name}
                 size="small"
                 name={e.name}
