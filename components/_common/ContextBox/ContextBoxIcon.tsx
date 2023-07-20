@@ -24,6 +24,26 @@ const ContextBoxIcon = ({ pageIcon }: Props) => {
 
     color: #d0dde9;
     font-size: 2.5em;
+
+    animation: Hangout 1s ease-in-out;
+
+    @keyframes Hangout {
+      0% {
+        transform: rotate(90deg);
+      }
+      25% {
+        transform: rotate(-60deg);
+      }
+      50% {
+        transform: rotate(30deg);
+      }
+      75% {
+        transform: rotate(-15deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
   `;
 
   return (

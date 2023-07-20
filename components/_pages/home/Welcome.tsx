@@ -31,6 +31,7 @@ const Welcome = () => {
       }
     }
     animation: gradient 20s linear infinite;
+    animation: LetterNarrow 0.5s ease;
 
     @keyframes gradient {
       to {
