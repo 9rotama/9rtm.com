@@ -59,8 +59,8 @@ const AboutPage: NextPage = () => {
             ${skillsStyle}
           `}
         >
-          {skills.map((e) => (
-            <ToolTip text={e.name}>
+          {skills.map((e, i) => (
+            <ToolTip key={i} text={e.name}>
               <TechIcon name={e.name} size={"medium"} src={e.iconSrc} />
             </ToolTip>
           ))}
