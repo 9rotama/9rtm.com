@@ -4,29 +4,12 @@ import { css } from "@emotion/react";
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import ContextBox from "../components/_common/ContextBox/ContextBox";
 import ProfImage from "../components/_pages/about/ProfImage";
-import { SkillCard } from "../components/_pages/about/SkillCard/SkillCard";
-import CardWrapper from "../components/_common/CardCommon/CardWrapper";
-import { client } from "../libs/client";
-import { Skill } from "../types/skill";
 import MyHead from "../components/_common/MyHead";
+import { skills } from "../const/skills";
+import TechIcon from "../components/_common/CardCommon/TechIcon";
+import ToolTip from "../components/_common/ToolTip";
 
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "skills" });
-
-  return {
-    props: {
-      skills: data.contents,
-    },
-  };
-};
-
-type Props = {
-  skills: Array<Skill>;
-};
-
-const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  skills,
-}: Props) => {
+const AboutPage: NextPage = () => {
   const pageTitle = "about me";
   const pageDescription = "自己紹介、スキルなど";
 
@@ -35,6 +18,12 @@ const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
     font-size: 1.5em;
     border-bottom: dotted #027775 5px;
+  `;
+
+  const skillsStyle = css`
+    display: flex;
+    gap: 10px;
+    justify-content: center;
   `;
 
   return (
@@ -59,24 +48,23 @@ const AboutPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           >
             9rotama
           </h2>
-          <h3>game dev / UI design</h3>
-          情報系大学の3年です。音楽ゲームが好きです。
+          <h3>front dev / game dev</h3>
+          情報系大学の学生です。音楽ゲームが好きです。
           <br />
           主にクライアント側の開発に興味があります。
         </div>
         <h1>⌨️ i use</h1>
-        <CardWrapper>
-          {skills.map((e) => (
-            <SkillCard
-              key={e.name + "-skillicon"}
-              name={e.name}
-              iconSrc={e.iconSrc}
-              rank={e.rank}
-              description={e.description}
-              url={e.url}
-            />
+        <section
+          css={css`
+            ${skillsStyle}
+          `}
+        >
+          {skills.map((e, i) => (
+            <ToolTip key={i} text={e.name}>
+              <TechIcon name={e.name} size={"medium"} src={e.iconSrc} />
+            </ToolTip>
           ))}
-        </CardWrapper>
+        </section>
       </ContextBox>
     </>
   );

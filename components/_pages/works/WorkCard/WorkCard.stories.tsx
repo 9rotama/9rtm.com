@@ -14,20 +14,17 @@ type Story = StoryObj<typeof WorkCard>;
 
 const normalWork: Work = {
   title: "TestTitle",
+  date: new Date(2020, 9),
   url: "https://9rtm.com",
-  imgSrc: {
-    url: "https://avatars.githubusercontent.com/u/65887771?v=4",
-  },
+  screenshot: "https://avatars.githubusercontent.com/u/65887771?v=4",
   description: "せつめいせつめい",
   techStack: [
     {
       name: "react",
-      iconUrl:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     },
   ], //アイコンのURL(文字列)の配列
   isTeam: true,
-  type: "game",
 };
 
 export const Normal: Story = {
@@ -38,21 +35,18 @@ export const Normal: Story = {
 
 const longTextWork: Work = {
   title: "TestTitleestTitleestTitleestTitle",
+  date: new Date(2020, 9),
   url: "https://9rtm.com",
-  imgSrc: {
-    url: "https://avatars.githubusercontent.com/u/65887771?v=4",
-  },
+  screenshot: "https://avatars.githubusercontent.com/u/65887771?v=4",
   description:
     "せつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめい",
   techStack: [
     {
       name: "react",
-      iconUrl:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     },
   ], //アイコンのURL(文字列)の配列
   isTeam: true,
-  type: "game",
 };
 
 export const LongText: Story = {

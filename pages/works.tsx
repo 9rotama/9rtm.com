@@ -5,27 +5,11 @@ import ContextBox from "../components/_common/ContextBox/ContextBox";
 import LinkButton from "../components/_pages/works/LinkButton";
 import CardWrapper from "../components/_common/CardCommon/CardWrapper";
 import WorkCard from "../components/_pages/works/WorkCard/WorkCard";
-import { client } from "../libs/client";
 import { Work } from "../types/work";
 import MyHead from "../components/_common/MyHead";
+import { works } from "../const/works";
 
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "works" });
-
-  return {
-    props: {
-      works: data.contents,
-    },
-  };
-};
-
-type Props = {
-  works: Array<Work>;
-};
-
-const WorksPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  works,
-}: Props) => {
+const WorksPage: NextPage = () => {
   const pageTitle = "works";
   const pageDescription = "作ったもの";
   return (

@@ -1,38 +1,34 @@
 import * as React from "react";
 import { css } from "@emotion/react";
+import Image, { StaticImageData } from "next/image";
 
 type Props = {
   name: string;
   size: "medium" | "small";
-  src: string;
+  src: string | StaticImageData;
 };
 
-const getSizeValues = (size: "medium" | "small"): string => {
+const getSizeValues = (size: "medium" | "small"): number => {
   if (size === "medium") {
-    return "40px";
+    return 40;
   } else {
-    return "30px";
+    return 30;
   }
 };
 
 const TechIcon = ({ name, size, src }: Props) => {
   const iconStyle = css`
-    width: ${getSizeValues(size)};
-    height: ${getSizeValues(size)};
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    width: ${getSizeValues(size)}px;
+    height: ${getSizeValues(size)}px;
   `;
 
   return (
-    <div
-      css={css`
-        ${iconStyle}
-      `}
-    >
-      <img src={src} alt={name} />
-    </div>
+    <>
+      <div css={iconStyle}>
+        <Image src={src} layout="fill" objectFit="contain" alt={name} />
+      </div>
+    </>
   );
 };
 

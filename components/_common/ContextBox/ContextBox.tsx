@@ -57,6 +57,8 @@ const ContextBox = ({
     @media (max-width: 480px) {
       font-size: 2em;
     }
+
+    animation: LetterNarrow 0.5s ease;
   `;
 
   const iconCenterStyle = css`

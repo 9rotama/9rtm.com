@@ -1,4 +1,8 @@
 import { css } from "@emotion/react";
+import Image from "next/image";
+
+const width = 180;
+const height = 180;
 
 const ProfImage = () => {
   const profImgStyle = css`
@@ -19,9 +23,11 @@ const ProfImage = () => {
   `;
 
   return (
-    <img
+    <Image
       src="https://avatars.githubusercontent.com/u/65887771?v=4"
       alt={"prof"}
+      width={width}
+      height={height}
       css={css`
         ${profImgStyle}
       `}
