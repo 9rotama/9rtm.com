@@ -15,15 +15,14 @@ type Story = StoryObj<typeof WorkCard>;
 const normalWork: Work = {
   title: "TestTitle",
   url: "https://9rtm.com",
-  imgSrc: {
+  screenshot: {
     url: "https://avatars.githubusercontent.com/u/65887771?v=4",
   },
   description: "せつめいせつめい",
   techStack: [
     {
       name: "react",
-      iconUrl:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     },
   ], //アイコンのURL(文字列)の配列
   isTeam: true,
@@ -39,7 +38,7 @@ export const Normal: Story = {
 const longTextWork: Work = {
   title: "TestTitleestTitleestTitleestTitle",
   url: "https://9rtm.com",
-  imgSrc: {
+  screenshot: {
     url: "https://avatars.githubusercontent.com/u/65887771?v=4",
   },
   description:
@@ -47,8 +46,7 @@ const longTextWork: Work = {
   techStack: [
     {
       name: "react",
-      iconUrl:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     },
   ], //アイコンのURL(文字列)の配列
   isTeam: true,
