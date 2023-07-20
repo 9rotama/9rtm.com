@@ -11,7 +11,7 @@ export default meta;
 
 type Story = StoryObj<typeof TitleButton>;
 
-export const BgSwitch: Story = {
+export const Index: Story = {
   args: {
     name: "9RTM.COM",
   },
