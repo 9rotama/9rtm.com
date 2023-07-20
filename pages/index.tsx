@@ -9,11 +9,14 @@ const HomePage = () => {
   const pageDescription = "ホーム";
 
   const wrapStyle = css`
+    position: absolute;
+    top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    width: 100vw;
     height: 100vh;
 
     text-align: center;

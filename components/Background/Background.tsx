@@ -20,7 +20,7 @@ const Background = () => {
     left: 0px;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: -2;
 
     opacity: ${backgroundState.switch ? "1" : "0"};
     transition-duration: ${transitionDur}s;
@@ -32,6 +32,7 @@ const Background = () => {
     left: 0px;
     width: 100%;
     height: 100%;
+    z-index: -2;
     background-color: #d0dde9;
     background-image: linear-gradient(
         30deg,
@@ -83,8 +84,6 @@ const Background = () => {
       );
     background-size: 74px 130px;
     background-position: 0 0, 0 0, 37px 65px, 37px 65px, 0 0, 37px 65px;
-    animation: tx 1s linear infinite;
-    animation: gradient 15s linear infinite;
     opacity: ${backgroundState.switch ? "0.4" : "0.6"};
 
     transition-duration: ${transitionDur}s;
