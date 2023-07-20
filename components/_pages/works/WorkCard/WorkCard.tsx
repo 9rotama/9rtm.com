@@ -83,7 +83,7 @@ const WorkCard = ({ data }: Props) => {
           `}
         >
           <Image
-            src={data.screenshot.url}
+            src={data.screenshot}
             layout="fill"
             alt={data.title}
             css={css`
@@ -119,12 +119,7 @@ const WorkCard = ({ data }: Props) => {
         >
           {data.techStack.map((e) => (
             <ToolTip text={e.name} key={e.name}>
-              <TechIcon
-                src={e.icon.url}
-                key={e.name}
-                size="small"
-                name={e.name}
-              />
+              <TechIcon src={e.icon} key={e.name} size="small" name={e.name} />
             </ToolTip>
           ))}
         </div>

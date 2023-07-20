@@ -1,14 +1,16 @@
+import { StaticImageData } from "next/image";
+
 type Tech = {
   name: string;
-  icon: Image;
+  icon: string | StaticImageData;
 };
 
 export type Work = {
   title: string;
   url: string;
-  screenshot: Image;
+  date: Date;
+  screenshot: string | StaticImageData;
   description: string;
   techStack: Array<Tech>;
   isTeam: boolean;
-  type: string;
 };
