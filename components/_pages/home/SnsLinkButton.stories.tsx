@@ -13,7 +13,6 @@ type Story = StoryObj<typeof SnsLinkButton>;
 
 export const Normal: Story = {
   args: {
-    name: "github",
     icon: faGithub,
     url: "https://github.com/9rotama",
     hoverColor: "#9b5de5",
@@ -22,7 +21,6 @@ export const Normal: Story = {
 
 export const Light: Story = {
   args: {
-    name: "github",
     icon: faGithub,
     url: "https://github.com/9rotama",
     hoverColor: "#f1edf6",
