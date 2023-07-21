@@ -21,7 +21,7 @@ const normalTheme: colorTheme = {
 
 const activeTheme: colorTheme = {
   backgroundColor: "#263657",
-  backgroundColorHover: "#252a34",
+  backgroundColorHover: "#11141a",
   textColor: "#d0dde9",
 };
 
