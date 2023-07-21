@@ -40,7 +40,7 @@ const rotateSpeed = 0.5;
 const zoomingDur = 1; //s
 const zoomingScaleFac = 3;
 
-const ThreeText = () => {
+const KaomojiText = () => {
   extend({ TextGeometry });
   const [initRot, setInitRot] = useState(
     new Vector3(Math.random() * 360, Math.random() * 360, Math.random() * 360)
@@ -82,4 +82,4 @@ const ThreeText = () => {
   );
 };
 
-export default ThreeText;
+export default KaomojiText;

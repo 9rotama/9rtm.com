@@ -11,6 +11,11 @@ type BackgroundState = {
   switch: boolean;
 };
 
+type MousePos = {
+  x: number;
+  y: number;
+};
+
 export const backgroundStateContext = createContext<BackgroundState>({
   render: true,
   switch: true,
