@@ -5,16 +5,19 @@ import { css } from "@emotion/react";
 
 type colorTheme = {
   backgroundColor: string;
+  backgroundColorHover: string;
   textColor?: string;
 };
 
 const normalTheme: colorTheme = {
   backgroundColor: "transparent",
+  backgroundColorHover: "#252a3420",
   textColor: "#252a34",
 };
 
 const activeTheme: colorTheme = {
   backgroundColor: "#252a34",
+  backgroundColorHover: "#252a34",
   textColor: "#d0dde9",
 };
 
@@ -59,6 +62,12 @@ const MenuButton = ({ name, path, isActive }: Props) => {
           ? activeTheme.backgroundColor
           : normalTheme.backgroundColor};
         color: ${isActive ? activeTheme.textColor : normalTheme.textColor};
+
+        &:hover {
+          background-color: ${isActive
+            ? activeTheme.backgroundColorHover
+            : normalTheme.backgroundColorHover};
+        }
       `}
     >
       <Link href={path} passHref>

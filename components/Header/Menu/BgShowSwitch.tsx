@@ -9,16 +9,19 @@ import { faCube } from "@fortawesome/free-solid-svg-icons";
 
 type colorTheme = {
   backgroundColor: string;
+  backgroundColorHover: string;
   textColor?: string;
 };
 
 const normalTheme: colorTheme = {
   backgroundColor: "transparent",
+  backgroundColorHover: "#252a3420",
   textColor: "#252a34",
 };
 
 const activeTheme: colorTheme = {
   backgroundColor: "#263657",
+  backgroundColorHover: "#252a34",
   textColor: "#d0dde9",
 };
 
@@ -59,6 +62,11 @@ const BgShowSwitch = () => {
       : normalTheme.backgroundColor};
 
     transition-duration: 0.3s;
+    &:hover {
+      background-color: ${backgroundState.switch
+        ? activeTheme.backgroundColorHover
+        : normalTheme.backgroundColorHover};
+    }
   `;
 
   const inputStyle = css`
