@@ -1,4 +1,4 @@
-import { useContext, Suspense, useState } from "react";
+import { useContext, Suspense } from "react";
 import { backgroundStateContext } from "../_common/Layout";
 import { backgroundTransitionDur } from "./Background";
 import { css } from "@emotion/react";
