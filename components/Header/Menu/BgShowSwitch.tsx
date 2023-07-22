@@ -3,24 +3,9 @@ import { useContext } from "react";
 import {
   backgroundStateContext,
   setBackgroundStateContext,
-} from "../../_common/Layout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+} from "../../../const/contexts";
 import { faCube } from "@fortawesome/free-solid-svg-icons";
-
-type colorTheme = {
-  backgroundColor: string;
-  textColor?: string;
-};
-
-const normalTheme: colorTheme = {
-  backgroundColor: "transparent",
-  textColor: "#252a34",
-};
-
-const activeTheme: colorTheme = {
-  backgroundColor: "#263657",
-  textColor: "#d0dde9",
-};
+import { SwitchButton } from "./SwitchButton";
 
 const BgShowSwitch = () => {
   const backgroundState = useContext(backgroundStateContext);
@@ -38,49 +23,12 @@ const BgShowSwitch = () => {
     }
   };
 
-  const iconStyle = css`
-    color: ${backgroundState.switch
-      ? activeTheme.textColor
-      : normalTheme.textColor};
-
-    transition-duration: 0.3s;
-  `;
-
-  const labelStyle = css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50vh;
-    border: 0.01px solid #252a3442;
-    background-color: ${backgroundState.switch
-      ? activeTheme.backgroundColor
-      : normalTheme.backgroundColor};
-
-    transition-duration: 0.3s;
-  `;
-
-  const inputStyle = css`
-    position: absolute;
-    display: none;
-  `;
   return (
-    <label
-      css={css`
-        ${labelStyle}
-      `}
-    >
-      <FontAwesomeIcon icon={faCube} css={iconStyle}></FontAwesomeIcon>
-      <input
-        type="checkbox"
-        css={css`
-          ${inputStyle}
-        `}
-        checked={backgroundState.switch}
-        onChange={handleClick}
-      />
-    </label>
+    <SwitchButton
+      icon={faCube}
+      isActive={backgroundState.switch}
+      handleClick={handleClick}
+    />
   );
 };
 

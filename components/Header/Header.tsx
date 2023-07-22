@@ -1,24 +1,30 @@
 import { css } from "@emotion/react";
 import TitleButton from "./TitleButton";
 import Menu from "./Menu/Menu";
+import { useContext } from "react";
+import { themeContext } from "../../const/contexts";
 
 type Props = {
   siteTitle: string;
 };
 
 const Header: React.FC<Props> = ({ siteTitle }) => {
+  const theme = useContext(themeContext);
+
   const headerStyle = css`
     position: fixed;
     top: 0px;
 
     width: 100%;
-    background-color: #e3ecf470;
+    background-color: ${theme.header.backgroundColor};
     backdrop-filter: blur(10px);
 
     animation-name: Down;
     animation-duration: 0.5s;
 
     z-index: 100;
+
+    transition-duration: 0.3s;
   `;
 
   const itemDisplayStyle = css`

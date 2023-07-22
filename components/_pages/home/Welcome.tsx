@@ -1,8 +1,13 @@
 import * as React from "react";
+import { useContext } from "react";
+
 import { css } from "@emotion/react";
+import { themeContext } from "../../../const/contexts";
 
 const Welcome = () => {
   const text = "welcome.";
+
+  const theme = useContext(themeContext);
 
   const welcomeStyle = css`
     font-size: 10em;
@@ -12,7 +17,7 @@ const Welcome = () => {
     background: linear-gradient(
       to right,
       #00000000 20%,
-      #ffffff80 25%,
+      ${theme.home.title.shineColor} 25%,
       #00000000 30%
     );
     background-size: 500% 100%;
@@ -43,11 +48,14 @@ const Welcome = () => {
       position: absolute;
       z-index: -1;
 
-      background: linear-gradient(#252a34 50%, #7b8495 100%);
+      background: linear-gradient(
+        ${theme.home.title.gradientTop} 50%,
+        ${theme.home.title.gradientDown} 100%
+      );
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0px 0px 4px #fff);
+      filter: drop-shadow(0px 0px 4px ${theme.home.title.shadowColor});
     }
   `;
 

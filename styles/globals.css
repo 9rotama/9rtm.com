@@ -2,45 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;600;800&display=swap");
 
-body {
-  font-family: "Inter", "M PLUS 1", sans-serif;
-  font-weight: 400;
-  color: #252a34;
-  background-color: #d0dde9;
-  margin: 0;
-}
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-h1 {
-  font-family: "Dosis", "M PLUS 1", sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 1.7em;
-  color: #252a34;
-  text-decoration: none;
-  margin: 80px -10px 30px -10px;
-  padding: 10px 20px 10px 20px;
-  border-bottom: 1px solid #252a3455;
-  color: #252a34;
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 1.5em;
-}
-
-h3 {
-  font-weight: 400;
-  font-size: 1.2em;
-}
-
-h4 {
-  font-weight: 500;
-}
 
 @media (max-width: 960px) {
   h1 {
