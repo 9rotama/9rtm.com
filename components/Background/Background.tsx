@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { backgroundStateContext } from "../_common/Layout";
+import { backgroundStateContext } from "../../const/contexts";
 import { PatternBg } from "./PatternBg";
 import { KaomojiBg } from "./KaomojiBg";
 

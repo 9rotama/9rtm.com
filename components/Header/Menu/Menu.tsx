@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import MenuButton from "./MenuButton";
 import BgShowSwitch from "./BgShowSwitch";
+import { ThemeSwitch } from "./ThemeSwitch";
 
 type menuItem = {
   name: string;
@@ -33,6 +33,7 @@ const Menu = () => {
         )
       )}
       <BgShowSwitch />
+      <ThemeSwitch />
     </div>
   );
 };

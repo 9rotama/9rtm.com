@@ -1,8 +1,10 @@
 import * as React from "react";
+import { useContext } from "react";
 import { css } from "@emotion/react";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import ContextBoxIcon from "./ContextBoxIcon";
 import Footer from "../../Footer/Footer";
+import { themeContext } from "../../../const/contexts";
 
 type Props = {
   pageIcon: IconDefinition;
@@ -17,6 +19,8 @@ const ContextBox = ({
   pageDescription,
   children,
 }: Props) => {
+  const theme = useContext(themeContext);
+
   const bgStyle = css`
     position: relative;
     left: 50%;
@@ -26,7 +30,7 @@ const ContextBox = ({
     padding: 50px 50px 70px 50px;
     margin: 150px 0 0 0;
 
-    background: #e3ecf4ee;
+    background: ${theme.contextbox.backgroundColor};
     border-radius: 30px;
 
     z-index: 3;
@@ -38,6 +42,7 @@ const ContextBox = ({
         padding-bottom: 50px;
       }
     }
+    transition-duration: 0.3s;
   `;
 
   const titleStyle = css`
@@ -45,7 +50,7 @@ const ContextBox = ({
 
     margin: 30px 0 0 0;
 
-    color: #252a34;
+    color: ${theme.global.textColor};
     font-family: "Dosis", "M PLUS 1", sans-serif;
     font-weight: 500;
     font-size: 2.5em;
@@ -59,6 +64,8 @@ const ContextBox = ({
     }
 
     animation: LetterNarrow 0.5s ease;
+
+    transition-duration: 0.3s;
   `;
 
   const iconCenterStyle = css`

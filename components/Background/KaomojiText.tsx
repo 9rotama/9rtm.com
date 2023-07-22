@@ -1,9 +1,10 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { Vector3 } from "three";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { useFrame, extend, ReactThreeFiber } from "@react-three/fiber";
 import fontJson from "three/examples/fonts/helvetiker_bold.typeface.json";
+import { themeContext } from "../../const/contexts";
 
 declare global {
   namespace JSX {
@@ -41,6 +42,8 @@ const zoomingDur = 1; //s
 const zoomingScaleFac = 3;
 
 const KaomojiText = () => {
+  const theme = useContext(themeContext);
+
   extend({ TextGeometry });
   const [initRot, setInitRot] = useState(
     new Vector3(Math.random() * 360, Math.random() * 360, Math.random() * 360)
@@ -77,7 +80,7 @@ const KaomojiText = () => {
   return (
     <mesh ref={meshRef}>
       <textGeometry args={[text, { font, size: 25, height: 10 }]} />
-      <meshMatcapMaterial attach="material" color="#cfe0fb" />
+      <meshMatcapMaterial attach="material" color={theme.background.kaomoji} />
     </mesh>
   );
 };

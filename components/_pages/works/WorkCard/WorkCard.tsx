@@ -1,5 +1,7 @@
-import * as React from "react";
+import { useContext } from "react";
 import { css } from "@emotion/react";
+import Image from "next/image";
+
 import TechIcon from "../../../_common/CardCommon/TechIcon";
 import {
   cardPaddingX,
@@ -12,13 +14,15 @@ import {
 import { Work } from "../../../../types/work";
 import ToolTip from "../../../_common/ToolTip";
 import IsTeamIcon from "./IsTeamIcon";
-import Image from "next/image";
+import { themeContext } from "../../../../const/contexts";
 
 type Props = {
   data: Work;
 };
 
 const WorkCard = ({ data }: Props) => {
+  const theme = useContext(themeContext);
+
   const workCardStyle = css`
     text-align: center;
     height: 270px;
@@ -73,7 +77,12 @@ const WorkCard = ({ data }: Props) => {
     >
       <div
         css={css`
-          ${cardStyle}
+          ${cardStyle(
+            theme.contextbox.card.backgroundColor,
+            theme.contextbox.card.backgroundColorHover,
+            theme.contextbox.card.innerColor,
+            theme.contextbox.card.shadowColor
+          )}
           ${workCardStyle}
         `}
       >

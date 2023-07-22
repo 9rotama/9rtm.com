@@ -12,7 +12,6 @@ const TitleButton = ({ name }: Props) => {
     margin-right: auto;
 
     text-decoration: none;
-    color: #252a34;
     font-family: "Dosis", "M PLUS 1", sans-serif;
     font-size: 2.3em;
     font-weight: 400;

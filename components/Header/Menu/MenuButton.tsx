@@ -1,25 +1,8 @@
 import * as React from "react";
-import { useEffect } from "react";
+import { useContext } from "react";
 import Link from "next/link";
 import { css } from "@emotion/react";
-
-type colorTheme = {
-  backgroundColor: string;
-  backgroundColorHover: string;
-  textColor?: string;
-};
-
-const normalTheme: colorTheme = {
-  backgroundColor: "transparent",
-  backgroundColorHover: "#252a3420",
-  textColor: "#252a34",
-};
-
-const activeTheme: colorTheme = {
-  backgroundColor: "#252a34",
-  backgroundColorHover: "#252a34",
-  textColor: "#d0dde9",
-};
+import { themeContext } from "../../../const/contexts";
 
 type Props = {
   name: string;
@@ -28,17 +11,21 @@ type Props = {
 };
 
 const MenuButton = ({ name, path, isActive }: Props) => {
+  const theme = useContext(themeContext);
+
   const menuButtonStyle = css`
     width: fit-content;
     padding: 2px 10px 2px 10px;
 
     border-bottom: solid;
-    border-color: ${normalTheme.textColor}50;
+    border-color: ${isActive
+      ? theme.header.menuButton.active.borderColor
+      : theme.header.menuButton.passive.borderColor};
     border-width: 1px;
     border-radius: 5px;
-    background-color: ${normalTheme.backgroundColor};
+    background-color: ${theme.header.menuButton.active.backgroundColor};
 
-    color: ${normalTheme.textColor};
+    color: ${theme.header.menuButton.active.innerColor};
     text-transform: uppercase;
     text-decoration: none;
     font-family: "Dosis", "M PLUS 1", sans-serif;
@@ -59,14 +46,16 @@ const MenuButton = ({ name, path, isActive }: Props) => {
       css={css`
         ${menuButtonStyle}
         background-color: ${isActive
-          ? activeTheme.backgroundColor
-          : normalTheme.backgroundColor};
-        color: ${isActive ? activeTheme.textColor : normalTheme.textColor};
+          ? theme.header.menuButton.active.backgroundColor
+          : theme.header.menuButton.passive.backgroundColor};
+        color: ${isActive
+          ? theme.header.menuButton.active.innerColor
+          : theme.header.menuButton.passive.innerColor};
 
         &:hover {
           background-color: ${isActive
-            ? activeTheme.backgroundColorHover
-            : normalTheme.backgroundColorHover};
+            ? theme.header.menuButton.active.backgroundColorHover
+            : theme.header.menuButton.passive.backgroundColorHover};
         }
       `}
     >

@@ -1,5 +1,8 @@
 import * as React from "react";
 import { css } from "@emotion/react";
+import { useContext } from "react";
+import { themeContext } from "../../../const/contexts";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
@@ -8,6 +11,8 @@ type Props = {
 };
 
 const ContextBoxIcon = ({ pageIcon }: Props) => {
+  const theme = useContext(themeContext);
+
   const iconBgStyle = css`
     position: relative;
     display: flex;
@@ -15,14 +20,14 @@ const ContextBoxIcon = ({ pageIcon }: Props) => {
 
     width: 100px;
     height: 100px;
-    background-color: #252a34;
+    background-color: ${theme.contextbox.iconBgColor};
     border-radius: 50%;
   `;
 
   const iconStyle = css`
     margin: auto;
 
-    color: #d0dde9;
+    color: ${theme.contextbox.iconColor};
     font-size: 2.5em;
 
     animation: Hangout 1s ease-in-out;

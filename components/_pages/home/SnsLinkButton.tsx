@@ -1,7 +1,8 @@
-import * as React from "react";
+import { useContext } from "react";
 import { css } from "@emotion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { themeContext } from "../../../const/contexts";
 
 type Props = {
   icon: IconDefinition;
@@ -10,10 +11,12 @@ type Props = {
 };
 
 const SnsLinkButton = ({ icon, url, hoverColor }: Props) => {
+  const theme = useContext(themeContext);
+
   const linkStyle = css`
     display: flex;
 
-    background: #eff6fadd;
+    background: ${theme.home.snsLinkButton.backgroundColor};
     width: 50px;
     height: 50px;
     padding: 2px;
@@ -21,7 +24,7 @@ const SnsLinkButton = ({ icon, url, hoverColor }: Props) => {
 
     transition-duration: 0.2s;
 
-    color: #253a60a0;
+    color: ${theme.home.snsLinkButton.innerColor};
 
     &:hover {
       background: #253a60a0;

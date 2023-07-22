@@ -1,27 +1,33 @@
 import { css } from "@emotion/react";
+import { ColorValue } from "../../../const/themes";
 
 export const cardPaddingX = 30;
 export const cardPaddingY = 10;
 
-export const cardStyle = css`
+export const cardStyle = (
+  backgroundColor: ColorValue,
+  backgroundColorHover: ColorValue,
+  innerColor: ColorValue,
+  shadowColor: ColorValue
+) => css`
   position: relative;
 
-  background: #f5faff;
+  background: ${backgroundColor};
   border-radius: 20px;
   padding: ${cardPaddingY}px ${cardPaddingX}px ${cardPaddingY}px
     ${cardPaddingX}px;
   overflow: hidden;
 
   text-decoration: none;
-  color: #252a34;
+  color: ${innerColor};
 
   transition-duration: 0.3s;
 
   &:hover {
     transform: translateY(-5px);
 
-    background: #ffffff;
-    filter: drop-shadow(0px 6px 8px #252a3422);
+    background: ${backgroundColorHover};
+    filter: drop-shadow(0px 6px 8px ${shadowColor});
 
     transition-duration: 0.3s;
   }

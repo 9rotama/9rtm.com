@@ -4,7 +4,7 @@ import { useState } from "react";
 import {
   backgroundStateContext,
   setBackgroundStateContext,
-} from "../../_common/Layout";
+} from "../../../const/contexts";
 
 import BgShowSwitch from "./BgShowSwitch";
 
@@ -17,30 +17,12 @@ export default meta;
 
 type Story = StoryObj<typeof BgShowSwitch>;
 
-export const Active: Story = {
+export const Index: Story = {
   decorators: [
     (Story) => {
       const [backgroundState, setBackgroundState] = useState({
         render: true,
         switch: true,
-      });
-      return (
-        <backgroundStateContext.Provider value={backgroundState}>
-          <setBackgroundStateContext.Provider value={setBackgroundState}>
-            <Story />
-          </setBackgroundStateContext.Provider>
-        </backgroundStateContext.Provider>
-      );
-    },
-  ],
-};
-
-export const Passive: Story = {
-  decorators: [
-    (Story) => {
-      const [backgroundState, setBackgroundState] = useState({
-        render: true,
-        switch: false,
       });
       return (
         <backgroundStateContext.Provider value={backgroundState}>

@@ -1,5 +1,5 @@
 import { useContext, Suspense } from "react";
-import { backgroundStateContext } from "../_common/Layout";
+import { backgroundStateContext } from "../../const/contexts";
 import { backgroundTransitionDur } from "./Background";
 import { css } from "@emotion/react";
 import { Canvas } from "@react-three/fiber";
