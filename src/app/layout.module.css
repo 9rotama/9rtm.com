@@ -1,0 +1,36 @@
+.mainLight {
+  background-color: rgb(var(--primary-light));
+  color: rgb(var(--primary-dark));
+  z-index: -10000;
+}
+
+.mainDark {
+  background-color: rgb(var(--primary-dark));
+  color: rgb(var(--primary-light));
+  z-index: -10000;
+}
+
+.kaomojiOff {
+  opacity: 0;
+  transition-duration: 300ms;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 3;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  z-index: 2;
+}

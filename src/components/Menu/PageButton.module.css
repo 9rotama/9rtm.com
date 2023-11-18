@@ -1,0 +1,64 @@
+.moduleLight {
+  --background-color-passive: transparent;
+  --background-color-passive-hover: rgba(var(--primary-dark) / 10%);
+  --inner-color-passive: rgb(var(--primary-dark));
+  --border-color-passive: rgba(var(--primary-dark) / 30%);
+  --background-color-active: rgb(var(--primary-dark));
+  --background-color-active-hover: rgb(var(--primary-dark));
+  --inner-color-active: rgb(var(--primary-light));
+  --border-color-active: rgba(var(--primary-dark) / 30%);
+}
+
+.moduleDark {
+  --background-color-passive: transparent;
+  --background-color-passive-hover: rgba(var(--primary-dark) / 10%);
+  --inner-color-passive: rgb(var(--primary-light));
+  --border-color-passive: rgba(var(--primary-dark) / 30%);
+  --background-color-active: rgb(var(--primary-light));
+  --background-color-active-hover: rgb(238 241 246);
+  --inner-color-active: rgb(var(--primary-dark));
+  --border-color-active: rgba(var(--primary-light) / 30%);
+}
+
+.modulePassive {
+  --background-color: var(--background-color-passive);
+  --background-color-hover: var(--background-color-passive-hover);
+  --inner-color: var(--inner-color-passive);
+  --border-color: var(--border-color-passive);
+}
+
+.moduleActive {
+  --background-color: var(--background-color-active);
+  --background-color-hover: var(--background-color-active-hover);
+  --inner-color: var(--inner-color-active);
+  --border-color: var(--border-color-active);
+}
+
+.module {
+  width: fit-content;
+  padding: 2px 10px;
+  border-bottom: solid;
+  border-color: var(--border-color);
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--background-color);
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: 400;
+  transition-duration: 0.3s;
+}
+
+.link {
+  color: var(--inner-color);
+  text-decoration: none;
+}
+
+.module:hover {
+  background-color: var(--background-color-hover);
+}
+
+@media (width <= 960px) {
+  .module {
+    font-size: 1.2em;
+  }
+}

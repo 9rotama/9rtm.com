@@ -1,0 +1,35 @@
+.moduleLight {
+  --background-color: rgba(239 246 250 / 86%);
+  --inner-color: rgba(37 58 95 / 62%);
+}
+
+.moduleDark {
+  --background-color: rgba(18 28 49 / 62%);
+  --inner-color: rgba(240 246 250/ 86%);
+}
+
+.module {
+  display: flex;
+  background: var(--background-color);
+  color: var(--inner-color);
+  width: 50px;
+  height: 50px;
+  padding: 2px;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+}
+
+.module:hover {
+  background: rgba(38 59 94 / 63%);
+  color: rgba(255 255 255 / 87%);
+  transition-duration: 0.2s;
+}
+
+.moduleGitHub:hover {
+  background: rgb(154 92 230);
+}
+
+.icon {
+  margin: auto;
+  font-size: 1.5em;
+}
