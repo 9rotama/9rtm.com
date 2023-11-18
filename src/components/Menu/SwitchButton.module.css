@@ -13,7 +13,7 @@
   --background-color-passive: transparent;
   --background-color-passive-hover: rgba(var(--primary-light) / 10%);
   --inner-color-passive: rgb(var(--primary-light));
-  --border-color-passive: rgba(var(--primary-dark) / 30%);
+  --border-color-passive: rgba(var(--primary-light) / 30%);
   --background-color-active: rgb(var(--primary-light));
   --background-color-active-hover: rgb(238 241 246);
   --inner-color-active: rgb(var(--primary-dark));
