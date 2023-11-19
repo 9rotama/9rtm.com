@@ -13,6 +13,7 @@
 }
 
 .module {
+  font-family: var(--font-dosis), sans-serif;
   font-size: 160px;
   font-weight: 160;
   z-index: 2;

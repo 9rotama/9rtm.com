@@ -10,7 +10,6 @@
 
 .module {
   width: 100%;
-  box-sizing: border-box;
   background-color: var(--background-color);
   backdrop-filter: blur(10px);
   display: flex;
@@ -20,6 +19,7 @@
   animation-duration: 0.5s;
   z-index: 100;
   transition-duration: 0.3s;
+  font-family: var(--font-dosis), sans-serif;
 }
 
 .titleButton {

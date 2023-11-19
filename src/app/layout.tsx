@@ -3,7 +3,7 @@
 import HeaderContainer from "@/components/Header/HeaderContainer";
 import KaomojiBackgroundContainer from "@/components/KaomojiBackground/KaomojiBackgroundContainer";
 import PatternBackgroundContainer from "@/components/PatternBackground/PatternBackgroundContainer";
-import { inter } from "@/const/fonts";
+import { dosis, inter, m_plus_1 } from "@/const/fonts";
 import { useTheme } from "@/hooks/useTheme";
 import { Theme } from "@/types/theme";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -31,7 +31,9 @@ export default function RootLayout({
   });
   return (
     <html lang="ja">
-      <body>
+      <body
+        className={clsx([dosis.variable, m_plus_1.variable, inter.variable])}
+      >
         <themeContext.Provider value={theme}>
           <setThemeContext.Provider value={setTheme}>
             <kaomojiBackgroundStateContext.Provider
@@ -55,7 +57,7 @@ function MainLayout({ children }: { children: React.ReactNode }) {
   const theme = useTheme();
 
   return (
-    <main className={clsx([inter.className, styles[`main${theme}`]])}>
+    <main className={clsx([styles[`main${theme}`], styles.main])}>
       <div className={styles.header}>
         <HeaderContainer />
       </div>

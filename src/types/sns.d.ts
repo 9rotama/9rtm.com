@@ -1,1 +1,1 @@
-export type Sns = "GitHub";
+export type Sns = "GitHub" | "ItchIo";

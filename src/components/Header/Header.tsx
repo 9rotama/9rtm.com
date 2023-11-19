@@ -1,4 +1,3 @@
-import { dosis } from "@/const/fonts";
 import { ThemeString } from "@/types/theme";
 import clsx from "clsx";
 import Link from "next/link";
@@ -11,13 +10,7 @@ type Props = {
 
 export default function Header({ theme }: Props) {
   return (
-    <header
-      className={clsx([
-        styles[`module${theme}`],
-        styles.module,
-        dosis.className,
-      ])}
-    >
+    <header className={clsx([styles[`module${theme}`], styles.module])}>
       <Link href="/" className={styles.titleButton}>
         9RTM.COM
       </Link>

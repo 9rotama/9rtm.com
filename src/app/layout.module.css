@@ -10,6 +10,10 @@
   z-index: -10000;
 }
 
+.main {
+  font-family: var(--font-inter), var(--font-m-plus-1), sans-serif;
+}
+
 .kaomojiOff {
   opacity: 0;
   transition-duration: 300ms;
@@ -31,6 +35,7 @@
 
 .page {
   position: relative;
+  overflow: hidden;
   min-height: 100vh;
   z-index: 2;
 }

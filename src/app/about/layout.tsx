@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "about",
-  description: "自己紹介",
+  description: "自己紹介、スキルなど",
 };
 
 export default function AboutLayout({

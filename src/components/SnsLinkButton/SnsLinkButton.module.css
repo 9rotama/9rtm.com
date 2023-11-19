@@ -29,6 +29,10 @@
   background: rgb(154 92 230);
 }
 
+.moduleItchIo:hover {
+  background: rgb(255 63 63);
+}
+
 .icon {
   margin: auto;
   font-size: 24px;

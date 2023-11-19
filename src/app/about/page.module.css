@@ -1,0 +1,51 @@
+.prof {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.profContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 24px;
+  margin: 0;
+  border-bottom: dotted #027775 5px;
+}
+
+.role {
+  margin: 0;
+}
+
+.profImage {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+}
+
+.profImage:hover {
+  border-radius: 10%;
+  transition-duration: 0.2s;
+}
+
+.skills {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+@media screen and (width <= 620px) {
+  .prof {
+    flex-direction: column;
+  }
+
+  .profContent {
+    align-items: center;
+    text-align: center;
+  }
+}
