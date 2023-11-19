@@ -9,8 +9,16 @@
   animation-duration: 0.4s;
 }
 
+.moduleLight {
+  --separator-color: rgba(36 41 51 / 46%);
+}
+
+.moduleDark {
+  --separator-color: rgba(200 225 255 / 46%);
+}
+
 .separator {
-  border-bottom: 1px solid #252a3477;
+  border-bottom: 1px solid var(--separator-color);
   width: 50px;
   margin: -5px 0 10px;
 }
