@@ -1,0 +1,12 @@
+.moduleDark {
+  color: #8ea1b238;
+}
+
+.moduleLight {
+  color: #252f6022;
+}
+
+.module {
+  position: relative;
+  font-size: 32px;
+}

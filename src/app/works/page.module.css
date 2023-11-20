@@ -1,0 +1,12 @@
+.cardGrid {
+  width: 100%;
+  display: grid;
+  gap: 20px 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (width <= 800px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+}
