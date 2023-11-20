@@ -5,9 +5,9 @@
 }
 
 .moduleDark {
-  --background-color: rgb(70 96 119);
-  --pattern-color: rgb(38 46 54);
-  --pattern-color-trans: rgba(38 46 54 / 46%);
+  --background-color: rgb(34 55 73);
+  --pattern-color: rgb(16 23 31);
+  --pattern-color-trans: rgba(14 20 26 / 46%);
 }
 
 .module {
