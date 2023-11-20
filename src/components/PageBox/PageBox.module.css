@@ -1,0 +1,112 @@
+.moduleLight {
+  --background-color: rgba(226 235 244 / 93%);
+  --text-color: rgb(var(--primary-dark));
+  --icon-background-color: rgb(var(--primary-dark));
+  --icon-color: rgb(var(--primary-light));
+}
+
+.moduleDark {
+  --background-color: rgba(19 34 47 / 84%);
+  --text-color: rgb(var(--primary-light));
+  --icon-background-color: rgb(var(--primary-light));
+  --icon-color: rgb(var(--primary-dark));
+}
+
+.module {
+  position: relative;
+  width: 100%;
+  padding: 50px 50px 70px;
+  background: var(--background-color);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  transition: background 0.2s ease-out;
+}
+
+.title {
+  display: inline-block;
+  color: var(--text-color);
+  font-family: var(--font-dosis);
+  font-weight: 500;
+  font-size: 32px;
+  animation: letter-narrow 0.5s ease;
+  transition: color 0.2s ease-out;
+}
+
+.description {
+  margin: 0;
+  transition: color 0.2s ease-out;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.iconBackground {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: var(--icon-background-color);
+  border-radius: 50%;
+  transition: background 0.2s ease-out;
+}
+
+.icon {
+  color: var(--icon-color);
+  font-size: 45px;
+  animation: hang-out 1s ease-in-out;
+  transition: color 0.2s ease-out;
+}
+
+@media screen and (width <= 720px) {
+  .module {
+    padding: 25px;
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (width<=480px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+@keyframes letter-narrow {
+  0% {
+    letter-spacing: 16px;
+  }
+
+  100% {
+    letter-spacing: 0;
+  }
+}
+
+@keyframes hang-out {
+  0% {
+    transform: rotate(50deg);
+  }
+
+  25% {
+    transform: rotate(-25deg);
+  }
+
+  50% {
+    transform: rotate(12.5deg);
+  }
+
+  75% {
+    transform: rotate(-6.25deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}

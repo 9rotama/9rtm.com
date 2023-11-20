@@ -1,0 +1,62 @@
+.moduleLight {
+  --gradient-top: rgb(var(--primary-dark));
+  --gradient-bottom: rgb(122 131 148);
+  --shine-color: rgba(255 255 255 / 50%);
+  --shadow-color: rgb(255 255 255);
+}
+
+.moduleDark {
+  --gradient-top: rgb(var(--primary-light));
+  --gradient-bottom: rgb(122 131 148);
+  --shine-color: rgba(38 53 64 / 50%);
+  --shadow-color: transparent;
+}
+
+.module {
+  font-family: var(--font-dosis), sans-serif;
+  font-size: 160px;
+  font-weight: 160;
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    transparent 20%,
+    var(--shine-color) 25%,
+    transparent 30%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% 100%;
+  animation: gradient 20s linear infinite;
+}
+
+.module::before {
+  content: "welcome.";
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-top) 50%,
+    var(--gradient-bottom) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 4px var(--shadow-color));
+}
+
+@media screen and (width <= 600px) {
+  .module {
+    font-size: 128px;
+  }
+}
+
+@media screen and (width <= 480px) {
+  .module {
+    font-size: 96px;
+  }
+}
+
+@keyframes gradient {
+  to {
+    background-position-x: -500%;
+  }
+}

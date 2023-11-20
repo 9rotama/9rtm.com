@@ -1,0 +1,12 @@
+.module {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-family: var(--font-dosis), sans-serif;
+  font-size: 50px;
+  animation-name: blur-fadein-down;
+  animation-duration: 0.4s;
+}

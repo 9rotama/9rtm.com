@@ -1,0 +1,15 @@
+.moduleLight {
+  --text-color: rgba(var(--primary-dark) / 60%);
+}
+
+.moduleDark {
+  --text-color: rgba(var(--primary-light) / 60%);
+}
+
+.module {
+  text-align: center;
+  margin: 40px;
+  font-size: 100;
+  color: var(--text-color);
+  transition: color 0.2s ease-out;
+}

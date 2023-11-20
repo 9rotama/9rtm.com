@@ -1,0 +1,21 @@
+.moduleLight {
+  --border-color: rgba(var(--primary-dark) / 30%);
+}
+
+.moduleDark {
+  --border-color: rgba(var(--primary-light) / 30%);
+}
+
+.module {
+  font-family: var(--font-dosis), sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  margin: 80px 0 30px;
+  padding: 10px 20px;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  transition:
+    color 0.2s ease-out,
+    border-bottom 0.2s ease-out;
+}

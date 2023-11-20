@@ -1,0 +1,55 @@
+{
+  "name": "9rtm.com",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-three/fiber": "^8.15.11",
+    "@react-three/postprocessing": "^2.15.11",
+    "@types/three": "^0.158.2",
+    "clsx": "^2.0.0",
+    "next": "14.0.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "three": "^0.158.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/nextjs": "^7.5.3",
+    "@storybook/react": "^7.5.3",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "eslint-plugin-storybook": "^0.6.15",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
+    "prettier": "3.1.0",
+    "storybook": "^7.5.3",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "typescript": "^5",
+    "typescript-plugin-css-modules": "^5.0.2"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
