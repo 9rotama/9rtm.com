@@ -1,5 +1,5 @@
 export const skills = [
-  { name: "Next.js", iconSrc: "/tech-logo/react.png" },
+  { name: "Next.js", iconSrc: "/tech-logo/next-js.svg" },
   { name: "Python", iconSrc: "/tech-logo/python.webp" },
   { name: "TypeScript", iconSrc: "/tech-logo/ts.png" },
   { name: "Unity", iconSrc: "/tech-logo/unity.png" },
