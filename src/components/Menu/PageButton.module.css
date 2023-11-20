@@ -45,12 +45,15 @@
   text-transform: uppercase;
   font-size: 24px;
   font-weight: 400;
-  transition-duration: 0.3s;
+  transition:
+    border-color 0.2s ease-out,
+    background-color 0.2s ease-out;
 }
 
 .link {
   color: var(--inner-color);
   text-decoration: none;
+  transition: color 0.2s ease-out;
 }
 
 .module:hover {

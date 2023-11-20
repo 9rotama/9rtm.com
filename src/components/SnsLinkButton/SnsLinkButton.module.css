@@ -16,7 +16,9 @@
   height: 50px;
   padding: 2px;
   border-radius: 50%;
-  transition-duration: 0.2s;
+  transition:
+    color 0.2s,
+    background 0.2s;
 }
 
 .module:hover {

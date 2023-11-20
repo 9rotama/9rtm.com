@@ -15,4 +15,7 @@
   padding: 10px 20px;
   width: 100%;
   border-bottom: 1px solid var(--border-color);
+  transition:
+    color 0.2s ease-out,
+    border-bottom 0.2s ease-out;
 }

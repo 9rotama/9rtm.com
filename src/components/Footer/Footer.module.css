@@ -11,4 +11,5 @@
   margin: 40px;
   font-size: 100;
   color: var(--text-color);
+  transition: color 0.2s ease-out;
 }

@@ -9,4 +9,5 @@
 .module {
   position: relative;
   font-size: 32px;
+  transition: color 0.2s ease-out;
 }

@@ -8,6 +8,7 @@
 .profContent {
   display: flex;
   flex-direction: column;
+  transition: color 0.2s ease-out;
 }
 
 .name {
