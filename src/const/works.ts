@@ -1,6 +1,19 @@
 export const works = {
   apps: [
     {
+      title: "dumb-slides-maker",
+      date: new Date(2023, 9),
+      url: "https://dumb-slides-maker.vercel.app/",
+      screenshot: "/screenshots/dumbslidesmaker.png",
+      description: "markdownでダサスライド作成",
+      techStack: [
+        { name: "Svelte", icon: "/tech-logo/svelte.png" },
+        { name: "UnoCSS", icon: "/tech-logo/unocss.svg" },
+        { name: "Marpit", icon: "/tech-logo/marp.png" },
+      ],
+      isTeam: false,
+    },
+    {
       title: "POLYFORCE",
       date: new Date(2023, 9),
       url: "https://unityroom.com/games/polyforce",
